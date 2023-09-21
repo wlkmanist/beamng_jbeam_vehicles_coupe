@@ -1,0 +1,972 @@
+{
+"coupe_transmission_5M": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"5-Speed Manual Transmission",
+        "value":390,
+    },
+    "slotType" : "coupe_transmission",
+    "slots": [
+        ["type", "default","description"],
+        ["coupe_flywheel","coupe_flywheel","Flywheel", {"coreSlot":true}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-3.35, 0, 3.32, 1.90, 1.31, 1.00, 0.84],
+        "friction": 0.8,
+        "dynamicFriction": 0.00077,
+        "torqueLossCoef": 0.0155,
+        "gearboxNode:":["tra1"],
+
+        "gearWhineCoefsInput":  [0.60, 0.00, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12],
+        "gearWhineCoefsOutput": [0.00, 0.00, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24],
+        "gearWhineInputEvent": "event:>Vehicle>Transmission>helical_01>twine_in",
+        "gearWhineOutputEvent": "event:>Vehicle>Transmission>helical_01>twine_out",
+
+        //"forwardInputPitchCoef":1
+        //"forwardOutputPitchCoef":1
+        //"reverseInputPitchCoef":0.7
+        //"reverseOutputPitchCoef":0.7
+
+        //"gearWhineInputPitchCoefSmoothing":50
+        //"gearWhineOutputPitchCoefSmoothing":50
+        //"gearWhineInputVolumeCoefSmoothing":10
+        //"gearWhineOutputVolumeCoefSmoothing":10
+
+        //"gearWhineFixedCoefOutput": 0.7
+        //"gearWhineFixedCoefInput": 0.4
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "lowShiftDownRPM":[0,0,0,1600,1900,1700,1600],
+        "lowShiftUpRPM":[0,0,3400,2800,2700,2600],
+    },
+    "controller": [
+        ["fileName"],
+        ["propAnimation/hPattern", {"name":"hPattern"}],
+
+    ]
+    "hPattern": {
+        "gearCoordinates": [
+            ["gearIndex",   "x",      "y"]
+            [-1,            1,       -1]
+            [0,             0,    0]
+            [1,             -1,   1]
+            [2,             -1,   -1]
+            [3,             0,    1]
+            [4,             0,    -1]
+            [5,             1,        1]
+        ]
+        "shiftSoundNode:":["sh_b3"]
+        "shiftSoundEventHPatternGearIn": "event:>Vehicle>Interior>Gearshift>manual_modern_01_in",
+        "shiftSoundEventHPatternGearOut": "event:>Vehicle>Interior>Gearshift>manual_modern_01_out",
+        "shiftSoundVolumeHPatternGearIn": 0.5,
+        "shiftSoundVolumeHPatternGearOut": 0.5,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["coupe_transmission", ["coupe_engine","coupe_transmission"]],
+        ["coupe_shifter_boot_M", ["coupe_body","coupe_shifter_M"]],
+        ["coupe_shifter_knob_M", ["coupe_body","coupe_shifterknob_M"]],
+
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        //clutch pedal
+        ["clutch"     ,"coupe_clutchpedal", "f1l","f1r","f6l", {"x":0, "y":0, "z":180}, {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":false},
+
+         //--SHIFTER---  has to be jbeamed to allow for realistic movement
+         {"group":"coupe_shifter_M"},
+         {"nodeWeight":0.45}
+         ["sh_b1l", 0.055, -0.32, 0.54157],
+         ["sh_b1r", -0.055, -0.32, 0.54157],
+         ["sh_b2l", 0.055, -0.19,  0.510],
+         ["sh_b2r", -0.055, -0.19, 0.510],
+
+         ["sh_b3", 0.00, -0.26, 0.49251],
+         {"selfCollision":true},
+         {"group":["coupe_shifter_M","coupe_shifterknob_M"]},
+         {"nodeWeight":0.5}
+         ["sh_l3", 0.005, -0.24, 0.58],
+         {"selfCollision":false},
+         {"nodeWeight":0.30}
+         {"group":["coupe_shifterknob_M"]},
+         ["sh_l1l", 0.035, -0.263, 0.667],
+         ["sh_l1r", -0.025, -0.263, 0.667],
+         ["sh_l2l", 0.035, -0.191, 0.65],
+         ["sh_l2r", -0.025, -0.191, 0.65],
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":"coupe_transmission"},
+         {"nodeWeight":21},
+         ["tra1", 0.0, -0.09, 0.32],
+         {"group":""},
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //main shape
+        {"beamSpring":401000,"beamDamp":55},
+        {"beamDeform":259000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        ["sh_b1l", "sh_b1r"],
+        ["sh_b1l", "sh_b2l"],
+        ["sh_b1l", "sh_b2r"],
+        ["sh_b1r", "sh_b2l"],
+        ["sh_b1r", "sh_b2r"],
+        ["sh_b2l", "sh_b2r"],
+
+        ["sh_b1l", "sh_b3"],
+        ["sh_b1r", "sh_b3"],
+        ["sh_b2l", "sh_b3"],
+        ["sh_b2r", "sh_b3"],
+        //lever
+        {"beamSpring":121000,"beamDamp":35},
+        ["sh_l3", "sh_l1l"],
+        ["sh_l3", "sh_l1r"],
+        ["sh_l3", "sh_l2l"],
+        ["sh_l3", "sh_l2r"],
+
+        ["sh_l1l", "sh_l1r"],
+        ["sh_l1l", "sh_l2l"],
+        ["sh_l1l", "sh_l2r"],
+
+        ["sh_l1r", "sh_l2l"],
+        ["sh_l1r", "sh_l2r"],
+        ["sh_l2l", "sh_l2r"],
+        //hinge
+        {"beamSpring":121000,"beamDamp":25},
+        ["sh_b3", "sh_l3"],
+        ["sh_b3", "sh_l1l"],
+        ["sh_b3", "sh_l1r"],
+        ["sh_b3", "sh_l2l"],
+        ["sh_b3", "sh_l2r"],
+
+        //stabilize the shifter
+        {"beamSpring":0,"beamDamp":175},
+        ["sh_b1l", "sh_l3"],
+        ["sh_b1r", "sh_l3"],
+        ["sh_b2l", "sh_l3"],
+        ["sh_b2r", "sh_l3"],
+        {"breakGroup":""},
+        //attach to body
+        {"beamSpring":300000,"beamDamp":70},
+        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+        ["sh_b1l", "f7r"],
+        ["sh_b1r", "f7r"],
+        ["sh_b2l", "f7r"],
+        ["sh_b2r", "f7r"],
+        ["sh_b3", "f7r"],
+
+        ["sh_b1l", "f7l"],
+        ["sh_b1r", "f7l"],
+        ["sh_b2l", "f7l"],
+        ["sh_b2r", "f7l"],
+        ["sh_b3", "f7l"],
+
+        ["sh_b1l", "f2r"],
+        ["sh_b1r", "f2r"],
+        ["sh_b2l", "f2r"],
+        ["sh_b2r", "f2r"],
+        ["sh_b3", "f2r"],
+
+        ["sh_b1l", "f2l"],
+        ["sh_b1r", "f2l"],
+        ["sh_b2l", "f2l"],
+        ["sh_b2r", "f2l"],
+        ["sh_b3", "f2l"],
+
+        ["sh_b1l", "f1r"],
+        ["sh_b1r", "f1r"],
+        ["sh_b2l", "f1r"],
+        ["sh_b2r", "f1r"],
+        ["sh_b3", "f1r"],
+
+        ["sh_b1l", "f1l"],
+        ["sh_b1r", "f1l"],
+        ["sh_b2l", "f1l"],
+        ["sh_b2r", "f1l"],
+        ["sh_b3", "f1l"],
+        {"beamSpring":200000,"beamDamp":20},
+        ["sh_b1l", "dsh"],
+        ["sh_b1r", "dsh"],
+        ["sh_b2l", "dsh"],
+        ["sh_b2r", "dsh"],
+        ["sh_b3",  "dsh"],
+        //support beams
+        {"beamType":"|SUPPORT","beamPrecompression":0.81,"beamLongBound":2},
+        {"beamSpring":201000,"beamDamp":50},
+        {"beamDeform":16000,"beamStrength":"FLT_MAX"},
+        ["sh_l1r", "sh_b2l"],
+        ["sh_l2r", "sh_b1l"],
+        ["sh_l2l", "sh_b1r"],
+        ["sh_l1l", "sh_b2r"],
+        {"beamPrecompression":0.68}
+        ["sh_l3", "sh_b1l"],
+        ["sh_l3", "sh_b1r"],
+        ["sh_l3", "sh_b2l"],
+        ["sh_l3", "sh_b2r"],
+        {"beamPrecompression":1,"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //--TRANSMISSION CONE--
+        {"beamSpring":7700550,"beamDamp":125},
+        {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+        ["tra1","e1r"],
+        ["tra1","e3r"],
+        ["tra1","e1l"],
+        ["tra1","e3l"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "torsionHydros": [
+        ["id1:","id2:","id3:","id4:"],
+        {"spring":200, "damp":1, "deform":"FLT_MAX", "strength":1000},
+        ["sh_b2l","sh_b1l","sh_b1r","sh_l3",  {"inputSource":"hPatternAxisY","factor":-0.20}],
+        ["sh_b1r","sh_b1l","sh_b2l","sh_l3",  {"inputSource":"hPatternAxisX","factor":-0.25}],
+        ["sh_b1r","sh_b2r","sh_b2l","sh_l3",  {"inputSource":"hPatternAxisY","factor":0.20}],
+        ["sh_b2l","sh_b2r","sh_b1r","sh_l3",  {"inputSource":"hPatternAxisX","factor":0.25}],
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        {"spring":100, "damp":0.2, "deform":30000, "strength":1000},
+        ["sh_b1r", "sh_b3", "sh_l3", "sh_l1r"],
+        ["sh_b2r", "sh_b3", "sh_l3", "sh_l2r"],
+        ["sh_b2l", "sh_b3", "sh_l3", "sh_l2l"],
+        ["sh_b1l", "sh_b3", "sh_l3", "sh_l1l"],
+
+    ],
+},
+"coupe_transmission_6M_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race 6-Speed Manual Transmission",
+        "value":4400,
+    },
+    "slotType" : "coupe_transmission",
+    "slots": [
+        ["type", "default","description"],
+        ["coupe_flywheel","coupe_flywheel_race","Flywheel", {"coreSlot":true}],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$gear_R", "range", ":1", "Transmission", 3.05, 0.5, 5, "Reverse Gear Ratio", "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_1", "range", ":1", "Transmission", 3.20, 0.5, 5, "1st Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_2", "range", ":1", "Transmission", 2.00, 0.5, 5, "2nd Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_3", "range", ":1", "Transmission", 1.45, 0.5, 5, "3rd Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_4", "range", ":1", "Transmission", 1.10, 0.5, 5, "4th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_5", "range", ":1", "Transmission", 0.90, 0.5, 5, "5th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_6", "range", ":1", "Transmission", 0.74, 0.5, 5, "6th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":["$=-$gear_R", 0, "$gear_1", "$gear_2", "$gear_3", "$gear_4", "$gear_5", "$gear_6"],
+        "friction": 1.2,
+        "dynamicFriction": 0.00115,
+        "torqueLossCoef": 0.013,
+        "gearboxNode:":["tra1"],
+
+        "gearWhineCoefsInput":  [0.66, 0.00, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33],
+        "gearWhineCoefsOutput": [0.00, 0.00, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66],
+        "gearWhineInputEvent": "event:>Vehicle>Transmission>straight_01>twine_in_race",
+        "gearWhineOutputEvent": "event:>Vehicle>Transmission>straight_01>twine_out_race",
+
+        //"forwardInputPitchCoef":1
+        //"forwardOutputPitchCoef":1
+        //"reverseInputPitchCoef":0.7
+        //"reverseOutputPitchCoef":0.7
+
+        //"gearWhineInputPitchCoefSmoothing":50
+        //"gearWhineOutputPitchCoefSmoothing":50
+        //"gearWhineInputVolumeCoefSmoothing":10
+        //"gearWhineOutputVolumeCoefSmoothing":10
+
+        //"gearWhineFixedCoefOutput": 0.7
+        //"gearWhineFixedCoefInput": 0.4
+    },
+    "clutch": {
+        "clutchFreePlay":0.3,
+    },
+    "vehicleController": {
+        "transmissionShiftDelay":0.14,
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.18,
+        //"aggressionSmoothingDown":0.05
+        "aggressionHoldOffThrottleDelay":3,
+        "lowShiftDownRPM":[0,0,0,2000,2600,2600,2600,2600],
+        "lowShiftUpRPM":[0,0,4200,4200,4050,3850,3700],
+        //"lowShiftDownRPM":[0,0,0,1600,1900,1800,1600,1500],
+        //"lowShiftUpRPM":[0,0,3400,3000,2900,2800,2700],
+        //"wheelSlipUpThreshold":100,
+    },
+    "controller": [
+        ["fileName"],
+        ["propAnimation/hPattern", {"name":"hPattern"}],
+
+    ]
+    "hPattern": {
+        "gearCoordinates": [
+            ["gearIndex",   "x",      "y"]
+            [-1,            -1,       1]
+            [0,             0.0,    -0.25]
+            [1,             -0.65,   0.95]
+            [2,             -0.65,   -1]
+            [3,             0.0,    0.95]
+            [4,             0.0,    -1]
+            [5,             0.65,        0.95]
+            [6,             0.65,        -1]
+        ]
+        "shiftSoundNode:":["sh_b3"]
+        "shiftSoundEventHPatternGearIn": "event:>Vehicle>Interior>Gearshift>manual_modern_09_in",
+        "shiftSoundEventHPatternGearOut": "event:>Vehicle>Interior>Gearshift>manual_modern_09_out",
+        "shiftSoundVolumeHPatternGearIn": 0.5,
+        "shiftSoundVolumeHPatternGearOut": 0.5,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["coupe_transmission", ["coupe_engine","coupe_transmission"]],
+        ["grp_stand_plate", ["shifter_body","coupe_floor"], [],      {"pos":{"x": -0.03, "y":-0.27, "z":0.50}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1.1, "y":1.0, "z":1.1}}],
+        ["grp_shifter_m_housing", ["shifter_body","coupe_floor"], [],{"pos":{"x": -0.0, "y":-0.26, "z":0.55}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
+        ["grp_shifter_m_details", ["shifter_body","coupe_floor"], [],{"pos":{"x": -0.0, "y":-0.26, "z":0.55}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
+        ["grp_shifter_m_sphere", ["shifter_lever"], [],              {"pos":{"x": -0.0, "y":-0.26, "z":0.55}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
+        ["grp_shifter_m_stick", ["shifter_lever"], [],               {"pos":{"x": -0.0, "y":-0.26, "z":0.55}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.0}}],
+        ["grp_shifter_knob_a", ["shifter_lever"], [],                {"pos":{"x": -0.0, "y":-0.26, "z":0.50}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
+        //["coupe_shifter_M", ["coupe_body","coupe_shifter_M"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        //clutch pedal
+        ["clutch"     ,"coupe_clutchpedal", "f1l","f1r","f6l", {"x":0, "y":0, "z":180}, {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":false},
+
+         //--SHIFTER---  has to be jbeamed to allow for realistic movement
+         {"group":"shifter_body"},
+         {"nodeWeight":0.45}
+         ["sh_b1l",  0.05, -0.325, 0.51],
+         ["sh_b1r", -0.05, -0.325, 0.51],
+         ["sh_b2l",  0.05, -0.194, 0.51],
+         ["sh_b2r", -0.05, -0.194, 0.51],
+
+         ["sh_b3", 0.00, -0.26, 0.52],
+         {"selfCollision":true},
+         {"group":"shifter_lever"},
+         {"nodeWeight":0.5}
+         ["sh_l3", -0.00, -0.26, 0.70],
+         {"selfCollision":false},
+         {"nodeWeight":0.30}
+         {"group":["shifter_lever"]},
+         ["sh_l1l", -0.04, -0.29, 0.61],
+         ["sh_l1r",  0.04, -0.29, 0.61],
+         ["sh_l2l", -0.04, -0.23, 0.61],
+         ["sh_l2r",  0.04, -0.23, 0.61],
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":"coupe_transmission"},
+         {"nodeWeight":21},
+         ["tra1", 0.0, -0.09, 0.32],
+         {"group":""},
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //main shape
+        {"beamSpring":401000,"beamDamp":55},
+        {"beamDeform":259000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        ["sh_b1l", "sh_b1r"],
+        ["sh_b1l", "sh_b2l"],
+        ["sh_b1l", "sh_b2r"],
+        ["sh_b1r", "sh_b2l"],
+        ["sh_b1r", "sh_b2r"],
+        ["sh_b2l", "sh_b2r"],
+
+        ["sh_b1l", "sh_b3"],
+        ["sh_b1r", "sh_b3"],
+        ["sh_b2l", "sh_b3"],
+        ["sh_b2r", "sh_b3"],
+        //lever
+        {"beamSpring":121000,"beamDamp":35},
+        ["sh_l3", "sh_l1l"],
+        ["sh_l3", "sh_l1r"],
+        ["sh_l3", "sh_l2l"],
+        ["sh_l3", "sh_l2r"],
+
+        ["sh_l1l", "sh_l1r"],
+        ["sh_l1l", "sh_l2l"],
+        ["sh_l1l", "sh_l2r"],
+
+        ["sh_l1r", "sh_l2l"],
+        ["sh_l1r", "sh_l2r"],
+        ["sh_l2l", "sh_l2r"],
+        //hinge
+        {"beamSpring":121000,"beamDamp":25},
+        ["sh_b3", "sh_l3"],
+        ["sh_b3", "sh_l1l"],
+        ["sh_b3", "sh_l1r"],
+        ["sh_b3", "sh_l2l"],
+        ["sh_b3", "sh_l2r"],
+
+        //stabilize the shifter
+        {"beamSpring":0,"beamDamp":175},
+        ["sh_b1l", "sh_l3"],
+        ["sh_b1r", "sh_l3"],
+        ["sh_b2l", "sh_l3"],
+        ["sh_b2r", "sh_l3"],
+        {"breakGroup":""},
+        //attach to body
+        {"beamSpring":300000,"beamDamp":70},
+        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+        ["sh_b1l", "f7r"],
+        ["sh_b1r", "f7r"],
+        ["sh_b2l", "f7r"],
+        ["sh_b2r", "f7r"],
+        ["sh_b3", "f7r"],
+
+        ["sh_b1l", "f7l"],
+        ["sh_b1r", "f7l"],
+        ["sh_b2l", "f7l"],
+        ["sh_b2r", "f7l"],
+        ["sh_b3", "f7l"],
+
+        ["sh_b1l", "f2r"],
+        ["sh_b1r", "f2r"],
+        ["sh_b2l", "f2r"],
+        ["sh_b2r", "f2r"],
+        ["sh_b3", "f2r"],
+
+        ["sh_b1l", "f2l"],
+        ["sh_b1r", "f2l"],
+        ["sh_b2l", "f2l"],
+        ["sh_b2r", "f2l"],
+        ["sh_b3", "f2l"],
+
+        ["sh_b1l", "f1r"],
+        ["sh_b1r", "f1r"],
+        ["sh_b2l", "f1r"],
+        ["sh_b2r", "f1r"],
+        ["sh_b3", "f1r"],
+
+        ["sh_b1l", "f1l"],
+        ["sh_b1r", "f1l"],
+        ["sh_b2l", "f1l"],
+        ["sh_b2r", "f1l"],
+        ["sh_b3", "f1l"],
+        {"beamSpring":200000,"beamDamp":20},
+        ["sh_b1l", "dsh"],
+        ["sh_b1r", "dsh"],
+        ["sh_b2l", "dsh"],
+        ["sh_b2r", "dsh"],
+        ["sh_b3",  "dsh"],
+        //support beams
+        {"beamType":"|SUPPORT","beamPrecompression":0.83,"beamLongBound":2},
+        {"beamSpring":201000,"beamDamp":50},
+        {"beamDeform":16000,"beamStrength":"FLT_MAX"},
+        ["sh_l1r", "sh_b2l"],
+        ["sh_l2r", "sh_b1l"],
+        ["sh_l2l", "sh_b1r"],
+        ["sh_l1l", "sh_b2r"],
+        {"beamPrecompression":0.82}
+        ["sh_l3", "sh_b1l"],
+        ["sh_l3", "sh_b1r"],
+        ["sh_l3", "sh_b2l"],
+        ["sh_l3", "sh_b2r"],
+        {"beamPrecompression":1,"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //--TRANSMISSION CONE--
+        {"beamSpring":7700550,"beamDamp":125},
+        {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+        ["tra1","e1r"],
+        ["tra1","e3r"],
+        ["tra1","e1l"],
+        ["tra1","e3l"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "torsionHydros": [
+        ["id1:","id2:","id3:","id4:"],
+        {"spring":200, "damp":1, "deform":"FLT_MAX", "strength":1000},
+        ["sh_b2l","sh_b1l","sh_b1r","sh_l3",  {"inputSource":"hPatternAxisY","factor":-0.20}],
+        ["sh_b1r","sh_b1l","sh_b2l","sh_l3",  {"inputSource":"hPatternAxisX","factor":-0.30}],
+        ["sh_b1r","sh_b2r","sh_b2l","sh_l3",  {"inputSource":"hPatternAxisY","factor":0.20}],
+        ["sh_b2l","sh_b2r","sh_b1r","sh_l3",  {"inputSource":"hPatternAxisX","factor":0.30}],
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        {"spring":100, "damp":0.2, "deform":30000, "strength":1000},
+        ["sh_b1r", "sh_b3", "sh_l3", "sh_l1r"],
+        ["sh_b2r", "sh_b3", "sh_l3", "sh_l2r"],
+        ["sh_b2l", "sh_b3", "sh_l3", "sh_l2l"],
+        ["sh_b1l", "sh_b3", "sh_l3", "sh_l1l"],
+
+    ],
+},
+"coupe_transmission_5M_sequential": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race 5-Speed Sequential Transmission",
+        "value":6450,
+    },
+    "slotType" : "coupe_transmission",
+    "slots": [
+        ["type", "default","description"],
+        ["coupe_flywheel","coupe_flywheel","Flywheel", {"coreSlot":true}],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$gear_R", "range", ":1", "Transmission", 3.35, 0.5, 5, "Reverse Gear Ratio", "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_1", "range", ":1", "Transmission", 3.32, 0.5, 5, "1st Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_2", "range", ":1", "Transmission", 1.90, 0.5, 5, "2nd Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_3", "range", ":1", "Transmission", 1.31, 0.5, 5, "3rd Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_4", "range", ":1", "Transmission", 1.0, 0.5, 5, "4th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_5", "range", ":1", "Transmission", 0.84, 0.5, 5, "5th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["sequentialGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":["$=-$gear_R", 0, "$gear_1", "$gear_2", "$gear_3", "$gear_4", "$gear_5"],
+        //"gearRatios":[-3.35, 0, 3.32, 1.90, 1.31, 1.00, 0.84],
+        "friction": 1.2,
+        "dynamicFriction": 0.000115,
+        "torqueLossCoef": 0.012,
+        "gearboxNode:":["tra1"],
+
+        "gearWhineCoefsInput":  [0.66, 0.00, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33],
+        "gearWhineCoefsOutput": [0.00, 0.00, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66],
+        "gearWhineInputEvent": "event:>Vehicle>Transmission>straight_01>twine_in_race",
+        "gearWhineOutputEvent": "event:>Vehicle>Transmission>straight_01>twine_out_race",
+
+        //"forwardInputPitchCoef":1
+        //"forwardOutputPitchCoef":1
+        //"reverseInputPitchCoef":0.7
+        //"reverseOutputPitchCoef":0.7
+
+        //"gearWhineInputPitchCoefSmoothing":50
+        //"gearWhineOutputPitchCoefSmoothing":50
+        //"gearWhineInputVolumeCoefSmoothing":10
+        //"gearWhineOutputVolumeCoefSmoothing":10
+
+        //"gearWhineFixedCoefOutput": 0.7
+        //"gearWhineFixedCoefInput": 0.4
+    },
+    "clutch": {
+        "clutchFreePlay":0.75,
+        "lockSpringCoef":0.3,
+    },
+    "vehicleController": {
+        "calculateOptimalLoadshiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.17,
+        //"aggressionSmoothingDown":0.05
+        "aggressionHoldOffThrottleDelay":3,
+        //"lowShiftDownRPM":[0,0,0,1600,1900,1800,1600,1500],
+        //"lowShiftUpRPM":[0,0,3500,3300,3150,3000,2900],
+        "lowShiftDownRPM":[0,0,0,2000,2600,2600,2600,2600],
+        "lowShiftUpRPM":[0,0,4200,4200,4050,3850,3700],
+        //"wheelSlipUpThreshold":100,
+        "clutchLaunchStartRPM":3000,
+        "clutchLaunchTargetRPM":3000,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["coupe_transmission", ["coupe_engine","coupe_transmission"]],
+        ["grp_stand_plate", ["shifter_body","coupe_floor"], [],      {"pos":{"x": 0.015, "y":-0.25, "z":0.517}, "rot":{"x":1, "y":0, "z":00}, "scale":{"x":0.86, "y":0.8, "z":1.1}}],
+    ],
+    "controller": [
+        ["fileName"],
+        ["propAnimation/sequentialLever", {"name":"sequentialLever"}],
+    ]
+    "sequentialLever": {
+        "shiftSoundNode:":["st_1r"],
+        "shiftSoundEventSequentialGearUp": "event:>Vehicle>Interior>Gearshift>sequential_03_out",
+        "shiftSoundEventSequentialGearDown": "event:>Vehicle>Interior>Gearshift>sequential_03_in",
+        "shiftSoundVolumeSequentialGearUp": 0.125,
+        "shiftSoundVolumeSequentialGearDown": 0.25,
+    }
+    "props": [
+        ["func",       "mesh",               "idRef:", "idX:", "idY:",  "baseRotation",            "rotation",               "translation",          "min", "max", "offset", "multiplier"],
+        //pedals
+         //clutch pedal
+        ["clutch"     ,"coupe_clutchpedal",               "f1l","f1r","f6l",               {"x":0, "y":0, "z":180},  {"x":-25, "y":0, "z":0}, {"x":0.0, "y":0, "z":0},  0, 1, 0, 1],
+        ["dummy",     "grp_shifter_sq_housing",           "st_1r","st_1l","st_2r",         {"x":90, "y":180, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.0, "z":0},  0, 0, 0, 1, {"baseTranslation":{"x":0.05, "y":0.10, "z":-0.087}}],
+        ["dummy",     "grp_shifter_sq_cablemount",        "st_1r","st_1l","st_2r",         {"x":90, "y":180, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.0, "z":0},  0, 0, 0, 1, {"baseTranslation":{"x":0.05, "y":0.10, "z":-0.087}}],
+        ["sequentialLeverY",  "grp_shifter_sq_lever",     "st_1r","st_1l","st_2r",         {"x":90, "y":180, "z":0}, {"x":-10, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, -1, 1, 0, 1, {"baseTranslation":{"x":0.05, "y":0.10, "z":-0.087}}],
+        ["sequentialLeverY",     "grp_shifter_knob_b",  "st_1r","st_1l","st_2r",         {"x":90, "y":180, "z":0} , {"x":-10, "y":0, "z":0},  {"x":0, "y":0.0, "z":0}, -1, 1, 0, 1, {"baseTranslation":{"x":0.05, "y":0.10, "z":-0.087}}]
+        ["sequentialLeverY",  "grp_shifter_sq_rod",       "st_1r","st_1l","st_2r",         {"x":90, "y":180, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.06, "z":0},-1, 1, 0, 1, {"baseTranslation":{"x":0.05, "y":0.10, "z":-0.017}}]
+    ],
+     "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":true},
+         {"group":"covet_stand"},
+         {"nodeWeight":0.6},
+         ["st_1r", -0.04, -0.30, 0.524],
+         ["st_1l", 0.06, -0.30, 0.524],
+
+         ["st_2r", -0.04, -0.18, 0.527],
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":"coupe_transmission"},
+         {"nodeWeight":21},
+         ["tra1", 0.0, -0.09, 0.32],
+         {"group":""},
+    ],
+     "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //stand main shape
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":282000,"beamDamp":50},
+        {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+        ["st_1r", "st_2r"],
+        ["st_1l", "st_1r"],
+        ["st_1l", "st_2r"],
+        //stand to floor
+        {"beamSpring":282000,"beamDamp":50},
+        {"beamDeform":2000,"beamStrength":40000},
+        ["st_1l", "f2r"],
+        ["st_1r", "f2r"],
+        ["st_2r", "f2r"],
+        ["st_1l", "f2l"],
+        ["st_1r", "f2l"],
+        ["st_2r", "f2l"],
+
+        ["st_1l", "f1r"],
+        ["st_1r", "f1r"],
+        ["st_2r", "f1r"],
+        ["st_1l", "f1l"],
+        ["st_1r", "f1l"],
+        ["st_2r", "f1l"],
+
+        ["st_1l", "f5r"],
+        ["st_1r", "f5r"],
+        ["st_1l", "f5l"],
+        ["st_1r", "f5l"],
+
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //--TRANSMISSION CONE--
+        {"beamSpring":7700550,"beamDamp":125},
+        {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+        ["tra1","e1r"],
+        ["tra1","e3r"],
+        ["tra1","e1l"],
+        ["tra1","e3l"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+
+},
+"coupe_transmission_4A": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"4-Speed Automatic Transmission",
+        "value":1350,
+    },
+    "slotType" : "coupe_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["coupe_converter","coupe_converter","Torque Converter", {"coreSlot":true}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-2.27, 0, 2.79, 1.54, 1.00, 0.695],
+        "parkLockTorque":2000,
+        "oneWayViscousCoef":25,
+        "friction": 0.96,
+        "dynamicFriction": 0.00092,
+        "torqueLossCoef": 0.017,
+        "gearboxNode:":["tra1"],
+    },
+    "vehicleController": {
+        "automaticModes":"PRND21",
+        "useSmartAggressionCalculation":false,
+        "calculateOptimalLoadshiftPoints": true,
+        "transmissionGearChangeDelay":1.5,
+        "shiftDownRPMOffsetCoef":1.25,
+        "gearboxDecisionSmoothingUp":1,
+        "gearboxDecisionSmoothingDown":0.4,
+        "lowShiftDownRPM":1100,
+        "lowShiftUpRPM":[0,0,2500,2300,2200],
+        //"highShiftDownRPM":3300,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["coupe_transmission", ["coupe_engine","coupe_transmission"]],
+        ["coupe_shifterbase_a", ["coupe_body","coupe_dash"]],
+    ],
+    "controller": [
+        ["fileName"],
+        ["propAnimation/singleAxisLever", {"name":"singleAxisLever"}],
+
+    ]
+    "singleAxisLever": {
+        "gearCoordinates": [
+            ["gearIndex",   "value"]
+            [1,            0.0]
+            [2,             0.2]
+            [3,             0.4]
+            [4,             0.6]
+            [5,             0.8]
+            [6,             1]
+        ]
+        "shiftSoundNode:":["f2r"]
+        "shiftSoundEventSingleAxisLever": "event:>Vehicle>Interior>Gearshift>automatic_02",
+        "shiftSoundVolumeSingleAxisLever": 0.5,
+    },
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        //auto shifter
+        ["gearModeIndex",         "coupe_shifter_A", "f7r","f7l","f8r", {"x":90, "y":0, "z":0}, {"x":0, "y":0, "z":0.1}     , {"x":0, "y":0.25, "z":0.03}, 0, 1, -0.10, 0.52],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":"coupe_transmission"},
+         {"nodeWeight":20},
+         ["tra1", 0.0, -0.09, 0.32],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":7700550,"beamDamp":125},
+          {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"coupe_transmission_4A_drag": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Drag 4-Speed Automatic Transmission",
+        "value":7600,
+    },
+    "slotType" : "coupe_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["coupe_converter_drag","coupe_converter_drag_med","Torque Converter", {"coreSlot":true}],
+    ],
+    "controller": [
+        ["fileName"],
+        ["propAnimation/singleAxisLever", {"name":"singleAxisLever"}],
+        ["transbrake", {}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-2.29, 0, 3.06, 1.62, 1.00, 0.7],
+        "parkLockTorque":5000,
+        "oneWayViscousCoef":35,
+        "friction": 1.98,
+        "dynamicFriction": 0.00184,
+        "torqueLossCoef": 0.017,
+        "shiftEfficiency":0.75,
+        "gearChangeTime": 0.05,
+        "gearboxNode:":["tra1"],
+    },
+    "vehicleController": {
+        "automaticModes":"PRND1",
+        "calculateOptimalLoadshiftPoints": false,
+        "useSmartAggressionCalculation":false,
+        "transmissionGearChangeDelay":0.75,
+        "gearboxDecisionSmoothingUp":2,
+        "gearboxDecisionSmoothingDown":2,
+        "lowShiftDownRPM":1500,
+        "lowShiftUpRPM":3500,
+        "highShiftDownRPM":3000,
+        //effectively disabled
+        "wheelSlipUpThreshold":99999,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["coupe_transmission", ["coupe_engine","coupe_transmission"]],
+        ["coupe_shifterbase_a", ["coupe_body","coupe_dash"]],
+    ],
+    "singleAxisLever": {
+        "gearCoordinates": [
+            ["gearIndex",   "value"]
+            [1,            0.0]
+            [2,             0.2]
+            [3,             0.4]
+            [4,             0.6]
+            [5,             1]
+        ]
+        "shiftSoundNode:":["f2r"]
+        "shiftSoundEventSingleAxisLever": "event:>Vehicle>Interior>Gearshift>automatic_02",
+        "shiftSoundVolumeSingleAxisLever": 0.5,
+    },
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        //auto shifter
+        ["gearModeIndex",         "coupe_shifter_A", "f7r","f7l","f8r", {"x":90, "y":0, "z":0}, {"x":0, "y":0, "z":0.1}     , {"x":0, "y":0.25, "z":0.03}, 0, 1, -0.10, 0.52],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":"coupe_transmission"},
+         {"nodeWeight":20},
+         ["tra1", 0.0, -0.09, 0.32],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":7700550,"beamDamp":125},
+          {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"coupe_converter": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Locking Torque Converter",
+        "value":150,
+    },
+    "slotType" : "coupe_converter",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.252,
+        "converterStiffness":9,
+        "couplingAVRatio":0.9,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":200,
+        "additionalEngineInertia":0.12,
+    },
+    "vehicleController": {
+        "torqueConverterLockupRPM":1600,
+        "torqueConverterLockupMinGear":3,
+    },
+},
+"coupe_converter_drag_lo": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Low Stall Converter",
+        "value":400,
+    },
+    "slotType" : "coupe_converter_drag",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter":0.295,
+        "converterStiffness":10,
+        "couplingAVRatio":0.9,
+        "stallTorqueRatio":1.7,
+        "additionalEngineInertia":0.18,
+    },
+},
+"coupe_converter_drag_med": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Medium Stall Converter",
+        "value":400,
+    },
+    "slotType" : "coupe_converter_drag",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter":0.275,
+        "converterStiffness":10,
+        "couplingAVRatio":0.9,
+        "stallTorqueRatio":1.85,
+        "additionalEngineInertia":0.17,
+    },
+},
+"coupe_converter_drag_hi": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"High Stall Converter",
+        "value":400,
+    },
+    "slotType" : "coupe_converter_drag",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter":0.255,
+        "converterStiffness":10,
+        "couplingAVRatio":0.9,
+        "stallTorqueRatio":1.7,
+        "additionalEngineInertia":0.16,
+    },
+},
+"coupe_flywheel": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Flywheel",
+        "value":150,
+    },
+    "slotType" : "coupe_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.10,
+        "clutchMass":4.5,
+    },
+},
+"coupe_flywheel_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Ultra Light Flywheel",
+        "value":600,
+    },
+    "slotType" : "coupe_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.02,
+        "clutchMass":3.25,
+    },
+},
+"coupe_flywheel_light": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Lightened Flywheel",
+        "value":400,
+    },
+    "slotType" : "coupe_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.05,
+        "clutchMass":4,
+    },
+},
+}

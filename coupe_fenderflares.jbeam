@@ -1,0 +1,143 @@
+{
+"coupe_fenderflare_FR": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Turbo Rabbit Front Right Fender Flare",
+        "value":400,
+    },
+    "slotType" : "coupe_fenderflare_FR",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_overfender_FR", ["coupe_fender_R"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //redefine nodes to move them and add weight
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"collision":true},
+         {"selfCollision":true},
+         {"group":"coupe_fender_R"},
+         {"nodeWeight":0.9},
+         ["fe2r",-0.82, -0.87, 0.32],
+         ["fe4r",-0.865, -1.00, 0.62],
+         ["fe5r",-0.86, -1.25, 0.71],
+         ["fe6r",-0.825, -1.58, 0.53],
+         {"group":""},
+    ],
+
+},
+"coupe_fenderflare_FL": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Turbo Rabbit Front Left Fender Flare",
+        "value":400,
+    },
+    "slotType" : "coupe_fenderflare_FL",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_overfender_FL", ["coupe_fender_L"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //redefine nodes to move them and add weight
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"collision":true},
+         {"selfCollision":true},
+         {"group":"coupe_fender_L"},
+         {"nodeWeight":0.9},
+         ["fe2l", 0.82, -0.87, 0.32],
+         ["fe4l", 0.865, -1.00, 0.62],
+         ["fe5l", 0.86, -1.25, 0.71],
+         ["fe6l", 0.825, -1.58, 0.53],
+         {"group":""},
+    ],
+},
+"coupe_fenderflare_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Turbo Rabbit Rear Fender Flares",
+        "value":800,
+    },
+    "slotType" : "coupe_fenderflare_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_overfender_RR", ["coupe_body"]],
+         ["coupe_overfender_RL", ["coupe_body"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":true},
+         {"group":"coupe_body"},
+         //quarter panel
+         {"nodeWeight":1.7},
+
+         ["q8r", -0.87, 0.97, 0.60],
+         ["q8l", 0.87, 0.97, 0.60],
+
+         ["q9r", -0.875, 1.25, 0.69],
+         ["q9l", 0.875, 1.25, 0.69],
+
+         ["q10r", -0.82, 1.58, 0.53],
+         ["q10l", 0.82, 1.58, 0.53],
+    ],
+
+},
+"coupe_fenderflare_R_kit": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Widebody Kit",
+        "value":3200,
+    },
+    "slotType" : "coupe_fenderflare_R",
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":true},
+         {"group":"coupe_body"},
+         //quarter panel
+         {"nodeWeight":1.75},
+         ["q1r", -0.78, 0.54, 0.87, {"group":["coupe_seats_R","coupe_seats","coupe_body"]}],
+         ["q1l", 0.78, 0.54, 0.87, {"group":["coupe_seats_R","coupe_seats","coupe_body"]}],
+         ["q2r", -0.78, 0.90, 0.87, {"group":["coupe_seats_R","coupe_body"]}],
+         ["q2l", 0.78, 0.90, 0.87, {"group":["coupe_seats_R","coupe_body"]}],
+         ["q3r", -0.77, 1.25, 0.87, {"group":["coupe_seats_R","coupe_body"]}],
+         ["q3l", 0.77, 1.25, 0.87, {"group":["coupe_seats_R","coupe_body"]}],
+
+         {"group":""},
+         {"nodeWeight":1.45},
+         ["q4r", -0.745, 1.62, 0.91],
+         ["q4l", 0.745, 1.62, 0.91],
+
+         {"group":"coupe_body"},
+         ["q5r", -0.73, 1.84, 0.88],
+         ["q5l", 0.73, 1.84, 0.88],
+         ["q6r", -0.69, 2.07, 0.86],
+         ["q6l", 0.69, 2.07, 0.86],
+         ["q7r",-0.82, 0.53, 0.60, {"group":["coupe_seats","coupe_body"]}],
+         ["q7l", 0.82, 0.53, 0.60, {"group":["coupe_seats","coupe_body"]}],
+         ["q8r", -0.86, 0.93, 0.60, {"group":["coupe_seats_R","coupe_body"]}],
+         ["q8l", 0.86, 0.93, 0.60, {"group":["coupe_seats_R","coupe_body"]}],
+         ["q9r", -0.865, 1.25, 0.69],
+         ["q9l", 0.865, 1.25, 0.69],
+         ["q10r", -0.84, 1.58, 0.53],
+         ["q10l", 0.84, 1.58, 0.53],
+         ["q11r", -0.78, 1.78, 0.535],
+         ["q11l", 0.78, 1.78, 0.535],
+         ["q12r", -0.74, 1.98, 0.54],
+         ["q12l", 0.74, 1.98, 0.54],
+         ["q13r", -0.56, 2.13, 0.68],
+         ["q13l", 0.56, 2.13, 0.68],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_bodykit_R", ["coupe_body"]],
+    ],
+},
+}

@@ -1,0 +1,66 @@
+{
+"coupe_shiftlight_single": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Shift Light Single",
+        "value":210,
+    },
+    "slotType" : "coupe_shiftlight",
+    "controller": [
+        ["fileName"],
+        ["shiftLights"],
+    ],
+    "shiftLights": {
+        "engineName":"mainEngine",
+        "maxEngineRPMOffset": 400,
+        "rpmRange": 1000,
+        "outputElectrics": ["led"],
+        "flashingOutputElectrics": ["led"],
+    },
+    "glowMap":{
+        "shiftlight_single_l0":    {"simpleFunction":{"led":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["shiftlight", ["coupe_dash"],[],{"pos":{"x":0.608,"y":-0.305,"z":1.037},"rot":{"x":6.75,"y":10.2,"z":28.1}}],
+        ["shiftlight_light", ["coupe_dash"],[],{"pos":{"x":0.608,"y":-0.305,"z":1.037},"rot":{"x":6.75,"y":10.2,"z":28.1}}],
+    ],
+},
+"coupe_shiftlight_multi": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Shift Light Multi",
+        "value":340,
+    },
+    "slotType" : "coupe_shiftlight",
+    "controller": [
+        ["fileName"],
+        ["shiftLights"],
+    ],
+    "shiftLights": {
+        "engineName":"mainEngine",
+        "maxEngineRPMOffset": 400,
+        "rpmRange": 3000,
+        "keepLEDsActive": true,
+        "hasStallWarning": true,
+        "outputElectrics": ["led0", "led1", "led2", "led3", "led4", "led5", "led6", "led7"],
+        "flashingOutputElectrics": ["led6", "led7"],
+        "flashingAlternateOutputElectrics": [],
+    },
+    "glowMap":{
+        "shiftlight_multi_l0":     {"simpleFunction":{"led0":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l1":     {"simpleFunction":{"led1":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l2":     {"simpleFunction":{"led2":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l3":     {"simpleFunction":{"led3":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l4":     {"simpleFunction":{"led4":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l5":     {"simpleFunction":{"led5":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l6":     {"simpleFunction":{"led6":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l7":     {"simpleFunction":{"led7":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["shiftlight_multi", ["coupe_dash"],[],{"pos":{"x":0.342,"y":-0.456,"z":0.958},"rot":{"x":0,"y":0,"z":0},"scale":{"x":0.85,"y":0.85,"z":0.85}}],
+        ["shiftlight_multi_led_mirror", ["coupe_dash"],[],{"pos":{"x":0.342,"y":-0.456,"z":0.958},"rot":{"x":0,"y":0,"z":0},"scale":{"x":0.85,"y":0.85,"z":0.85}}],
+    ],
+},
+}

@@ -1,0 +1,175 @@
+{
+"coupe_xtypespoiler": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"X-Type Spoiler",
+        "value":600,
+    },
+    "slotType" : "coupe_spoiler",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_xtypespoiler", ["coupe_spoiler"]],
+    ],
+    "trunkCoupler":{
+        "$+openForceMagnitude":  25,
+        "$+openForceDuration":   0.1,
+        "$+closeForceMagnitude": -20,
+        "$+closeForceDuration":  0,
+    }
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--TRUNK--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"group":"coupe_spoiler"},
+         {"collision":true},
+         {"nodeWeight":0.45},
+         {"selfCollision":true},
+
+         ["sp2rr", -0.7, 1.93, 1.00],
+         ["sp2r", -0.27, 2.00, 1.01],
+         ["sp2l", 0.27, 2.00, 1.01],
+         ["sp2ll", 0.7, 1.93, 1.00],
+
+         ["sp3rr", -0.71, 2.07, 1.025],
+         ["sp3r", -0.36, 2.13, 1.033],
+         ["sp3", 0.0, 2.15, 1.04],
+         ["sp3l", 0.36, 2.13, 1.033],
+         ["sp3ll", 0.71, 2.07, 1.025],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":225000,"beamDamp":25},
+          {"beamDeform":35000,"beamStrength":160000},
+          {"deformLimitExpansion":1.1},
+          ["sp2ll", "sp2l"],
+          ["sp2ll", "sp3ll"],
+          ["sp2ll", "sp3l"],
+          ["sp3ll", "sp3l"],
+          ["sp3ll", "sp2l"],
+
+          ["sp2l", "sp3l"],
+          ["sp2l", "sp3"],
+
+          ["sp3l", "sp3"],
+
+          ["sp2rr", "sp2r"],
+          ["sp2rr", "sp3rr"],
+          ["sp2rr", "sp3r"],
+          ["sp3rr", "sp3r"],
+          ["sp3rr", "sp2r"],
+
+          ["sp2r", "sp3r"],
+          ["sp2r", "sp3"],
+
+          ["sp3r", "sp3"],
+
+          ["sp2l", "sp2r"],
+
+          //wing rigids
+          {"deformLimitExpansion":""},
+          ["sp3ll", "sp3"],
+          ["sp3ll", "sp3r"],
+          ["sp3ll", "sp3rr"],
+          ["sp3ll", "sp2r"],
+          ["sp3ll", "sp2rr"],
+          ["sp2ll", "sp2r"],
+          ["sp2ll", "sp2rr"],
+          ["sp2ll", "sp3"],
+          ["sp2ll", "sp3r"],
+          ["sp2ll", "sp3rr"],
+
+          ["sp3rr", "sp3"],
+          ["sp3rr", "sp3l"],
+          ["sp3rr", "sp2l"],
+          ["sp2rr", "sp2l"],
+          ["sp2rr", "sp3"],
+          ["sp2rr", "sp3l"],
+
+          //attachment left
+          {"beamSpring":165000,"beamDamp":50},
+          {"beamDeform":1675,"beamStrength":2620},
+          {"breakGroup":"spoiler_attach_l"},
+          ["sp3ll", "t3ll"],
+          ["sp2ll", "t3ll"],
+
+          ["sp3ll", "t2ll"],
+          ["sp2ll", "t2ll"],
+
+          ["sp3l", "t3ll"],
+          ["sp2l", "t3ll"],
+
+          ["sp3l", "t2ll"],
+          ["sp2l", "t2ll"],
+
+          ["sp3", "t2ll"],
+          ["sp3", "t3ll"],
+
+          //damp
+          ["sp3","t4l", {"beamSpring":0,"beamDamp":90}],
+
+          //attachment right
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":1675,"beamStrength":2620},
+          {"breakGroup":"spoiler_attach_r"},
+          ["sp3rr", "t3rr"],
+          ["sp2rr", "t3rr"],
+
+          ["sp3rr", "t2rr"],
+          ["sp2rr", "t2rr"],
+
+
+          ["sp3r", "t3rr"],
+          ["sp2r", "t3rr"],
+
+          ["sp3r", "t2rr"],
+          ["sp2r", "t2rr"],
+
+          ["sp3", "t2rr"],
+          ["sp3", "t3rr"],
+
+          //damp
+          ["sp3","t4r", {"beamSpring":0,"beamDamp":90}],
+          {"breakGroup":""},
+          {"deformLimitExpansion":1.1},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"dragCoef":10},
+        {"groundModel":"plastic"},
+        ["sp2ll","sp3ll","sp3l", {"liftCoef":70}],
+        ["sp2ll","sp3l","sp2l", {"liftCoef":70}],
+        ["sp2l","sp3l","sp3", {"liftCoef":70}],
+
+        ["sp2l","sp3","sp2r", {"liftCoef":70}],
+        ["sp2r","sp3","sp3r", {"liftCoef":70}],
+        ["sp2r","sp3r","sp2rr", {"liftCoef":70}],
+        ["sp2rr","sp3r","sp3rr", {"liftCoef":70}],
+    ],
+},
+"coupe_smallspoiler": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Small Lip",
+        "value":300,
+    },
+    "slotType" : "coupe_spoiler",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_smallspoiler", ["coupe_trunk"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--TRUNK--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"group":"coupe_spoiler"},
+         {"collision":true},
+         {"nodeWeight":0.24},
+         {"selfCollision":true},
+         {"group":""},
+    ],
+},
+}

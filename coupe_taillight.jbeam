@@ -1,0 +1,67 @@
+{
+"coupe_taillight_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Right Taillight",
+        "value":160,
+    },
+    "slotType" : "coupe_taillight_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_taillightframe_R", ["coupe_body"]],
+         {"deformGroup":"taillight_R_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+         ["coupe_taillight_R", ["coupe_body"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.5}],
+         {"deformGroup":""},
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        {
+            "lightInnerAngle":0,
+            "lightOuterAngle":120,
+            "lightRange":8,
+            "lightColor":{"r":255, "g":50, "b":0, "a":255},
+            "lightAttenuation":{"x":0, "y":1, "z":1},
+            "lightCastShadows":false,
+            "flareName":"vehicleBrakeLightFlare",
+            "cookieName":""
+        },
+        //corner
+        ["signal_R" ,         "SPOTLIGHT"        , "q11r", "q12r", "q6r", {"x":0, "y":-35, "z":-30} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.7, "z":-0.01},"flareScale":0.04,"lightBrightness":0.04,"deformGroup":"taillight_R_break"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "q11r", "q12r", "q6r", {"x":0, "y":-45, "z":-60} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.7, "z":-0.01},"flareScale":0.02,"lightBrightness":0.03,"lightRange":8,"deformGroup":"taillight_R_break"}],
+        ["brake" ,         "SPOTLIGHT"        , "q11r", "q12r", "q6r", {"x":0, "y":-45, "z":-60} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.7, "z":-0.01},"flareScale":0.05,"lightBrightness":0.05,"lightRange":8,"deformGroup":"taillight_R_break"}],
+     ],
+},
+"coupe_taillight_L": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Left Taillight",
+        "value":160,
+    },
+    "slotType" : "coupe_taillight_L",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_taillightframe_L", ["coupe_body"]],
+         {"deformGroup":"taillight_L_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+         ["coupe_taillight_L", ["coupe_body"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound1", "deformVolume":0.5}],
+         {"deformGroup":""},
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        {
+            "lightInnerAngle":0,
+            "lightOuterAngle":120,
+            "lightRange":8,
+            "lightColor":{"r":255, "g":50, "b":0, "a":255},
+            "lightAttenuation":{"x":0, "y":1, "z":1},
+            "lightCastShadows":false,
+            "flareName":"vehicleBrakeLightFlare",
+            "cookieName":""
+        },
+        //corner
+        ["signal_L" ,         "SPOTLIGHT"        , "q11l", "q12l", "q6l", {"x":180, "y":-60, "z":30} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.7, "z":0.01},"flareScale":0.04,"lightBrightness":0.04,"deformGroup":"taillight_L_break"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "q11l", "q12l", "q6l", {"x":180, "y":-45, "z":60} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.7, "z":0.01},"flareScale":0.02,"lightBrightness":0.03,"lightRange":8,"deformGroup":"taillight_L_break"}],
+        ["brake" ,         "SPOTLIGHT"        , "q11l", "q12l", "q6l", {"x":180, "y":-45, "z":60} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.7, "z":0.01},"flareScale":0.05,"lightBrightness":0.05,"lightRange":8,"deformGroup":"taillight_L_break"}],
+
+     ],
+},
+}

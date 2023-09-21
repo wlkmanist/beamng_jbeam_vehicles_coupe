@@ -1,0 +1,92 @@
+{
+"coupe_wheeliebar": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Wheelie Bar",
+        "value":1700,
+    },
+    "slotType" : "coupe_wheeliebar",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_wheeliebar_mounts", ["coupe_wheeliebar_upper", "coupe_body"]],
+         ["coupe_wheeliebar", ["coupe_wheeliebar"]],
+         ["coupe_wheeliebar_upper", ["coupe_wheeliebar_lower", "coupe_body"]],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$wheeliebar", "range", "", "Chassis", 1.0, 0.975, 1.1, "Wheelie Bar Height", "Adjusts the position of the wheelie bar"],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //wheeliebar
+         {"frictionCoef":1},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":3},
+         {"group":"coupe_wheeliebar"},
+         ["wb1l",0.31,1.48, 0.28, {"group":["coupe_wheeliebar_upper", "coupe_wheeliebar"]}],
+         ["wb1r",-0.31,1.48, 0.28, {"group":["coupe_wheeliebar_upper", "coupe_wheeliebar"]}],
+         {"frictionCoef":0.1},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         ["wb2l",0.28,2.905, 0.2, {"group":["coupe_wheeliebar_lower", "coupe_wheeliebar"]}],
+         ["wb2r",-0.28,2.905, 0.2, {"group":["coupe_wheeliebar_lower", "coupe_wheeliebar"]}],
+         {"group":""},
+         {"collision":false},
+         {"selfCollision":false},
+         ["wb3",-0.0,2.28, 0.4],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":4151000,"beamDamp":120},
+          {"beamDeform":67830,"beamStrength":"FLT_MAX"},
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"deformLimitExpansion":1.1},
+          ["wb1l","wb1r"],
+          ["wb1l","wb2l"],
+          ["wb1l","wb2r"],
+
+          ["wb1r","wb2l"],
+          ["wb1r","wb2r"],
+
+          ["wb2l","wb2r"],
+
+          ["wb3", "wb2l"],
+          ["wb3", "wb2r"],
+          ["wb3", "wb1l"],
+          ["wb3", "wb1r"],
+
+          {"beamSpring":1801000,"beamDamp":90},
+          //wheelie bar attachment to body
+          {"beamDeform":67830,"beamStrength":297500},
+          {"deformLimitExpansion":""},
+          //lower
+          ["wb1r", "r2"],
+          ["wb1r", "r5"],
+          ["wb1r", "r1"],
+          ["wb1r", "r1rr"],
+          ["wb1r", "r5rr"],
+          ["wb1r", "r2rr"],
+
+          ["wb1l", "r2"],
+          ["wb1l", "r5"],
+          ["wb1l", "r1"],
+          ["wb1l", "r1ll"],
+          ["wb1l", "r5ll"],
+          ["wb1l", "r2ll"],
+
+          //upper
+          {"beamSpring":2001000,"beamDamp":120},
+          ["wb2l", "r7ll", {"beamPrecompression":"$wheeliebar","beamPrecompressionTime":0.5}],
+          ["wb2r", "r7rr", {"beamPrecompression":"$wheeliebar","beamPrecompressionTime":0.5}],
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"breakGroup":""},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":5},
+            ["wb1l","wb2l","wb2r"],
+            ["wb1l","wb2r","wb1r"],
+    ],
+},
+}

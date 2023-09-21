@@ -1,0 +1,364 @@
+{
+"coupe_brake_F_4": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Disc Brakes",
+        "value":210,
+    },
+    "slotType" : "coupe_brake_F_4",
+    "slots": [
+        ["type", "default", "description"],
+        ["brakepad_F","brakepad_F_premium", "Front Brake Pads", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["brake_hub_4l", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.695,"y":-1.245,"z":0.35}, "scale":{"x":0.5,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_hub_4l", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x":0.695,"y":-1.245,"z":0.35}, "scale":{"x":0.5,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":180}}],
+        ["brake_disc_plain", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.69,"y":-1.245,"z":0.35}, "scale":{"x":0.9,"y":0.95,"z":0.95}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_disc_plain", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x":0.69,"y":-1.245,"z":0.35}, "scale":{"x":0.9,"y":0.95,"z":0.95}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_caliper_standard_plain", ["coupe_hub_F","wheelhub_FR"], [], {"pos":{"x":-0.69,"y":-1.245,"z":0.35}, "scale":{"x":0.9,"y":0.8,"z":0.95}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_caliper_standard_plain", ["coupe_hub_F","wheelhub_FL"], [], {"pos":{"x":0.69,"y":-1.245,"z":0.35}, "scale":{"x":0.9,"y":0.8,"z":0.95}, "rot":{"x":0,"y":180,"z":0}}],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"brakeTorque":"$=$brakestrength*1600"},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":0},
+        {"brakeSpring":100},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.25},
+        {"brakeMass":6.0},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.0},
+        //abs
+        {"absSlipRatioTarget":0.2},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
+    ],
+},
+"coupe_brake_R_4": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Disc Brakes",
+        "value":200,
+    },
+    "slotType" : "coupe_brake_R_4",
+    "slots": [
+        ["type", "default", "description"],
+        ["brakepad_R","brakepad_R_premium", "Rear Brake Pads", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["brake_hub_4l", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.695,"y":1.25,"z":0.325}, "scale":{"x":0.5,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_hub_4l", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.695,"y":1.25,"z":0.325}, "scale":{"x":0.5,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":180}}],
+        ["brake_disc_plain", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.69,"y":1.25,"z":0.325}, "scale":{"x":0.9,"y":0.85,"z":0.85}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_disc_plain", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.69,"y":1.25,"z":0.325}, "scale":{"x":0.9,"y":0.85,"z":0.85}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_caliper_standard_plain", ["coupe_hub_R","wheelhub_RR"], [], {"pos":{"x":-0.69,"y":1.25,"z":0.325}, "scale":{"x":0.9,"y":0.7,"z":0.85}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_caliper_standard_plain", ["coupe_hub_R","wheelhub_RL"], [], {"pos":{"x":0.69,"y":1.25,"z":0.325}, "scale":{"x":0.9,"y":0.7,"z":0.85}, "rot":{"x":0,"y":180,"z":0}}],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+
+        {"brakeTorque":"$=$brakestrength*600"},
+        {"brakeInputSplit":0.5},
+        {"brakeSplitCoef":0.75},
+        {"parkingTorque":2000},
+        {"brakeSpring":100},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.23},
+        {"brakeMass":4.0},
+        {"brakeType":"disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.8},
+        //abs
+        {"absSlipRatioTarget":0.13},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
+    ],
+},
+"coupe_brake_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Disc Brakes",
+        "value":250,
+    },
+    "slotType" : "coupe_brake_F",
+    "slots": [
+        ["type", "default", "description"],
+        ["brakepad_F","brakepad_F_premium", "Front Brake Pads", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["brake_hub_5l", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.695,"y":-1.245,"z":0.35}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_hub_5l", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x":0.695,"y":-1.245,"z":0.35}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":180}}],
+        ["brake_disc_plain", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.685,"y":-1.245,"z":0.35}, "scale":{"x":1.0,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_disc_plain", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x":0.685,"y":-1.245,"z":0.35}, "scale":{"x":1.0,"y":1.0,"z":1.0}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_caliper_standard_plain", ["coupe_hub_F","wheelhub_FR"], [], {"pos":{"x":-0.685,"y":-1.245,"z":0.35}, "scale":{"x":1.0,"y":0.9,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_caliper_standard_plain", ["coupe_hub_F","wheelhub_FL"], [], {"pos":{"x":0.685,"y":-1.245,"z":0.35}, "scale":{"x":1.0,"y":0.9,"z":1.0}, "rot":{"x":0,"y":180,"z":0}}],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"brakeTorque":"$=$brakestrength*1600"},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":0},
+        {"brakeSpring":100},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.25},
+        {"brakeMass":6.0},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.0},
+        //abs
+        {"absSlipRatioTarget":0.2},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
+    ],
+},
+"coupe_brake_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Disc Brakes",
+        "value":220,
+    },
+    "slotType" : "coupe_brake_R",
+    "slots": [
+        ["type", "default", "description"],
+        ["brakepad_R","brakepad_R_premium", "Rear Brake Pads", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["brake_hub_5l", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.695,"y":1.25,"z":0.325}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_hub_5l", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.695,"y":1.25,"z":0.325}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":180}}],
+        ["brake_disc_plain", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.9,"z":0.9}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_disc_plain", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.9,"z":0.9}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_caliper_standard_plain", ["coupe_hub_R","wheelhub_RR"], [], {"pos":{"x":-0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.75,"z":0.9}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_caliper_standard_plain", ["coupe_hub_R","wheelhub_RL"], [], {"pos":{"x":0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.75,"z":0.9}, "rot":{"x":0,"y":180,"z":0}}],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+
+        {"brakeTorque":"$=$brakestrength*650"},
+        {"brakeInputSplit":0.5},
+        {"brakeSplitCoef":0.75},
+        {"parkingTorque":2000},
+        {"brakeSpring":100},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.23},
+        {"brakeMass":4.0},
+        {"brakeType":"disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.8},
+        //abs
+        {"absSlipRatioTarget":0.13},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
+    ],
+},
+"coupe_brake_F_sport": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Type-LS Front Disc Brakes",
+        "value":350,
+    },
+    "slotType" : "coupe_brake_F",
+    "slots": [
+        ["type", "default", "description"],
+        ["brakepad_F","brakepad_F_sport", "Front Brake Pads", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["brake_hub_5l", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.695,"y":-1.245,"z":0.35}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_hub_5l", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x":0.695,"y":-1.245,"z":0.35}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":180}}],
+        ["brake_disc_plain", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.685,"y":-1.245,"z":0.35}, "scale":{"x":1.0,"y":1.07,"z":1.07}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_disc_plain", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x":0.685,"y":-1.245,"z":0.35}, "scale":{"x":1.0,"y":1.07,"z":1.07}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_caliper_4pot_plain", ["coupe_hub_F","wheelhub_FR"], [], {"pos":{"x":-0.685,"y":-1.245,"z":0.35}, "scale":{"x":1.0,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_caliper_4pot_plain", ["coupe_hub_F","wheelhub_FL"], [], {"pos":{"x":0.685,"y":-1.245,"z":0.35}, "scale":{"x":1.0,"y":1.0,"z":1.0}, "rot":{"x":0,"y":180,"z":0}}],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"brakeTorque":"$=$brakestrength*1600"},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":0},
+        {"brakeSpring":100},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.26},
+        {"brakeMass":6.5},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.0},
+        //abs
+        {"absSlipRatioTarget":0.2},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.5}
+    ],
+},
+"coupe_brake_R_sport": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Type-LS Rear Disc Brakes",
+        "value":300,
+    },
+    "slotType" : "coupe_brake_R",
+    "slots": [
+        ["type", "default", "description"],
+        ["brakepad_R","brakepad_R_sport", "Rear Brake Pads", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["brake_hub_5l", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.695,"y":1.25,"z":0.325}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_hub_5l", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.695,"y":1.25,"z":0.325}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":180}}],
+        ["brake_disc_plain", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.95,"z":0.95}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_disc_plain", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.95,"z":0.95}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_caliper_standard_plain", ["coupe_hub_R","wheelhub_RR"], [], {"pos":{"x":-0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.8,"z":0.95}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_caliper_standard_plain", ["coupe_hub_R","wheelhub_RL"], [], {"pos":{"x":0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.8,"z":0.95}, "rot":{"x":0,"y":180,"z":0}}],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+
+        {"brakeTorque":"$=$brakestrength*750"},
+        {"brakeInputSplit":0.5},
+        {"brakeSplitCoef":0.75},
+        {"parkingTorque":2000},
+        {"brakeSpring":100},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.24},
+        {"brakeMass":4.0},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.8},
+        //abs
+        {"absSlipRatioTarget":0.13},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
+    ],
+},
+"coupe_brake_F_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Front Disc Brakes",
+        "value":1100,
+    },
+    "slotType" : "coupe_brake_F",
+    "slots": [
+        ["type", "default", "description"],
+        ["brakepad_F","brakepad_F_race", "Front Brake Pads", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["brake_hub_5l", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.695,"y":-1.245,"z":0.35}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_hub_5l", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x":0.695,"y":-1.245,"z":0.35}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":180}}],
+        ["brake_disc_drilled", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.685,"y":-1.245,"z":0.35}, "scale":{"x":1.0,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_disc_drilled", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x":0.685,"y":-1.245,"z":0.35}, "scale":{"x":1.0,"y":1.0,"z":1.0}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_caliper_6pot_red_rotopad", ["coupe_hub_F","wheelhub_FR"], [], {"pos":{"x":-0.685,"y":-1.245,"z":0.35}, "scale":{"x":1.0,"y":1.02,"z":1.02}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_caliper_6pot_red_rotopad", ["coupe_hub_F","wheelhub_FL"], [], {"pos":{"x":0.685,"y":-1.245,"z":0.35}, "scale":{"x":1.0,"y":1.02,"z":1.02}, "rot":{"x":0,"y":180,"z":0}}],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        //["$braketorque", "range", "", "Brakes", 3300, 0, 5000, "Brake Torque", "Scales the overall brake torque", {"minDis":0}]
+        ["$brakebias", "range", "", "Brakes", 0.72 , 0, 1, "Brake Bias", "Percent of brake torque to the front wheels", {"minDis":0, "maxDis":100}],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"brakeTorque":"$=$brakestrength*3400*$brakebias"},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":0},
+        {"brakeSpring":100},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.31},
+        {"brakeMass":7.5},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.5},
+        //abs
+        {"absSlipRatioTarget":0.2},
+        //brake sounds
+        {"squealCoefNatural": 1.0, "squealCoefLowSpeed": 1.0}
+    ],
+},
+"coupe_brake_R_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Rear Disc Brakes",
+        "value":950,
+    },
+    "slotType" : "coupe_brake_R",
+    "slots": [
+        ["type", "default", "description"],
+        ["brakepad_R","brakepad_R_race", "Rear Brake Pads", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["brake_hub_5l", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.695,"y":1.25,"z":0.325}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_hub_5l", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.695,"y":1.25,"z":0.325}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":180}}],
+        ["brake_disc_drilled", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.95,"z":0.95}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_disc_drilled", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.95,"z":0.95}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_caliper_4pot_red_rotopad", ["coupe_hub_R","wheelhub_RR"], [], {"pos":{"x":-0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.95,"z":0.95}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_caliper_4pot_red_rotopad", ["coupe_hub_R","wheelhub_RL"], [], {"pos":{"x":0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.95,"z":0.95}, "rot":{"x":0,"y":180,"z":0}}],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+
+        //if no race front brake, use default value
+        //{"brakeTorque":"$=case($brakebias == nil, $brakestrength*900, $brakestrength*3400*(1-$brakebias))"},
+        {"brakeTorque":"$=$brakebias == nil and $brakestrength*900 or $brakestrength*3400*(1-$brakebias)"},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":2000},
+        {"brakeSpring":100},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.27},
+        {"brakeMass":5.0},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.2},
+        //abs
+        {"absSlipRatioTarget":0.15},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
+    ],
+},
+"coupe_ABS": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Anti-Lock Braking System",
+        "value":200,
+    },
+    "slotType":"coupe_ABS",
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"enableABS":true},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
+    ],
+},
+}

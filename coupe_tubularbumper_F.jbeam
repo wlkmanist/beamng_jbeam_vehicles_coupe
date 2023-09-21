@@ -1,0 +1,191 @@
+{
+"coupe_tubularbumper_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Bash Bar",
+        "value":550,
+    },
+    "slotType" : "coupe_bumper_F",
+    "flexbodies": [
+         ["mesh", "[group]:", "fbonFlexMaterials"],
+         ["coupe_tubularbumper_F", ["coupe_tubularbumper_F"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--FRONT BUMPER--
+         {"selfCollision":true},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"group":"coupe_tubularbumper_F"},
+         {"nodeWeight":1.25},
+         ["fbt1rrr",-0.80, -1.70, 0.47],
+         ["fbt1rr",-0.70, -2.0, 0.47],
+         ["fbt1r",-0.40, -2.05, 0.47],
+         ["fbt1", 0.0, -2.07, 0.47],
+         ["fbt1l", 0.40, -2.05, 0.47],
+         ["fbt1ll", 0.70, -2.0, 0.47],
+         ["fbt1lll", 0.80, -1.70, 0.47],
+
+         ["fbt2r",-0.38, -1.96, 0.28],
+         ["fbt2", 0.0, -1.96, 0.28],
+         ["fbt2l", 0.38, -1.96, 0.28],
+
+         ["fbt3r",-0.42, -1.88, 0.46],
+         ["fbt3l", 0.42, -1.88, 0.46],
+         {"group":""},
+         //rigidifier
+         {"collision":false},
+         {"selfCollision":false},
+         ["fbt4", 0.0, -1.70, 0.42],
+
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          //--FRONT BUMPER--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":2001000,"beamDamp":100},
+          {"beamDeform":45000,"beamStrength":"FLT_MAX"},
+          //main shape
+          {"deformLimitExpansion":1.1},
+          ["fbt1rrr","fbt1rr"],
+          ["fbt1rr","fbt1r"],
+          ["fbt1r","fbt1"],
+          ["fbt1l","fbt1"],
+          ["fbt1ll","fbt1l"],
+          ["fbt1lll","fbt1ll"],
+
+          ["fbt2r","fbt2"],
+          ["fbt2l","fbt2"],
+          ["fbt1","fbt2"],
+
+          ["fbt2r","fbt1r"],
+          ["fbt2l","fbt1l"],
+
+          //rigids
+          {"deformLimitExpansion":""},
+          {"beamSpring":1001000,"beamDamp":100},
+          {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+          ["fbt1rr","fbt1"],
+          ["fbt1rrr","fbt1r"],
+          ["fbt1lll","fbt1l"],
+          ["fbt1r","fbt1l"],
+          ["fbt1ll","fbt1"],
+
+          ["fbt2r","fbt2l"],
+
+          //
+          ["fbt2","fbt1r"],
+          ["fbt2","fbt1l"],
+          ["fbt2r","fbt1rr"],
+          ["fbt2l","fbt1ll"],
+          ["fbt2r","fbt1"],
+          ["fbt2l","fbt1"],
+          //
+          ["fbt1rrr","fbt2r"],
+          ["fbt1lll","fbt2l"],
+
+          //attachment node
+          {"beamSpring":1501000,"beamDamp":100},
+          {"beamDeform":45000,"beamStrength":"FLT_MAX"},
+          ["fbt1r","fbt3r"],
+          ["fbt1l","fbt3l"],
+
+          ["fbt1rrr","fbt3r"],
+          ["fbt1rr","fbt3r"],
+          ["fbt1","fbt3r"],
+          ["fbt2r","fbt3r"],
+          ["fbt2","fbt3r"],
+
+          ["fbt1lll","fbt3l"],
+          ["fbt1ll","fbt3l"],
+          ["fbt1","fbt3l"],
+          ["fbt2l","fbt3l"],
+          ["fbt2","fbt3l"],
+
+          //rigidifier
+          {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+          ["fbt1rrr","fbt4"],
+          ["fbt1rr","fbt4"],
+          ["fbt1r","fbt4"],
+          ["fbt1","fbt4"],
+          ["fbt1lll","fbt4"],
+          ["fbt1ll","fbt4"],
+          ["fbt1l","fbt4"],
+
+          ["fbt2r","fbt4"],
+          ["fbt2l","fbt4"],
+          ["fbt2","fbt4"],
+
+          ["fbt3r","fbt4"],
+          ["fbt3l","fbt4"],
+
+          //attach
+          {"beamSpring":1001000,"beamDamp":100},
+          {"beamDeform":15000,"beamStrength":50000},
+          {"breakGroup":"tubularbumper_F_R"},
+          ["fbt3r","f11rr"],
+          ["fbt3r","f13rr"],
+          ["fbt3r","f10rr"],
+          ["fbt3r","f12rr"],
+          ["fbt3r","f19rr"],
+
+          ["fbt1","f11rr"],
+          ["fbt1","f13rr"],
+          ["fbt1r","f11rr"],
+          ["fbt1r","f13rr"],
+          ["fbt1rr","f11rr"],
+          ["fbt1rr","f13rr"],
+
+          ["fbt1r","f15r"],
+          ["fbt1r","f15"],
+
+          {"breakGroup":"tubularbumper_F_L"},
+          ["fbt3l","f11ll"],
+          ["fbt3l","f13ll"],
+          ["fbt3l","f10ll"],
+          ["fbt3l","f12ll"],
+          ["fbt3l","f19ll"],
+
+          ["fbt1","f11ll"],
+          ["fbt1","f13ll"],
+          ["fbt1l","f11ll"],
+          ["fbt1l","f13ll"],
+          ["fbt1ll","f11ll"],
+          ["fbt1ll","f13ll"],
+
+          ["fbt1l","f15l"],
+          ["fbt1l","f15"],
+          ["fbt1","f15"],
+
+          //damper beams
+          {"beamSpring":0,"beamDamp":300},
+          {"beamDeform":15000,"beamStrength":50000},
+          {"breakGroupType":1},
+          {"breakGroup":"tubularbumper_F_R"},
+          ["fbt1rrr","f13rr"],
+          ["fbt1rrr","f11rr"],
+          {"breakGroup":"tubularbumper_F_L"},
+          ["fbt1lll","f13ll"],
+          ["fbt1lll","f11ll"],
+          {"breakGroupType":0},
+          {"breakGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":6},
+            ["fbt2", "fbt1", "fbt2r"],
+            ["fbt1r", "fbt2r", "fbt1"],
+            ["fbt1rr", "fbt2r", "fbt1r"],
+            ["fbt1rrr", "fbt2r", "fbt1rr"],
+
+            ["fbt1", "fbt2", "fbt2l"],
+            ["fbt2l", "fbt1l", "fbt1"],
+            ["fbt2l", "fbt1ll", "fbt1l"],
+            ["fbt2l", "fbt1lll", "fbt1ll"],
+    ],
+},
+}

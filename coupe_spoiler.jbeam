@@ -1,0 +1,150 @@
+{
+"coupe_spoiler": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Type-LS Spoiler",
+        "value":580,
+    },
+    "slotType" : "coupe_spoiler",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_spoiler", ["coupe_spoiler"]],
+    ],
+    "trunkCoupler":{
+        "$+openForceMagnitude":  19,
+        "$+openForceDuration":   0.1,
+        "$+closeForceMagnitude": -10,
+        "$+closeForceDuration":  0,
+    }
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--TRUNK--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"group":"coupe_spoiler"},
+         {"collision":true},
+         {"nodeWeight":0.35},
+         {"selfCollision":true},
+
+         ["sp2rr", -0.7, 1.935, 0.93],
+         ["sp2r", -0.27, 1.98, 0.98],
+         ["sp2l", 0.27, 1.98, 0.98],
+         ["sp2ll", 0.7, 1.935, 0.93],
+
+         ["sp3rr", -0.68, 2.07, 0.94],
+         ["sp3r", -0.36, 2.115, 1.0],
+         ["sp3", 0.0, 2.125, 1.01],
+         ["sp3l", 0.36, 2.115, 1.0],
+         ["sp3ll", 0.68, 2.07, 0.94],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":205000,"beamDamp":25},
+          {"beamDeform":35000,"beamStrength":160000},
+          {"deformLimitExpansion":1.1},
+          ["sp2ll", "sp2l"],
+          ["sp2ll", "sp3ll"],
+          ["sp2ll", "sp3l"],
+          ["sp3ll", "sp3l"],
+          ["sp3ll", "sp2l"],
+
+          ["sp2l", "sp3l"],
+          ["sp2l", "sp3"],
+
+          ["sp3l", "sp3"],
+
+          ["sp2rr", "sp2r"],
+          ["sp2rr", "sp3rr"],
+          ["sp2rr", "sp3r"],
+          ["sp3rr", "sp3r"],
+          ["sp3rr", "sp2r"],
+
+          ["sp2r", "sp3r"],
+          ["sp2r", "sp3"],
+
+          ["sp3r", "sp3"],
+
+          ["sp2l", "sp2r"],
+
+          //wing rigids
+          {"deformLimitExpansion":""},
+          ["sp3ll", "sp3"],
+          ["sp3ll", "sp3r"],
+          ["sp3ll", "sp3rr"],
+          ["sp3ll", "sp2r"],
+          ["sp3ll", "sp2rr"],
+          ["sp2ll", "sp2r"],
+          ["sp2ll", "sp2rr"],
+          ["sp2ll", "sp3"],
+          ["sp2ll", "sp3r"],
+          ["sp2ll", "sp3rr"],
+
+          ["sp3rr", "sp3"],
+          ["sp3rr", "sp3l"],
+          ["sp3rr", "sp2l"],
+          ["sp2rr", "sp2l"],
+          ["sp2rr", "sp3"],
+          ["sp2rr", "sp3l"],
+
+          //attachment left
+          {"beamSpring":355000,"beamDamp":50},
+          {"beamDeform":3075,"beamStrength":4220},
+          {"breakGroup":"spoiler_attach_l"},
+          ["sp3ll", "t3ll"],
+          ["sp2ll", "t3ll"],
+
+          ["sp3ll", "t2ll"],
+          ["sp2ll", "t2ll"],
+
+          ["sp3l", "t3ll"],
+          ["sp2l", "t3ll"],
+
+          ["sp3l", "t2ll"],
+          ["sp2l", "t2ll"],
+
+          ["sp3", "t2ll"],
+          ["sp3", "t3ll"],
+
+          //damp
+          ["sp3","t4l", {"beamSpring":0,"beamDamp":90}],
+
+          //attachment right
+          {"beamDeform":3075,"beamStrength":4220},
+          {"breakGroup":"spoiler_attach_r"},
+          ["sp3rr", "t3rr"],
+          ["sp2rr", "t3rr"],
+
+          ["sp3rr", "t2rr"],
+          ["sp2rr", "t2rr"],
+
+          ["sp3r", "t3rr"],
+          ["sp2r", "t3rr"],
+
+          ["sp3r", "t2rr"],
+          ["sp2r", "t2rr"],
+
+          ["sp3", "t2rr"],
+          ["sp3", "t3rr"],
+          //damp
+          ["sp3","t4r", {"beamSpring":0,"beamDamp":90}],
+          {"breakGroup":""},
+          {"deformLimitExpansion":1.1},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"dragCoef":10},
+        {"groundModel":"plastic"},
+        ["sp2ll","sp3l","sp2l", {"liftCoef":50}],
+        ["sp2ll","sp3ll","sp3l", {"liftCoef":50}],
+        ["sp2ll","sp3l","sp2l", {"liftCoef":50}],
+        ["sp2l","sp3l","sp3", {"liftCoef":50}],
+
+        ["sp2l","sp3","sp2r", {"liftCoef":50}],
+        ["sp2r","sp3","sp3r", {"liftCoef":50}],
+        ["sp2r","sp3r","sp2rr", {"liftCoef":50}],
+        ["sp2rr","sp3r","sp3rr", {"liftCoef":50}],
+    ],
+},
+}
