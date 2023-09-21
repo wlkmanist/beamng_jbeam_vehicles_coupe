@@ -23,7 +23,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         //rear running gear
-        ["coupe_subframe_R", ["coupe_lowermounts_R","coupe_uppermounts_R","coupe_shocktop_R"]],
+        ["coupe_subframe_R", ["coupe_subframe_R"]],
         ["coupe_lowerarm_R", ["coupe_lowermounts_R","coupe_lowerarm_R"]],
         ["coupe_hub_R", ["coupe_hub_R"]],
         ["coupe_upperarm_R", ["coupe_uppermounts_R","coupe_upperarm_R"]],
@@ -31,34 +31,47 @@
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
-         //--REAR RUNNING GEAR--
+         //--REAR SUBFRAME--
          {"nodeMaterial":"|NM_METAL"},
          {"frictionCoef":0.5},
          {"collision":true},
          {"selfCollision":true},
          //multilink suspension
          {"nodeWeight":6.0},
-         {"group":"coupe_lowermounts_R"},
+         {"group":["coupe_subframe_R", "coupe_lowermounts_R"]},
          //lower arm
          ["rx1r", -0.353, 1.245, 0.215, {"tag":"rideheight_RR"}],
          ["rx1l", 0.353, 1.245, 0.215, {"tag":"rideheight_RL"}],
-         {"selfCollision":false},
+         //{"selfCollision":false},
          {"nodeWeight":7.5},
+         {"group":"coupe_lowermounts_R"},
          ["rx2r", -0.479, 0.948, 0.275],
          ["rx2l", 0.479, 0.948, 0.275],
          {"nodeWeight":5.5},
 
          //upper links
-         {"group":"coupe_uppermounts_R"},
+         {"group":["coupe_subframe_R", "coupe_uppermounts_R"]},
          ["rx3r", -0.461, 1.082, 0.418],
          ["rx3l", 0.461, 1.082, 0.418],
-         {"chemEnergy":200,"burnRate":0.5,"flashPoint":400,"specHeat":0.8,"smokePoint":150,"selfIgnitionCoef":false},
+         {"group":"coupe_uppermounts_R"},
          ["rx5r", -0.354, 1.338, 0.389],
          ["rx5l", 0.354, 1.338, 0.389],
          //toe link
          ["rx4r", -0.250, 1.374, 0.293],
          ["rx4l", 0.250, 1.374, 0.293],
-         {"chemEnergy":false,"burnRate":false,"flashPoint":false,"specHeat":false,"smokePoint":false,"selfIgnitionCoef":false},
+
+         {"nodeWeight":4.0},
+         //front mounts
+         {"group":"coupe_subframe_R"},
+         ["rx6r", -0.59, 0.78, 0.21, {"selfCollision":false}],
+         ["rx6l", 0.59, 0.78, 0.21, {"selfCollision":false}],
+         //rear mounts
+         ["rx7r", -0.34, 1.43, 0.48],
+         ["rx7l", 0.34, 1.43, 0.48],
+
+         //rigidifier
+         ["rx8", 0.0, 1.0, 0.54, {"group":"", "collision":false, "selfCollision":false}],
+
 
          //--REAR INDEPENDENT SUSPENSION--
          {"collision":true},
@@ -92,10 +105,11 @@
     ],
     "beams": [
           ["id1:", "id2:"],
-           //--REAR RUNNING GEAR--
+           //--REAR SUBFRAME--
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
           {"beamSpring":5001000,"beamDamp":100},
           {"beamDeform":22500,"beamStrength":"FLT_MAX"},
+
           //rear suspension axis points
           {"deformLimitExpansion":1.1},
           //width
@@ -148,66 +162,156 @@
 
           ["rx3r", "rx4l"],
           ["rx3l", "rx4r"],
-          //attach
-          //lower
+
+          //attach axis to mounts
           {"beamSpring":4001000,"beamDamp":100},
-          {"beamDeform":16400,"beamStrength":"FLT_MAX"},
-          ["rx2r", "f4r"],
-          ["rx2l", "f4l"],
-          ["rx2r", "f8r"],
-          ["rx2l", "f8l"],
-          {"beamDeform":14400,"beamStrength":"FLT_MAX"},
+          {"beamDeform":17000,"beamStrength":"FLT_MAX"},
+          //front
+          {"deformLimitExpansion":1.1},
+          ["rx2r", "rx6r"],
+          ["rx2l", "rx6l"],
+          ["rx6l", "rx6r"],
+          {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+          ["rx3r", "rx6r"],
+          ["rx3l", "rx6l"],
+          //crossing
+          {"deformLimitExpansion":""}
+          {"beamDeform":14000,"beamStrength":"FLT_MAX"},
+          ["rx2l", "rx6r"],
+          ["rx2r", "rx6l"],
+          ["rx6l", "rx3r"],
+          ["rx3l", "rx6r"],
+          //rigids
+          ["rx6r", "rx1r"],
+          ["rx6l", "rx1l"],
+          ["rx6r", "rx7r"],
+          ["rx6l", "rx7l"],
+
+          //rear
+          {"deformLimitExpansion":1.1},
+          {"beamDeform":19000,"beamStrength":"FLT_MAX"},
+          ["rx7l", "rx5l"],
+          ["rx7l", "rx4l"],
+          ["rx7r", "rx4r"],
+          ["rx7r", "rx5r"],
+          ["rx7r", "rx7l"],
+          {"beamDeform":17000,"beamStrength":"FLT_MAX"},
+          ["rx7l", "rx3l"],
+          ["rx7r", "rx3r"],
+          //crossing
+          {"deformLimitExpansion":""}
+          {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+          ["rx7l", "rx4r"],
+          ["rx7r", "rx4l"],
+          ["rx7l", "rx3r"],
+          ["rx7r", "rx3l"],
+
+          //rigidifier
+          {"beamSpring":3501000,"beamDamp":70},
+          {"beamDeform":11000,"beamStrength":"FLT_MAX"},
+          ["rx8", "rx6l"],
+          ["rx8", "rx6r"],
+          ["rx8", "rx2l"],
+          ["rx8", "rx2r"],
+          ["rx8", "rx1r"],
+          ["rx8", "rx1l"],
+          ["rx8", "rx4r"],
+          ["rx8", "rx4l"],
+          ["rx8", "rx3r"],
+          ["rx8", "rx3l"],
+          ["rx8", "rx5r"],
+          ["rx8", "rx5l"],
+          ["rx8", "rx7r"],
+          ["rx8", "rx7l"],
+
+          //attach to body
+          {"beamSpring":3701000, "beamDamp":200},
+          {"beamDeform":19000, "beamStrength":130000},
+          //front
+          {"breakGroup":"subframemount_RR1"},
+          ["rx6r", "f4rr"],
+          ["rx6r", "f4r"],
+          ["rx6r", "f3rr"],
+          ["rx6r", "f3r"],
+          ["rx6r", "f8r"],
+          ["rx6r", "f9r"],
           ["rx2r", "f4rr"],
-          ["rx2l", "f4ll"],
-          ["rx2l", "f3l"],
+          ["rx2r", "f4r"],
+          ["rx2r", "f3rr"],
           ["rx2r", "f3r"],
-          ["rx2l", "f9l"],
+          ["rx2r", "f8r"],
           ["rx2r", "f9r"],
-          ["rx4r", "r2"],
-          ["rx4l", "r2"],
-          ["rx5r", "r2"],
-          ["rx5l", "r2"],
+          {"breakGroup":"subframemount_RL1"},
+          ["rx6l", "f4ll"],
+          ["rx6l", "f4l"],
+          ["rx6l", "f3ll"],
+          ["rx6l", "f3l"],
+          ["rx6l", "f8l"],
+          ["rx6l", "f9l"],
+          ["rx2l", "f4ll"],
+          ["rx2l", "f4l"],
+          ["rx2l", "f3ll"],
+          ["rx2l", "f3l"],
+          ["rx2l", "f8l"],
+          ["rx2l", "f9l"],
+          //rear
+          {"breakGroup":"subframemount_RR2"},
+          ["rx7r", "r5rr"],
+          ["rx7r", "r2"],
+          ["rx7r", "r5"],
+          ["rx7r", "f9r"],
+          ["rx7r", "f9l"],
+          ["rx7r", "r1rr"],
+          ["rx7r", "r1"],
+          ["rx4r", "r5rr"],
           ["rx4r", "r5"],
+          ["rx4r", "f9r"],
+          ["rx4r", "f9l"],
+          {"breakGroup":"subframemount_RL2"},
+          ["rx7l", "r5ll"],
+          ["rx7l", "r2"],
+          ["rx7l", "r5"],
+          ["rx7l", "f9l"],
+          ["rx7l", "f9r"],
+          ["rx7l", "r1ll"],
+          ["rx7l", "r1"],
+          ["rx4l", "r5ll"],
           ["rx4l", "r5"],
-          ["rx5l", "r5"],
-          ["rx5r", "r5"],
-          ["rx5r", "r5rr"],
-          ["rx4r", "r2rr"],
-          ["rx5l", "r5ll"],
-          ["rx4l", "r2ll"],
+          ["rx4l", "f9l"],
+          ["rx4l", "f9r"],
+          {"breakGroup":""},
 
-          ["rx1l", "f4l", {"optional":true}],
-          ["rx1r", "f4r", {"optional":true}],
+          //limiter
+          {"beamPrecompression":1.0, "beamType":"|SUPPORT", "beamLongBound":2},
+          {"beamSpring":3001000, "beamDamp":180},
+          {"beamDeform":15000, "beamStrength":80000},
+          {"deformLimitExpansion":""},
+          ["rx6r", "f4rr"],
+          ["rx6r", "f4r"],
+          ["rx6r", "f3rr"],
+          ["rx6r", "f3r"],
+          ["rx6r", "f8r"],
+          ["rx6r", "f9r"],
+          ["rx6l", "f4ll"],
+          ["rx6l", "f4l"],
+          ["rx6l", "f3ll"],
+          ["rx6l", "f3l"],
+          ["rx6l", "f8l"],
+          ["rx6l", "f9l"],
 
-          ["rx1r", "f4l"],
-          ["rx1l", "f4r"],
+          ["rx1r", "f9r"],
+          ["rx1r", "r5rr"],
+          ["rx1r", "r5"],
+          ["rx1r", "f9l"],
 
-          ["rx3r", "f4r"],
-          ["rx3l", "f4l"],
-          ["rx3l", "f4r"],
-          ["f4l", "rx3r"],
+          ["rx1l", "f9l"],
+          ["rx1l", "r5ll"],
+          ["rx1l", "r5"],
+          ["rx1l", "f9r"],
 
-          ["rx2l", "f4r"],
-          ["rx2r", "f4l"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 
-          //upper
-          {"beamSpring":4001000,"beamDamp":100},
-          ["rx3r", "f9r"],
-          ["rx3l", "f9l"],
-          ["rx3l", "f8l"],
-          ["rx3r", "f8r"],
-          ["rx3l", "f9r"],
-          ["f9l", "rx3r"],
-          ["rx5r", "f9r"],
-          ["rx5l", "f9l"],
-
-          {"beamDeform":16000,"beamStrength":"FLT_MAX"},
-          ["rx5l", "r1ll"],
-          ["rx5r", "r1rr"],
-          ["rx3r", "r1rr"],
-          ["rx3l", "r1ll"],
-
-          //--REAR RUNNING GEAR--
+          //--REAR SUSPENSION--
           //multilink suspension
           {"deformLimitExpansion":1.1},
           {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
@@ -355,11 +459,27 @@
     ],
     "triangles": [
           ["id1:","id2:","id3:"],
-          {"triangleType":"NONCOLLIDABLE"},
-          ["rx4l", "rx1l", "rx1r"],
-          ["rx1r", "rx4r", "rx4l"],
-          ["rx1l", "rx2l", "rx2r"],
+          {"dragCoef":1},
+          ["rx6r", "rx2r", "rx2l",{"triangleType":"NONCOLLIDABLE"}],
+          ["rx2l", "rx6l", "rx6r",{"triangleType":"NONCOLLIDABLE"}],
           ["rx2r", "rx1r", "rx1l"],
+          ["rx1l", "rx2l", "rx2r"],
+          ["rx1r", "rx4r", "rx4l"],
+          ["rx4l", "rx1l", "rx1r"],
+          ["rx4r", "rx7r", "rx7l"],
+          ["rx7l", "rx4l", "rx4r"],
+          ["rx3l", "rx2l", "rx1l"],
+          ["rx3l", "rx1l", "rx5l"],
+          ["rx5l", "rx1l", "rx4l"],
+          ["rx7l", "rx5l", "rx4l"],
+          ["rx7l", "rx3l", "rx5l"],
+          ["rx7r", "rx5r", "rx3r"],
+          ["rx7r", "rx4r", "rx5r"],
+          ["rx5r", "rx4r", "rx1r"],
+          ["rx5r", "rx1r", "rx3r"],
+          ["rx3r", "rx1r", "rx2r"],
+
+          {"triangleType":"NONCOLLIDABLE"},
 
           ["rx1r", "rx2r", "rh2r"],
           ["rh4r", "rx3r", "rx5r"],
@@ -371,7 +491,7 @@
           ["rh6r", "rh2r", "rh1r"],
 
           ["rx2l", "rx1l", "rh2l"],
-          ["rx3l", "rh4l", "rx5r"],
+          ["rx3l", "rh4l", "rx5l"],
           ["rx3l", "rh3l", "rx5l"],
           ["rx4l", "rh5l", "rh6l"],
           ["rh4l", "rh5l", "rh3l"],
@@ -531,8 +651,8 @@
           //dampers
           {"beamSpring":0,"beamDamp":2200},
           {"beamLimitSpring":0,"beamLimitDamp":0},
-          ["rh1r","r1rr", {"name":"damper_RR","beamDampFast":1100,"beamDampRebound":4900,"beamDampReboundFast":2450,"beamDampVelocitySplit":0.22,"dampCutoffHz":500,"name":"damper_RR"}],
-          ["rh1l","r1ll", {"name":"damper_RL","beamDampFast":1100,"beamDampRebound":4900,"beamDampReboundFast":2450,"beamDampVelocitySplit":0.22,"dampCutoffHz":500,"name":"damper_RL"}],
+          ["rh1r","r1rr", {"name":"damper_RR","beamDampFast":1100,"beamDampRebound":4900,"beamDampReboundFast":2450,"beamDampVelocitySplit":0.22,"dampCutoffHz":500}],
+          ["rh1l","r1ll", {"name":"damper_RL","beamDampFast":1100,"beamDampRebound":4900,"beamDampReboundFast":2450,"beamDampVelocitySplit":0.22,"dampCutoffHz":500}],
 
           //harder bump stop
           {"beamSpring":0,"beamDamp":0},
@@ -579,8 +699,8 @@
           {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1, "beamShortBound":1},
           {"beamLimitSpring":0,"beamLimitDamp":0},
           {"beamSpring":0,"beamDamp":"$damp_bump_R"},
-          ["rh1r","r1rr", {"name":"damper_RR","beamDampRebound":"$damp_rebound_R","beamDampVelocitySplit":0.3,"beamDampFast":"$=$damp_bump_R / 3","beamDampReboundFast":"$=$damp_rebound_R / 2","dampCutoffHz":500,"name":"damper_RR"}],
-          ["rh1l","r1ll", {"name":"damper_RL","beamDampRebound":"$damp_rebound_R","beamDampVelocitySplit":0.3,"beamDampFast":"$=$damp_bump_R / 3","beamDampReboundFast":"$=$damp_rebound_R / 2","dampCutoffHz":500,"name":"damper_RL"}],
+          ["rh1r","r1rr", {"name":"damper_RR","beamDampRebound":"$damp_rebound_R","beamDampVelocitySplit":0.3,"beamDampFast":"$=$damp_bump_R / 3","beamDampReboundFast":"$=$damp_rebound_R / 2","dampCutoffHz":500}],
+          ["rh1l","r1ll", {"name":"damper_RL","beamDampRebound":"$damp_rebound_R","beamDampVelocitySplit":0.3,"beamDampFast":"$=$damp_bump_R / 3","beamDampReboundFast":"$=$damp_rebound_R / 2","dampCutoffHz":500}],
           //hard bump stop
           {"beamSpring":0,"beamDamp":0},
           {"beamLimitSpring":151000,"beamLimitDamp":10000},
@@ -627,8 +747,8 @@
           {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
           {"beamLimitSpring":0,"beamLimitDamp":0},
           {"beamSpring":0,"beamDamp":"$damp_bump_R"},
-          ["rh1r","r1rr", {"name":"damper_RR","beamDampRebound":"$damp_rebound_R","beamDampVelocitySplit":1.5,"beamDampFast":"$damp_bump_R_fast","beamDampReboundFast":"$damp_rebound_R","dampCutoffHz":500,"name":"damper_RR"}],
-          ["rh1l","r1ll", {"name":"damper_RL","beamDampRebound":"$damp_rebound_R","beamDampVelocitySplit":1.5,"beamDampFast":"$damp_bump_R_fast","beamDampReboundFast":"$damp_rebound_R","dampCutoffHz":500,"name":"damper_RL"}],
+          ["rh1r","r1rr", {"name":"damper_RR","beamDampRebound":"$damp_rebound_R","beamDampVelocitySplit":1.5,"beamDampFast":"$damp_bump_R_fast","beamDampReboundFast":"$damp_rebound_R","dampCutoffHz":500}],
+          ["rh1l","r1ll", {"name":"damper_RL","beamDampRebound":"$damp_rebound_R","beamDampVelocitySplit":1.5,"beamDampFast":"$damp_bump_R_fast","beamDampReboundFast":"$damp_rebound_R","dampCutoffHz":500}],
           //hard bump stop
           {"beamSpring":0,"beamDamp":0},
           {"beamLimitSpring":151000,"beamLimitDamp":10000},

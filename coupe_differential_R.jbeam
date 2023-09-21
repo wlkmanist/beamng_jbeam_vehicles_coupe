@@ -23,7 +23,7 @@
     },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["coupe_differential_R", ["coupe_differential","coupe_lowermounts_R","coupe_uppermounts_R"]],
+        ["coupe_differential_R", ["coupe_differential","coupe_subframe_R"]],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -80,7 +80,7 @@
     },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["coupe_differential_R", ["coupe_differential","coupe_lowermounts_R","coupe_uppermounts_R"]],
+        ["coupe_differential_R", ["coupe_differential","coupe_subframe_R"]],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -137,7 +137,7 @@
     },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["coupe_differential_R", ["coupe_differential","coupe_lowermounts_R","coupe_uppermounts_R"]],
+        ["coupe_differential_R", ["coupe_differential","coupe_subframe_R"]],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -200,7 +200,7 @@
     },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["coupe_differential_R", ["coupe_differential","coupe_lowermounts_R","coupe_uppermounts_R"]],
+        ["coupe_differential_R", ["coupe_differential","coupe_subframe_R"]],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],

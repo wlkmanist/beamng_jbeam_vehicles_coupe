@@ -154,7 +154,7 @@
           ["fe12r","fe13r"],
 
           //attach
-          {"beamDeform":15750,"beamStrength":48250},
+          {"beamDeform":15750,"beamStrength":68250},
           {"disableTriangleBreaking":true},
           //firewall
           //r
@@ -171,15 +171,18 @@
           {"deformGroup":""},
 
           //middle
-          {"beamDeform":14250,"beamStrength":48250},
+          {"beamDeform":14250,"beamStrength":68250},
           //r
           {"breakGroup":"fender_b_R"},
           ["fe8r","f14rr"],
           ["fe4r","f14rr"],
-          ["fe10r","f15rr"],
+          ["fe10r", "f14rr"],
+          ["fe10r", "f14r"],
+          ["fe9r", "f14r"],
+          ["fe8r", "f14r"],
 
           //front
-          {"beamDeform":8550,"beamStrength":48250},
+          {"beamDeform":8550,"beamStrength":68250},
           //r
           {"breakGroup":"fender_c_R"},
           ["fe9r","f15rr"],
@@ -401,7 +404,7 @@
           ["fe12l","fe13l"],
 
           //attach
-          {"beamDeform":15750,"beamStrength":48250},
+          {"beamDeform":15750,"beamStrength":68250},
           {"disableTriangleBreaking":true},
           //firewall
           //l
@@ -418,15 +421,18 @@
           {"deformGroup":""},
 
           //middle
-          {"beamDeform":14250,"beamStrength":48250},
+          {"beamDeform":14250,"beamStrength":68250},
           //l
           {"breakGroup":"fender_b_L"},
           ["fe8l","f14ll"],
           ["fe4l","f14ll"],
-          ["fe10l","f15ll"],
+          ["fe10l", "f14ll"],
+          ["fe10l", "f14l"],
+          ["fe9l", "f14l"],
+          ["fe8l", "f14l"],	 	  
 
           //front
-          {"beamDeform":8550,"beamStrength":48250},
+          {"beamDeform":8550,"beamStrength":68250},
           //l
           {"breakGroup":"fender_c_L"},
           ["fe9l","f15ll"],
@@ -642,7 +648,7 @@
           ["fe12r","fe13r"],
 
           //attach
-          {"beamDeform":8775,"beamStrength":48250},
+          {"beamDeform":15750,"beamStrength":68250},
           {"disableTriangleBreaking":true},
           //firewall
           //r
@@ -657,16 +663,18 @@
           {"deformGroup":""},
 
           //middle
-          {"beamDeform":14875,"beamStrength":48250},
+          {"beamDeform":14875,"beamStrength":68250},
           //r
           {"breakGroup":"fender_b_R"},
           ["fe8r","f14rr"],
           ["fe4r","f14rr"],
-          ["fe10r","f15rr"],
-
+          ["fe10r", "f14rr"],
+          ["fe10r", "f14r"],
+          ["fe9r", "f14r"],
+          ["fe8r", "f14r"],	 
 
           //front
-          {"beamDeform":5775,"beamStrength":48250},
+          {"beamDeform":5775,"beamStrength":68250},
           //r
           {"breakGroup":"fender_c_R"},
           ["fe9r","f15rr"],
@@ -881,7 +889,7 @@
           ["fe12l","fe13l"],
 
           //attach
-          {"beamDeform":8775,"beamStrength":48250},
+          {"beamDeform":15750,"beamStrength":68250},
           {"disableTriangleBreaking":true},
           //firewall
           //l
@@ -896,15 +904,18 @@
           {"deformGroup":""},
 
           //middle
-          {"beamDeform":14875,"beamStrength":48250},
+          {"beamDeform":14875,"beamStrength":68250},
           //l
           {"breakGroup":"fender_b_L"},
           ["fe8l","f14ll"],
           ["fe4l","f14ll"],
-          ["fe10l","f15ll"],
-
+          ["fe10l", "f14ll"],
+          ["fe10l", "f14l"],
+          ["fe9l", "f14l"],
+          ["fe8l", "f14l"],	 
+		  
           //front
-          {"beamDeform":5775,"beamStrength":48250},
+          {"beamDeform":5775,"beamStrength":68250},
           //l
           {"breakGroup":"fender_c_L"},
           ["fe9l","f15ll"],

@@ -366,8 +366,8 @@
           ["t2l","q5l"],
           ["t3r","q6r"],
           ["t3l","q6l"],
-          ["t4r","q13r"],
-          ["t4l","q13l"],
+          ["t4r","r7rr"],
+          ["t4l","r7ll"],
 
           //weak
           {"beamDeform":9000,"beamStrength":1250000},

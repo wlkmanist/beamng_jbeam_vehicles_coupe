@@ -24,7 +24,7 @@
         "attachSoundVolume":1,
         "detachSoundVolume":1,
         "soundNode:":["f15"]
-        "attachSoundEvent": "event:>Vehicle>Latches>Hood>modern_07_close",
+        "attachSoundEvent": "event:>Vehicle>Latches>Hood>90s_03_close",
         "detachSoundEvent": "event:>Vehicle>Latches>Hood>90s_02_open_lever",
         "breakSoundEvent":""
         "openForceMagnitude": 0,
@@ -41,7 +41,7 @@
         "attachSoundVolume":1,
         "detachSoundVolume":1,
         "soundNode:":["h8"]
-        "attachSoundEvent": "event:>Vehicle>Latches>Hood>modern_07_close",
+        "attachSoundEvent": "event:>Vehicle>Latches>Hood>90s_03_close",
         "detachSoundEvent": "event:>Vehicle>Latches>Hood>modern_02_open_hood",
         "breakSoundEvent":""
         "openForceMagnitude": 50,
@@ -497,7 +497,7 @@
         "attachSoundVolume":1,
         "detachSoundVolume":1,
         "soundNode:":["f15"]
-        "attachSoundEvent": "event:>Vehicle>Latches>Hood>modern_07_close",
+        "attachSoundEvent": "event:>Vehicle>Latches>Hood>90s_03_close",
         "detachSoundEvent": "event:>Vehicle>Latches>Hood>90s_02_open_lever",
         "breakSoundEvent":""
         "openForceMagnitude": 0,
@@ -514,7 +514,7 @@
         "attachSoundVolume":1,
         "detachSoundVolume":1,
         "soundNode:":["h8"]
-        "attachSoundEvent": "event:>Vehicle>Latches>Hood>modern_07_close",
+        "attachSoundEvent": "event:>Vehicle>Latches>Hood>90s_03_close",
         "detachSoundEvent": "event:>Vehicle>Latches>Hood>modern_02_open_hood",
         "breakSoundEvent":""
         "openForceMagnitude": 50,

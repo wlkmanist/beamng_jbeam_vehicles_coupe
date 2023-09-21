@@ -618,7 +618,7 @@
 "coupe_engine_internals_stage3": {
     "information":{
         "authors":"BeamNG",
-        "name":"Stage 3Performance Long Block",
+        "name":"Stage 3 Performance Long Block",
         "value":3900,
     },
     "slotType" : "coupe_engine_internals",
