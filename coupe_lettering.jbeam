@@ -1,0 +1,44 @@
+{
+"coupe_lettering_base": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Base Trunk Lettering",
+        "value":50,
+    },
+    "slotType" : "coupe_lettering_trunk",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_lettering_ibishu", ["coupe_trunk"]],
+    ],
+},
+"coupe_lettering_L": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Type-L Trunk Lettering",
+        "value":80,
+    },
+    "slotType" : "coupe_lettering_trunk",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_lettering_L", ["coupe_trunk"]],
+          ["coupe_lettering_type", ["coupe_trunk"]],
+          ["coupe_lettering_ibishu", ["coupe_trunk"]],
+
+    ],
+},
+"coupe_lettering_LS": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Type-LS Trunk Lettering",
+        "value":120,
+    },
+    "slotType" : "coupe_lettering_trunk",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_lettering_LS", ["coupe_trunk"]],
+          ["coupe_lettering_type", ["coupe_trunk"]],
+          ["coupe_lettering_ibishu", ["coupe_trunk"]],
+
+    ],
+},
+}

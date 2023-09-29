@@ -1,0 +1,64 @@
+{
+"coupe_oilcooler": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Oil Cooler",
+        "value":310,
+    },
+    "slotType" : "coupe_oilcooler",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_oilcooler", ["coupe_radiator"]],
+    ],
+    "mainEngine":{
+        "oilRadiatorArea":0.16,
+        "oilRadiatorEffectiveness":1000,
+        "oilThermostatTemperature":110,
+
+        //damage deformGroups
+        "deformGroups_oilRadiator":["oilcooler_damage"]
+    },
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        {"selfCollision":false},
+        {"collision":true},
+
+        {"nodeWeight":2.0},
+        {"group":"pessima_oilcooler"},
+        {"chemEnergy":200,"burnRate":0.4"flashPoint":250,"specHeat":0.8,"smokePoint":150,"selfIgnitionCoef":false},
+        ["oilcooler", -0.1, -1.85, 0.43],
+        {"engineGroup":""},
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":1000000,"beamDamp":150},
+        {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+        {"deformGroup":"oilcooler_damage","deformationTriggerRatio":0.05},
+        {"deformLimitExpansion":""},
+        ["oilcooler", "f15"],
+        ["oilcooler", "f15r"],
+        ["oilcooler", "f11rr"],
+        ["oilcooler", "f13rr"],
+        ["oilcooler", "f15l"],
+        ["oilcooler", "f11ll"],
+        ["oilcooler", "f13ll"],
+        ["f11rr", "f11ll"],
+        ["f13ll", "f11rr"],
+        ["f13rr", "f11ll"],
+        ["f15l", "f11rr"],
+        ["f15r", "f11ll"],
+        ["f13ll", "f15r"],
+        ["f13rr", "f15l"],
+        {"deformGroup":""},
+
+        //stability
+        ["oilcooler", "f10rr"],
+        ["oilcooler", "f10ll"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+}
