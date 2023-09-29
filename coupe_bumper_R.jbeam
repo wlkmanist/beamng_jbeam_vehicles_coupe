@@ -321,7 +321,7 @@
           //rear bumper support beams
           {"beamType":"|SUPPORT", "beamLongBound":4},
           {"beamSpring":223050,"beamDamp":120},
-          {"beamDeform":36765,"beamStrength":1125000},
+          {"beamDeform":19765,"beamStrength":1125000},
           {"optional":true},
           //["rb2l","t4"],
           //["rb2r","t4"],
@@ -398,11 +398,6 @@
           ["rb5ll","r3ll"],
           ["rb5r","r3rr"],
           ["rb5l","r3ll"],
-
-          ["rb2rr","q8r"],
-          ["rb2rr","q9r"],
-          ["rb2ll","q8l"],
-          ["rb2ll","q9l"],
 
           ["rb6r","q11r", {"beamPrecompression":0.95}],
           ["rb6l","q11l", {"beamPrecompression":0.95}],
@@ -774,7 +769,7 @@
           //rear bumper support beams
           {"beamType":"|SUPPORT", "beamLongBound":4},
           {"beamSpring":223050,"beamDamp":120},
-          {"beamDeform":36765,"beamStrength":1125000},
+          {"beamDeform":19765,"beamStrength":1125000},
           {"optional":true},
           //["rb2l","t4"],
           //["rb2r","t4"],
@@ -851,11 +846,6 @@
           ["rb5ll","r3ll"],
           ["rb5r","r3rr"],
           ["rb5l","r3ll"],
-
-          ["rb2rr","q8r"],
-          ["rb2rr","q9r"],
-          ["rb2ll","q8l"],
-          ["rb2ll","q9l"],
 
           ["rb6r","q11r", {"beamPrecompression":0.95}],
           ["rb6l","q11l", {"beamPrecompression":0.95}],

@@ -18,7 +18,7 @@
          {"frictionCoef":0.5},
          {"nodeMaterial":"|NM_METAL"},
          {"group":"coupe_bumperbar_F"},
-         {"nodeWeight":2.0},
+         {"nodeWeight":1.8},
          //front bumper bar
          ["f16rr", -0.59, -1.90, 0.325],
          ["f16r", -0.40, -1.98, 0.325],
@@ -35,7 +35,7 @@
     "beams": [
           ["id1:", "id2:"],
           {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-          {"beamSpring":2501000,"beamDamp":100},
+          {"beamSpring":2001000,"beamDamp":60},
           //front bumper bar
           {"deformLimitExpansion":1.1},
           {"beamDeform":22800,"beamStrength":"FLT_MAX"},

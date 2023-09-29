@@ -14,8 +14,8 @@
          ["coupe_wing_d", ["coupe_trunk"]],
     ],
     "trunkCoupler":{
-        "$+openForceMagnitude":  33,
-        "$+openForceDuration":   0.1,
+        "$+openForceMagnitude":  40,
+        "$+openForceDuration":   0.4,
         "$+closeForceMagnitude": 2,
         "$+closeForceDuration":  0,
     }
@@ -212,7 +212,7 @@
 
           //left support trunk attach
           {"breakGroup":"spoiler_trunk_L"},
-          {"beamSpring":401000,"beamDamp":25},
+          {"beamSpring":351000,"beamDamp":15},
           {"beamDeform":4500,"beamStrength":7600},
           ["sp1l","t2ll"],
           ["sp1l","t3ll"],

@@ -187,7 +187,7 @@
 
           //door hinge
           {"beamSpring":1601000,"beamDamp":70},
-          {"beamDeform":16800,"beamStrength":48000},
+          {"beamDeform":16800,"beamStrength":88000},
           {"disableTriangleBreaking":true},
           {"breakGroup":"doorhinge_a_R"},
           ["d7r","f1rr"],
@@ -458,7 +458,7 @@
 
           //door hinge
           {"beamSpring":1601000,"beamDamp":70},
-          {"beamDeform":16800,"beamStrength":48000},
+          {"beamDeform":16800,"beamStrength":88000},
           {"disableTriangleBreaking":true},
           {"breakGroup":"doorhinge_a_L"},
           ["d7l","f1ll"],

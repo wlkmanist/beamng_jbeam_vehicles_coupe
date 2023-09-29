@@ -385,7 +385,7 @@
          ["id", "posX", "posY", "posZ"],
          {"collision":true},
          {"selfCollision":true},
-         {"nodeWeight":7},
+         {"nodeWeight":4},
          {"frictionCoef":0.5},
          {"nodeMaterial":"|NM_METAL"},
          //seats flexbody
@@ -401,11 +401,10 @@
           {"beamDeform":3160,"beamStrength":"FLT_MAX"},
           //interior flexbody
           {"deformLimitExpansion":""},
-          //["rseatl","rseatr"],
+          ["rseatl","rseatr"],
 
           ["rseatl","f4ll"],
           ["rseatl","f3ll"],
-          ["rseatl","tb1l"],
           ["rseatl","f8r"],
           ["rseatl","f9l"],
           ["rseatl","f4l"],
@@ -413,19 +412,22 @@
 
           ["rseatr","f4rr"],
           ["rseatr","f3rr"],
-          ["rseatr","tb1r"],
           ["rseatr","f8l"],
           ["rseatr","f9r"],
           ["rseatr","f4r"],
           ["rseatr","f3r"],
 
-          ["rseatl","tb1"],
-          ["rseatr","tb1"],
-
           ["rseatl","q3l"],
           ["rseatl", "q8l"],
           ["rseatr","q3r"],
           ["rseatr", "q8r"],
+
+          ["rseatl", "r1ll"],
+          ["rseatl", "r1"],
+          ["rseatl", "tb3l"],
+          ["rseatr", "r1rr"],
+          ["rseatr", "r1"],
+          ["rseatr", "tb3r"],
           {"deformLimitExpansion":1.1},
     ],
 },

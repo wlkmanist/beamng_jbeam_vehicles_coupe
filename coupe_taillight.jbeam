@@ -8,9 +8,9 @@
     "slotType" : "coupe_taillight_R",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["coupe_taillightframe_R", ["coupe_body"]],
+         ["coupe_taillightframe_R", ["coupe_taillights"]],
          {"deformGroup":"taillight_R_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
-         ["coupe_taillight_R", ["coupe_body"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.5}],
+         ["coupe_taillight_R", ["coupe_taillights"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.5}],
          {"deformGroup":""},
     ],
     "props": [
@@ -40,9 +40,9 @@
     "slotType" : "coupe_taillight_L",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["coupe_taillightframe_L", ["coupe_body"]],
+         ["coupe_taillightframe_L", ["coupe_taillights"]],
          {"deformGroup":"taillight_L_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
-         ["coupe_taillight_L", ["coupe_body"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound1", "deformVolume":0.5}],
+         ["coupe_taillight_L", ["coupe_taillights"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound1", "deformVolume":0.5}],
          {"deformGroup":""},
     ],
     "props": [

@@ -136,7 +136,7 @@
           ["fe11r","fe9r"],
 
           //rigidifier
-          {"beamSpring":743050,"beamDamp":60},
+          {"beamSpring":543050,"beamDamp":60},
           {"beamDeform":3750,"beamStrength":"FLT_MAX"},
           {"deformGroup":"fendersignal_R_break"},
           ["fe1r","fe13r"],
@@ -385,7 +385,7 @@
           ["fe11l","fe9l"],
 
           //rigidifier
-          {"beamSpring":743050,"beamDamp":60},
+          {"beamSpring":543050,"beamDamp":60},
           {"beamDeform":3750,"beamStrength":"FLT_MAX"},
           {"deformGroup":"fendersignal_L_break"},
           ["fe1l","fe13l"],
@@ -429,7 +429,7 @@
           ["fe10l", "f14ll"],
           ["fe10l", "f14l"],
           ["fe9l", "f14l"],
-          ["fe8l", "f14l"],	 	  
+          ["fe8l", "f14l"],
 
           //front
           {"beamDeform":8550,"beamStrength":68250},
@@ -630,7 +630,7 @@
           ["fe11r","fe9r"],
 
           //rigidifier
-          {"beamSpring":743050,"beamDamp":60},
+          {"beamSpring":543050,"beamDamp":60},
           {"beamDeform":3750,"beamStrength":"FLT_MAX"},
           {"deformGroup":"fendersignal_R_break"},
           ["fe1r","fe13r"],
@@ -658,12 +658,14 @@
           ["fe2r","f5rr"],
           ["fe3r","f5rr"],
           ["fe7r","f6rr"],
+          ["fe7r","f5rr"],
+          ["fe7r","f6r"],
           ["fe1r","f1rr"],
           ["fe2r","f1rr"],
           {"deformGroup":""},
 
           //middle
-          {"beamDeform":14875,"beamStrength":68250},
+          {"beamDeform":14250,"beamStrength":68250},
           //r
           {"breakGroup":"fender_b_R"},
           ["fe8r","f14rr"],
@@ -671,10 +673,10 @@
           ["fe10r", "f14rr"],
           ["fe10r", "f14r"],
           ["fe9r", "f14r"],
-          ["fe8r", "f14r"],	 
+          ["fe8r", "f14r"],
 
           //front
-          {"beamDeform":5775,"beamStrength":68250},
+          {"beamDeform":8550,"beamStrength":68250},
           //r
           {"breakGroup":"fender_c_R"},
           ["fe9r","f15rr"],
@@ -705,6 +707,7 @@
           ["fe8r","f6r"],
           ["fe7r","p1r"],
           ["fe7r","p2r"],
+          ["fe7r","p2rr"],
           ["fe3r","f1rr"],
           ["fe3r","f6rr"],
           ["fe7r","f1rr"],
@@ -871,7 +874,7 @@
           ["fe11l","fe9l"],
 
           //rigidifier
-          {"beamSpring":743050,"beamDamp":60},
+          {"beamSpring":543050,"beamDamp":60},
           {"beamDeform":3750,"beamStrength":"FLT_MAX"},
           {"deformGroup":"fendersignal_L_break"},
           ["fe1l","fe13l"],
@@ -899,12 +902,14 @@
           ["fe2l","f5ll"],
           ["fe3l","f5ll"],
           ["fe7l","f6ll"],
+          ["fe7l","f5ll"],
+          ["fe7l","f6l"],
           ["fe1l","f1ll"],
           ["fe2l","f1ll"],
           {"deformGroup":""},
 
           //middle
-          {"beamDeform":14875,"beamStrength":68250},
+          {"beamDeform":14250,"beamStrength":68250},
           //l
           {"breakGroup":"fender_b_L"},
           ["fe8l","f14ll"],
@@ -912,10 +917,10 @@
           ["fe10l", "f14ll"],
           ["fe10l", "f14l"],
           ["fe9l", "f14l"],
-          ["fe8l", "f14l"],	 
-		  
+          ["fe8l", "f14l"],
+
           //front
-          {"beamDeform":5775,"beamStrength":68250},
+          {"beamDeform":8550,"beamStrength":68250},
           //l
           {"breakGroup":"fender_c_L"},
           ["fe9l","f15ll"],
@@ -946,6 +951,7 @@
           ["fe8l","f6l"],
           ["fe7l","p1l"],
           ["fe7l","p2l"],
+          ["fe7l","p2ll"],
           ["fe3l","f1ll"],
           ["fe3l","f6ll"],
           ["fe7l","f1ll"],
