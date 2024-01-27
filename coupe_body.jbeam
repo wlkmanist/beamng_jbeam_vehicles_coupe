@@ -58,6 +58,7 @@
 
         //misc
         ["coupe_roof_accessory","", "Roof Accessory"],
+        ["coupe_trunk_load","", "Trunk Load"],
         //running gear
         ["coupe_ABS","", "Anti-Lock Braking System"],
         ["coupe_suspension_R","coupe_suspension_R", "Rear Suspension"],
@@ -878,16 +879,19 @@
           ["p4r","rf4r"],
           ["p4l","rf4l"],
 
-          {"beamDeform":7600,"beamStrength":"FLT_MAX"},
+          //weak to quarter
+          {"beamDeform":4000,"beamStrength":"FLT_MAX"},
           {"deformGroup":"sideglass_L_break", "deformationTriggerRatio":0.05},
           ["qrgl", "p3l"],
           ["qrgl", "p4l"],
+          ["qrgl", "rf3l", {"beamDeform":2500}],
           {"deformGroup":"sideglass_R_break", "deformationTriggerRatio":0.05},
           ["qrgr", "p3r"],
           ["qrgr", "p4r"],
+          ["qrgr", "rf3r", {"beamDeform":2500}],
           {"deformGroup":""},
 
-          //weak
+          //weak to roof
           {"beamDeform":3000,"beamStrength":"FLT_MAX"},
           ["p3r","rf2"],
           ["p3l","rf2"],
@@ -924,7 +928,7 @@
 
           //corners
           {"deformLimitExpansion":""},
-          {"beamDeform":7800,"beamStrength":"FLT_MAX"},
+          {"beamDeform":6500,"beamStrength":"FLT_MAX"},
           {"deformGroup":"sideglass_R_break", "deformationTriggerRatio":0.05},
           ["p5r","rf4"],
           ["p6r","rf4"],
@@ -935,8 +939,8 @@
           ["p5r","q9r"],
           ["p5r","q2r"],
 
-          ["p5r", "tb3r", {"beamDeform":4200}],
-          ["p6r", "tb3r", {"beamDeform":4200}],
+          ["p5r", "tb3r", {"beamDeform":3000}],
+          ["p6r", "tb3r", {"beamDeform":3000}],
 
           {"deformGroup":"sideglass_L_break", "deformationTriggerRatio":0.05},
           ["p5l","rf4"],
@@ -948,8 +952,8 @@
           ["p5l","q9l"],
           ["p5l","q2l"],
 
-          ["p5l", "tb3l", {"beamDeform":4200}],
-          ["p6l", "tb3l", {"beamDeform":4200}],
+          ["p5l", "tb3l", {"beamDeform":3000}],
+          ["p6l", "tb3l", {"beamDeform":3000}],
           {"deformGroup":""},
 
           ["p5r","r1rr"],
@@ -965,8 +969,6 @@
           //rigids
           ["tb1rr","rf4r"],
           ["tb1ll","rf4l"],
-          ["qrgr", "rf3r"],
-          ["qrgl", "rf3l"],
 
           //trunk base main shape widthwise
           {"deformLimitExpansion":1.1},

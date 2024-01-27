@@ -17,7 +17,7 @@
     ],
     "slots": [
         ["type", "default", "description"],
-        ["roofbars_load","","Load", {"nodeOffset":{"x":0.0, "y":0.42, "z":1.355}}],
+        ["roofbars_load","","Roof Bars Load", {"nodeOffset":{"x":0.0, "y":0.42, "z":1.355}}],
     ],
     "rails": {
         "roofbar_F":{"links:":["rfb1rr", "rfb1ll"], "broken:":[], "looped":false, "capped":true},
