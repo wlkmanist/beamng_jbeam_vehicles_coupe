@@ -49,7 +49,7 @@
     "props": [
         ["func",     "mesh",        "idRef:", "idX:", "idY:", "baseRotation",            "rotation",            "translation",         "min", "max", "offset", "multiplier"],
         {"optional":true},
-        ["null", "n2o_bottle_10lb", "r5ll","r5","r6ll",        {"x":90, "y":90, "z":180}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.3,"y":0.1, "z":0}}],
+        ["null", "n2o_bottle_10lb", "r5ll","r5","r6ll",        {"x":90, "y":90, "z":180}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.18,"y":0.1, "z":0}}],
         {"optional":false},
     ],
     "powertrain": [
