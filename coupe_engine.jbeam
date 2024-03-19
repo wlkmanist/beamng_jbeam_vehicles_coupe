@@ -53,7 +53,7 @@
             [1, 0.34],
         ],
         //fuel system
-        "energyStorage": "mainTank",
+        "energyStorage": ["mainTank", "auxTank", "aux2Tank"],
         "requiredEnergyType":"gasoline",
 
         //cooling and oil system
