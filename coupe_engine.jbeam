@@ -619,7 +619,10 @@
     "information":{
         "authors":"BeamNG",
         "name":"Stage 3 Performance Long Block",
-        "value":3900,
+        //calculator used here, based on "maxTorqueRating" offset.
+        //because there is no any known formula to calculate this value properly.
+        //some other vehicles have the same price issue (at least covet and bastion)
+        "value":5150,
     },
     "slotType" : "coupe_engine_internals",
     "mainEngine":{
