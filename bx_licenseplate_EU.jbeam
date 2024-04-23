@@ -1,0 +1,28 @@
+{
+"bx_licenseplate_F_popup_EU": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front EU License Plate",
+        "value":0,
+    },
+    "slotType" : "bx_licenseplate_F_popup",
+    "licenseplateFormat": "52-11",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate-52-11-r2", ["bx_bumper_F"],[],{"pos":{"x":0.0, "y":-2.155, "z":0.48}, "rot":{"x":-1, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+},
+"bx_licenseplate_F_fixed_EU": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front EU License Plate",
+        "value":0,
+    },
+    "slotType" : "bx_licenseplate_F_fixed",
+    "licenseplateFormat": "52-11",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate-52-11-r2", ["bx_bumper_F"],[],{"pos":{"x":0.0, "y":-2.195, "z":0.44}, "rot":{"x":2, "y":0, "z":0}, "scale":{"x":1, "y":1.2, "z":1}}],
+    ],
+},
+}

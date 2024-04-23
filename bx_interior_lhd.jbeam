@@ -1,0 +1,585 @@
+{
+"bx_dashboard_lhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Left-Hand-Drive Dashboard",
+        "value":500,
+    },
+    "slotType" : "bx_dashboard",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_dash", ["bx_dash"]],
+         ["bx_mirror_int_lhd", ["bx_body"]],
+         ["bx_sunvisors", ["bx_body"]],
+         ["bx_wipers_lhd", ["bx_windshield"]],
+         //window siwtches
+         ["bx_doorpanel_controls_single_R", ["bx_doorpanel_R2"]],
+         ["bx_doorpanel_controls_L", ["bx_doorpanel_L2"]],
+    ],
+    "mirrors": [
+        ["mesh", "idRef:", "id1:", "id2:"],
+        ["bx_mirror_int_lhd","rf1","rf1r","rf2",{"refBaseTranslation":{"x":0.00,"y":-0.08,"z":-0.12},"baseRotationGlobal":{"x":6,"y":0,"z":19}}],
+    ],
+    "slots": [
+        ["type", "default", "description"],
+        ["bx_steer","bx_steer", "Steering Wheel"],
+        ["bx_radio_lhd","bx_radio_lhd", "Radio", {"coreSlot":true}],
+        ["bx_shifter_lhd","bx_shifter_A_lhd", "Shifter"],
+        ["bx_gauges_lhd","bx_gauges_lhd", "Gauges", {"coreSlot":true}],
+        ["bx_shiftlight_lhd","", "Shift Light"],
+        ["bx_interior_accessory_lhd","", "Dashboard Accessory"],
+        ["gps_alt","","Navigation Unit", {"nodeMove":{"x":0.055,"y":-0.42,"z":0.865}}],
+    ],
+    "soundscape": [
+        ["name", "src"],
+        //indicator9
+        {"node:":"stc3"},
+        ["indicatorStart", "event:>Vehicle>Interior>Indicator>AU5_On"],
+        ["indicatorStop", "event:>Vehicle>Interior>Indicator>AU5_Off"],
+        ["indLoop1", "event:>Vehicle>Interior>Indicator>FIPA_Click"],
+        ["indLoop2", "event:>Vehicle>Interior>Indicator>AU3_Clack"],
+        //lights15
+        ["LightOn", "event:>Vehicle>Interior>Light>PEU_On"],
+        ["LightOff", "event:>Vehicle>Interior>Light>PEU_Off"],
+        //handbrake5
+        {"node:":"dsh3r"},
+        ["handbrakeEngaging","event:>Vehicle>Interior>Handbrake_Ratchet>Ratchet_07_Ratchet"],
+        ["handbrakeDisengaging","event:>Vehicle>Interior>Handbrake_Ratchet>Ratchet_07_Button"],
+        ["handbrakeDisengaged","event:>Vehicle>Interior>Handbrake_Ratchet>Ratchet_07_Thump"],
+        //affects horn location because horn soundscape is loaded after
+        {"node:":"f15"},
+    ],
+    "camerasInternal":[
+        ["type", "x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
+        {"nodeWeight":1.9},
+        {"beamSpring":600,"beamDamp":100},
+        {"selfCollision":true},
+        {"collision":true},
+        //dash cam
+        ["dash", 0.34, 0.34, 1.07, 55, "f1ll","f1r","f3ll","f3r","f4ll","f4r", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        //turn signal stalk
+        ["turnsignal"  , "bx_signalstalk", "stc1","stc2","stc3", {"x":90, "y":0, "z":180}, {"x":0, "y":-15, "z":0}    , {"x":0, "y":0, "z":0}, -1, 1, 0, 1],
+        //wiper stalk
+        ["wipers"  , "bx_wiperstalk", "stc1","stc2","stc3", {"x":90, "y":0, "z":180}, {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, -1, 1, -0.8, 1],
+        //pedals
+        ["brake"     ,"bx_brakepedal", "f5l","f5r","f6l", {"x":5, "y":0, "z":180}, {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+        ["throttle"     ,"bx_gaspedal", "f5l","f5r","f6l", {"x":0, "y":0, "z":180}, {"x":-16, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+        //parking brake
+        ["parkingbrake"     ,"bx_parkingbrake", "f7r","f7l","f8r",  {"x":125, "y":0, "z":0} , {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["hood_int", "", "f5ll","f5l","f6ll", "box", {"x":0.08, "y":0.08, "z":0.08}, {"x":45, "y":0, "z":-15}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.07, "y":0.0, "z":-0.15}],
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],
+        ["hood_int", "action0", "hoodRelease"],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_CLOTH"},
+         {"selfCollision":true},
+         {"collision":true},
+
+         //interior flexbody
+         {"group":"bx_dash"},
+         {"nodeWeight":4.0},
+         ["dsh1rr",-0.676,-0.4486,0.8332],
+         ["dsh1r",-0.1966,-0.4486,0.8736,{"nodeWeight":3.75}],//remove some weight to be added back by the radio
+         ["dsh1l",0.1966,-0.4621,0.9513,{"nodeWeight":3.75}],//remove some weight to be added back by the radio
+         ["dsh1ll",0.6803,-0.4338,0.8784],
+
+         ["dsh2rr",-0.644,-0.4097,0.6901],
+         ["dsh2r",-0.1966,-0.3745,0.6901,{"nodeWeight":3.75}],//remove some weight to be added back by the radio
+         ["dsh2l",0.1966,-0.3745,0.6901,{"nodeWeight":3.75}],//remove some weight to be added back by the radio
+         ["dsh2ll",0.6483,-0.3745,0.6901],
+
+         ["dsh3r",-0.0901,-0.2762,0.5372],
+         ["dsh3l",0.0901,-0.2762,0.5372],
+
+         ["dsh4",0.0,0.33,0.51],
+
+         //steering column
+         {"group":"bx_column"},
+         {"nodeWeight":2.0},
+         ["stc1",0.3426,-0.5404,0.70],
+         ["stc2",0.1767,-0.5404,0.70],
+         ["stc3",0.3426,-0.285,0.785],
+    ],
+    "torsionbars":[
+       ["id1:", "id2:", "id3:", "id4:"],
+        //rigify the column
+        {"spring":20000, "damp":1, "deform":18000, "strength":28000},
+        ["stc3", "stc1", "stc2", "f5l"],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //dashboard maine shape
+          {"beamSpring":2001000,"beamDamp":50},
+          {"beamDeform":28000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.1},
+          ["dsh1ll", "dsh2ll"],
+          ["dsh1l", "dsh2l"],
+          ["dsh1r", "dsh2r"],
+          ["dsh1rr", "dsh2rr"],
+          ["dsh2r", "dsh3r"],
+          ["dsh2l", "dsh3l"],
+          ["dsh1ll", "dsh1l"],
+          ["dsh1l", "dsh1r"],
+          ["dsh1r", "dsh1rr"],
+          ["dsh2ll", "dsh2l"],
+          ["dsh2l", "dsh2r"],
+          ["dsh2r", "dsh2rr"],
+          ["dsh3l", "dsh3r"],
+          ["f6ll", "dsh1ll"],
+          ["f6l", "dsh1l"],
+          ["f6r", "dsh1r"],
+          ["f6rr", "dsh1rr"],
+          ["f5rr", "dsh2rr"],
+          ["f5r", "dsh2r"],
+          ["f5l", "dsh2l"],
+          ["f5ll", "dsh2ll"],
+          ["dsh4", "dsh3l"],
+          ["dsh4", "dsh3r"],
+          {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+          ["dsh4", "f3l"],
+          ["dsh4", "f3r"],
+
+          //crossing
+          {"beamDeform":16000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":""},
+          ["f6ll", "dsh1l"],
+          ["dsh1ll", "f6l"],
+          ["dsh1l", "f6r"],
+          ["f6l", "dsh1r"],
+          ["dsh1r", "f6rr"],
+          ["f6r", "dsh1rr"],
+          ["dsh2r", "dsh1rr"],
+          ["dsh2rr", "dsh1r"],
+          ["dsh2r", "dsh1l"],
+          ["dsh2l", "dsh1r"],
+          ["dsh1l", "dsh2ll"],
+          ["dsh2l", "dsh1ll"],
+          ["dsh1ll", "f5ll"],
+          ["dsh2ll", "f6ll"],
+          ["dsh1rr", "f5rr"],
+          ["dsh2rr", "f6rr"],
+          ["dsh1r", "f5r"],
+          ["dsh2r", "f6r"],
+          ["dsh1l", "f5l"],
+          ["dsh2l", "f6l"],
+          ["dsh2ll", "f5l"],
+          ["f5ll", "dsh2l"],
+          ["dsh2l", "f5r"],
+          ["dsh2r", "f5l"],
+          ["dsh2r", "f5rr"],
+          ["dsh2rr", "f5r"],
+          {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+          ["dsh4", "f2r"],
+          ["dsh4", "f2l"],
+          ["dsh3l", "f3l"],
+          ["dsh3r", "f3r"],
+
+          //rigids
+          {"beamDeform":14000,"beamStrength":"FLT_MAX"},
+          ["dsh2ll", "dsh2r"],
+          ["dsh2l", "dsh2rr"],
+          ["dsh1ll", "dsh1r"],
+          ["dsh1l", "dsh1rr"],
+          ["dsh1l", "dsh3l"],
+          ["dsh3r", "dsh1r"],
+
+          //extra attach
+          {"beamDeform":9000,"beamStrength":"FLT_MAX"},
+          ["dsh2l", "dsh3r"],
+          ["dsh2r", "dsh3l"],
+          ["f6rr", "dsh2r"],
+          ["f6ll", "dsh2l"],
+
+          ["dsh3r", "f7l"],
+          ["dsh3r", "f5l"],
+          ["dsh3r", "f5r"],
+          ["dsh3r", "f7r"],
+          ["dsh3r", "f2l"],
+          ["dsh3r", "f1l"],
+          ["dsh3r", "f1r"],
+          ["dsh3r", "f2r"],
+
+          ["dsh3l", "f7l"],
+          ["dsh3l", "f5l"],
+          ["dsh3l", "f5r"],
+          ["dsh3l", "f7r"],
+          ["dsh3l", "f2l"],
+          ["dsh3l", "f1l"],
+          ["dsh3l", "f1r"],
+          ["dsh3l", "f2r"],
+
+          //steering column
+          {"beamSpring":2501000,"beamDamp":50},
+          {"beamDeform":38000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.1},
+          ["stc2", "stc1"],
+          ["stc1", "stc3"],
+          ["stc3", "stc2"],
+
+          //attach
+          {"beamDeform":21000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":""},
+          ["stc2", "dsh2l"],
+          ["stc2", "dsh1l"],
+          ["stc2", "dsh2ll"],
+          ["stc2", "dsh1ll"],
+          ["stc1", "dsh2ll"],
+          ["stc1", "dsh1ll"],
+          ["stc1", "dsh2l"],
+          ["stc1", "dsh1l"],
+
+          ["stc1", "f6l"],
+          ["stc1", "f5l"],
+          ["stc1", "f6ll"],
+          ["stc1", "f5ll"],
+
+          ["stc2", "f6l"],
+          ["stc2", "f5l"],
+          ["stc2", "f6ll"],
+          ["stc2", "f5ll"],
+
+          //damper
+          {"beamSpring":0,"beamDamp":550},
+          ["stc3", "dsh2ll"],
+          ["stc3", "dsh2l"],
+          ["stc3", "dsh1l"],
+          ["stc3", "dsh1ll"],
+          ["stc3", "dsh3l"],
+    ],
+    "triangles":[
+        ["id1:", "id2:", "id3:"],
+        {"groundModel":"plastic"},
+        //Dashboard
+        {"dragCoef":0},
+        ["dsh1ll", "dsh2ll", "dsh1l"],
+        ["dsh1l", "dsh2ll", "dsh2l"],
+        ["dsh1l", "dsh2l", "dsh2r"],
+        ["dsh2r", "dsh1r", "dsh1l"],
+        ["dsh1r", "dsh2r", "dsh2rr"],
+        ["dsh2rr", "dsh1rr", "dsh1r"],
+        ["dsh2l", "dsh3l", "dsh3r"],
+        ["dsh3r", "dsh2r", "dsh2l"],
+        ["dsh3l", "dsh4", "dsh3r"],
+
+        ["dsh1r", "f6r", "f6l"],
+        ["f6l", "dsh1l", "dsh1r"],
+        ["dsh4", "fi3l", "fi3r"],
+
+        ["dsh1rr", "f6rr",   "f6r"],
+        ["f6r",    "dsh1r",  "dsh1rr"],
+        ["dsh2r",  "f5r",    "dsh2rr"],
+        ["dsh2rr", "f5r",    "f5rr"],
+        ["dsh2rr", "f5rr",   "f6rr"],
+        ["dsh1rr", "dsh2rr", "f6rr"],
+        ["dsh2r",  "dsh3r",  "f5r"],
+        ["dsh3r",  "fi2r",   "fi1r"],
+        ["dsh3r",  "fi1r",   "f5r"],
+        ["dsh4",   "fi2r",   "dsh3r"],
+        ["dsh4",   "fi3r",   "fi2r"],
+
+        ["f6ll",   "dsh1ll", "f6l"],
+        ["dsh1l",  "f6l",    "dsh1ll"],
+        ["f5l",    "dsh2l",  "dsh2ll"],
+        ["f5l",    "dsh2ll", "f5ll"],
+        ["f5ll",   "dsh2ll", "f6ll"],
+        ["dsh2ll", "dsh1ll", "f6ll"],
+        ["dsh3l",  "dsh2l",  "f5l"],
+        ["fi2l",   "dsh3l",  "fi1l"],
+        ["fi1l",   "dsh3l",  "f5l"],
+        ["fi2l",   "dsh4",   "dsh3l"],
+        ["fi3l",   "dsh4",   "fi2l"],
+    ],
+},
+"bx_radio_lhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stock Radio",
+        "value":500,
+    },
+    "slotType" : "bx_radio_lhd",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_radio", ["bx_dash"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_CLOTH"},
+         {"selfCollision":true},
+         {"collision":true},
+         //interior flexbody
+         {"group":"bx_dash"},
+         {"nodeWeight":4.0},
+         ["dsh1r",-0.1966,-0.4486,0.8736,{"nodeWeight":3.75}],//remove some weight to be added back by the radio
+         ["dsh1l",0.1966,-0.4621,0.9513,{"nodeWeight":3.75}],//remove some weight to be added back by the radio
+         ["dsh2r",-0.1966,-0.3745,0.6901,{"nodeWeight":3.75}],//remove some weight to be added back by the radio
+         ["dsh2l",0.1966,-0.3745,0.6901,{"nodeWeight":3.75}],//remove some weight to be added back by the radio
+    ],
+},
+"bx_radioCover_lhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Carbon Fibre Blanking Plate",
+        "value":500,
+    },
+    "slotType" : "bx_radio_lhd",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_radiocover", ["bx_dash"]],
+    ],
+},
+"bx_shifter_A_lhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Automatic Shifter",
+        "value":150,
+    },
+    "slotType" : "bx_shifter_lhd",
+    "controller": [
+        ["fileName"],
+        ["propAnimation/singleAxisLever", {"name":"singleAxisLever"}],
+    ]
+    "singleAxisLever": {
+        "gearCoordinates": [
+            ["gearIndex",   "value"]
+            [1,            0.0]
+            [2,             0.2]
+            [3,             0.4]
+            [4,             0.6]
+            [5,             0.8]
+            [6,             1]
+        ]
+        "shiftSoundNode:":["f2r"]
+        "shiftSoundEventSingleAxisLever": "event:>Vehicle>Interior>Gearshift>automatic_02",
+        "shiftSoundVolumeSingleAxisLever": 0.5,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_shifterbase_A", ["bx_body"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        //auto shifter
+        ["gearModeIndex",         "bx_shifter_A", "f7r","f7l","f8r", {"x":90, "y":0, "z":0}, {"x":0, "y":0, "z":0.1}     , {"x":0, "y":0.25, "z":0.03}, 0, 1, -0.15, 0.52],
+    ],
+},
+"bx_shifter_M_lhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Manual Shifter",
+        "value":100,
+    },
+    "slotType" : "bx_shifter_lhd",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_shifter_M", ["bx_shifterknob_M"]],
+         ["bx_shifterbase_M", ["bx_body","bx_shifterboot_M"]],
+    ],
+    "controller": [
+        ["fileName"],
+        ["propAnimation/hPattern", {"name":"hPattern"}],
+    ]
+    "hPattern": {
+        "gearCoordinates": [
+            ["gearIndex",   "x",      "y"]
+            [-1,            1,       -1]
+            [0,             0,    0]
+            [1,             -1,   1]
+            [2,             -1,   -1]
+            [3,             0,    1]
+            [4,             0,    -1]
+            [5,             1,        1]
+        ]
+        "shiftSoundNode:":["sh_b3"]
+        "shiftSoundEventHPatternGearIn": "event:>Vehicle>Interior>Gearshift>manual_modern_01_in",
+        "shiftSoundEventHPatternGearOut": "event:>Vehicle>Interior>Gearshift>manual_modern_01_out",
+        "shiftSoundVolumeHPatternGearIn": 0.5,
+        "shiftSoundVolumeHPatternGearOut": 0.5,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_shifterbase_M", ["bx_body","bx_shifter_M"]],
+        ["bx_shifter_M", ["bx_body","bx_shifterknob_M"]],
+
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        //clutch pedal
+        ["clutch"     ,"bx_clutchpedal", "f5l","f5r","f6l", {"x":0, "y":0, "z":180}, {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":false},
+
+         //--SHIFTER---  has to be jbeamed to allow for realistic movement
+         {"group":"bx_shifter_M"},
+         {"nodeWeight":0.45}
+         ["sh_b1l", 0.055, -0.2301, 0.5254],
+         ["sh_b1r", -0.055, -0.2301, 0.5254],
+         ["sh_b2l", 0.055, -0.0993,  0.4972],
+         ["sh_b2r", -0.055, -0.0993, 0.4972],
+
+         ["sh_b3", 0.00, -0.1688, 0.4779],
+         {"selfCollision":true},
+         {"group":["bx_shifter_M","bx_shifterknob_M"]},
+         {"nodeWeight":0.5}
+         ["sh_l3", 0.005, -0.1511, 0.5659],
+         {"selfCollision":false},
+         {"nodeWeight":0.30}
+         {"group":["bx_shifterknob_M"]},
+         ["sh_l1l", 0.035, -0.1764, 0.6523],
+         ["sh_l1r", -0.025, -0.1764, 0.6523],
+         ["sh_l2l", 0.035, -0.1039, 0.6372],
+         ["sh_l2r", -0.025, -0.1039, 0.6372],
+         {"group":""},
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+        //main shape
+        {"beamSpring":401000,"beamDamp":55},
+        {"beamDeform":259000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        ["sh_b1l", "sh_b1r"],
+        ["sh_b1l", "sh_b2l"],
+        ["sh_b1l", "sh_b2r"],
+        ["sh_b1r", "sh_b2l"],
+        ["sh_b1r", "sh_b2r"],
+        ["sh_b2l", "sh_b2r"],
+
+        ["sh_b1l", "sh_b3"],
+        ["sh_b1r", "sh_b3"],
+        ["sh_b2l", "sh_b3"],
+        ["sh_b2r", "sh_b3"],
+
+        //lever
+        {"beamSpring":121000,"beamDamp":35},
+        ["sh_l3", "sh_l1l"],
+        ["sh_l3", "sh_l1r"],
+        ["sh_l3", "sh_l2l"],
+        ["sh_l3", "sh_l2r"],
+
+        ["sh_l1l", "sh_l1r"],
+        ["sh_l1l", "sh_l2l"],
+        ["sh_l1l", "sh_l2r"],
+
+        ["sh_l1r", "sh_l2l"],
+        ["sh_l1r", "sh_l2r"],
+        ["sh_l2l", "sh_l2r"],
+
+        //hinge
+        {"beamSpring":121000,"beamDamp":25},
+        ["sh_b3", "sh_l3"],
+        ["sh_b3", "sh_l1l"],
+        ["sh_b3", "sh_l1r"],
+        ["sh_b3", "sh_l2l"],
+        ["sh_b3", "sh_l2r"],
+
+        //stabilize the shifter
+        {"beamSpring":0,"beamDamp":175},
+        ["sh_b1l", "sh_l3"],
+        ["sh_b1r", "sh_l3"],
+        ["sh_b2l", "sh_l3"],
+        ["sh_b2r", "sh_l3"],
+        {"breakGroup":""},
+
+        //attach to body
+        {"beamSpring":300000,"beamDamp":70},
+        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+        ["sh_b1l", "f7r"],
+        ["sh_b1r", "f7r"],
+        ["sh_b2l", "f7r"],
+        ["sh_b2r", "f7r"],
+        ["sh_b3", "f7r"],
+
+        ["sh_b1l", "f7l"],
+        ["sh_b1r", "f7l"],
+        ["sh_b2l", "f7l"],
+        ["sh_b2r", "f7l"],
+        ["sh_b3", "f7l"],
+
+        ["sh_b1l", "f2r"],
+        ["sh_b1r", "f2r"],
+        ["sh_b2l", "f2r"],
+        ["sh_b2r", "f2r"],
+        ["sh_b3", "f2r"],
+
+        ["sh_b1l", "f2l"],
+        ["sh_b1r", "f2l"],
+        ["sh_b2l", "f2l"],
+        ["sh_b2r", "f2l"],
+        ["sh_b3", "f2l"],
+
+        ["sh_b1l", "f1r"],
+        ["sh_b1r", "f1r"],
+        ["sh_b2l", "f1r"],
+        ["sh_b2r", "f1r"],
+        ["sh_b3", "f1r"],
+
+        ["sh_b1l", "f1l"],
+        ["sh_b1r", "f1l"],
+        ["sh_b2l", "f1l"],
+        ["sh_b2r", "f1l"],
+        ["sh_b3", "f1l"],
+
+        {"beamSpring":200000,"beamDamp":20},
+        ["sh_b1l", "dsh2r"],
+        ["sh_b1r", "dsh2r"],
+        ["sh_b2l", "dsh2r"],
+        ["sh_b2r", "dsh2r"],
+        ["sh_b3",  "dsh2r"],
+        ["sh_b1l", "dsh2l"],
+        ["sh_b1r", "dsh2l"],
+        ["sh_b2l", "dsh2l"],
+        ["sh_b2r", "dsh2l"],
+        ["sh_b3",  "dsh2l"],
+
+        //support beams
+        {"beamType":"|SUPPORT","beamPrecompression":0.81,"beamLongBound":2},
+        {"beamSpring":201000,"beamDamp":50},
+        {"beamDeform":16000,"beamStrength":"FLT_MAX"},
+        ["sh_l1r", "sh_b2l"],
+        ["sh_l2r", "sh_b1l"],
+        ["sh_l2l", "sh_b1r"],
+        ["sh_l1l", "sh_b2r"],
+        {"beamPrecompression":0.68}
+        ["sh_l3", "sh_b1l"],
+        ["sh_l3", "sh_b1r"],
+        ["sh_l3", "sh_b2l"],
+        ["sh_l3", "sh_b2r"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "torsionHydros": [
+        ["id1:","id2:","id3:","id4:"],
+        {"spring":200, "damp":1, "deform":"FLT_MAX", "strength":1000},
+        ["sh_b2l","sh_b1l","sh_b1r","sh_l3",  {"inputSource":"hPatternAxisY","factor":-0.20}],
+        ["sh_b1r","sh_b1l","sh_b2l","sh_l3",  {"inputSource":"hPatternAxisX","factor":-0.25}],
+        ["sh_b1r","sh_b2r","sh_b2l","sh_l3",  {"inputSource":"hPatternAxisY","factor":0.20}],
+        ["sh_b2l","sh_b2r","sh_b1r","sh_l3",  {"inputSource":"hPatternAxisX","factor":0.25}],
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        {"spring":100, "damp":0.2, "deform":30000, "strength":1000},
+        ["sh_b1r", "sh_b3", "sh_l3", "sh_l1r"],
+        ["sh_b2r", "sh_b3", "sh_l3", "sh_l2r"],
+        ["sh_b2l", "sh_b3", "sh_l3", "sh_l2l"],
+        ["sh_b1l", "sh_b3", "sh_l3", "sh_l1l"],
+    ],
+},
+}

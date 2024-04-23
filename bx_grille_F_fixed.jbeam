@@ -1,0 +1,234 @@
+{
+"bx_grille_F_fixed": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Grille",
+        "value":50,
+    },
+    "slotType" : "bx_grille_F_fixed",
+    "slots": [
+        ["type", "default", "description"],
+        ["bx_lettering_grille_fixed","", "Front Grille Badge"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_grille_fixed", ["bx_grille_F", "bx_bumper_F"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"frictionCoef":0.8},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"group":"bx_grille_F"},
+         {"nodeWeight":0.4},
+         ["fgr1r", -0.3236, -2.0214, 0.6671],
+         ["fgr1", -0.0000, -2.0565, 0.6671],
+         ["fgr1l", 0.3236, -2.0214, 0.6671],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //front grille main shape
+          {"beamSpring":201000,"beamDamp":50},
+          {"beamDeform":22000,"beamStrength":80000},
+          {"deformLimitExpansion":1.1},
+          ["fgr1r", "fgr1"],
+          ["fgr1", "fgr1l"],
+          ["fgr1l", "fb1l"],
+          ["fgr1", "fb1"],
+          ["fgr1r", "fb1r"],
+
+          //cross
+          {"deformLimitExpansion":""},
+          {"beamDeform":8000,"beamStrength":34000},
+          ["fgr1r", "fb1"],
+          ["fgr1", "fb1r"],
+          ["fgr1", "fb1l"],
+          ["fgr1l", "fb1"],
+
+          //rigids
+          {"beamDeform":8000,"beamStrength":34000},
+          ["fgr1r", "fgr1l"],
+          ["fgr1l", "fb2l"],
+          ["fgr1", "fb2"],
+          ["fgr1r", "fb2r"],
+
+          //rigidifier
+          {"beamSpring":21000,"beamDamp":50},
+          {"beamDeform":2000,"beamStrength":"FLT_MAX"},
+          ["fgr1l", "fb5"],
+          ["fgr1", "fb5"],
+          ["fgr1r", "fb5"],
+
+          //attach
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":151000,"beamDamp":120},
+          {"beamDeform":3000,"beamStrength":5500},
+          {"breakGroup":"bumper_F_R3"},
+          ["fgr1r", "f15r"],
+          ["fgr1r", "f15"],
+          ["fgr1", "f15r"],
+          ["fgr1r", "f13rr"],
+          {"breakGroup":"bumper_F_L3"},
+          ["fgr1l", "f15l"],
+          ["fgr1l", "f15"],
+          ["fgr1", "f15l"],
+          ["fgr1l", "f13ll"],
+          {"breakGroup":""},
+
+          //front grille support beams
+          {"beamType":"|SUPPORT","beamLongBound":5},
+          {"beamSpring":171000,"beamDamp":120},
+          {"beamDeform":12000,"beamStrength":100000},
+          //to body
+          ["fgr1l", "f15l"],
+          ["fgr1", "f15"],
+          ["fgr1r", "f15r"],
+          ["fgr1l", "f15ll"],
+          ["fgr1r", "f15rr"],
+          ["fgr1r", "f15"],
+          ["fgr1l", "f15"],
+
+          //to hood
+          {"optional":true},
+          {"beamLongBound":15}
+          ["h5r", "fb1r"],
+          ["fb1r", "h5"],
+          ["h5", "fb1l"],
+          ["fb1l", "h5l"],
+          ["h5", "fb1"],
+          {"optional":false},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //front grille
+            {"groundModel":"plastic"},
+            {"group":"bx_grille_F"},
+            {"dragCoef":3},
+            ["fgr1", "fb1", "fgr1l"],
+            ["fgr1l", "fb1", "fb1l"],
+            ["fgr1", "fgr1r", "fb1"],
+            ["fgr1r", "fb1r", "fb1"],
+            {"group":""},
+    ],
+},
+"bx_grille_F_fixed_sport": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sport Front Grille",
+        "value":70,
+    },
+    "slotType" : "bx_grille_F_fixed",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_grille_fixed_sport", ["bx_grille_F", "bx_bumper_F"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"frictionCoef":0.8},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"group":"bx_grille_F"},
+         {"nodeWeight":0.4},
+         ["fgr1r", -0.3236, -2.0214, 0.6671],
+         ["fgr1", -0.0000, -2.0565, 0.6671],
+         ["fgr1l", 0.3236, -2.0214, 0.6671],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //front grille main shape
+          {"beamSpring":201000,"beamDamp":50},
+          {"beamDeform":22000,"beamStrength":80000},
+          {"deformLimitExpansion":1.1},
+          ["fgr1r", "fgr1"],
+          ["fgr1", "fgr1l"],
+          ["fgr1l", "fb1l"],
+          ["fgr1", "fb1"],
+          ["fgr1r", "fb1r"],
+
+          //cross
+          {"deformLimitExpansion":""},
+          {"beamDeform":8000,"beamStrength":34000},
+          ["fgr1r", "fb1"],
+          ["fgr1", "fb1r"],
+          ["fgr1", "fb1l"],
+          ["fgr1l", "fb1"],
+
+          //rigids
+          {"beamDeform":8000,"beamStrength":34000},
+          ["fgr1r", "fgr1l"],
+          ["fgr1l", "fb2l"],
+          ["fgr1", "fb2"],
+          ["fgr1r", "fb2r"],
+
+          //rigidifier
+          {"beamSpring":21000,"beamDamp":50},
+          {"beamDeform":2000,"beamStrength":"FLT_MAX"},
+          ["fgr1l", "fb5"],
+          ["fgr1", "fb5"],
+          ["fgr1r", "fb5"],
+
+          //attach
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":151000,"beamDamp":120},
+          {"beamDeform":3000,"beamStrength":5500},
+          {"breakGroup":"bumper_F_R3"},
+          ["fgr1r", "f15r"],
+          ["fgr1r", "f15"],
+          ["fgr1", "f15r"],
+          ["fgr1r", "f13rr"],
+          {"breakGroup":"bumper_F_L3"},
+          ["fgr1l", "f15l"],
+          ["fgr1l", "f15"],
+          ["fgr1", "f15l"],
+          ["fgr1l", "f13ll"],
+          {"breakGroup":""},
+
+          //front grille support beams
+          {"beamType":"|SUPPORT","beamLongBound":5},
+          {"beamSpring":171000,"beamDamp":120},
+          {"beamDeform":12000,"beamStrength":100000},
+          //to body
+          ["fgr1l", "f15l"],
+          ["fgr1", "f15"],
+          ["fgr1r", "f15r"],
+          ["fgr1l", "f15ll"],
+          ["fgr1r", "f15rr"],
+          ["fgr1r", "f15"],
+          ["fgr1l", "f15"],
+
+          //to hood
+          {"optional":true},
+          {"beamLongBound":15}
+          ["h5r", "fb1r"],
+          ["fb1r", "h5"],
+          ["h5", "fb1l"],
+          ["fb1l", "h5l"],
+          ["h5", "fb1"],
+          {"optional":false},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //front grille
+            {"groundModel":"plastic"},
+            {"group":"bx_grille_F"},
+            {"dragCoef":3},
+            ["fgr1", "fb1", "fgr1l"],
+            ["fgr1l", "fb1", "fb1l"],
+            ["fgr1", "fgr1r", "fb1"],
+            ["fgr1r", "fb1r", "fb1"],
+            {"group":""},
+    ],
+},
+}

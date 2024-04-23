@@ -1,0 +1,106 @@
+{
+"bx_fenderflare_FR_popup": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Right Bolt-On Fender Flare",
+        "value":50,
+    },
+    "slotType" : "bx_fenderflare_FR_popup",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_fenderflare_R_bolton_popup", ["bx_fender_R"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":true},
+
+         {"group":"bx_fender_R"},
+         {"nodeWeight":1.4},
+         ["fe4r", -0.88, -1.00, 0.62],
+         ["fe5r", -0.885, -1.25, 0.71],
+         ["fe6r", -0.825, -1.58, 0.53],
+         {"group":""},
+    ],
+},
+"bx_fenderflare_FL_popup": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Left Bolt-On Fender Flare",
+        "value":50,
+    },
+    "slotType" : "bx_fenderflare_FL_popup",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_fenderflare_L_bolton_popup", ["bx_fender_L"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":true},
+
+         {"group":"bx_fender_L"},
+         {"nodeWeight":1.4},
+         ["fe4l", 0.88, -1.00, 0.62],
+         ["fe5l", 0.885, -1.25, 0.71],
+         ["fe6l", 0.825, -1.58, 0.53],
+         {"group":""},
+    ],
+},
+"bx_fenderflare_FR_fixed": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Right Bolt-On Fender Flare",
+        "value":50,
+    },
+    "slotType" : "bx_fenderflare_FR_fixed",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_fenderflare_R_bolton_fixed", ["bx_fender_R"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":true},
+
+         {"group":"bx_fender_R"},
+         {"nodeWeight":1.4},
+         ["fe4r", -0.88, -1.00, 0.62],
+         ["fe5r", -0.88, -1.25, 0.71],
+         ["fe6r", -0.825, -1.58, 0.53],
+         {"group":""},
+    ],
+},
+"bx_fenderflare_FL_fixed": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Left Bolt-On Fender Flare",
+        "value":50,
+    },
+    "slotType" : "bx_fenderflare_FL_fixed",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_fenderflare_L_bolton_fixed", ["bx_fender_L"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":true},
+
+         {"group":"bx_fender_L"},
+         {"nodeWeight":1.4},
+         ["fe4l", 0.88, -1.00, 0.62],
+         ["fe5l", 0.88, -1.25, 0.71],
+         ["fe6l", 0.825, -1.58, 0.53],
+         {"group":""},
+    ],
+},
+}

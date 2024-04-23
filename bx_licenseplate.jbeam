@@ -1,0 +1,86 @@
+{
+"bx_licenseplate_F_popup": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front License Plate",
+        "value":0,
+    },
+    "slotType" : "bx_licenseplate_F_popup",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["bx_bumper_F"],[],{"pos":{"x":0.0, "y":-2.155, "z":0.48}, "rot":{"x":-1, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+},
+"bx_licenseplate_F_fixed": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front License Plate",
+        "value":0,
+    },
+    "slotType" : "bx_licenseplate_F_fixed",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["bx_bumper_F"],[],{"pos":{"x":0.0, "y":-2.195, "z":0.44}, "rot":{"x":2, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+},
+"bx_licenseplate_F_popup_kit_a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front License Plate",
+        "value":0,
+    },
+    "slotType" : "bx_licenseplate_F_popup_kit_a",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["bx_bumper_F"],[],{"pos":{"x":0.0, "y":-2.195, "z":0.44}, "rot":{"x":-1, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+},
+"bx_licenseplate_F_fixed_kit_a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front License Plate",
+        "value":0,
+    },
+    "slotType" : "bx_licenseplate_F_fixed_kit_a",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["bx_bumper_F"],[],{"pos":{"x":0.0, "y":-2.208, "z":0.44}, "rot":{"x":2, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+},
+"bx_licenseplate_F_popup_kit_b": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front License Plate",
+        "value":0,
+    },
+    "slotType" : "bx_licenseplate_F_popup_kit_b",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["bx_bumper_F"],[],{"pos":{"x":0.0, "y":-2.26, "z":0.415}, "rot":{"x":-1, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+},
+"bx_licenseplate_F_fixed_kit_b": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front License Plate",
+        "value":0,
+    },
+    "slotType" : "bx_licenseplate_F_fixed_kit_b",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["bx_bumper_F"],[],{"pos":{"x":0.0, "y":-2.224, "z":0.441}, "rot":{"x":2, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+},
+"bx_licenseplate_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear License Plate",
+        "value":0,
+    },
+    "slotType" : "bx_licenseplate_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["bx_bumper_R"],[],{"pos":{"x":0.0, "y":2.19, "z":0.447}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+},
+}

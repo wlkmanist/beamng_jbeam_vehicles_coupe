@@ -1,0 +1,114 @@
+{
+"bx_trim_body_black": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Black Body Trim",
+        "value":45,
+    },
+    "slotType" : "bx_trim_body",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_quarterpanels_trim_black_hatch", ["bx_body"]],
+         ["bx_door_trim_black_R", ["bx_door_R"]],
+         ["bx_door_trim_black_L", ["bx_door_L"]],
+         ["bx_fender_trim_black_R_fixed", ["bx_fender_R_fixed"]],
+         ["bx_fender_trim_black_L_fixed", ["bx_fender_L_fixed"]],
+         ["bx_fender_trim_black_R_popup", ["bx_fender_R_popup"]],
+         ["bx_fender_trim_black_L_popup", ["bx_fender_L_popup"]],
+         ["bx_fender_trim_black_R_popup_alt", ["bx_fender_R_popup_signal"]],
+         ["bx_fender_trim_black_L_popup_alt", ["bx_fender_L_popup_signal"]],
+    ],
+}
+"bx_trim_bumper_R_black": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Black Rear Bumper Trim",
+        "value":25,
+    },
+    "slotType" : "bx_trim_bumper_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_bumper_trim_black_R", ["bx_bumper_R"]],
+    ],
+}
+"bx_trim_bumper_F_popup_black": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Black Rear Bumper Trim",
+        "value":25,
+    },
+    "slotType" : "bx_trim_bumper_F_popup",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_bumper_trim_black_F_popup", ["bx_bumper_F"]],
+    ],
+}
+"bx_trim_bumper_F_fixed_black": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Black Rear Bumper Trim",
+        "value":25,
+    },
+    "slotType" : "bx_trim_bumper_F_fixed",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_bumper_trim_black_F_fixed", ["bx_bumper_F"]],
+    ],
+}
+"bx_trim_body_painted": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Painted Body Trim",
+        "value":45,
+    },
+    "slotType" : "bx_trim_body",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_quarterpanels_trim_painted_hatch", ["bx_body"]],
+         ["bx_door_trim_painted_R", ["bx_door_R"]],
+         ["bx_door_trim_painted_L", ["bx_door_L"]],
+         ["bx_fender_trim_painted_R_fixed", ["bx_fender_R_fixed"]],
+         ["bx_fender_trim_painted_L_fixed", ["bx_fender_L_fixed"]],
+         ["bx_fender_trim_painted_R_popup", ["bx_fender_R_popup"]],
+         ["bx_fender_trim_painted_L_popup", ["bx_fender_L_popup"]],
+         ["bx_fender_trim_painted_R_popup_alt", ["bx_fender_R_popup_signal"]],
+         ["bx_fender_trim_painted_L_popup_alt", ["bx_fender_L_popup_signal"]],
+    ],
+}
+"bx_trim_bumper_R_painted": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Painted Rear Bumper Trim",
+        "value":25,
+    },
+    "slotType" : "bx_trim_bumper_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_bumper_trim_painted_R", ["bx_bumper_R"]],
+    ],
+}
+"bx_trim_bumper_F_popup_painted": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Painted Rear Bumper Trim",
+        "value":25,
+    },
+    "slotType" : "bx_trim_bumper_F_popup",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_bumper_trim_painted_F_popup", ["bx_bumper_F"]],
+    ],
+}
+"bx_trim_bumper_F_fixed_painted": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Painted Rear Bumper Trim",
+        "value":25,
+    },
+    "slotType" : "bx_trim_bumper_F_fixed",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_bumper_trim_painted_F_fixed", ["bx_bumper_F"]],
+    ],
+}
+}

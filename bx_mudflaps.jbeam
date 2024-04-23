@@ -1,0 +1,39 @@
+{
+"bx_mudflap_FR": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Right Mudflap",
+        "value":140,
+    },
+    "slotType" : "bx_mudflap_FR",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_mudflap_FR", ["bx_fender_R", "bx_mudflap_FR"],[],{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+},
+"bx_mudflap_FL": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Left Mudflap",
+        "value":140,
+    },
+    "slotType" : "bx_mudflap_FL",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_mudflap_FL", ["bx_fender_L", "bx_mudflap_FL"],[],{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+},
+"bx_mudflap_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Mudflaps",
+        "value":280,
+    },
+    "slotType" : "bx_mudflap_R",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_mudflap_RR", ["bx_bumper_R"],[],{"pos":{"x":-0.0001,"y":0,"z":0}}],
+        ["bx_mudflap_RL", ["bx_bumper_R"],[],{"pos":{"x":0.0001,"y":0,"z":0}}],
+    ],
+},
+}

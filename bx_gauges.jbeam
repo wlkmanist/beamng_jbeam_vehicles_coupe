@@ -1,0 +1,222 @@
+{
+"bx_gauges_lhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Imperial Gauges",
+        "value":300,
+    },
+    "slotType" : "bx_gauges_lhd",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_gauges", ["bx_dash"]],
+        ["bx_decals_gauges", ["bx_dash"]],
+    ],
+    "props": [
+        ["func",       "mesh",               "idRef:", "idX:", "idY:", "baseRotation",            "rotation",                "translation",         "min", "max", "offset", "multiplier"],
+        //needles
+        ["wheelspeed", "bx_needle_speedo", "dsh2l","dsh2ll","dsh1l", {"x":-108, "y":0, "z":0}, {"x":0, "y":0, "z":-3.23}     , {"x":0, "y":0, "z":0}, 0, 185.65, 19.305, 1],
+        ["rpm",        "bx_needle_tacho",  "dsh2l","dsh2ll","dsh1l", {"x":-110, "y":0, "z":0}, {"x":0, "y":0, "z":-0.0275}     , {"x":0, "y":0, "z":0}, 0, 12000, 2500, 1],
+        ["fuel",       "bx_needle_fuel",   "dsh2l","dsh2ll","dsh1l", {"x":-110, "y":0, "z":0}, {"x":0, "y":0, "z":90}     , {"x":0, "y":0, "z":0}, 0, 50, 0.95, 0.7],
+        ["watertemp",  "bx_needle_temp",   "dsh2l","dsh2ll","dsh1l", {"x":-110, "y":0, "z":0}, {"x":0, "y":0, "z":-0.75}     , {"x":0, "y":0, "z":0}, 52, 125, 59, 1],
+    ],
+    "controller": [
+        ["fileName"],
+        ["gauges/analogOdometer", {"name":"analogOdometer" }],
+    ],
+    "analogOdometer": {
+        "configuration": {
+            "materialName": "@bx_gauges_odo",
+            "htmlPath": "local://local/vehicles/common/analogOdo.html",
+            "displayWidth":512,
+            "displayHeight":32,
+            "odometerDigits":7,
+            "odometerHasDecimalSeparator":true,
+            "tripHasDecimalSeparator":true,
+            "unit":"imperial",
+            "floatStyle":{"color":"black"},
+            "bodyStyle":{
+                "background": "url('/vehicles/common/odometer_analog_b.cef_color.png')",
+                "font-family": "OpenSans",
+                "font-size": "28px",
+                "color": "white",
+                "letter-spacing": "15.5px",
+                "margin": "-4.5px 10.5px",
+                "transform": "scaleX(1.26)",
+                "transform-origin": "left",
+            },
+            "tripDivStyle":{
+                "margin-left": "-3px",
+                "position": "fixed",
+                "letter-spacing": "32px"
+            }
+        },
+    },
+},
+"bx_gauges_rhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Imperial Gauges",
+        "value":300,
+    },
+    "slotType" : "bx_gauges_rhd",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_gauges_rhd", ["bx_dash"]],
+        ["bx_decals_gauges_rhd", ["bx_dash"]],
+    ],
+    "props": [
+        ["func",       "mesh",               "idRef:", "idX:", "idY:", "baseRotation",            "rotation",                "translation",         "min", "max", "offset", "multiplier"],
+        //needles
+        ["wheelspeed", "bx_needle_speedo_rhd", "dsh2rr","dsh2r","dsh1rr", {"x":-108, "y":0, "z":0}, {"x":0, "y":0, "z":-3.23}     , {"x":0, "y":0, "z":0}, 0, 185.65, 19.305, 1],
+        ["rpm",        "bx_needle_tacho_rhd",  "dsh2rr","dsh2r","dsh1rr", {"x":-108, "y":0, "z":0}, {"x":0, "y":0, "z":-0.0290}  , {"x":0, "y":0, "z":0}, 0, 12000, 2150, 1],
+        ["fuel",       "bx_needle_fuel_rhd",   "dsh2rr","dsh2r","dsh1rr", {"x":-108, "y":0, "z":0}, {"x":0, "y":0, "z":90}     , {"x":0, "y":0, "z":0}, 0, 50, 0.95, 0.7],
+        ["watertemp",  "bx_needle_temp_rhd",   "dsh2rr","dsh2r","dsh1rr", {"x":-108, "y":0, "z":0}, {"x":0, "y":0, "z":-0.71}      , {"x":0, "y":0, "z":0}, 52, 130, 62, 1],
+    ],
+    "controller": [
+        ["fileName"],
+        ["gauges/analogOdometer", {"name":"analogOdometer" }],
+    ],
+    "analogOdometer": {
+        "configuration": {
+            "materialName": "@bx_gauges_odo",
+            "htmlPath": "local://local/vehicles/common/analogOdo.html",
+            "displayWidth":512,
+            "displayHeight":32,
+            "odometerDigits":7,
+            "odometerHasDecimalSeparator":true,
+            "tripHasDecimalSeparator":true,
+            "unit":"imperial",
+            "floatStyle":{"color":"black"},
+            "bodyStyle":{
+                "background": "url('/vehicles/common/odometer_analog_b.cef_color.png')",
+                "font-family": "OpenSans",
+                "font-size": "28px",
+                "color": "white",
+                "letter-spacing": "15.5px",
+                "margin": "-4.5px 10.5px",
+                "transform": "scaleX(1.26)",
+                "transform-origin": "left",
+            },
+            "tripDivStyle":{
+                "margin-left": "-3px",
+                "position": "fixed",
+                "letter-spacing": "32px"
+            }
+        },
+    },
+},
+"bx_gauges_lhd_metric": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Metric Gauges",
+        "value":300,
+    },
+    "slotType" : "bx_gauges_lhd",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_gauges", ["bx_dash"]],
+        ["bx_decals_gauges", ["bx_dash"]],
+    ],
+    "props": [
+        ["func",       "mesh",               "idRef:", "idX:", "idY:", "baseRotation",            "rotation",                "translation",         "min", "max", "offset", "multiplier"],
+        //needles
+        ["wheelspeed", "bx_needle_speedo", "dsh2l","dsh2ll","dsh1l", {"x":-108, "y":0, "z":0}, {"x":0, "y":0, "z":-4.59}     , {"x":0, "y":0, "z":0}, 0, 55, 13.5, 1.01],
+        ["rpm",        "bx_needle_tacho",  "dsh2l","dsh2ll","dsh1l", {"x":-108, "y":0, "z":0}, {"x":0, "y":0, "z":-0.0290}  , {"x":0, "y":0, "z":0}, 0, 12000, 2150, 1],
+        ["fuel",       "bx_needle_fuel",   "dsh2l","dsh2ll","dsh1l", {"x":-108, "y":0, "z":0}, {"x":0, "y":0, "z":90}     , {"x":0, "y":0, "z":0}, 0, 50, 0.95, 0.7],
+        ["watertemp",  "bx_needle_temp",   "dsh2l","dsh2ll","dsh1l", {"x":-108, "y":0, "z":0}, {"x":0, "y":0, "z":-0.71}      , {"x":0, "y":0, "z":0}, 52, 130, 62, 1],
+    ],
+    "controller": [
+        ["fileName"],
+        ["gauges/analogOdometer", {"name":"analogOdometer" }],
+    ],
+    "glowMap":{
+        //gauges
+        "bx_gauges":       {"simpleFunction":"lowhighbeam", "off":"bx_gauges_metric", "on":"bx_gauges_metric_on"},
+    },
+    "analogOdometer": {
+        "configuration": {
+            "materialName": "@bx_gauges_odo",
+            "htmlPath": "local://local/vehicles/common/analogOdo.html",
+            "displayWidth":512,
+            "displayHeight":32,
+            "odometerDigits":7,
+            "odometerHasDecimalSeparator":true,
+            "tripHasDecimalSeparator":true,
+            "unit":"imperial",
+            "floatStyle":{"color":"black"},
+            "bodyStyle":{
+                "background": "url('/vehicles/common/odometer_analog_b.cef_color.png')",
+                "font-family": "OpenSans",
+                "font-size": "28px",
+                "color": "white",
+                "letter-spacing": "15.5px",
+                "margin": "-4.5px 10.5px",
+                "transform": "scaleX(1.26)",
+                "transform-origin": "left",
+            },
+            "tripDivStyle":{
+                "margin-left": "-3px",
+                "position": "fixed",
+                "letter-spacing": "32px"
+            }
+        },
+    },
+},
+"bx_gauges_rhd_metric": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Metric Gauges",
+        "value":300,
+    },
+    "slotType" : "bx_gauges_rhd",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_gauges_rhd", ["bx_dash"]],
+        ["bx_decals_gauges_rhd", ["bx_dash"]],
+    ],
+    "props": [
+        ["func",       "mesh",               "idRef:", "idX:", "idY:", "baseRotation",            "rotation",                "translation",         "min", "max", "offset", "multiplier"],
+        //needles
+        ["wheelspeed", "bx_needle_speedo_rhd", "dsh2rr","dsh2r","dsh1rr", {"x":-108, "y":0, "z":0}, {"x":0, "y":0, "z":-4.59}     , {"x":0, "y":0, "z":0}, 0, 55, 13.5, 1.01],
+        ["rpm",        "bx_needle_tacho_rhd",  "dsh2rr","dsh2r","dsh1rr", {"x":-108, "y":0, "z":0}, {"x":0, "y":0, "z":-0.0290}  , {"x":0, "y":0, "z":0}, 0, 12000, 2150, 1],
+        ["fuel",       "bx_needle_fuel_rhd",   "dsh2rr","dsh2r","dsh1rr", {"x":-108, "y":0, "z":0}, {"x":0, "y":0, "z":90}     , {"x":0, "y":0, "z":0}, 0, 50, 0.95, 0.7],
+        ["watertemp",  "bx_needle_temp_rhd",   "dsh2rr","dsh2r","dsh1rr", {"x":-108, "y":0, "z":0}, {"x":0, "y":0, "z":-0.75}      , {"x":0, "y":0, "z":0}, 52, 130, 62, 1],
+    ],
+    "controller": [
+        ["fileName"],
+        ["gauges/analogOdometer", {"name":"analogOdometer" }],
+    ],
+    "glowMap":{
+        //gauges
+        "bx_gauges":       {"simpleFunction":"lowhighbeam", "off":"bx_gauges_metric", "on":"bx_gauges_metric_on"},
+    },
+    "analogOdometer": {
+        "configuration": {
+            "materialName": "@bx_gauges_odo",
+            "htmlPath": "local://local/vehicles/common/analogOdo.html",
+            "displayWidth":512,
+            "displayHeight":32,
+            "odometerDigits":7,
+            "odometerHasDecimalSeparator":true,
+            "tripHasDecimalSeparator":true,
+            "unit":"imperial",
+            "floatStyle":{"color":"black"},
+            "bodyStyle":{
+                "background": "url('/vehicles/common/odometer_analog_b.cef_color.png')",
+                "font-family": "OpenSans",
+                "font-size": "28px",
+                "color": "white",
+                "letter-spacing": "15.5px",
+                "margin": "-4.5px 10.5px",
+                "transform": "scaleX(1.26)",
+                "transform-origin": "left",
+            },
+            "tripDivStyle":{
+                "margin-left": "-3px",
+                "position": "fixed",
+                "letter-spacing": "32px"
+            }
+        },
+    },
+},
+}

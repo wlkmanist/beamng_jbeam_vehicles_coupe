@@ -1,0 +1,832 @@
+{
+"bx_dashboard_race_rhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Right-Hand-Drive Race Dashboard",
+        "value":500,
+    },
+    "slotType" : "bx_dashboard",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_grp_dash_rhd", ["bx_dash"]],
+        ["bx_grp_buttons_generic_rhd", ["bx_dash"]],
+        //["bx_grp_dash_gauges_rhd", ["bx_dash"]],
+        //["bx_grp_buttons_drag_rhd", ["bx_dash"]],
+        ["bx_mirror_int_rhd", ["bx_body"]],
+        ["bx_wipers_rhd", ["bx_windshield"]],
+        //window siwtches
+        ["bx_doorpanel_controls_R", ["bx_doorpanel_R2"]],
+        ["bx_doorpanel_controls_single_L", ["bx_doorpanel_L2"]],
+    ],
+    "mirrors": [
+        ["mesh", "idRef:", "id1:", "id2:"],
+        ["bx_mirror_int_rhd","rf1","rf1r","rf2",{"refBaseTranslation":{"x":0.00,"y":-0.08,"z":-0.12},"baseRotationGlobal":{"x":6,"y":0,"z":-19}}],
+    ],
+    "slots": [
+        ["type", "default", "description"],
+        ["bx_steer","bx_steer", "Steering Wheel"],
+        ["bx_shifter_race_rhd","bx_shifter_M_race_rhd", "Shifter"],
+        ["bx_gauges_race_rhd","bx_gauges_race_rhd_metric", "Gauges", {"coreSlot":true}],
+        ["skin_grp", "skin_grp_aluminium", "Racing Parts Color", {"coreSlot":true}],
+        ["bx_pedalbox_rhd","bx_pedalbox_race_rhd", "Pedals", {"coreSlot":true}],
+        ["bx_dragbuttons_rhd","", "Drag Controls"],
+        ["bx_shiftlight_race_rhd","", "Shift Light"],
+    ],
+    "soundscape": [
+        ["name", "src"],
+        //indicator9
+        {"node:":"stc3"},
+        ["indicatorStart", "event:>Vehicle>Interior>Indicator>AU5_On"],
+        ["indicatorStop", "event:>Vehicle>Interior>Indicator>AU5_Off"],
+        ["indLoop1", "event:>Vehicle>Interior>Indicator>FIPA_Click"],
+        ["indLoop2", "event:>Vehicle>Interior>Indicator>AU3_Clack"],
+        //lights15
+        ["LightOn", "event:>Vehicle>Interior>Light>PEU_On"],
+        ["LightOff", "event:>Vehicle>Interior>Light>PEU_Off"],
+        //handbrake5
+        {"node:":"dsh3r"},
+        ["handbrakeEngaging","event:>Vehicle>Interior>Handbrake_Ratchet>Ratchet_07_Ratchet"],
+        ["handbrakeDisengaging","event:>Vehicle>Interior>Handbrake_Ratchet>Ratchet_07_Button"],
+        ["handbrakeDisengaged","event:>Vehicle>Interior>Handbrake_Ratchet>Ratchet_07_Thump"],
+        //affects horn location because horn soundscape is loaded after
+        {"node:":"f15"},
+    ],
+    "camerasInternal":[
+        ["type", "x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
+        {"nodeWeight":1.9},
+        {"beamSpring":600,"beamDamp":100},
+        {"selfCollision":true},
+        {"collision":true},
+        {"rightHandCamera":true}
+        //dash cam
+        ["dash", -0.34, 0.34, 1.07, 55, "f1rr","f1l","f3rr","f3l","f4rr","f4l", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        //steering column
+        ["steering", "grp_steerwheel_hub",   "stc3","stc1","stc2", {"x":0, "y":90, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1, {"baseTranslation":{"x":0, "y":0, "z":0}}],
+    ],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["hood_int", "", "f5rr","f5r","f6rr", "box", {"x":-0.08, "y":0.08, "z":0.08}, {"x":45, "y":0, "z":-165}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.07, "y":0.0, "z":0.15}],
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],
+        ["hood_int", "action0", "hoodRelease"],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_CLOTH"},
+         {"selfCollision":true},
+         {"collision":true},
+
+         //interior flexbody
+         {"group":"bx_dash"},
+         {"nodeWeight":4.0},
+         ["dsh1rr",-0.6362,-0.4338,0.8717],
+         ["dsh1r",-0.2233,-0.4476,0.9408],
+         ["dsh1l",0.2233,-0.4338,0.8717],
+         ["dsh1ll",0.6362,-0.4338,0.8717],
+
+         ["dsh2rr",-0.6362,-0.4038,0.7207],
+         ["dsh2r",-0.2233,-0.4038,0.7207],
+         ["dsh2l",0.2233,-0.4038,0.7207],
+         ["dsh2ll",0.6362,-0.4038,0.7207],
+
+         ["dsh3r",-0.0901,-0.2587,0.6352],
+         ["dsh3l",0.0901,-0.2587,0.6352],
+
+
+         //steering column
+         {"group":"bx_column"},
+         {"nodeWeight":2.0},
+         ["stc1",-0.3426,-0.5404,0.735],
+         ["stc2",-0.5085,-0.5404,0.735],
+         ["stc3",-0.3426,-0.29, 0.78],
+    ],
+    "torsionbars":[
+       ["id1:", "id2:", "id3:", "id4:"],
+        //rigify the column
+        {"spring":20000, "damp":1, "deform":18000, "strength":28000},
+        ["stc3", "stc1", "stc2", "f5r"],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //dashboard maine shape
+          {"beamSpring":2001000,"beamDamp":50},
+          {"beamDeform":28000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.1},
+          ["dsh1ll", "dsh2ll"],
+          ["dsh1l", "dsh2l"],
+          ["dsh1r", "dsh2r"],
+          ["dsh1rr", "dsh2rr"],
+          ["dsh2r", "dsh3r"],
+          ["dsh2l", "dsh3l"],
+          ["dsh1ll", "dsh1l"],
+          ["dsh1l", "dsh1r"],
+          ["dsh1r", "dsh1rr"],
+          ["dsh2ll", "dsh2l"],
+          ["dsh2l", "dsh2r"],
+          ["dsh2r", "dsh2rr"],
+          ["dsh3l", "dsh3r"],
+          ["f6ll", "dsh1ll"],
+          ["f6l", "dsh1l"],
+          ["f6r", "dsh1r"],
+          ["f6rr", "dsh1rr"],
+          ["f5rr", "dsh2rr"],
+          ["f5r", "dsh2r"],
+          ["f5l", "dsh2l"],
+          ["f5ll", "dsh2ll"],
+
+          //crossing
+          {"beamDeform":16000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":""},
+          ["f6ll", "dsh1l"],
+          ["dsh1ll", "f6l"],
+          ["dsh1l", "f6r"],
+          ["f6l", "dsh1r"],
+          ["dsh1r", "f6rr"],
+          ["f6r", "dsh1rr"],
+          ["dsh2r", "dsh1rr"],
+          ["dsh2rr", "dsh1r"],
+          ["dsh2r", "dsh1l"],
+          ["dsh2l", "dsh1r"],
+          ["dsh1l", "dsh2ll"],
+          ["dsh2l", "dsh1ll"],
+          ["dsh1ll", "f5ll"],
+          ["dsh2ll", "f6ll"],
+          ["dsh1rr", "f5rr"],
+          ["dsh2rr", "f6rr"],
+          ["dsh1r", "f5r"],
+          ["dsh2r", "f6r"],
+          ["dsh1l", "f5l"],
+          ["dsh2l", "f6l"],
+          ["dsh2ll", "f5l"],
+          ["f5ll", "dsh2l"],
+          ["dsh2l", "f5r"],
+          ["dsh2r", "f5l"],
+          ["dsh2r", "f5rr"],
+          ["dsh2rr", "f5r"],
+          {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+          ["dsh3l", "f3l"],
+          ["dsh3r", "f3r"],
+
+          //rigids
+          {"beamDeform":14000,"beamStrength":"FLT_MAX"},
+          ["dsh2ll", "dsh2r"],
+          ["dsh2l", "dsh2rr"],
+          ["dsh1ll", "dsh1r"],
+          ["dsh1l", "dsh1rr"],
+          ["dsh1l", "dsh3l"],
+          ["dsh3r", "dsh1r"],
+
+          //extra attach
+          {"beamDeform":9000,"beamStrength":"FLT_MAX"},
+          ["dsh2l", "dsh3r"],
+          ["dsh2r", "dsh3l"],
+          ["f6rr", "dsh2r"],
+          ["f6ll", "dsh2l"],
+
+          ["dsh3r", "f7l"],
+          ["dsh3r", "f5l"],
+          ["dsh3r", "f5r"],
+          ["dsh3r", "f7r"],
+          ["dsh3r", "f2l"],
+          ["dsh3r", "f1l"],
+          ["dsh3r", "f1r"],
+          ["dsh3r", "f2r"],
+
+          ["dsh3l", "f7l"],
+          ["dsh3l", "f5l"],
+          ["dsh3l", "f5r"],
+          ["dsh3l", "f7r"],
+          ["dsh3l", "f2l"],
+          ["dsh3l", "f1l"],
+          ["dsh3l", "f1r"],
+          ["dsh3l", "f2r"],
+
+          //steering column
+          {"beamSpring":2501000,"beamDamp":50},
+          {"beamDeform":38000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.1},
+          ["stc2", "stc1"],
+          ["stc1", "stc3"],
+          ["stc3", "stc2"],
+
+          //attach
+          {"beamDeform":21000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":""},
+          ["stc2", "dsh2r"],
+          ["stc2", "dsh1r"],
+          ["stc2", "dsh2rr"],
+          ["stc2", "dsh1rr"],
+          ["stc1", "dsh2rr"],
+          ["stc1", "dsh1rr"],
+          ["stc1", "dsh2r"],
+          ["stc1", "dsh1r"],
+
+          ["stc1", "f6r"],
+          ["stc1", "f5r"],
+          ["stc1", "f6rr"],
+          ["stc1", "f5rr"],
+
+          ["stc2", "f6r"],
+          ["stc2", "f5r"],
+          ["stc2", "f6rr"],
+          ["stc2", "f5rr"],
+
+          //damper
+          {"beamSpring":0,"beamDamp":550},
+          ["stc3", "dsh2rr"],
+          ["stc3", "dsh2r"],
+          ["stc3", "dsh1r"],
+          ["stc3", "dsh1rr"],
+          ["stc3", "dsh3r"],
+    ],
+    "triangles":[
+        ["id1:", "id2:", "id3:"],
+        {"groundModel":"plastic"},
+        //Dashboard
+        {"dragCoef":0},
+        ["dsh1ll", "dsh2ll", "dsh1l"],
+        ["dsh1l", "dsh2ll", "dsh2l"],
+        ["dsh1l", "dsh2l", "dsh2r"],
+        ["dsh2r", "dsh1r", "dsh1l"],
+        ["dsh1r", "dsh2r", "dsh2rr"],
+        ["dsh2rr", "dsh1rr", "dsh1r"],
+        ["dsh2l", "dsh3l", "dsh3r"],
+        ["dsh3r", "dsh2r", "dsh2l"],
+
+        ["dsh1r", "f6r", "f6l"],
+        ["f6l", "dsh1l", "dsh1r"],
+
+        ["dsh1rr", "f6rr",   "f6r"],
+        ["f6r",    "dsh1r",  "dsh1rr"],
+        ["dsh2r",  "f5r",    "dsh2rr"],
+        ["dsh2rr", "f5r",    "f5rr"],
+        ["dsh2rr", "f5rr",   "f6rr"],
+        ["dsh1rr", "dsh2rr", "f6rr"],
+        ["dsh2r",  "dsh3r",  "f5r"],
+
+        ["f6ll",   "dsh1ll", "f6l"],
+        ["dsh1l",  "f6l",    "dsh1ll"],
+        ["f5l",    "dsh2l",  "dsh2ll"],
+        ["f5l",    "dsh2ll", "f5ll"],
+        ["f5ll",   "dsh2ll", "f6ll"],
+        ["dsh2ll", "dsh1ll", "f6ll"],
+        ["dsh3l",  "dsh2l",  "f5l"],
+
+        ["dsh3r", "dsh3l", "f5l"],
+        ["f5l", "f5r", "dsh3r"],
+    ],
+},
+"bx_pedalbox_race_rhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Pedalbox",
+        "value":10,
+    },
+    "slotType" : "bx_pedalbox_rhd",
+    "slots": [
+        ["type", "default", "description"],
+        ["bx_pedalbox_clutch","bx_pedalbox_clutch", "Clutch Pedal"],
+        ["bx_pedalbox_pads","bx_pedalbox_pads", "Pedal Pads", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["grp_padalbox_footplate", ["pedalbox"],  [],{"pos":{"x":-0.37,"y": -0.57,"z":0.32}, "scale":{"x":1.0, "y":1.0, "z":1.5}}],
+    ],
+
+    "props": [
+        ["func",       "mesh",               "idRef:", "idX:", "idY:",  "baseRotation",            "rotation",               "translation",          "min", "max", "offset", "multiplier"],
+        //pedals
+        ["dummy",        "grp_pedalbox_base",  "pb_1r","pb_1l","pb_2r",                {"x":90, "y":0, "z":0} , {"x":0 "y":0, "z":0},     {"x":0, "y":0.0, "z":0}, 0, 1, 0, 1, {"baseTranslation":{"x":0.13, "y":0.08, "z":-0.000}}],
+        ["dummy",        "grp_padalbox_line_clutch",  "pb_1r","pb_1l","pb_2r",                {"x":90, "y":0, "z":0} , {"x":0 "y":0, "z":0},     {"x":0, "y":0.0, "z":0}, 0, 1, 0, 1, {"baseTranslation":{"x":0.13, "y":0.08, "z":-0.000}}],
+        ["dummy",        "grp_padalbox_line_brake2",  "pb_1r","pb_1l","pb_2r",                {"x":90, "y":0, "z":0} , {"x":0 "y":0, "z":0},     {"x":0, "y":0.0, "z":0}, 0, 1, 0, 1, {"baseTranslation":{"x":0.13, "y":0.08, "z":-0.000}}],
+        ["throttle",     "grp_pedalbox_gas_arm",  "pb_1r","pb_1l","pb_2r",             {"x":90, "y":0, "z":0} , {"x":8 "y":0, "z":0},     {"x":0, "y":0.0, "z":0}, 0, 1, 0, 1, {"baseTranslation":{"x":0.042, "y":0.08, "z":-0.019}}],
+        ["throttle",     "grp_pedalbox_gas_arm_2",  "pb_1r","pb_1l","pb_2r",           {"x":90, "y":0, "z":0} , {"x":30, "y":0, "z":0},   {"x":0, "y":0.0, "z":0}, 0, 1, 0, 1, {"baseTranslation":{"x":0.048, "y":0.023, "z":-0.087}}],
+        ["throttle",     "grp_pedalbox_gas_rod_prop",  "pb_1r","pb_1l","pb_2r",        {"x":90, "y":0, "z":0} , {"x":15, "y":0, "z":0},   {"x":0, "y":-0.04, "z":0.001}, 0, 1, 0, 1, {"baseTranslation":{"x":0.055, "y":0.067, "z":-0.1095}}],
+        ["brake",        "grp_pedalbox_brake_arm",  "pb_1r","pb_1l","pb_2r",           {"x":90, "y":0, "z":0} , {"x":8 "y":0, "z":0},     {"x":0, "y":0.0, "z":0}, 0, 1, 0, 1, {"baseTranslation":{"x":0.13, "y":0.08, "z":-0.019}}],
+        ["brake",        "grp_pedalbox_brake_rod1_prop",  "pb_1r","pb_1l","pb_2r",     {"x":90, "y":0, "z":0} , {"x":-2, "y":0, "z":0},   {"x":0, "y":-0.017, "z":0.001}, 0, 1, 0, 1, {"baseTranslation":{"x":0.105, "y":0.078, "z":-0.051}}],
+        ["brake",        "grp_pedalbox_brake_rod2_prop",  "pb_1r","pb_1l","pb_2r",     {"x":90, "y":0, "z":0} , {"x":-2, "y":0, "z":0},   {"x":0, "y":-0.017, "z":0.001}, 0, 1, 0, 1, {"baseTranslation":{"x":0.157, "y":0.078, "z":-0.051}}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":false},
+         {"selfCollision":false},
+
+         //--PEDALBOX----
+         {"group":"pedalbox"},
+         {"nodeWeight":0.4},
+         ["pb_1r", -0.49, -0.65, 0.32],
+         ["pb_1l", -0.23, -0.65, 0.32],
+         ["pb_2r", -0.49, -0.40, 0.32],
+         ["pb_2l", -0.23, -0.40, 0.32],
+         {"group":""},
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //pedal box main shape
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":282000,"beamDamp":50},
+        {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+        ["pb_1l", "pb_2l"],
+        ["pb_1r", "pb_2r"],
+        ["pb_1l", "pb_1r"],
+        ["pb_2l", "pb_2r"],
+
+        ["pb_1l", "pb_2r"],
+        ["pb_1r", "pb_2l"],
+        //pbox to floor
+        {"beamSpring":282000,"beamDamp":50},
+        {"beamDeform":2000,"beamStrength":40000,"deformLimit":1.5},
+        ["pb_1l", "f2rr"],
+        ["pb_1r", "f2rr"],
+        ["pb_2l", "f2rr"],
+        ["pb_2r", "f2rr"],
+        ["pb_1l", "f2r"],
+        ["pb_1r", "f2r"],
+        ["pb_2l", "f2r"],
+        ["pb_2r", "f2r"],
+
+        ["pb_1l", "f1rr"],
+        ["pb_1r", "f1rr"],
+        ["pb_2l", "f1rr"],
+        ["pb_2r", "f1rr"],
+        ["pb_1l", "f1r"],
+        ["pb_1r", "f1r"],
+        ["pb_2l", "f1r"],
+        ["pb_2r", "f1r"],
+
+        ["pb_1l", "f5rr"],
+        ["pb_1r", "f5rr"],
+        ["pb_1l", "f5r"],
+        ["pb_1r", "f5r"],
+
+        ["pb_2l", "f5rr"],
+        ["pb_2r", "f5rr"],
+        ["pb_2l", "f5r"],
+        ["pb_2r", "f5r"],
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0,,"deformLimit":""},
+        {"deformLimitExpansion":""},
+        {"deformGroup":""},
+    ],
+},
+"bx_shifter_M_race_rhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Manual Shifter",
+        "value":60,
+    },
+    "slotType" : "bx_shifter_race_rhd",
+    "slots":[
+        ["type", "default", "description"],
+        ["bx_handbrake_race","bx_handbrake_race_a", "Hydraulic Handbrake"],
+
+    ],
+    "controller": [
+        ["fileName"],
+        ["propAnimation/hPattern", {"name":"hPattern"}],
+    ]
+    "hPattern": {
+        "gearCoordinates": [
+            ["gearIndex",   "x",      "y"]
+            [-1,            -1,       0.65]
+            [0,             0.0,    -0.25]
+            [1,             -0.65,   0.65]
+            [2,             -0.65,   -0.90]
+            [3,             0.0,    0.65]
+            [4,             0.0,    -0.90]
+            [5,             0.65,        0.65]
+            [6,             0.65,        -0.90]
+        ]
+        "shiftSoundNode:":["sh_b5"]
+        "shiftSoundEventHPatternGearIn":  "event:>Vehicle>Interior>Gearshift>manual_modern_09_in",
+        "shiftSoundEventHPatternGearOut": "event:>Vehicle>Interior>Gearshift>manual_modern_09_out",
+        "shiftSoundVolumeHPatternGearIn": 0.5,
+        "shiftSoundVolumeHPatternGearOut": 0.5,
+    },
+    "soundscape": [
+        ["name", "src"],
+        //handbrake8
+        {"node:":"sh_b3"},
+        ["handbrakeDisengaged","event:>Vehicle>Interior>Handbrake_Race>Race_01_Unlock"],
+        ["handbrakeEngaging","event:>Vehicle>Interior>Handbrake_Race>Race_01_Lock"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["grp_stand_plate", ["shifter_body","bx_floor"], [], {"pos":{"x": -0.03, "y":-0.22, "z":0.47}, "rot":{"x":0, "y":180, "z":0}, "scale":{"x":1.4, "y":1.2, "z":1.1}}],
+         ["grp_shifter_m_housing", ["shifter_body","bx_floor"], [], {"pos":{"x": -0.05, "y":-0.16, "z":0.585}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
+         ["grp_shifter_m_details", ["shifter_body","bx_floor"], [], {"pos":{"x": -0.05, "y":-0.16, "z":0.585}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
+         ["grp_shifter_m_sphere", ["shifter_lever"], [], {"pos":{"x": -0.05, "y":-0.16, "z":0.585}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
+         ["grp_shifter_m_stick", ["shifter_lever"], [], {"pos":{"x": -0.05, "y":-0.16, "z":0.585}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
+         ["grp_shifter_knob_a", ["shifter_lever"], [], {"pos":{"x": -0.05, "y":-0.16, "z":0.585}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":false},
+
+         //--SHIFTER---  has to be jbeamed to allow for realistic movement
+         {"group":"shifter_body"},
+         {"nodeWeight":0.45}
+         ["sh_b1",  0.00, -0.225, 0.575],
+         ["sh_b2", -0.10, -0.225, 0.575],
+         ["sh_b3",  0.00, -0.094, 0.575],
+         ["sh_b4", -0.10, -0.094, 0.575],
+
+         ["sh_b5", -0.05, -0.16, 0.5415],
+         {"selfCollision":true},
+         {"group":"shifter_lever"},
+         {"nodeWeight":0.5}
+         ["sh_l1", -0.05, -0.16, 0.765],
+         {"selfCollision":false},
+         {"nodeWeight":0.30}
+         {"group":["shifter_lever"]},
+         ["sh_l2", -0.03, -0.19, 0.675],
+         ["sh_l3", -0.07, -0.19, 0.675],
+         ["sh_l4", -0.03, -0.13, 0.675],
+         ["sh_l5", -0.07, -0.13, 0.675],
+         {"group":""},
+    ],
+     "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //main shape
+        {"beamSpring":401000,"beamDamp":55},
+        {"beamDeform":259000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        ["sh_b1", "sh_b2"],
+        ["sh_b1", "sh_b3"],
+        ["sh_b1", "sh_b4"],
+        ["sh_b2", "sh_b3"],
+        ["sh_b2", "sh_b4"],
+        ["sh_b3", "sh_b4"],
+
+        ["sh_b1", "sh_b5"],
+        ["sh_b2", "sh_b5"],
+        ["sh_b3", "sh_b5"],
+        ["sh_b4", "sh_b5"],
+        //lever
+        {"beamSpring":121000,"beamDamp":35},
+        ["sh_l1", "sh_l2"],
+        ["sh_l1", "sh_l3"],
+        ["sh_l1", "sh_l4"],
+        ["sh_l1", "sh_l5"],
+
+        ["sh_l2", "sh_l3"],
+        ["sh_l2", "sh_l4"],
+        ["sh_l2", "sh_l5"],
+
+        ["sh_l3", "sh_l4"],
+        ["sh_l3", "sh_l5"],
+        ["sh_l4", "sh_l5"],
+        //hinge
+        {"beamSpring":121000,"beamDamp":25},
+        ["sh_b5", "sh_l1"],
+        ["sh_b5", "sh_l2"],
+        ["sh_b5", "sh_l3"],
+        ["sh_b5", "sh_l4"],
+        ["sh_b5", "sh_l5"],
+
+        //stabilize the shifter
+        {"beamSpring":0,"beamDamp":175},
+        ["sh_b1", "sh_l1"],
+        ["sh_b2", "sh_l1"],
+        ["sh_b3", "sh_l1"],
+        ["sh_b4", "sh_l1"],
+        {"breakGroup":""},
+        //attach to body
+        {"beamSpring":300000,"beamDamp":70},
+        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+        ["sh_b1", "f7r"],
+        ["sh_b2", "f7r"],
+        ["sh_b3", "f7r"],
+        ["sh_b4", "f7r"],
+        ["sh_b5", "f7r"],
+
+        ["sh_b1", "f7l"],
+        ["sh_b2", "f7l"],
+        ["sh_b3", "f7l"],
+        ["sh_b4", "f7l"],
+        ["sh_b5", "f7l"],
+
+        ["sh_b1", "f2r"],
+        ["sh_b2", "f2r"],
+        ["sh_b3", "f2r"],
+        ["sh_b4", "f2r"],
+        ["sh_b5", "f2r"],
+
+        ["sh_b1", "f2l"],
+        ["sh_b2", "f2l"],
+        ["sh_b3", "f2l"],
+        ["sh_b4", "f2l"],
+        ["sh_b5", "f2l"],
+
+        ["sh_b1", "f1r"],
+        ["sh_b2", "f1r"],
+        ["sh_b3", "f1r"],
+        ["sh_b4", "f1r"],
+        ["sh_b5", "f1r"],
+
+        ["sh_b1", "f1l"],
+        ["sh_b2", "f1l"],
+        ["sh_b3", "f1l"],
+        ["sh_b4", "f1l"],
+        ["sh_b5", "f1l"],
+
+        //support beams
+        {"beamType":"|SUPPORT","beamPrecompression":0.88,"beamLongBound":2},
+        {"beamSpring":201000,"beamDamp":50},
+        {"beamDeform":16000,"beamStrength":"FLT_MAX"},
+        ["sh_l3", "sh_b3"],
+        ["sh_l5", "sh_b1"],
+        ["sh_l4", "sh_b2"],
+        ["sh_l2", "sh_b4"],
+        {"beamPrecompression":0.905}
+        ["sh_l1", "sh_b1"],
+        ["sh_l1", "sh_b2"],
+        ["sh_l1", "sh_b3"],
+        ["sh_l1", "sh_b4"],
+        {"beamPrecompression":1,"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":""},
+    ],
+    "torsionHydros": [
+        ["id1:","id2:","id3:","id4:"],
+        {"spring":200, "damp":1, "deform":"FLT_MAX", "strength":1000},
+        ["sh_b3","sh_b1","sh_b2","sh_l1",  {"inputSource":"hPatternAxisY","factor":-0.25}],
+        ["sh_b2","sh_b1","sh_b3","sh_l1",  {"inputSource":"hPatternAxisX","factor":-0.30}],
+        ["sh_b2","sh_b4","sh_b3","sh_l1",  {"inputSource":"hPatternAxisY","factor":0.25}],
+        ["sh_b3","sh_b4","sh_b2","sh_l1",  {"inputSource":"hPatternAxisX","factor":0.30}],
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        {"spring":100, "damp":0.2, "deform":30000, "strength":1000},
+        ["sh_b2", "sh_b5", "sh_l1", "sh_l3"],
+        ["sh_b4", "sh_b5", "sh_l1", "sh_l5"],
+        ["sh_b3", "sh_b5", "sh_l1", "sh_l4"],
+        ["sh_b1", "sh_b5", "sh_l1", "sh_l2"]
+
+    ],
+},
+"bx_shifter_race_A_rhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Automatic Shifter",
+        "value":60,
+    },
+    "slotType" : "bx_shifter_race_rhd",
+    "slots":[
+        ["type", "default", "description"],
+        ["bx_handbrake_race","bx_handbrake_race_a", "Hydraulic Handbrake"],
+
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["grp_stand_plate", ["bx_stand"], [], {"pos":{"x": 0.015, "y":-0.15, "z":0.46}, "rot":{"x":3, "y":180, "z":180}, "scale":{"x":1.3, "y":1.2, "z":1.2}}],
+
+    ],
+    "controller": [
+        ["fileName"],
+        ["propAnimation/singleAxisLever", {"name":"singleAxisLever"}],
+
+    ]
+    "singleAxisLever": {
+        "gearCoordinates": [
+            ["gearIndex",   "value"]
+            [1,            0.0]
+            [2,             0.2]
+            [3,             0.4]
+            [4,             0.6]
+            [5,             0.8]
+            [6,             1]
+        ]
+        "shiftSoundNode:":["st_1r"]
+        "shiftSoundEventSingleAxisLever": "event:>Vehicle>Interior>Gearshift>automatic_04",
+        "shiftSoundVolumeSingleAxisLever": 0.5,
+    },
+    "soundscape": [
+        ["name", "src"],
+        //handbrake8
+        {"node:":"st_2r"},
+        ["handbrakeDisengaged","event:>Vehicle>Interior>Handbrake_Race>Race_01_Unlock"],
+        ["handbrakeEngaging","event:>Vehicle>Interior>Handbrake_Race>Race_01_Lock"],
+    ],
+    "props": [
+        ["func",           "mesh",               "idRef:", "idX:", "idY:","baseRotation",           "rotation",              "translation",         "min", "max", "offset", "multiplier"],
+        //automatic shifter
+        ["nop",           "grp_rs_housing",      "st_1r","st_1l","st_2r", {"x":90, "y":0, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1,  {"baseTranslation":{"x":-0.03, "y":0.19, "z":-0.04}}],
+        ["gearModeIndex", "grp_rs_handle_lock",  "st_1r","st_1l","st_2r", {"x":125, "y":0, "z":0}, {"x":-52, "y":0, "z":0},  {"x":0, "y":0.0, "z":0}, -1, 1, 0, 1, {"baseTranslation":{"x":-0.043, "y":0.19, "z":-0.04}}],
+        ["gearModeIndex", "grp_rs_handle",       "st_1r","st_1l","st_2r", {"x":125, "y":0, "z":0}, {"x":-52, "y":0, "z":0},  {"x":0, "y":0.0, "z":0}, -1, 1, 0, 1, {"baseTranslation":{"x":-0.043, "y":0.19, "z":-0.04}}]
+    ],
+     "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":true},
+         {"group":"bx_stand"},
+         {"nodeWeight":0.6},
+         ["st_1r", -0.02, -0.33, 0.47],
+         ["st_1l", 0.1, -0.33, 0.47],
+
+         ["st_2r", -0.02, -0.21, 0.465],
+         {"group":""},
+    ],
+     "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //stand main shape
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":282000,"beamDamp":50},
+        {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+        ["st_1r", "st_2r"],
+        ["st_1l", "st_1r"],
+        ["st_1l", "st_2r"],
+        //stand to floor
+        {"beamSpring":282000,"beamDamp":50},
+        {"beamDeform":2000,"beamStrength":40000,"deformLimit":1.5},
+        ["st_1l", "f2r"],
+        ["st_1r", "f2r"],
+        ["st_2r", "f2r"],
+        ["st_1l", "f2l"],
+        ["st_1r", "f2l"],
+        ["st_2r", "f2l"],
+
+        ["st_1l", "f1r"],
+        ["st_1r", "f1r"],
+        ["st_2r", "f1r"],
+        ["st_1l", "f1l"],
+        ["st_1r", "f1l"],
+        ["st_2r", "f1l"],
+
+        ["st_1l", "f5r"],
+        ["st_1r", "f5r"],
+        ["st_1l", "f5l"],
+        ["st_1r", "f5l"],
+
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":""},
+    ],
+},
+"bx_shifter_race_sq_rhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sequential Shifter",
+        "value":60,
+    },
+    "slotType" : "bx_shifter_race_rhd",
+    "slots":[
+        ["type", "default", "description"],
+        ["bx_shiftknob_sq_rhd","bx_shiftknob_sq_rhd", "Shift knob", {"coreSlot":true}],
+        ["bx_handbrake_race","bx_handbrake_race_a", "Hydraulic Handbrake"],
+
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["grp_stand_plate", ["bx_stand"], [], {"pos":{"x": -0.05, "y":-0.25, "z":0.47}, "rot":{"x":0, "y":180, "z":0}, "scale":{"x":1.1, "y":1.0, "z":1.0}}],
+
+    ],
+    "controller": [
+        ["fileName"],
+        ["propAnimation/sequentialLever", {"name":"sequentialLever"}],
+    ]
+    "soundscape": [
+        ["name", "src"],
+        //handbrake8
+        {"node:":"st_2r"},
+        ["handbrakeDisengaged","event:>Vehicle>Interior>Handbrake_Race>Race_01_Unlock"],
+        ["handbrakeEngaging","event:>Vehicle>Interior>Handbrake_Race>Race_01_Lock"],
+    ],
+    "sequentialLever": {
+        "shiftSoundNode:":["st_1r"],
+        "shiftSoundEventSequentialGearUp": "event:>Vehicle>Interior>Gearshift>sequential_03_out",
+        "shiftSoundEventSequentialGearDown": "event:>Vehicle>Interior>Gearshift>sequential_03_in",
+        "shiftSoundVolumeSequentialGearUp": 0.5,
+        "shiftSoundVolumeSequentialGearDown": 0.5,
+    }
+    "props": [
+        ["func",       "mesh",               "idRef:", "idX:", "idY:",  "baseRotation",            "rotation",               "translation",          "min", "max", "offset", "multiplier"],
+        //pedals
+        ["dummy",     "grp_shifter_sq_housing",      "st_1r","st_1l","st_2r",        {"x":90, "y":180, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1,   {"baseTranslation":{"x":-0.02, "y":0.12, "z":-0.097}}],
+        ["dummy",     "grp_shifter_sq_cablemount",   "st_1r","st_1l","st_2r",        {"x":90, "y":180, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1,   {"baseTranslation":{"x":-0.02, "y":0.12, "z":-0.097}}],
+        ["dummy",     "grp_cable_M",                 "st_1r","st_1l","st_2r",        {"x":90, "y":180, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1,   {"baseTranslation":{"x":-0.02, "y":0.12, "z":-0.097}}],
+        ["sequentialLeverY",  "grp_shifter_sq_lever",     "st_1r","st_1l","st_2r",   {"x":90, "y":180, "z":0}, {"x":-10, "y":0, "z":0}, {"x":0, "y":0.0, "z":0}, -1, 1, 0, 1,  {"baseTranslation":{"x":-0.02, "y":0.12, "z":-0.097}}],
+        ["sequentialLeverY",  "grp_shifter_sq_rod",       "st_1r","st_1l","st_2r",   {"x":90, "y":180, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.06, "z":0}, -1, 1, 0, 1, {"baseTranslation":{"x":-0.02, "y":0.12, "z":-0.027}}],
+    ],
+     "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":true},
+         {"group":"bx_stand"},
+         {"nodeWeight":0.6},
+         ["st_1r", -0.040, -0.33, 0.47],
+         ["st_1l", 0.08, -0.33, 0.47],
+
+         ["st_2r", -0.040, -0.21, 0.47],
+         {"group":""},
+    ],
+     "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //stand main shape
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":282000,"beamDamp":50},
+        {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+        ["st_1r", "st_2r"],
+        ["st_1l", "st_1r"],
+        ["st_1l", "st_2r"],
+        //stand to floor
+        {"beamSpring":282000,"beamDamp":50},
+        {"beamDeform":2000,"beamStrength":40000,"deformLimit":1.5},
+        ["st_1l", "f2r"],
+        ["st_1r", "f2r"],
+        ["st_2r", "f2r"],
+        ["st_1l", "f2l"],
+        ["st_1r", "f2l"],
+        ["st_2r", "f2l"],
+
+        ["st_1l", "f1r"],
+        ["st_1r", "f1r"],
+        ["st_2r", "f1r"],
+        ["st_1l", "f1l"],
+        ["st_1r", "f1l"],
+        ["st_2r", "f1l"],
+
+        ["st_1l", "f5r"],
+        ["st_1r", "f5r"],
+        ["st_1l", "f5l"],
+        ["st_1r", "f5l"],
+
+
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":""},
+    ],
+},
+"bx_shiftknob_sq_rhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Ball",
+        "value":60,
+    },
+    "slotType" : "bx_shiftknob_sq_rhd",
+    "props": [
+        ["func",       "mesh",               "idRef:", "idX:", "idY:",  "baseRotation",            "rotation",               "translation",          "min", "max", "offset", "multiplier"],
+        //pedals
+        ["sequentialLeverY",     "grp_shifter_knob_a",  "st_1r","st_1l","st_2r",         {"x":90, "y":180, "z":0} , {"x":-10, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, -1, 1, 0, 1, {"baseTranslation":{"x":-0.02, "y":0.12, "z":-0.097}, "optional":true}],
+    ],
+},
+"bx_shiftknob_sq_rhd_b": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Cylinder",
+        "value":60,
+    },
+    "slotType" : "bx_shiftknob_sq_rhd",
+    "slots":[
+        ["type", "default", "description"],
+        ["bx_shiftknob_sq_b_padding_rhd","bx_shiftknob_sq_b_padding_rhd", "Shift Padding"],
+
+    ],
+    "props": [
+        ["func",       "mesh",               "idRef:", "idX:", "idY:",  "baseRotation",            "rotation",               "translation",          "min", "max", "offset", "multiplier"],
+        //pedals
+        ["sequentialLeverY",     "grp_shifter_knob_b",  "st_1r","st_1l","st_2r",         {"x":90, "y":180, "z":0} , {"x":-10, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, -1, 1, 0, 1, {"baseTranslation":{"x":-0.02, "y":0.12, "z":-0.097}, "optional":true}],
+    ],
+},
+"bx_shiftknob_sq_b_padding_rhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Padding",
+        "value":60,
+    },
+    "slotType" : "bx_shiftknob_sq_b_padding_rhd",
+    "props": [
+        ["func",       "mesh",               "idRef:", "idX:", "idY:",  "baseRotation",            "rotation",               "translation",          "min", "max", "offset", "multiplier"],
+        //pedals
+        ["sequentialLeverY",     "grp_shifter_knob_b2",  "st_1r","st_1l","st_2r",         {"x":90, "y":180, "z":0} , {"x":-10, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, -1, 1, 0, 1, {"baseTranslation":{"x":-0.02, "y":0.12, "z":-0.097}, "optional":true}],
+    ],
+},
+"bx_dragbuttons_rhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Drag Controls",
+        "value":60,
+    },
+    "slotType" : "bx_dragbuttons_rhd",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_grp_buttons_drag_rhd", ["bx_dash"]],
+    ],
+},
+}

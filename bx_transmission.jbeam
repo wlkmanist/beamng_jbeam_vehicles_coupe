@@ -1,0 +1,536 @@
+{
+"bx_transmission_5M": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"5-Speed Manual Transmission",
+        "value":390,
+    },
+    "slotType" : "bx_transmission",
+    "slots": [
+        ["type", "default","description"],
+        ["bx_flywheel","bx_flywheel","Flywheel", {"coreSlot":true}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-3.35, 0, 3.32, 1.90, 1.31, 1.00, 0.84],
+        "friction": 0.8,
+        "dynamicFriction": 0.00077,
+        "torqueLossCoef": 0.0155,
+        "gearboxNode:":["tra1"],
+
+        "gearWhineCoefsInput":  [0.60, 0.00, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12],
+        "gearWhineCoefsOutput": [0.00, 0.00, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24],
+        "gearWhineInputEvent": "event:>Vehicle>Transmission>helical_01>twine_in",
+        "gearWhineOutputEvent": "event:>Vehicle>Transmission>helical_01>twine_out",
+
+        //"forwardInputPitchCoef":1
+        //"forwardOutputPitchCoef":1
+        //"reverseInputPitchCoef":0.7
+        //"reverseOutputPitchCoef":0.7
+
+        //"gearWhineInputPitchCoefSmoothing":50
+        //"gearWhineOutputPitchCoefSmoothing":50
+        //"gearWhineInputVolumeCoefSmoothing":10
+        //"gearWhineOutputVolumeCoefSmoothing":10
+
+        //"gearWhineFixedCoefOutput": 0.7
+        //"gearWhineFixedCoefInput": 0.4
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "lowShiftDownRPM":[0,0,0,1600,1900,1700,1600],
+        "lowShiftUpRPM":[0,0,3400,2800,2700,2600],
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_transmission", ["bx_engine","bx_transmission"]],
+        ["bx_transmission_brace", ["bx_engine","bx_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":"bx_transmission"},
+         {"nodeWeight":19},
+         ["tra1", 0.0, -0.09, 0.32],
+         {"group":""},
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1,"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //--TRANSMISSION CONE--
+        {"beamSpring":7700550,"beamDamp":125},
+        {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+        ["tra1","e1r"],
+        ["tra1","e3r"],
+        ["tra1","e1l"],
+        ["tra1","e3l"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"bx_transmission_6M_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race 6-Speed Manual Transmission",
+        "value":4400,
+    },
+    "slotType" : "bx_transmission",
+    "slots": [
+        ["type", "default","description"],
+        ["bx_flywheel","bx_flywheel_race","Flywheel", {"coreSlot":true}],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$gear_R", "range", ":1", "Transmission", 3.05, 0.5, 5, "Reverse Gear Ratio", "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_1", "range", ":1", "Transmission", 3.20, 0.5, 5, "1st Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_2", "range", ":1", "Transmission", 2.00, 0.5, 5, "2nd Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_3", "range", ":1", "Transmission", 1.45, 0.5, 5, "3rd Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_4", "range", ":1", "Transmission", 1.10, 0.5, 5, "4th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_5", "range", ":1", "Transmission", 0.90, 0.5, 5, "5th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_6", "range", ":1", "Transmission", 0.74, 0.5, 5, "6th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":["$=-$gear_R", 0, "$gear_1", "$gear_2", "$gear_3", "$gear_4", "$gear_5", "$gear_6"],
+        "friction": 1.2,
+        "dynamicFriction": 0.00115,
+        "torqueLossCoef": 0.013,
+        "gearboxNode:":["tra1"],
+
+        "gearWhineCoefsInput":  [0.66, 0.00, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33],
+        "gearWhineCoefsOutput": [0.00, 0.00, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66],
+        "gearWhineInputEvent": "event:>Vehicle>Transmission>straight_01>twine_in_race",
+        "gearWhineOutputEvent": "event:>Vehicle>Transmission>straight_01>twine_out_race",
+
+        //"forwardInputPitchCoef":1
+        //"forwardOutputPitchCoef":1
+        //"reverseInputPitchCoef":0.7
+        //"reverseOutputPitchCoef":0.7
+
+        //"gearWhineInputPitchCoefSmoothing":50
+        //"gearWhineOutputPitchCoefSmoothing":50
+        //"gearWhineInputVolumeCoefSmoothing":10
+        //"gearWhineOutputVolumeCoefSmoothing":10
+
+        //"gearWhineFixedCoefOutput": 0.7
+        //"gearWhineFixedCoefInput": 0.4
+    },
+    "clutch": {
+        "clutchFreePlay":0.3,
+    },
+    "vehicleController": {
+        "transmissionShiftDelay":0.14,
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.18,
+        //"aggressionSmoothingDown":0.05
+        "aggressionHoldOffThrottleDelay":3,
+        "lowShiftDownRPM":[0,0,0,2000,2600,2600,2600,2600],
+        "lowShiftUpRPM":[0,0,4200,4200,4050,3850,3700],
+        //"lowShiftDownRPM":[0,0,0,1600,1900,1800,1600,1500],
+        //"lowShiftUpRPM":[0,0,3400,3000,2900,2800,2700],
+        //"wheelSlipUpThreshold":100,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_transmission", ["bx_engine","bx_transmission"]],
+        ["bx_transmission_brace", ["bx_engine","bx_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":"bx_transmission"},
+         {"nodeWeight":19},
+         ["tra1", 0.0, -0.09, 0.32],
+         {"group":""},
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1,"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //--TRANSMISSION CONE--
+        {"beamSpring":7700550,"beamDamp":125},
+        {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+        ["tra1","e1r"],
+        ["tra1","e3r"],
+        ["tra1","e1l"],
+        ["tra1","e3l"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"bx_transmission_5M_sequential": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race 5-Speed Sequential Transmission",
+        "value":6450,
+    },
+    "slotType" : "bx_transmission",
+    "slots": [
+        ["type", "default","description"],
+        ["bx_flywheel","bx_flywheel","Flywheel", {"coreSlot":true}],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$gear_R", "range", ":1", "Transmission", 3.35, 0.5, 5, "Reverse Gear Ratio", "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_1", "range", ":1", "Transmission", 3.32, 0.5, 5, "1st Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_2", "range", ":1", "Transmission", 1.90, 0.5, 5, "2nd Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_3", "range", ":1", "Transmission", 1.31, 0.5, 5, "3rd Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_4", "range", ":1", "Transmission", 1.0, 0.5, 5, "4th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_5", "range", ":1", "Transmission", 0.84, 0.5, 5, "5th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["sequentialGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":["$=-$gear_R", 0, "$gear_1", "$gear_2", "$gear_3", "$gear_4", "$gear_5"],
+        //"gearRatios":[-3.35, 0, 3.32, 1.90, 1.31, 1.00, 0.84],
+        "friction": 1.2,
+        "dynamicFriction": 0.000115,
+        "torqueLossCoef": 0.012,
+        "gearboxNode:":["tra1"],
+
+        "gearWhineCoefsInput":  [0.66, 0.00, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33],
+        "gearWhineCoefsOutput": [0.00, 0.00, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66],
+        "gearWhineInputEvent": "event:>Vehicle>Transmission>straight_01>twine_in_race",
+        "gearWhineOutputEvent": "event:>Vehicle>Transmission>straight_01>twine_out_race",
+
+        //"forwardInputPitchCoef":1
+        //"forwardOutputPitchCoef":1
+        //"reverseInputPitchCoef":0.7
+        //"reverseOutputPitchCoef":0.7
+
+        //"gearWhineInputPitchCoefSmoothing":50
+        //"gearWhineOutputPitchCoefSmoothing":50
+        //"gearWhineInputVolumeCoefSmoothing":10
+        //"gearWhineOutputVolumeCoefSmoothing":10
+
+        //"gearWhineFixedCoefOutput": 0.7
+        //"gearWhineFixedCoefInput": 0.4
+    },
+    "clutch": {
+        "clutchFreePlay":0.75,
+        "lockSpringCoef":0.3,
+    },
+    "vehicleController": {
+        "calculateOptimalLoadshiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.17,
+        //"aggressionSmoothingDown":0.05
+        "aggressionHoldOffThrottleDelay":3,
+        //"lowShiftDownRPM":[0,0,0,1600,1900,1800,1600,1500],
+        //"lowShiftUpRPM":[0,0,3500,3300,3150,3000,2900],
+        "lowShiftDownRPM":[0,0,0,2000,2600,2600,2600,2600],
+        "lowShiftUpRPM":[0,0,4200,4200,4050,3850,3700],
+        //"wheelSlipUpThreshold":100,
+        "clutchLaunchStartRPM":3000,
+        "clutchLaunchTargetRPM":3000,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_transmission", ["bx_engine","bx_transmission"]],
+        ["bx_transmission_brace", ["bx_engine","bx_transmission"]],
+    ],
+    "sequentialLever": {
+        "shiftSoundNode:":["st_1r"],
+        "shiftSoundEventSequentialGearUp": "event:>Vehicle>Interior>Gearshift>sequential_03_out",
+        "shiftSoundEventSequentialGearDown": "event:>Vehicle>Interior>Gearshift>sequential_03_in",
+        "shiftSoundVolumeSequentialGearUp": 0.125,
+        "shiftSoundVolumeSequentialGearDown": 0.25,
+    }
+     "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":"bx_transmission"},
+         {"nodeWeight":19},
+         ["tra1", 0.0, -0.09, 0.32],
+         {"group":""},
+    ],
+     "beams":[
+        ["id1:", "id2:"],
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //--TRANSMISSION CONE--
+        {"beamSpring":7700550,"beamDamp":125},
+        {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+        ["tra1","e1r"],
+        ["tra1","e3r"],
+        ["tra1","e1l"],
+        ["tra1","e3l"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+
+},
+"bx_transmission_4A": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"4-Speed Automatic Transmission",
+        "value":1350,
+    },
+    "slotType" : "bx_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["bx_converter","bx_converter","Torque Converter", {"coreSlot":true}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-2.27, 0, 2.79, 1.54, 1.00, 0.695],
+        "gearChangeTime":0.2//min change time in box
+        "parkLockTorque":2000,
+        "oneWayViscousCoef":25,
+        "friction": 0.96,
+        "dynamicFriction": 0.00092,
+        "torqueLossCoef": 0.017,
+        "gearboxNode:":["tra1"],
+    },
+    "vehicleController": {
+        "automaticModes":"PRND21",
+        "useSmartAggressionCalculation":false,
+        "calculateOptimalLoadshiftPoints": false,
+        "transmissionGearChangeDelay":0.5,
+        //"shiftDownRPMOffsetCoef":1,
+        "gearboxDecisionSmoothingUp":5,
+        "gearboxDecisionSmoothingDown":0.2,
+        "maxGearChangeTime":0.45,//low load
+        "minGearChangeTime":0.2,//high load
+        "highShiftUpRPM":[0,0,6450,6450,6450],
+        "highShiftDownRPM":[0,0,0,2600,3500,3800],
+        "lowShiftUpRPM":[0,0,2250,2050,1900],
+        "lowShiftDownRPM":1400,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_transmission", ["bx_engine","bx_transmission"]],
+        ["bx_transmission_brace", ["bx_engine","bx_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":"bx_transmission"},
+         {"nodeWeight":15},
+         ["tra1", 0.0, -0.09, 0.32],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":7700550,"beamDamp":125},
+          {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"bx_transmission_4A_drag": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Drag 4-Speed Automatic Transmission",
+        "value":7600,
+    },
+    "slotType" : "bx_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["bx_converter_drag","bx_converter_drag_med","Torque Converter", {"coreSlot":true}],
+    ],
+    "controller": [
+        ["fileName"],
+        ["transbrake", {}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-2.29, 0, 3.06, 1.62, 1.00, 0.7],
+        "parkLockTorque":5000,
+        "oneWayViscousCoef":35,
+        "friction": 1.98,
+        "dynamicFriction": 0.00184,
+        "torqueLossCoef": 0.017,
+        "shiftEfficiency":0.75,
+        "gearChangeTime": 0.05,
+        "gearboxNode:":["tra1"],
+    },
+    "vehicleController": {
+        "automaticModes":"PRND21",
+        "calculateOptimalLoadshiftPoints": false,
+        "useSmartAggressionCalculation":false,
+        "transmissionGearChangeDelay":0.75,
+        "gearboxDecisionSmoothingUp":2,
+        "gearboxDecisionSmoothingDown":2,
+        "lowShiftDownRPM":1500,
+        "lowShiftUpRPM":3500,
+        "highShiftDownRPM":3000,
+        //effectively disabled
+        "wheelSlipUpThreshold":99999,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_transmission", ["bx_engine","bx_transmission"]],
+        ["bx_transmission_brace", ["bx_engine","bx_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":"bx_transmission"},
+         {"nodeWeight":15},
+         ["tra1", 0.0, -0.09, 0.32],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":7700550,"beamDamp":125},
+          {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"bx_converter": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Locking Torque Converter",
+        "value":150,
+    },
+    "slotType" : "bx_converter",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.259,
+        "converterStiffness":10,
+        "couplingAVRatio":0.91,
+        "stallTorqueRatio":2,
+        "lockupClutchTorque":200,
+        "additionalEngineInertia":0.12,
+    },
+    "vehicleController": {
+        "torqueConverterLockupRPM":1400,
+        "torqueConverterLockupMinGear":3,
+        "torqueConverterHasPartialLockup":false,
+        "torqueConverterLockupRate":2,
+        "torqueConverterLockupRange":150,
+    },
+},
+"bx_converter_drag_lo": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Low Stall Converter",
+        "value":400,
+    },
+    "slotType" : "bx_converter_drag",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter":0.295,
+        "converterStiffness":10,
+        "couplingAVRatio":0.9,
+        "stallTorqueRatio":1.7,
+        "additionalEngineInertia":0.18,
+    },
+},
+"bx_converter_drag_med": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Medium Stall Converter",
+        "value":400,
+    },
+    "slotType" : "bx_converter_drag",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter":0.275,
+        "converterStiffness":10,
+        "couplingAVRatio":0.9,
+        "stallTorqueRatio":1.85,
+        "additionalEngineInertia":0.17,
+    },
+},
+"bx_converter_drag_hi": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"High Stall Converter",
+        "value":400,
+    },
+    "slotType" : "bx_converter_drag",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter":0.255,
+        "converterStiffness":10,
+        "couplingAVRatio":0.9,
+        "stallTorqueRatio":1.7,
+        "additionalEngineInertia":0.16,
+    },
+},
+"bx_flywheel": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Flywheel",
+        "value":150,
+    },
+    "slotType" : "bx_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.10,
+        "clutchMass":4.5,
+    },
+},
+"bx_flywheel_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Ultra Light Flywheel",
+        "value":600,
+    },
+    "slotType" : "bx_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.02,
+        "clutchMass":3.25,
+    },
+},
+"bx_flywheel_light": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Lightened Flywheel",
+        "value":400,
+    },
+    "slotType" : "bx_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.05,
+        "clutchMass":4,
+    },
+},
+}

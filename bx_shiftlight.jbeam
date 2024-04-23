@@ -1,0 +1,130 @@
+{
+"bx_shiftlight_single_lhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Single Shift Light",
+        "value":210,
+    },
+    "slotType" : "bx_shiftlight_lhd",
+    "controller": [
+        ["fileName"],
+        ["shiftLights"],
+    ],
+    "shiftLights": {
+        "engineName":"mainEngine",
+        "maxEngineRPMOffset": 400,
+        "rpmRange": 1000,
+        "outputElectrics": ["led"],
+        "flashingOutputElectrics": ["led"],
+    },
+    "glowMap":{
+        "shiftlight_single_l0":    {"simpleFunction":{"led":1}, "off":"shiftlight_off", "on":"shiftlight_single_on"},
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["shiftlight", ["bx_dash"],[],{"pos":{"x":0.432,"y":-0.45,"z":0.8},"rot":{"x":12.1,"y":-6,"z":9}}],
+        ["shiftlight_light", ["bx_dash"],[],{"pos":{"x":0.432,"y":-0.45,"z":0.8},"rot":{"x":12.1,"y":-6,"z":9}}],
+    ],
+},
+"bx_shiftlight_single_rhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Single Shift Light",
+        "value":210,
+    },
+    "slotType" : "bx_shiftlight_rhd",
+    "controller": [
+        ["fileName"],
+        ["shiftLights"],
+    ],
+    "shiftLights": {
+        "engineName":"mainEngine",
+        "maxEngineRPMOffset": 400,
+        "rpmRange": 1000,
+        "outputElectrics": ["led"],
+        "flashingOutputElectrics": ["led"],
+    },
+    "glowMap":{
+        "shiftlight_single_l0":    {"simpleFunction":{"led":1}, "off":"shiftlight_off", "on":"shiftlight_single_on"},
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["shiftlight", ["bx_dash"],[],{"pos":{"x":-0.432,"y":-0.45,"z":0.8},"rot":{"x":12.1,"y":-6,"z":-9}}],
+        ["shiftlight_light", ["bx_dash"],[],{"pos":{"x":-0.432,"y":-0.45,"z":0.8},"rot":{"x":12.1,"y":-6,"z":-9}}],
+    ],
+},
+"bx_shiftlight_multi_lhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Progressive Shift Light",
+        "value":340,
+    },
+    "slotType" : "bx_shiftlight_race_lhd",
+    "controller": [
+        ["fileName"],
+        ["shiftLights"],
+    ],
+    "shiftLights": {
+        "engineName":"mainEngine",
+        "maxEngineRPMOffset": 400,
+        "rpmRange": 3000,
+        "keepLEDsActive": true,
+        "hasStallWarning": true,
+        "outputElectrics": ["led0", "led1", "led2", "led3", "led4", "led5", "led6", "led7"],
+        "flashingOutputElectrics": ["led6", "led7"],
+        "flashingAlternateOutputElectrics": [],
+    },
+    "glowMap":{
+        "shiftlight_multi_l0":     {"simpleFunction":{"led0":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l1":     {"simpleFunction":{"led1":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l2":     {"simpleFunction":{"led2":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l3":     {"simpleFunction":{"led3":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l4":     {"simpleFunction":{"led4":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l5":     {"simpleFunction":{"led5":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l6":     {"simpleFunction":{"led6":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l7":     {"simpleFunction":{"led7":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["shiftlight_multi", ["bx_dash"],[],           {"pos":{"x":0.345,"y":-0.412,"z":0.78},"rot":{"x":9.65,"y":0,"z":0},"scale":{"x":1,"y":1,"z":1}}],
+        ["shiftlight_multi_led_mirror", ["bx_dash"],[],{"pos":{"x":0.345,"y":-0.412,"z":0.78},"rot":{"x":9.65,"y":0,"z":0},"scale":{"x":1,"y":1,"z":1}}],
+    ],
+},
+"bx_shiftlight_multi_rhd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Progressive Shift Light",
+        "value":340,
+    },
+    "slotType" : "bx_shiftlight_race_rhd",
+    "controller": [
+        ["fileName"],
+        ["shiftLights"],
+    ],
+    "shiftLights": {
+        "engineName":"mainEngine",
+        "maxEngineRPMOffset": 400,
+        "rpmRange": 3000,
+        "keepLEDsActive": true,
+        "hasStallWarning": true,
+        "outputElectrics": ["led0", "led1", "led2", "led3", "led4", "led5", "led6", "led7"],
+        "flashingOutputElectrics": ["led6", "led7"],
+        "flashingAlternateOutputElectrics": [],
+    },
+    "glowMap":{
+        "shiftlight_multi_l0":     {"simpleFunction":{"led0":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l1":     {"simpleFunction":{"led1":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l2":     {"simpleFunction":{"led2":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l3":     {"simpleFunction":{"led3":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l4":     {"simpleFunction":{"led4":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l5":     {"simpleFunction":{"led5":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l6":     {"simpleFunction":{"led6":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+        "shiftlight_multi_l7":     {"simpleFunction":{"led7":1}, "off":"shiftlight_off", "on":"shiftlight_on"},
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["shiftlight_multi", ["bx_dash"],[],           {"pos":{"x":-0.345,"y":-0.412,"z":0.78},"rot":{"x":9.65,"y":0,"z":0},"scale":{"x":1,"y":1,"z":1}}],
+        ["shiftlight_multi_led_mirror", ["bx_dash"],[],{"pos":{"x":-0.345,"y":-0.412,"z":0.78},"rot":{"x":9.65,"y":0,"z":0},"scale":{"x":1,"y":1,"z":1}}],
+    ],
+},
+}

@@ -1,0 +1,365 @@
+{
+"bx_lettering_trunk_coupe_base_240bx": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"240BX Base Trunk Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_trunk_coupe",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_coupe_240bx", ["bx_trunk"]],
+         ["bx_lettering_coupe_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_trunk_coupe_base_200bx": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"200BX Base Trunk Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_trunk_coupe",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_coupe_200bx", ["bx_trunk"]],
+         ["bx_lettering_coupe_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_trunk_coupe_base_diana": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Diana Base Trunk Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_trunk_coupe",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_coupe_diana", ["bx_trunk"]],
+         ["bx_lettering_coupe_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_trunk_coupe_dx_240bx": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"240BX DX Trunk Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_trunk_coupe",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_coupe_240bx", ["bx_trunk"]],
+         ["bx_lettering_coupe_dx", ["bx_trunk"]],
+         ["bx_lettering_coupe_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_trunk_coupe_l_200bx": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"200BX Type-L Trunk Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_trunk_coupe",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_coupe_200bx", ["bx_trunk"]],
+         ["bx_lettering_coupe_l", ["bx_trunk"]],
+         ["bx_lettering_coupe_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_trunk_coupe_l_diana": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Diana Type-L Trunk Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_trunk_coupe",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_coupe_diana", ["bx_trunk"]],
+         ["bx_lettering_coupe_l", ["bx_trunk"]],
+         ["bx_lettering_coupe_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_trunk_coupe_lx_240bx": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"240BX LX Trunk Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_trunk_coupe",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_coupe_240bx", ["bx_trunk"]],
+         ["bx_lettering_coupe_lx", ["bx_trunk"]],
+         ["bx_lettering_coupe_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_trunk_coupe_ls_200bx": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"200BX Type-LS Trunk Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_trunk_coupe",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_coupe_200bx", ["bx_trunk"]],
+         ["bx_lettering_coupe_ls", ["bx_trunk"]],
+         ["bx_lettering_coupe_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_trunk_coupe_ls_diana": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Diana Type-LS Trunk Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_trunk_coupe",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_coupe_diana", ["bx_trunk"]],
+         ["bx_lettering_coupe_ls", ["bx_trunk"]],
+         ["bx_lettering_coupe_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_trunk_coupe_lxz_240bx": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"240BX LXz Trunk Lettering",
+        "value":100,
+    },
+    "slotType" : "bx_lettering_trunk_coupe",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_coupe_240bx", ["bx_trunk"]],
+         ["bx_lettering_coupe_lxz", ["bx_trunk"]],
+         ["bx_lettering_coupe_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_trunk_coupe_gtz_200bx": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"200BX GTz Trunk Lettering",
+        "value":150,
+    },
+    "slotType" : "bx_lettering_trunk_coupe",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_coupe_200bx", ["bx_trunk"]],
+         ["bx_lettering_coupe_gtz_turbo", ["bx_trunk"]],
+         ["bx_lettering_coupe_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_trunk_coupe_gtz_diana": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Diana GTz Trunk Lettering",
+        "value":150,
+    },
+    "slotType" : "bx_lettering_trunk_coupe",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_coupe_diana", ["bx_trunk"]],
+         ["bx_lettering_coupe_gtz_turbo", ["bx_trunk"]],
+         ["bx_lettering_coupe_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_tailgate_hatch_l": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Type-L Tailgate Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_tailgate_hatch",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_hatch_l", ["bx_trunk"]],
+         ["bx_lettering_hatch_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_tailgate_hatch_ls": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Type-LS Tailgate Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_tailgate_hatch",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_hatch_ls", ["bx_trunk"]],
+         ["bx_lettering_hatch_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_tailgate_hatch_dx": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"DX Tailgate Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_tailgate_hatch",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_hatch_dx", ["bx_trunk"]],
+         ["bx_lettering_hatch_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_tailgate_hatch_lx": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"LX Tailgate Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_tailgate_hatch",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_hatch_lx", ["bx_trunk"]],
+         ["bx_lettering_hatch_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_tailgate_hatch_lxz": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"LXz Tailgate Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_tailgate_hatch",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_hatch_lxz", ["bx_trunk"]],
+         ["bx_lettering_hatch_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_tailgate_hatch_gtz": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GTz Tailgate Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_tailgate_hatch",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_hatch_gtz_turbo", ["bx_trunk"]],
+         ["bx_lettering_hatch_ibishu", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_rearpanel_hatch_240bx": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"240BX Rear Panel Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_rearpanel_hatch",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_hatch_240bx", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_rearpanel_hatch_200bx": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"200BX Rear Panel Lettering",
+        "value":50,
+    },
+    "slotType" : "bx_lettering_rearpanel_hatch",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_hatch_200bx", ["bx_trunk"]],
+    ],
+},
+"bx_lettering_rearpanel_hatch_special": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"V-Special Rear Panel Lettering",
+        "value":150,
+    },
+    "slotType" : "bx_lettering_rearpanel_hatch",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_hatch_special", ["bx_trunk"]],
+    ],
+},
+"bx_badge_F_popup": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Badge",
+        "value":80,
+    },
+    "slotType" : "bx_lettering_F_popup",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_bumper_F_popup_ibishu", ["bx_bumper_F"]],
+    ],
+},
+"bx_badge_F_popup_kit_a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Badge",
+        "value":80,
+    },
+    "slotType" : "bx_lettering_F_popup_kit_a",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_bumper_F_popup_kit_a_ibishu", ["bx_bumper_F"]],
+    ],
+},
+"bx_badge_F_popup_kit_b": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Badge",
+        "value":80,
+    },
+    "slotType" : "bx_lettering_F_popup_kit_b",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_bumper_F_popup_kit_b_ibishu", ["bx_bumper_F"]],
+    ],
+},
+"bx_badge_F_hood_fixed_ibishu": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Hood Badge",
+        "value":100,
+    },
+    "slotType" : "bx_lettering_hood_fixed",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_hood_fixed_ibishu", ["bx_hood"]],
+     ],
+},
+"bx_badge_F_hood_fixed_diana": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Diana Front Hood Badge",
+        "value":150,
+    },
+    "slotType" : "bx_lettering_hood_fixed",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_hood_fixed_diana", ["bx_hood"]],
+     ],
+},
+"bx_badge_F_grille_fixed_ibishu": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Grille Badge",
+        "value":100,
+    },
+    "slotType" : "bx_lettering_grille_fixed",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_grille_fixed_ibishu", ["bx_grille_F", "bx_bumper_F"]],
+     ],
+},
+"bx_badge_F_grille_fixed_diana": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Diana Front Grille Badge",
+        "value":150,
+    },
+    "slotType" : "bx_lettering_grille_fixed",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lettering_grille_fixed_diana", ["bx_grille_F", "bx_bumper_F"]],
+     ],
+},
+}

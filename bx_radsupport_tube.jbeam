@@ -1,0 +1,371 @@
+{
+"bx_radsupport_tube_popup": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Popup Headlight Tubular Front Frame"
+        "value":2000,
+    },
+    "slotType" : "bx_radsupport",
+    "slots": [
+        ["type", "default", "description"],
+        //bodywork
+        ["bx_bumper_F_popup","bx_bumper_F_popup", "Front Bumper"],
+        ["bx_hood_popup","bx_hood_popup", "Hood"],
+        ["bx_fender_R_popup","bx_fender_R_popup", "Front Right Fender"],
+        ["bx_fender_L_popup","bx_fender_L_popup", "Front Left Fender"],
+
+        //lights
+        ["bx_headlight_R_popup","bx_headlight_R_popup", "Right Headlight"],
+        ["bx_headlight_L_popup","bx_headlight_L_popup", "Left Headlight"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_chassis_front_tube", ["bx_body","bx_shocktop_F"]],
+         ["bx_tubeframe", ["bx_body","bx_shocktop_F"]],
+         ["bx_engbaycrap_custom", ["bx_body","bx_shocktop_F"]],
+         ["bx_headlightmount_popup_tube", ["bx_body","bx_shocktop_F"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":true},
+
+         //rad support
+         {"nodeWeight":1.1},
+         {"group":"bx_body"},
+         ["f15rr", -0.6904, -1.71, 0.69],
+         ["f15r", -0.40, -1.83, 0.7, {"group":["bx_body","bx_radiator"], "engineGroup":"radiator"}],
+         ["f15", 0.0, -1.835, 0.7, {"group":["bx_body","bx_radiator"], "engineGroup":"radiator"}],
+         ["f15l", 0.40, -1.83, 0.7, {"group":["bx_body","bx_radiator"], "engineGroup":"radiator"}],
+         ["f15ll", 0.6904, -1.71, 0.69],
+
+         //front inner bodywork
+         {"nodeWeight":1.2},
+         {"group":"bx_body"},
+         ["f14rr", -0.74, -1.26, 0.77],
+         ["f14ll", 0.74, -1.26, 0.77],
+         ["f14r", -0.74, -1.26, 0.62],
+         ["f14l", 0.74, -1.26, 0.62],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //enticer
+          {"beamSpring":3001000,"beamDamp":200},
+          {"beamDeform":2500,"beamStrength":"FLT_MAX"},
+          ["f15r", "f1r"],
+          ["f15l", "f1l"],
+          ["f1rr", "f15rr"],
+          ["f1ll", "f15ll"],
+
+          //strengthen frame
+          {"beamSpring":3801000,"beamDamp":80},
+          {"beamDeform":12500,"beamStrength":"FLT_MAX"},
+          ["f1r", "f11rr"],
+          ["f5r", "f13rr"],
+          ["f1l", "f11ll"],
+          ["f5l", "f13ll"],
+
+
+          //tube frame main shape
+          {"beamSpring":1001000,"beamDamp":40},
+          {"beamDeform":22500,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.1},
+          ["f15ll", "f15l"],
+          ["f15l", "f15"],
+          ["f15", "f15r"],
+          ["f15r", "f15rr"],
+          {"beamDeform":25500,"beamStrength":"FLT_MAX"},
+          ["f15l", "f13ll"],
+          ["f15r", "f13rr"],
+          {"beamDeform":12500,"beamStrength":"FLT_MAX"},
+          ["f15ll", "f14ll"],
+          ["f15rr", "f14rr"],
+
+          //corners
+          {"beamDeform":12500,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":""},
+          ["f15", "f13rr"],
+          ["f15", "f13ll"],
+          ["f15ll", "f13ll"],
+          ["f15rr", "f13rr"],
+          //to frame
+          {"beamDeform":9500,"beamStrength":"FLT_MAX"},
+          ["f15rr", "fs1r"],
+          ["f15ll", "fs1l"],
+          ["f14rr", "f15r"],
+          ["f15l", "f14ll"],
+          ["f15rr", "f14r"],
+          ["f15ll", "f14l"],
+          ["f15l", "f12ll"],
+          ["f15r", "f12rr"],
+          //extra
+          {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+          ["f15ll", "f11ll"],
+          ["f15rr", "f11rr"],
+          ["f15l", "f13rr"],
+          ["f15r", "f13ll"],
+          ["f15", "f11ll"],
+          ["f15", "f11rr"],
+          ["f15l", "f14l"],
+          ["f15r", "f14r"],
+
+          //rigids
+          {"beamDeform":12500,"beamStrength":"FLT_MAX"},
+          //vertical
+          ["f15l", "f11ll"],
+          ["f15r", "f11rr"],
+          //widthwise
+          ["f15ll", "f15"],
+          ["f15l", "f15r"],
+          ["f15", "f15rr"],
+          //lengthwise
+          {"beamDeform":9500,"beamStrength":"FLT_MAX"},
+          ["f15rr", "f6rr"],
+          ["f15rr", "f5rr"],
+          ["f15ll", "f6ll"],
+          ["f15ll", "f5ll"],
+
+          //stock tower brace
+          {"beamSpring":1301000,"beamDamp":80},
+          {"beamDeform":12500,"beamStrength":"FLT_MAX"},
+          ["f14rr", "f6r"],
+          ["f14r", "f6r"],
+          ["f14rr", "f5r"],
+          ["f14ll", "f6l"],
+          ["f14l", "f6l"],
+          ["f14ll", "f5l"],
+          {"beamDeform":9500,"beamStrength":"FLT_MAX"},
+          ["f14r", "f13rr"],
+          ["f14rr", "f13rr"],
+          ["fs1r", "f13rr"],
+          ["f14l", "f13ll"],
+          ["f14ll", "f13ll"],
+          ["fs1l", "f13ll"],
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+
+            //front end
+            {"dragCoef":0},
+            //leave at 0 to affect front edge normals
+            ["f14ll","f14rr","f15"],
+            ["f14rr","f15rr","f15r"],
+            ["f14rr","f15r","f15"],
+            ["f14ll","f15l","f15ll"],
+            ["f15l","f14ll","f15"],
+
+            {"dragCoef":25},
+            ["f15r", "f15rr", "f13rr"],
+            ["f15r", "f13rr", "f15"],
+            ["f13rr", "f11rr", "f11"],
+            ["f15", "f13rr", "f11"],
+            ["f15", "f11", "f13ll"],
+            ["f13ll", "f11", "f11ll"],
+            ["f13ll", "f15l", "f15"],
+            ["f15l", "f13ll", "f15ll"],
+
+            //sides
+            {"dragCoef":6},
+            ["f15ll", "f14l", "f14ll", {"group":"bx_side_L"}],
+            ["f15rr", "f14rr", "f14r", {"group":"bx_side_R"}],
+
+            //bottom
+            {"dragCoef":10},
+            ["f13rr", "f15rr", "f14r"],
+            ["f12rr", "f13rr", "f14r"],
+            ["f11rr", "f13rr", "f12rr"],
+            ["f15ll", "f13ll", "f14l"],
+            ["f13ll", "f12ll", "f14l"],
+            ["f13ll", "f11ll", "f12ll"],
+
+    ],
+}
+"bx_radsupport_tube_fixed": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Fixed Headlight Tubular Front Frame"
+        "value":2000,
+    },
+    "slotType" : "bx_radsupport",
+    "slots": [
+        ["type", "default", "description"],
+        //bodywork
+        ["bx_bumper_F_fixed","bx_bumper_F_fixed", "Front Bumper"],
+        ["bx_hood_fixed","bx_hood_fixed", "Hood"],
+        ["bx_fender_R_fixed","bx_fender_R_fixed", "Front Right Fender"],
+        ["bx_fender_L_fixed","bx_fender_L_fixed", "Front Left Fender"],
+
+        //lights
+        ["bx_headlight_R_fixed","bx_headlight_R_fixed", "Right Headlight"],
+        ["bx_headlight_L_fixed","bx_headlight_L_fixed", "Left Headlight"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_chassis_front_tube", ["bx_body","bx_shocktop_F"]],
+         ["bx_tubeframe", ["bx_body","bx_shocktop_F"]],
+         ["bx_engbaycrap_custom", ["bx_body","bx_shocktop_F"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":true},
+
+         //rad support
+         {"nodeWeight":1.1},
+         {"group":"bx_body"},
+         ["f15rr", -0.6904, -1.71, 0.69],
+         ["f15r", -0.40, -1.83, 0.7, {"group":["bx_body","bx_radiator"], "engineGroup":"radiator"}],
+         ["f15", 0.0, -1.835, 0.7, {"group":["bx_body","bx_radiator"], "engineGroup":"radiator"}],
+         ["f15l", 0.40, -1.83, 0.7, {"group":["bx_body","bx_radiator"], "engineGroup":"radiator"}],
+         ["f15ll", 0.6904, -1.71, 0.69],
+
+         //front inner bodywork
+         {"nodeWeight":1.2},
+         {"group":"bx_body"},
+         ["f14rr", -0.74, -1.26, 0.77],
+         ["f14ll", 0.74, -1.26, 0.77],
+         ["f14r", -0.74, -1.26, 0.62],
+         ["f14l", 0.74, -1.26, 0.62],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //enticer
+          {"beamSpring":3001000,"beamDamp":200},
+          {"beamDeform":2500,"beamStrength":"FLT_MAX"},
+          ["f15r", "f1r"],
+          ["f15l", "f1l"],
+          ["f1rr", "f15rr"],
+          ["f1ll", "f15ll"],
+
+          //strengthen frame
+          {"beamSpring":3801000,"beamDamp":80},
+          {"beamDeform":12500,"beamStrength":"FLT_MAX"},
+          ["f1r", "f11rr"],
+          ["f5r", "f13rr"],
+          ["f1l", "f11ll"],
+          ["f5l", "f13ll"],
+
+
+          //tube frame main shape
+          {"beamSpring":1001000,"beamDamp":40},
+          {"beamDeform":22500,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.1},
+          ["f15ll", "f15l"],
+          ["f15l", "f15"],
+          ["f15", "f15r"],
+          ["f15r", "f15rr"],
+          {"beamDeform":25500,"beamStrength":"FLT_MAX"},
+          ["f15l", "f13ll"],
+          ["f15r", "f13rr"],
+          {"beamDeform":12500,"beamStrength":"FLT_MAX"},
+          ["f15ll", "f14ll"],
+          ["f15rr", "f14rr"],
+
+          //corners
+          {"beamDeform":12500,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":""},
+          ["f15", "f13rr"],
+          ["f15", "f13ll"],
+          ["f15ll", "f13ll"],
+          ["f15rr", "f13rr"],
+          //to frame
+          {"beamDeform":9500,"beamStrength":"FLT_MAX"},
+          ["f15rr", "fs1r"],
+          ["f15ll", "fs1l"],
+          ["f14rr", "f15r"],
+          ["f15l", "f14ll"],
+          ["f15rr", "f14r"],
+          ["f15ll", "f14l"],
+          ["f15l", "f12ll"],
+          ["f15r", "f12rr"],
+          //extra
+          {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+          ["f15ll", "f11ll"],
+          ["f15rr", "f11rr"],
+          ["f15l", "f13rr"],
+          ["f15r", "f13ll"],
+          ["f15", "f11ll"],
+          ["f15", "f11rr"],
+          ["f15l", "f14l"],
+          ["f15r", "f14r"],
+
+          //rigids
+          {"beamDeform":12500,"beamStrength":"FLT_MAX"},
+          //vertical
+          ["f15l", "f11ll"],
+          ["f15r", "f11rr"],
+          //widthwise
+          ["f15ll", "f15"],
+          ["f15l", "f15r"],
+          ["f15", "f15rr"],
+          //lengthwise
+          {"beamDeform":9500,"beamStrength":"FLT_MAX"},
+          ["f15rr", "f6rr"],
+          ["f15rr", "f5rr"],
+          ["f15ll", "f6ll"],
+          ["f15ll", "f5ll"],
+
+          //stock tower brace
+          {"beamSpring":1301000,"beamDamp":80},
+          {"beamDeform":12500,"beamStrength":"FLT_MAX"},
+          ["f14rr", "f6r"],
+          ["f14r", "f6r"],
+          ["f14rr", "f5r"],
+          ["f14ll", "f6l"],
+          ["f14l", "f6l"],
+          ["f14ll", "f5l"],
+          {"beamDeform":9500,"beamStrength":"FLT_MAX"},
+          ["f14r", "f13rr"],
+          ["f14rr", "f13rr"],
+          ["fs1r", "f13rr"],
+          ["f14l", "f13ll"],
+          ["f14ll", "f13ll"],
+          ["fs1l", "f13ll"],
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+
+            //front end
+            {"dragCoef":0},
+            //leave at 0 to affect front edge normals
+            ["f14ll","f14rr","f15"],
+            ["f14rr","f15rr","f15r"],
+            ["f14rr","f15r","f15"],
+            ["f14ll","f15l","f15ll"],
+            ["f15l","f14ll","f15"],
+
+            {"dragCoef":25},
+            ["f15r", "f15rr", "f13rr"],
+            ["f15r", "f13rr", "f15"],
+            ["f13rr", "f11rr", "f11"],
+            ["f15", "f13rr", "f11"],
+            ["f15", "f11", "f13ll"],
+            ["f13ll", "f11", "f11ll"],
+            ["f13ll", "f15l", "f15"],
+            ["f15l", "f13ll", "f15ll"],
+
+            //sides
+            {"dragCoef":6},
+            ["f15ll", "f14l", "f14ll", {"group":"bx_side_L"}],
+            ["f15rr", "f14rr", "f14r", {"group":"bx_side_R"}],
+
+            //bottom
+            {"dragCoef":10},
+            ["f13rr", "f15rr", "f14r"],
+            ["f12rr", "f13rr", "f14r"],
+            ["f11rr", "f13rr", "f12rr"],
+            ["f15ll", "f13ll", "f14l"],
+            ["f13ll", "f12ll", "f14l"],
+            ["f13ll", "f11ll", "f12ll"],
+
+    ],
+}
+}

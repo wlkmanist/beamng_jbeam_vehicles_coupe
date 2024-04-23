@@ -1,0 +1,126 @@
+{
+"bx_marker_FR_popup": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Right Marker",
+        "value":15,
+    },
+    "slotType" : "bx_marker_FR_popup",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"marker_FR_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights_dmg"},
+         ["bx_marker_FR_popup", ["bx_bumper_F"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound2", "deformVolume":0.3}],
+         {"deformGroup":""},
+    ],
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        {
+            "lightInnerAngle":0,
+            "lightOuterAngle":150,
+            "lightRange":8,
+            "lightColor":{"r":255, "g":150, "b":0, "a":255},
+            "lightAttenuation":{"x":0, "y":1, "z":1},
+            "lightCastShadows":false,
+            "flareName":"vehicleBrakeLightFlare",
+            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
+            "texSize":512,
+            "shadowSoftness":0.1,
+        },
+        //bumper signals
+        ["lowhighbeam", "SPOTLIGHT", "fb2rrrr", "fb2rrr", "fb4rrrr", {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.3, "y":0.07, "z":0.0},"flareScale":0.02,"lightBrightness":0.01,"deformGroup":"marker_FR_break"}],
+    ],
+}
+"bx_marker_FL_popup": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Left Marker",
+        "value":15,
+    },
+    "slotType" : "bx_marker_FL_popup",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"marker_FL_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights_dmg"},
+         ["bx_marker_FL_popup", ["bx_bumper_F"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound2", "deformVolume":0.3}],
+         {"deformGroup":""},
+    ],
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        {
+            "lightInnerAngle":0,
+            "lightOuterAngle":150,
+            "lightRange":8,
+            "lightColor":{"r":255, "g":150, "b":0, "a":255},
+            "lightAttenuation":{"x":0, "y":1, "z":1},
+            "lightCastShadows":false,
+            "flareName":"vehicleBrakeLightFlare",
+            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
+            "texSize":512,
+            "shadowSoftness":0.1,
+        },
+        //bumper signals
+        ["lowhighbeam", "SPOTLIGHT", "fb2llll", "fb2lll", "fb4llll", {"x":180, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.3, "y":0.07, "z":0.0},"flareScale":0.02,"lightBrightness":0.01,"deformGroup":"marker_FL_break"}],
+    ],
+}
+"bx_marker_RR": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Right Marker",
+        "value":15,
+    },
+    "slotType" : "bx_marker_RR",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"marker_RR_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights_dmg"},
+         ["bx_marker_RR", ["bx_bumper_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound2", "deformVolume":0.3}],
+         {"deformGroup":""},
+    ],
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        {
+            "lightInnerAngle":0,
+            "lightOuterAngle":150,
+            "lightRange":8,
+            "lightColor":{"r":255, "g":0, "b":0, "a":255},
+            "lightAttenuation":{"x":0, "y":1, "z":1},
+            "lightCastShadows":false,
+            "flareName":"vehicleBrakeLightFlare",
+            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
+            "texSize":512,
+            "shadowSoftness":0.1,
+        },
+        //bumper signals
+        ["lowhighbeam", "SPOTLIGHT", "rb2rrrr", "rb2rrr", "rb3rrrr", {"x":180, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.4, "y":0.06, "z":0.0},"flareScale":0.02,"lightBrightness":0.01,"deformGroup":"marker_RR_break"}],
+    ],
+}
+"bx_marker_RL": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Left Marker",
+        "value":15,
+    },
+    "slotType" : "bx_marker_RL",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"marker_RL_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights_dmg"},
+         ["bx_marker_RL", ["bx_bumper_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound2", "deformVolume":0.3}],
+         {"deformGroup":""},
+    ],
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        {
+            "lightInnerAngle":0,
+            "lightOuterAngle":150,
+            "lightRange":8,
+            "lightColor":{"r":255, "g":0, "b":0, "a":255},
+            "lightAttenuation":{"x":0, "y":1, "z":1},
+            "lightCastShadows":false,
+            "flareName":"vehicleBrakeLightFlare",
+            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
+            "texSize":512,
+            "shadowSoftness":0.1,
+        },
+        //bumper signals
+        ["lowhighbeam", "SPOTLIGHT", "rb2llll", "rb2lll", "rb3llll", {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.4, "y":0.06, "z":0.0},"flareScale":0.02,"lightBrightness":0.01,"deformGroup":"marker_RL_break"}],
+    ],
+}
+}
