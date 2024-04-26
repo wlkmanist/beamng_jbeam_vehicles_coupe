@@ -536,7 +536,7 @@
     ],
     "slots": [
         ["type", "default", "description"],
-        ["bx_brake_F","bx_brake_F", "Front Brakes", {"nodeOffset":{"x":0.07, "y":0.0, "z":0.04}}],
+        ["bx_brake_F","bx_brake_F", "Front Brakes", {"nodeOffset":{"x":0.07, "y":-0.005, "z":0.04}}],
         ["wheel_F_4","steelwheel_01a_14x5.5_F","Front Wheels", {"nodeOffset":{"x":"$=$trackoffset_F+0.280", "y":-1.25, "z":0.39}}],
     ],
     "nodes": [
@@ -588,7 +588,7 @@
     ],
     "slots": [
         ["type", "default", "description"],
-        ["bx_brake_F","bx_brake_F", "Front Brakes"{"nodeOffset":{"x":0.07, "y":0.0, "z":0.04}}],
+        ["bx_brake_F","bx_brake_F", "Front Brakes"{"nodeOffset":{"x":0.08, "y":-0.005, "z":0.04}}],
         ["wheel_F_5","steelwheel_01a_15x7_F","Front Wheels", {"nodeOffset":{"x":"$=$trackoffset_F+0.280", "y":-1.25, "z":0.39}}],
     ],
     "nodes": [

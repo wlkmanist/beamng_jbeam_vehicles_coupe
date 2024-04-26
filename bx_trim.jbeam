@@ -34,7 +34,7 @@
 "bx_trim_bumper_F_popup_black": {
     "information":{
         "authors":"BeamNG",
-        "name":"Black Rear Bumper Trim",
+        "name":"Black Front Bumper Trim",
         "value":25,
     },
     "slotType" : "bx_trim_bumper_F_popup",
@@ -46,7 +46,7 @@
 "bx_trim_bumper_F_fixed_black": {
     "information":{
         "authors":"BeamNG",
-        "name":"Black Rear Bumper Trim",
+        "name":"Black Front Bumper Trim",
         "value":25,
     },
     "slotType" : "bx_trim_bumper_F_fixed",
@@ -90,7 +90,7 @@
 "bx_trim_bumper_F_popup_painted": {
     "information":{
         "authors":"BeamNG",
-        "name":"Painted Rear Bumper Trim",
+        "name":"Painted Front Bumper Trim",
         "value":25,
     },
     "slotType" : "bx_trim_bumper_F_popup",
@@ -102,7 +102,7 @@
 "bx_trim_bumper_F_fixed_painted": {
     "information":{
         "authors":"BeamNG",
-        "name":"Painted Rear Bumper Trim",
+        "name":"Painted Front Bumper Trim",
         "value":25,
     },
     "slotType" : "bx_trim_bumper_F_fixed",

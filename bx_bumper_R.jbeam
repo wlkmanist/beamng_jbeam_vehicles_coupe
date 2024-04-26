@@ -412,6 +412,7 @@
         ["type", "default", "description"],
         ["bx_trim_bumper_R","bx_trim_bumper_R_black", "Rear Bumper Trim", {"coreSlot":true}],
         ["bx_licenseplate_R","bx_licenseplate_R", "Rear License Plate"],
+        ["bx_bashbar_R","", "Rear License Plate"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "rbonFlexMaterials"],

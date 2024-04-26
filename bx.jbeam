@@ -140,6 +140,24 @@
     "slotType" : "paint_design",
     "skinName" : "twotone"
 },
+"bx_skin_drag": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Drag (Colorable)",
+        "value":2500
+    },
+    "slotType" : "paint_design",
+    "skinName" : "drag"
+},
+"bx_skin_old": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Old Paint (Colorable)",
+        "value":0
+    },
+    "slotType" : "paint_design",
+    "skinName" : "old"
+},
 "bx_skin_tuningstudio": {
     "information":{
         "authors":"BeamNG",

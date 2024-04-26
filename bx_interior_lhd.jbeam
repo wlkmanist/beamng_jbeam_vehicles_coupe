@@ -22,6 +22,7 @@
     ],
     "slots": [
         ["type", "default", "description"],
+        ["soundscape_horn", "soundscape_horn_3", "Horn"],
         ["bx_steer","bx_steer", "Steering Wheel"],
         ["bx_radio_lhd","bx_radio_lhd", "Radio", {"coreSlot":true}],
         ["bx_shifter_lhd","bx_shifter_A_lhd", "Shifter"],
@@ -331,7 +332,7 @@
 "bx_radioCover_lhd": {
     "information":{
         "authors":"BeamNG",
-        "name":"Carbon Fibre Blanking Plate",
+        "name":"Carbon Fiber Blanking Plate",
         "value":500,
     },
     "slotType" : "bx_radio_lhd",

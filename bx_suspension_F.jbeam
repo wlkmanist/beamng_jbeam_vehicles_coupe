@@ -669,9 +669,9 @@
           {"beamSpring":20000,"beamDamp":0},
           {"beamLimitSpring":34000,"beamLimitDamp":1000},
           ["fh4r","fs1r", {"name":"spring_FR","precompressionRange":0.128,"longBoundRange":1,"shortBoundRange":0.155,"boundZone":0.06,"beamLimitDampRebound":0,"dampCutoffHz":500,
-              "soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.35,"attackFactor":15,"volumeFactor":1.7,"decayFactor":8,"noiseFactor":0.01,"pitchFactor":0.2,"maxStress":900}],
+              "soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.35,"attackFactor":15,"volumeFactor":1.7,"decayFactor":12,"noiseFactor":0.01,"pitchFactor":0.2,"maxStress":900}],
           ["fh4l","fs1l", {"name":"spring_FL","precompressionRange":0.128,"longBoundRange":1,"shortBoundRange":0.155,"boundZone":0.06,"beamLimitDampRebound":0,"dampCutoffHz":500,
-              "soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.35,"attackFactor":15,"volumeFactor":1.7,"decayFactor":8,"noiseFactor":0.01,"pitchFactor":0.2,"maxStress":900}],
+              "soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.35,"attackFactor":15,"volumeFactor":1.7,"decayFactor":12,"noiseFactor":0.01,"pitchFactor":0.2,"maxStress":900}],
           //dampers
           {"beamSpring":0,"beamDamp":2736},
           {"beamLimitSpring":0,"beamLimitDamp":0},
@@ -708,9 +708,9 @@
           {"beamSpring":22000,"beamDamp":0},
           {"beamLimitSpring":37000,"beamLimitDamp":1000},
           ["fh4r","fs1r", {"name":"spring_FR","precompressionRange":0.12,"longBoundRange":1,"shortBoundRange":0.138,"boundZone":0.06,"beamLimitDampRebound":0,"dampCutoffHz":500,
-              "soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.4,"attackFactor":20,"volumeFactor":1.7,"decayFactor":10,"noiseFactor":0.01,"pitchFactor":0.4,"maxStress":1200}],
+              "soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.4,"attackFactor":20,"volumeFactor":1.7,"decayFactor":15,"noiseFactor":0.01,"pitchFactor":0.4,"maxStress":1200}],
           ["fh4l","fs1l", {"name":"spring_FL","precompressionRange":0.12,"longBoundRange":1,"shortBoundRange":0.138,"boundZone":0.06,"beamLimitDampRebound":0,"dampCutoffHz":500,
-              "soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.4,"attackFactor":20,"volumeFactor":1.7,"decayFactor":10,"noiseFactor":0.01,"pitchFactor":0.4,"maxStress":1200}],
+              "soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.4,"attackFactor":20,"volumeFactor":1.7,"decayFactor":15,"noiseFactor":0.01,"pitchFactor":0.4,"maxStress":1200}],
           //dampers
           {"beamSpring":0,"beamDamp":3530},
           {"beamLimitSpring":0,"beamLimitDamp":0},

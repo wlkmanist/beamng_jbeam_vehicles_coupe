@@ -10,7 +10,6 @@
         ["type", "default", "description"],
 
         //misc
-        ["soundscape_horn", "soundscape_horn_3", "Horn"],
         ["bx_lightbar","", "Light Bar"],
         ["bx_towhitch","", "Tow Hitch", {"nodeOffset":{"x":0.0, "y":-0.44, "z":-0.14}}],
         ["bx_wheeliebar","", "Wheelie Bar"],

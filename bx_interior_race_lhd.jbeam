@@ -24,6 +24,7 @@
     ],
     "slots": [
         ["type", "default", "description"],
+        ["soundscape_horn", "soundscape_horn_3", "Horn"],
         ["bx_steer","bx_steer", "Steering Wheel"],
         ["bx_shifter_race_lhd","bx_shifter_M_race_lhd", "Shifter"],
         ["bx_gauges_race_lhd","bx_gauges_race_lhd_metric", "Gauges", {"coreSlot":true}],

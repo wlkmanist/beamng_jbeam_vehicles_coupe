@@ -142,7 +142,7 @@
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.2},
     ],
-    "tliangles": [
+    "triangles": [
             ["id1:","id2:","id3:"],
             //right taillight
             {"groundModel":"plastic"},
@@ -300,7 +300,7 @@
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.2},
     ],
-    "tliangles": [
+    "triangles": [
             ["id1:","id2:","id3:"],
             //right taillight
             {"groundModel":"plastic"},

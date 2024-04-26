@@ -182,7 +182,7 @@
     "slotType" : "bx_gauges_race_rhd",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bx_grp_dash_gauges", ["bx_dash"]],
+        ["bx_grp_dash_gauges_rhd", ["bx_dash"]],
     ],
     "glowMap":{
         //gauges

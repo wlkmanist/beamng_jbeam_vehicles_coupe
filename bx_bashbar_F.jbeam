@@ -1,0 +1,171 @@
+{
+"bx_bashbar_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Bash Bar",
+        "value":200,
+    },
+    "slotType" : "bx_bumperbar_F",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_bashbar_F", ["bx_bashbar_F"]],
+    ],
+
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":true},
+         {"group":"bx_bashbar_F"},
+         //bumper bar
+         {"nodeWeight":1.5},
+         ["bb1r", -0.40, -2.01, 0.28],
+         ["bb1",   0.00, -2.05, 0.28],
+         ["bb1l",  0.40, -2.01, 0.28],
+
+         ["bb2rr",-0.71, -1.89, 0.45],
+         ["bb2r", -0.40, -2.07, 0.45],
+         ["bb2",   0.00, -2.09, 0.45],
+         ["bb2l",  0.40, -2.07, 0.45],
+         ["bb2ll", 0.71, -1.89, 0.45],
+
+         //rigidifier
+         ["bb3r",-0.40, -1.85, 0.44, {"group":"bx_bashbar_F","selfCollision":false, "collision":true}],
+         ["bb3l", 0.40, -1.85, 0.44, {"group":"bx_bashbar_F","selfCollision":false, "collision":true}],
+    ],
+    "torsionbars":[
+       ["id1:", "id2:", "id3:", "id4:"],
+       //help with inverting issue
+       {"spring":5300, "damp":0, "deform":25000, "strength":30000},
+       ["bb3l", "bb2l", "bb2", "bb1l"],
+       ["bb3r", "bb2r", "bb2", "bb1r"],
+       ["bb3l", "bb2l", "bb1l", "bb1r"],
+       ["bb3r", "bb2r", "bb1r", "bb1l"],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //bumper bar
+          {"beamSpring":1701000,"beamDamp":30},
+          {"beamDeform":22280,"beamStrength":"FLT_MAX"},
+          //main shape widthwise
+          {"deformLimitExpansion":1.1},
+          ["bb1r","bb1"],
+          ["bb1l","bb1"],
+          ["bb2rr","bb2r"],
+          ["bb2r","bb2"],
+          ["bb2l","bb2"],
+          ["bb2ll","bb2l"],
+
+          //vertical
+          ["bb1r","bb2r"],
+          ["bb1","bb2"],
+          ["bb1l","bb2l"],
+
+          //surf cross
+          {"deformLimitExpansion":""},
+          ["bb1r","bb2"],
+          ["bb1l","bb2"],
+          ["bb2r","bb1"],
+          ["bb2l","bb1"],
+          ["bb2rr","bb1r"],
+          ["bb2ll","bb1l"],
+
+          //rigids
+          {"beamDeform":13560,"beamStrength":"FLT_MAX"},
+          ["bb1r","bb1l"],
+          ["bb2r","bb2l"],
+          ["bb2rr","bb2"],
+          ["bb2ll","bb2"],
+
+          //rigidifier
+          {"beamDeform":18560,"beamStrength":"FLT_MAX"},
+          ["bb3r", "bb2rr"],
+          ["bb3r", "bb2r",{"beamDeform":28560,"deformLimitExpansion":0}],
+          ["bb3r", "bb2"],
+          ["bb3r", "bb2l"],
+          ["bb3l", "bb2l",{"beamDeform":28560,"deformLimitExpansion":0}],
+          ["bb3l", "bb2ll"],
+          ["bb3l", "bb2"],
+          ["bb3l", "bb2r"],
+          ["bb3r", "bb1r",{"beamDeform":21560,"deformLimitExpansion":0.4}],
+          ["bb3r", "bb1"],
+          ["bb3r", "bb1l"],
+          ["bb3l", "bb1l",{"beamDeform":21560,"deformLimitExpansion":0.4}],
+          ["bb3l", "bb1"],
+          ["bb3l", "bb1r"],
+
+          //attach
+          {"beamSpring":200000,"beamDamp":400},
+          {"beamDeform":32000,"beamStrength":34000},
+          {"breakGroup":"bashbar_F_R"},
+          ["bb3r", "f11rr"],
+          ["bb3r", "f13rr"],
+          ["bb3r", "f10rr"],
+          ["bb3r", "f12rr"],
+          ["bb3r", "f11"],
+          {"beamDeform":3000,"beamStrength":34000},
+          ["bb2r", "f11rr",{"beamDeform":5000}],
+          ["bb2r", "f13rr"],
+          ["bb1r", "f11rr"],
+          ["bb1r", "f13rr",{"beamDeform":5000}],
+          {"breakGroup":"bashbar_F_L"},
+          {"beamDeform":32000,"beamStrength":34000},
+          ["bb3l", "f11ll"],
+          ["bb3l", "f13ll"],
+          ["bb3l", "f10ll"],
+          ["bb3l", "f12ll"],
+          ["bb3l", "f11"],
+          {"beamDeform":3000,"beamStrength":34000},
+          ["bb2l", "f11ll",{"beamDeform":5000}],
+          ["bb2l", "f13ll"],
+          ["bb1l", "f11ll"],
+          ["bb1l", "f13ll",{"beamDeform":5000}],
+          {"breakGroup":""},
+          //front bashbar support beams
+          {"beamType":"|SUPPORT","beamLongBound":4},
+          {"beamSpring":201000,"beamDamp":30},
+          {"beamDeform":145000,"beamStrength":"FLT_MAX"},
+          {"beamPrecompression":0.6},
+          ["bb2l", "f11ll"],
+          ["bb2l", "f13ll"],
+          ["bb2r", "f11rr"],
+          ["bb2r", "f13rr"],
+          {"beamPrecompression":0.2,"beamLongBound":8},
+          ["bb1l", "f11ll"],
+          ["bb1l", "f13ll"],
+          ["bb1r", "f11rr"],
+          ["bb1r", "f13rr"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":1},
+            //bumper bar
+            {"group":"bx_bashbar"},
+            ["bb2rr","bb1r","bb2r"],
+            ["bb2","bb2r","bb1r"],
+            ["bb2","bb1r","bb1"],
+            ["bb2l","bb2","bb1"],
+            ["bb2l","bb1","bb1l"],
+            ["bb2ll","bb2l","bb1l"],
+            //back side
+            ["bb2ll","bb1l","bb3l"],
+            ["bb2ll","bb3l","bb2l"],
+            ["bb3l","bb1l","bb1"],
+            ["bb3l","bb2","bb2l"],
+            ["bb3l","bb1","bb2"],
+
+            ["bb1r","bb2rr","bb3r"],
+            ["bb3r","bb2rr","bb2r"],
+            ["bb1r","bb3r","bb1"],
+            ["bb2","bb3r","bb2r"],
+            ["bb1","bb3r","bb2"],
+
+
+    ],
+},
+}
