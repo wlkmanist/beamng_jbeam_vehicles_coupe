@@ -11,7 +11,7 @@
          ["bx_spoiler_hatch", ["bx_spoiler"]],
     ],
     "trunkCoupler":{
-        "$+openForceMagnitude":  25,
+        "$+openForceMagnitude":  4,
         "$+openForceDuration":   0.1,
         "$+closeForceMagnitude": -10,
         "$+closeForceDuration":  0,
@@ -202,7 +202,7 @@
          ["bx_spoiler_hatch_special", ["bx_spoiler"]],
     ],
     "trunkCoupler":{
-        "$+openForceMagnitude":  15,
+        "$+openForceMagnitude":  10,
         "$+openForceDuration":   0.1,
         "$+closeForceMagnitude": -5,
         "$+closeForceDuration":  0.1,
@@ -447,7 +447,7 @@
          ["bx_spoiler_custom_a_hatch", ["bx_spoiler"]],
     ],
     "trunkCoupler":{
-        "$+openForceMagnitude":  32,
+        "$+openForceMagnitude":  12,
         "$+openForceDuration":   0.2,
         "$+closeForceMagnitude": -10,
         "$+closeForceDuration":  0,

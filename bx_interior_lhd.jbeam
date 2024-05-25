@@ -10,6 +10,7 @@
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_dash", ["bx_dash"]],
          ["bx_mirror_int_lhd", ["bx_body"]],
+         ["bx_engbaycrap_back_lhd", ["bx_body"]],
          ["bx_sunvisors", ["bx_body"]],
          ["bx_wipers_lhd", ["bx_windshield"]],
          //window siwtches

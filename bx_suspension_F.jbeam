@@ -63,7 +63,7 @@
          ["fx2r", -0.3102, -1.2820, 0.2918, {"tag":"rideheight_FR"}],
          ["fx2l", 0.3102, -1.2820, 0.2918, {"tag":"rideheight_FL"}],
          //steering box/tie rod end
-         {"nodeWeight":5.0},
+         {"nodeWeight":5.5},
          {"group":"bx_steeringbox"},
          //steering jbeam can relocate
          {"selfCollision":false},
@@ -85,7 +85,7 @@
          ["fh1l", 0.6512, -1.2557, 0.2658, {"group":["bx_lowerarm_F","bx_hub_F"]}],
          {"selfCollision":false},
          //tie rod end (gets overwritten by drift steer)
-         {"nodeWeight":5.0},
+         {"nodeWeight":5.25},
          //["fh3r",-0.6224, -1.0962, 0.2022, {"group":["bx_tierod_F","bx_hub_F"]}],
          //["fh3l", 0.6224, -1.0962, 0.2022, {"group":["bx_tierod_F","bx_hub_F"]}],
          ["fh3r",-0.6133, -1.1401, 0.259, {"group":["bx_tierod_F","bx_hub_F","bx_strut_F"]}],//0.2609 original
@@ -1041,7 +1041,7 @@
          {"nodeMaterial":"|NM_METAL"},
          {"frictionCoef":0.5},
          {"group":"bx_tierod_F"},
-         {"nodeWeight":5.0},
+         {"nodeWeight":5.25},
          ["fh6r", -0.3061, -1.171, 0.2845],
          ["fh6l",  0.3061, -1.171, 0.2845],
          {"group":""},
@@ -1132,7 +1132,7 @@
          {"nodeMaterial":"|NM_METAL"},
          {"frictionCoef":0.5},
          {"group":"bx_tierod_F"},
-         {"nodeWeight":5.0},
+         {"nodeWeight":5.25},
          ["fh6r", -0.3061, -1.171, 0.2845],
          ["fh6l",  0.3061, -1.171, 0.2845],
          {"group":""},
@@ -1212,7 +1212,7 @@
          {"nodeMaterial":"|NM_METAL"},
          {"frictionCoef":0.5},
          {"group":"bx_tierod_F"},
-         {"nodeWeight":5.0},
+         {"nodeWeight":5.25},
          ["fh6r", -0.3061, -1.171, 0.2845],
          ["fh6l",  0.3061, -1.171, 0.2845],
          {"group":""},

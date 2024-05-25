@@ -35,7 +35,7 @@
           {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"beamSpring":1201000,"beamDamp":50},
           {"beamDeform":40000,"beamStrength":"FLT_MAX"},
-          {"highlight":{"radius":0.005, "col":"#ffcc00ff" }},
+          //{"highlight":{"radius":0.005, "col":"#ffcc00ff" }},
           ["rc1l", "rc1"],
           ["rc1", "rc1r"],
           ["rc1l", "rc1r"],

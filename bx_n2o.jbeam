@@ -64,7 +64,7 @@
         "startingCapacity": 4.54,
     },
     "mainEngine": {
-        "energyStorage": ["mainTank", "mainBottle"],
+        "energyStorage": ["mainTank", "mainBottle","auxTank"],
     },
     "n2o": {
         "purgeValves:": ["f6r","f1r"],

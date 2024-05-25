@@ -54,7 +54,7 @@
             [1, 0.26],
         ],
         //fuel system
-        "energyStorage": "mainTank"
+        "energyStorage": ["mainTank","auxTank"],
         "requiredEnergyType":"gasoline",
 
         //exhaust

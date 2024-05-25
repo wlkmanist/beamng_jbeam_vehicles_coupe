@@ -81,12 +81,12 @@
     ],
     "mainEngine":{
         "radiatorArea":0.32,
-        "radiatorEffectiveness":20000,
+        "radiatorEffectiveness":24000,
         "coolantVolume":15,
         "radiatorFanType":"electric",
         "radiatorFanTemperature":95,
         "radiatorFanMaxAirSpeed":5,
-        "thermostatTemperature":90,
+        "thermostatTemperature":85,
         "radiatorFanLoopEvent": "event:>Vehicle>Cooling Fan>Electric_05",
         "radiatorFanVolume": 1.0,
 

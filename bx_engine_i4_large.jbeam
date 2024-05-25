@@ -56,7 +56,7 @@
             [1, 0.34],
         ],
         //fuel system
-        "energyStorage": "mainTank",
+        "energyStorage": ["mainTank","auxTank"],
         "requiredEnergyType":"gasoline",
 
         //cooling and oil system
@@ -663,13 +663,6 @@
         "$+mainGain": 0.3,
         "$+offLoadGain": 0.00,
     },
-    "flexbodies": [
-        ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bx_header", ["bx_engine", "bx_header"]],
-        ["bx_intake", ["bx_engine"]],
-        ["bx_intakepipe_na", ["bx_engine", "bx_airbox"]],
-        ["bx_filter_airbox", ["bx_engine", "bx_airbox"]],
-    ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
          {"selfCollision":false},

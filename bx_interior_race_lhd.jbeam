@@ -9,6 +9,7 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_grp_dash", ["bx_dash"]],
+         ["bx_engbaycrap_back_lhd", ["bx_body"]],
          ["bx_grp_buttons_generic", ["bx_dash"]],
          //["bx_grp_dash_gauges", ["bx_dash"]],
          //["bx_grp_buttons_drag", ["bx_dash"]],

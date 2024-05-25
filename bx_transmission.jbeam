@@ -133,14 +133,15 @@
     "vehicleController": {
         "transmissionShiftDelay":0.14,
         "calculateOptimalLoadShiftPoints": true,
-        "shiftDownRPMOffsetCoef":1.18,
+        "shiftDownRPMOffsetCoef":0.95,
         //"aggressionSmoothingDown":0.05
         "aggressionHoldOffThrottleDelay":3,
         "lowShiftDownRPM":[0,0,0,2000,2600,2600,2600,2600],
         "lowShiftUpRPM":[0,0,4200,4200,4050,3850,3700],
         //"lowShiftDownRPM":[0,0,0,1600,1900,1800,1600,1500],
         //"lowShiftUpRPM":[0,0,3400,3000,2900,2800,2700],
-        //"wheelSlipUpThreshold":100,
+        "wheelSlipUpThreshold":70000,
+        "wheelSlipDownThreshold":30000
     },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

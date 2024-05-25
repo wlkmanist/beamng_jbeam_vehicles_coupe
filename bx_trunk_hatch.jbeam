@@ -38,10 +38,10 @@
         "attachSoundEvent": "event:>Vehicle>Latches>Trunk>modern_05_close",
         "detachSoundEvent": "event:>Vehicle>Latches>Trunk>modern_02_open",
         "breakSoundEvent":""
-        "openForceMagnitude": 45,
-        "openForceDuration": 0.4,
-        "closeForceMagnitude": 65,
-        "closeForceDuration": 0.9,
+        "openForceMagnitude": 115,
+        "openForceDuration": 0.8,
+        "closeForceMagnitude": 85,
+        "closeForceDuration": 1.2,
     }
     "triggers":[
         ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -326,20 +326,27 @@
           {"beamPrecompression":1},
 
           //limiter
-          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":2.3, "beamShortBound":1},
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":2.5, "beamShortBound":1},
           {"beamSpring":0,"beamDamp":10},
-          {"beamLimitSpring":601000,"beamLimitDamp":500},
+          {"beamLimitSpring":201000,"beamLimitDamp":500},
           {"beamDeform":3000,"beamStrength":70000},
-          ["t3rr", "q5r", {"breakGroup":"trunkhinge_R"}],
-          ["t3ll", "q5l", {"breakGroup":"trunkhinge_L"}],
-
+          ["t3rr", "q5r", {"breakGroup":"trunkhinge_R","boundZone":0.5}],
+          ["t3ll", "q5l", {"breakGroup":"trunkhinge_L","boundZone":0.5}],
+          //extra dampening for fast movement
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":2.1, "beamShortBound":1},
+          {"beamSpring":0,"beamDamp":10},
+          {"beamLimitSpring":100,"beamLimitDamp":1500},
+          {"beamDeform":3000,"beamStrength":70000},
+          ["t3rr", "q5r", {"breakGroup":"trunkhinge_R","boundZone":0.5}],
+          ["t3ll", "q5l", {"breakGroup":"trunkhinge_L","boundZone":0.5}],
           //opening springs
           {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0}
-          {"beamSpring":1010,"beamDamp":10},
+          {"beamSpring":1200,"beamDamp":20},
           {"beamDeform":4000,"beamStrength":10000},
           {"beamPrecompression":2.0},
-          ["t1ll", "p5l", {"breakGroup":"trunkhinge_R"}],
-          ["t1rr", "p5r", {"breakGroup":"trunkhinge_L"}],
+          ["t1ll", "p6l", {"breakGroup":"trunkhinge_R"}],
+          ["t1rr", "p6r", {"breakGroup":"trunkhinge_L"}],
+          {"highlight":""},
           {"beamPrecompression":1},
           {"breakGroupType":0},
           {"breakGroup":""},
