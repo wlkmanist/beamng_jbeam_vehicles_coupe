@@ -826,9 +826,9 @@
           {"beamSpring":"$spring_R_race","beamDamp":0},
           //{"beamSpring":0,"beamDamp":0},
           ["rh2r","r1rr", {"name":"spring_RR","precompressionRange":"$=$springheight_R_race + 0.02",
-              "soundFile":"event:>Vehicle>Suspension>car_sports_01>spring_compress_01","colorFactor":0.75,"attackFactor":25,"volumeFactor":1.8,"decayFactor":20,"noiseFactor":0.01,"pitchFactor":1.0,"maxStress":400,"name":"spring_RR"}],
+              "soundFile":"event:>Vehicle>Suspension>car_sports_01>spring_compress_01","colorFactor":0.75,"attackFactor":25,"volumeFactor":1.8,"decayFactor":20,"noiseFactor":0.01,"pitchFactor":1.0,"maxStress":400,}],
           ["rh2l","r1ll", {"name":"spring_RL","precompressionRange":"$=$springheight_R_race + 0.02",
-              "soundFile":"event:>Vehicle>Suspension>car_sports_01>spring_compress_01","colorFactor":0.75,"attackFactor":25,"volumeFactor":1.8,"decayFactor":20,"noiseFactor":0.01,"pitchFactor":1.0,"maxStress":400,"name":"spring_RR"}],
+              "soundFile":"event:>Vehicle>Suspension>car_sports_01>spring_compress_01","colorFactor":0.75,"attackFactor":25,"volumeFactor":1.8,"decayFactor":20,"noiseFactor":0.01,"pitchFactor":1.0,"maxStress":400,}],
           //damper
           {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1, "beamShortBound":1},
           {"beamLimitSpring":0,"beamLimitDamp":0},
@@ -871,9 +871,9 @@
           {"beamSpring":"$spring_R_rally","beamDamp":0},
           //{"beamSpring":0,"beamDamp":0},
           ["rh2r","r1rr", {"name":"spring_RR","precompressionRange":"$=$springheight_R_rally + 0.105",
-              "soundFile":"event:>Vehicle>Suspension>car_sports_01>spring_compress_01","colorFactor":0.75,"attackFactor":15,"volumeFactor":1.85,"decayFactor":10,"noiseFactor":0.01,"pitchFactor":0.7,"maxStress":1200,"name":"spring_RR"}],
+              "soundFile":"event:>Vehicle>Suspension>car_sports_01>spring_compress_01","colorFactor":0.75,"attackFactor":15,"volumeFactor":1.85,"decayFactor":10,"noiseFactor":0.01,"pitchFactor":0.7,"maxStress":1200}],
           ["rh2l","r1ll", {"name":"spring_RL","precompressionRange":"$=$springheight_R_rally + 0.105",
-              "soundFile":"event:>Vehicle>Suspension>car_sports_01>spring_compress_01","colorFactor":0.75,"attackFactor":15,"volumeFactor":1.85,"decayFactor":10,"noiseFactor":0.01,"pitchFactor":0.7,"maxStress":1200,"name":"spring_RR"}],
+              "soundFile":"event:>Vehicle>Suspension>car_sports_01>spring_compress_01","colorFactor":0.75,"attackFactor":15,"volumeFactor":1.85,"decayFactor":10,"noiseFactor":0.01,"pitchFactor":0.7,"maxStress":1200}],
           //damper
           {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
           {"beamLimitSpring":0,"beamLimitDamp":0},

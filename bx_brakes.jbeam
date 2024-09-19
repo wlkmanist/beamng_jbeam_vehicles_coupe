@@ -312,10 +312,6 @@
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
-    ],
-    "pressureWheels": [
-        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
-        //brakes
 
         //if no race front brake, use default value
         //{"brakeTorque":"$=case($brakebias == nil, $brakestrength*900, $brakestrength*3400*(1-$brakebias))"},

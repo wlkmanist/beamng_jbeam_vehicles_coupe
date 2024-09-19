@@ -324,10 +324,10 @@
          //interior flexbody
          {"group":"bx_dash"},
          {"nodeWeight":4.0},
-         ["dsh1r",-0.1966,-0.4486,0.8736,{"nodeWeight":3.75}],//remove some weight to be added back by the radio
-         ["dsh1l",0.1966,-0.4621,0.9513,{"nodeWeight":3.75}],//remove some weight to be added back by the radio
-         ["dsh2r",-0.1966,-0.3745,0.6901,{"nodeWeight":3.75}],//remove some weight to be added back by the radio
-         ["dsh2l",0.1966,-0.3745,0.6901,{"nodeWeight":3.75}],//remove some weight to be added back by the radio
+         ["dsh1r",-0.1966,-0.4486,0.8736],
+         ["dsh1l",0.1966,-0.4621,0.9513],
+         ["dsh2r",-0.1966,-0.3745,0.6901],
+         ["dsh2l",0.1966,-0.3745,0.6901],
     ],
 },
 "bx_radioCover_lhd": {
@@ -384,11 +384,6 @@
         "value":100,
     },
     "slotType" : "bx_shifter_lhd",
-    "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-         ["bx_shifter_M", ["bx_shifterknob_M"]],
-         ["bx_shifterbase_M", ["bx_body","bx_shifterboot_M"]],
-    ],
     "controller": [
         ["fileName"],
         ["propAnimation/hPattern", {"name":"hPattern"}],

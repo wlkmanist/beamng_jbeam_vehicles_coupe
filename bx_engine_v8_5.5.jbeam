@@ -52,7 +52,7 @@
             [0.05, 0.21],
             [0.4, 0.33],
             [0.7, 0.36],
-            [1, 0.24],
+            [1, 0.28],
         ],
         //fuel system
         "energyStorage": ["mainTank","auxTank"],
@@ -179,11 +179,6 @@
         ["bx_radhose_v8", ["bx_engine", "bx_radiator"]],
         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
     ],
-        "props": [
-        ["func",            "mesh",                   "idRef:", "idX:", "idY:", "baseRotation",          "rotation",            "translation",         "min", "max", "offset", "multiplier"],
-        ["rpmspin",             "bx_supercharger_pulley",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],
-    ],
-
     "props": [
         ["func",            "mesh",                   "idRef:", "idX:", "idY:", "baseRotation",          "rotation",            "translation",         "min", "max", "offset", "multiplier"],
         ["rpmspin",             "bx_engine_v8_pulley1",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],

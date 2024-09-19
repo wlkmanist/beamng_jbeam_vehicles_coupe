@@ -28,14 +28,6 @@
         ["$caster_FR", "range", "", "Wheel Alignment", 1, 1.03, 0.97, "Caster Adjust", "Adjust forward rake of the steering axis", {"subCategory":"Front"}],
         ["$trackoffset_F", "range", "+m", "Wheels", 0, -0.02, 0.05, "Track Offset", "Spacing of the wheel from the hub", {"stepDis":0.001, "subCategory":"Front"}],
     ],
-    "rails": {
-        "enginemountnodes":{"links:":["fx2r", "fx2l"], "broken:":[], "looped":false, "capped":true},
-    },
-    "slidenodes": [
-        ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
-        ["fx6r", "enginemountnodes", true, true, 0.0, 11001000, "FLT_MAX", "FLT_MAX"],
-        ["fx6l", "enginemountnodes", true, true, 0.0, 11001000, "FLT_MAX", "FLT_MAX"],
-    ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
          //--FRONT RUNNING GEAR--
@@ -72,8 +64,8 @@
          //engine mount nodes
          {"nodeWeight":2.0},
          {"group":""},
-         ["fx6r", -0.23, -1.25, 0.27],
-         ["fx6l", 0.23, -1.25, 0.27],
+         ["fx6r", -0.23, -1.2820, 0.2918],
+         ["fx6l", 0.23, -1.2820, 0.2918],
 
          //--FRONT INDEPENDENT SUSPENSION--
          {"collision":true},
@@ -141,6 +133,9 @@
         "controlarm_FR":{
             "links:":["fh1r", "fx2r"], "broken:":[], "looped":false, "capped":true,
         },
+        "enginemountnodes":{
+            "links:":["fx2r", "fx2l"], "broken:":[], "looped":false, "capped":true,
+        },
     },
     "slidenodes": [
         ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
@@ -148,6 +143,8 @@
         ["fh4l", "strut_FL", true, true, 0.0, 18001000, "FLT_MAX", "FLT_MAX"],
         ["fh7r", "controlarm_FR", true, true, 0.0, 5001000, "FLT_MAX", "FLT_MAX"],
         ["fh7l", "controlarm_FL", true, true, 0.0, 5001000, "FLT_MAX", "FLT_MAX"],
+        ["fx6r", "enginemountnodes", true, true, 0.0, 5001000, "FLT_MAX", "FLT_MAX"],
+        ["fx6l", "enginemountnodes", true, true, 0.0, 5001000, "FLT_MAX", "FLT_MAX"],
     ],
     "torsionbars": [
         ["id1:", "id2:", "id3:", "id4:"],

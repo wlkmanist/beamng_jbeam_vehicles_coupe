@@ -14,7 +14,7 @@
         ["bx_licenseplate_R","bx_licenseplate_R", "Rear License Plate"],
     ],
     "flexbodies": [
-         ["mesh", "[group]:", "rbonFlexMaterials"],
+         ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_bumper_R", ["bx_bumper_R"]],
     ],
     "props": [
@@ -415,7 +415,7 @@
         ["bx_bashbar_R","", "Rear Bash Bar"{"nodeOffset":{"x":0.0, "y":0.00, "z":-0.05}}],
     ],
     "flexbodies": [
-         ["mesh", "[group]:", "rbonFlexMaterials"],
+         ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_bumper_R_cut", ["bx_bumper_R"]],
     ],
     "nodes": [

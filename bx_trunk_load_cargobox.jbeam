@@ -1,0 +1,72 @@
+{
+"bx_cargo_load_box_3M_trunk": {
+  "information":{
+    "authors":"BeamNG",
+    "name":"3x Cargo Load Box M",
+    "value":0,
+  },
+  "slotType" : "bx_trunk_load",
+  "slots": [
+    ["type", "default", "description"],
+    ["cargo_load_box_M_trunk_A_90deg","cargo_load_box_M_trunk_A_90deg", "Trunk Box A", {"nodeMove":{"x":-0.26, "y":1.72, "z":0.58}, "coreSlot":true}],
+    ["cargo_load_box_M_trunk_B_90deg","cargo_load_box_M_trunk_B_90deg", "Trunk Box B", {"nodeMove":{"x": 0.00, "y":1.72, "z":0.58}, "coreSlot":true}],
+    ["cargo_load_box_M_trunk_C_90deg","cargo_load_box_M_trunk_C_90deg", "Trunk Box C", {"nodeMove":{"x": 0.26, "y":1.72, "z":0.58}, "coreSlot":true}],
+  ],
+  "flexbodies": [
+    ["mesh", "[group]:", "nonFlexMaterials"],
+    {"deformGroup":"strap","deformMaterialBase":"woodplanks","deformMaterialDamaged":"invis"},
+    ["woodplanks_straps_boxutility_small", ["trunk_box_A", "bx_body"],[],{"pos":{"x":0.0, "y":1.53, "z":0.58}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.75, "y":0.45, "z":0.27}}],
+    ["woodplanks_straps_boxutility_small", ["trunk_box_C", "bx_body"],[],{"pos":{"x":0.0, "y":1.93, "z":0.58}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.75, "y":0.45, "z":0.27}}],
+    {"deformGroup":""},
+  ],
+  "beams": [
+    ["id1:", "id2:"],
+    {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+
+    {"beamSpring":1501000,"beamDamp":30},
+    {"beamDeform":20000,"beamStrength":15000},
+    {"breakGroup":"strap"}
+    {"deformGroup":"strap", "deformationTriggerRatio":0.5}
+    ["trunk_box_A_5", "r3ll"],
+    ["trunk_box_A_5", "r2ll"],
+    ["trunk_box_A_5", "r3"],
+    ["trunk_box_A_1", "r3ll"],
+    ["trunk_box_A_1", "r2ll"],
+    ["trunk_box_A_1", "r3"],
+    ["trunk_box_A_6", "r3rr"],
+    ["trunk_box_A_6", "r2rr"],
+    ["trunk_box_A_6", "r3"],
+    ["trunk_box_A_0", "r3"],
+    ["trunk_box_A_0", "r2rr"],
+    ["trunk_box_A_0", "r3rr"],
+    //box2
+    ["trunk_box_B_5", "r3ll"],
+    ["trunk_box_B_5", "r2ll"],
+    ["trunk_box_B_5", "r3"],
+    ["trunk_box_B_1", "r3ll"],
+    ["trunk_box_B_1", "r2ll"],
+    ["trunk_box_B_1", "r3"],
+    ["trunk_box_B_6", "r3rr"],
+    ["trunk_box_B_6", "r2rr"],
+    ["trunk_box_B_6", "r3"],
+    ["trunk_box_B_0", "r3"],
+    ["trunk_box_B_0", "r2rr"],
+    ["trunk_box_B_0", "r3rr"],
+    //box3
+    ["trunk_box_C_5", "r3ll"],
+    ["trunk_box_C_5", "r2ll"],
+    ["trunk_box_C_5", "r3"],
+    ["trunk_box_C_1", "r3ll"],
+    ["trunk_box_C_1", "r2ll"],
+    ["trunk_box_C_1", "r3"],
+    ["trunk_box_C_6", "r3rr"],
+    ["trunk_box_C_6", "r2rr"],
+    ["trunk_box_C_6", "r3"],
+    ["trunk_box_C_0", "r3"],
+    ["trunk_box_C_0", "r2rr"],
+    ["trunk_box_C_0", "r3rr"],
+    {"breakGroup":""}
+    {"deformGroup":""}
+  ],
+},
+}

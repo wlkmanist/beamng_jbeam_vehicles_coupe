@@ -11,7 +11,7 @@
         ["bx_licenseplate_R","bx_licenseplate_R", "Rear License Plate", {"nodeMove":{"x":0.0, "y":0.015, "z":0.0}}],
     ],
     "flexbodies": [
-         ["mesh", "[group]:", "rbonFlexMaterials"],
+         ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_bumper_R_kit_a", ["bx_bumper_R"]],
     ],
     "nodes": [
@@ -388,7 +388,7 @@
         ["bx_licenseplate_R","bx_licenseplate_R", "Rear License Plate", {"nodeMove":{"x":0.0, "y":0.02, "z":0.0}}],
     ],
     "flexbodies": [
-         ["mesh", "[group]:", "rbonFlexMaterials"],
+         ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_bumper_R_kit_b", ["bx_bumper_R"]],
     ],
     "nodes": [

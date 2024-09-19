@@ -16,6 +16,7 @@
         ["bx_fender_L_popup","bx_fender_L_popup", "Front Left Fender"],
         ["bx_tubs_FR","bx_tubs_FR", "Front Right Inner Fender"],
         ["bx_tubs_FL","bx_tubs_FL", "Front Left Inner Fender"],
+        ["bx_skidplate","", "Skidplate"],
 
         //lights
         ["bx_headlight_R_popup","bx_headlight_R_popup", "Right Headlight"],
@@ -204,6 +205,8 @@
         ["bx_fender_L_fixed","bx_fender_L_fixed", "Front Left Fender"],
         ["bx_tubs_FR","bx_tubs_FR", "Front Right Inner Fender"],
         ["bx_tubs_FL","bx_tubs_FL", "Front Left Inner Fender"],
+        ["bx_lightbar_LED","", "LED Lightbar"],
+        ["bx_skidplate","", "Skidplate"],
 
         //lights
         ["bx_headlight_R_fixed","bx_headlight_R_fixed", "Right Headlight"],

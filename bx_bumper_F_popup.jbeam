@@ -534,18 +534,6 @@
         "value":200,
     },
     "slotType" : "bx_lip_F_popup",
-    "nodes": [
-         ["id", "posX", "posY", "posZ"],
-         //--FRONT BUMPER--
-         {"selfCollision":true},
-         {"collision":true},
-         {"frictionCoef":0.8},
-         {"nodeMaterial":"|NM_PLASTIC"},
-         {"group":"bx_bumper_F"},
-         {"nodeWeight":0.44},
-
-         {"group":""},
-    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_lip_F_popup", ["bx_bumper_F"]],
@@ -577,18 +565,6 @@
         "value":300,
     },
     "slotType" : "bx_lip_F_popup",
-    "nodes": [
-         ["id", "posX", "posY", "posZ"],
-         //--FRONT BUMPER--
-         {"selfCollision":true},
-         {"collision":true},
-         {"frictionCoef":0.8},
-         {"nodeMaterial":"|NM_PLASTIC"},
-         {"group":"bx_bumper_F"},
-         {"nodeWeight":0.44},
-
-         {"group":""},
-    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_lip_F_popup_sport", ["bx_bumper_F"]],

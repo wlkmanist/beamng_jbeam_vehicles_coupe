@@ -166,5 +166,14 @@
     },
     "slotType" : "paint_design",
     "skinName" : "tuningstudio"
+},
+"bx_skin_powerglow": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Powerglow (Colorable)",
+        "value":4200
+    },
+    "slotType" : "paint_design",
+    "skinName" : "powerglow"
   }
 }

@@ -194,7 +194,7 @@
     "slotType" : "bx_roof_accessory_hatch",
     "slots": [
         ["type", "default", "description"],
-        ["soundscape_siren","soundscape_siren_21", "Siren Audio"]
+        ["soundscape_siren","soundscape_siren_5", "Siren Audio"]
     ],
     "soundscape": [
         ["name", "src"],
@@ -564,7 +564,7 @@
     "slotType" : "bx_roof_accessory_coupe",
     "slots": [
         ["type", "default", "description"],
-        ["soundscape_siren","soundscape_siren_21", "Siren Audio"]
+        ["soundscape_siren","soundscape_siren_5", "Siren Audio"]
     ],
     "soundscape": [
         ["name", "src"],
@@ -934,7 +934,7 @@
     "slotType" : "bx_roof_accessory_hatch",
     "slots": [
         ["type", "default", "description"],
-        ["soundscape_siren","soundscape_siren_21", "Siren Audio"]
+        ["soundscape_siren","soundscape_siren_5", "Siren Audio"]
     ],
     "soundscape": [
         ["name", "src"],
@@ -1135,7 +1135,7 @@
         //lights
         {"deformGroup":"lightbar_M", "deformMaterialBase":"policeparts_glass_white", "deformMaterialDamaged":"policeparts_glass_white_dmg"},
         ["halogen_light_bar_glass", ["bx_lightbar"], [], {"pos":{"x": 0.0, "y":0.35, "z":1.28}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.15, "y":1.15, "z":1.15},"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound3", "deformVolume":0.5}],
-        {"deformGroup":"lightbar_R", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+        {"deformGroup":"lightbar_R", "deformMaterialBase":"policeparts_glass_red", "deformMaterialDamaged":"policeparts_glass_red_dmg"},
         ["halogen_light_bar_glass_R", ["bx_lightbar"], [], {"pos":{"x": 0.0, "y":0.35, "z":1.28}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.15, "y":1.15, "z":1.15},"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound3", "deformVolume":0.5}],
         {"deformGroup":"lightbar_L", "deformMaterialBase":"policeparts_glass_red", "deformMaterialDamaged":"policeparts_glass_red_dmg"},
         ["halogen_light_bar_glass_L", ["bx_lightbar"], [], {"pos":{"x": 0.0, "y":0.35, "z":1.28}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.15, "y":1.15, "z":1.15},"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound3", "deformVolume":0.5}],
@@ -1291,7 +1291,7 @@
     "slotType" : "bx_roof_accessory_coupe",
     "slots": [
         ["type", "default", "description"],
-        ["soundscape_siren","soundscape_siren_21", "Siren Audio"]
+        ["soundscape_siren","soundscape_siren_5", "Siren Audio"]
     ],
     "soundscape": [
         ["name", "src"],
@@ -1492,7 +1492,7 @@
         //lights
         {"deformGroup":"lightbar_M", "deformMaterialBase":"policeparts_glass_white", "deformMaterialDamaged":"policeparts_glass_white_dmg"},
         ["halogen_light_bar_glass", ["bx_lightbar"], [], {"pos":{"x": 0.0, "y":0.35, "z":1.28}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.15, "y":1.15, "z":1.15},"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound3", "deformVolume":0.5}],
-        {"deformGroup":"lightbar_R", "deformMaterialBase":"policeparts_glass_blue", "deformMaterialDamaged":"policeparts_glass_blue_dmg"},
+        {"deformGroup":"lightbar_R", "deformMaterialBase":"policeparts_glass_red", "deformMaterialDamaged":"policeparts_glass_red_dmg"},
         ["halogen_light_bar_glass_R", ["bx_lightbar"], [], {"pos":{"x": 0.0, "y":0.35, "z":1.28}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.15, "y":1.15, "z":1.15},"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound3", "deformVolume":0.5}],
         {"deformGroup":"lightbar_L", "deformMaterialBase":"policeparts_glass_red", "deformMaterialDamaged":"policeparts_glass_red_dmg"},
         ["halogen_light_bar_glass_L", ["bx_lightbar"], [], {"pos":{"x": 0.0, "y":0.35, "z":1.28}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.15, "y":1.15, "z":1.15},"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound3", "deformVolume":0.5}],

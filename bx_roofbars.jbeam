@@ -1,5 +1,5 @@
 {
-"bx_roofbars_hatch": {
+"bx_cargo_load_roofbars_hatch": {
     "information":{
         "authors":"BeamNG",
         "name":"Roof Bars",
@@ -165,7 +165,7 @@
             ["rfb2r", "rf4", "rf4r"],
     ],
 },
-"bx_roofbars_coupe": {
+"bx_cargo_load_roofbars_coupe": {
     "information":{
         "authors":"BeamNG",
         "name":"Roof Bars",

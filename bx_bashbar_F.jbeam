@@ -5,12 +5,11 @@
         "name":"Front Bash Bar",
         "value":200,
     },
-    "slotType" : "bx_bumperbar_F",
+    "slotType" : ["bx_bumperbar_F","bx_bashbar_f"]
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_bashbar_F", ["bx_bashbar_F"]],
     ],
-
     "nodes": [
          ["id", "posX", "posY", "posZ"],
          {"frictionCoef":0.5},

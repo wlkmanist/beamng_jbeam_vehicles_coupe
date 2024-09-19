@@ -9,6 +9,7 @@
     "slots": [
         ["type", "default", "description"],
         //bodywork
+        ["bx_bashbar_f","","Bash Bar"]
         ["bx_bumper_F_popup","bx_bumper_F_popup", "Front Bumper"],
         ["bx_hood_popup","bx_hood_popup", "Hood"],
         ["bx_fender_R_popup","bx_fender_R_popup", "Front Right Fender"],
@@ -194,6 +195,7 @@
     "slots": [
         ["type", "default", "description"],
         //bodywork
+        ["bx_bashbar_f","","Bash Bar"]
         ["bx_bumper_F_fixed","bx_bumper_F_fixed", "Front Bumper"],
         ["bx_hood_fixed","bx_hood_fixed", "Hood"],
         ["bx_fender_R_fixed","bx_fender_R_fixed", "Front Right Fender"],

@@ -109,15 +109,15 @@
         "torqueLossCoef": 0.013,
         "gearboxNode:":["tra1"],
 
-        "gearWhineCoefsInput":  [0.66, 0.00, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33],
-        "gearWhineCoefsOutput": [0.00, 0.00, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66],
-        "gearWhineInputEvent": "event:>Vehicle>Transmission>straight_01>twine_in_race",
-        "gearWhineOutputEvent": "event:>Vehicle>Transmission>straight_01>twine_out_race",
+        "gearWhineCoefsInput":  [0.33, 0.00, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33],
+        "gearWhineCoefsOutput": [0.00, 0.00, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33],
+        "gearWhineInputEvent": "event:>Vehicle>Transmission>straight_01>twine_in_racegt3",
+        "gearWhineOutputEvent": "event:>Vehicle>Transmission>straight_01>twine_out_racegt3",
 
-        //"forwardInputPitchCoef":1
-        //"forwardOutputPitchCoef":1
-        //"reverseInputPitchCoef":0.7
-        //"reverseOutputPitchCoef":0.7
+        "forwardInputPitchCoef":0.85
+        "forwardOutputPitchCoef":0.85
+        "reverseInputPitchCoef":0.7
+        "reverseOutputPitchCoef":0.7
 
         //"gearWhineInputPitchCoefSmoothing":50
         //"gearWhineOutputPitchCoefSmoothing":50
