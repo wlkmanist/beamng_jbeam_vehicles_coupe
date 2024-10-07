@@ -6,10 +6,6 @@
         "value":900,
     },
     "slotType" : "bx_exhaust_v8",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_muffler","bx_muffler", "Muffler", {"coreSlot":true}],
-    ],
     "flexbodies":[
         ["mesh", "[group]:","nonFlexMaterials"],
         ["bx_exhaust", ["bx_exhaust"]],

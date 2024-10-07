@@ -617,11 +617,16 @@
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["grp_shifter_m_housing", ["shifter_body","bx_floor"], [], {"pos":{"x": -0.00, "y":-0.16, "z":0.585}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
-         ["grp_shifter_m_details", ["shifter_body","bx_floor"], [], {"pos":{"x": -0.00, "y":-0.16, "z":0.585}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
-         ["grp_shifter_m_sphere", ["shifter_lever"], [], {"pos":{"x": -0.00, "y":-0.16, "z":0.585}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
-         ["grp_shifter_m_stick", ["shifter_lever"], [], {"pos":{"x": -0.00, "y":-0.16, "z":0.585}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
-         ["grp_shifter_knob_a", ["shifter_lever"], [], {"pos":{"x": -0.00, "y":-0.16, "z":0.585}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.2, "z":1.2}}],
+         ["grp_shifter_m_housing", ["shifter_body","bx_floor"], [], {"pos":{"x": -0.00, "y":-0.165, "z":0.585}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
+         ["grp_shifter_m_details", ["shifter_body","bx_floor"], [], {"pos":{"x": -0.00, "y":-0.165, "z":0.585}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
+         ["grp_shifter_m_sphere", ["shifter_lever"], [], {"pos":{"x": -0.00, "y":-0.165, "z":0.585}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
+         ["grp_shifter_m_stick", ["shifter_lever"], [], {"pos":{"x": -0.00, "y":-0.165, "z":0.585}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
+         ["grp_shifter_knob_a", ["shifter_lever"], [], {"pos":{"x": -0.00, "y":-0.165, "z":0.585}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        //clutch pedal
+        ["clutch"     ,"bx_clutchpedal_rhd", "f5l","f5r","f6l", {"x":0, "y":0, "z":180}, {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],

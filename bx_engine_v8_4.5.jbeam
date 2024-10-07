@@ -17,8 +17,10 @@
         ["bx_transmission","bx_transmission_4A", "Transmission"],
         ["bx_radiator_v8","bx_radiator_v8", "Radiator"],
         ["bx_oilcooler","", "Oil Cooler"],
-        ["bx_exhaust_v8","bx_exhaust_v8", "Exhaust"],
     ],
+    "components":{
+        "relocateBattery":true,
+    },
     "powertrain" : [
         ["type", "name", "inputName", "inputIndex"],
         ["combustionEngine", "mainEngine", "dummy", 0],
@@ -298,7 +300,7 @@
     "slotType" : "bx_header_v8",
     "slots": [
         ["type", "default", "description"],
-        ["bx_exhaust","bx_exhaust", "Exhaust Pipes"],
+        ["bx_exhaust_v8","bx_exhaust_v8", "Exhaust"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -343,6 +345,22 @@
           ["exm1l", "e2r"],
 
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"bx_header_v8_turbo": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Twin Turbo Exhaust Manifolds",
+        "value":350,
+    },
+    "slotType" : "bx_header_v8_turbo",
+    "slots": [
+        ["type", "default", "description"],
+        ["bx_exhaust_v8","bx_exhaust_v8", "Exhaust"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_header_v8_turbo", ["bx_engine", "bx_header"],[]],
     ],
 },
 "bx_intake_v8_stock": {
@@ -639,6 +657,10 @@
         "value":2500,
     },
     "slotType" : "bx_intake_v8",
+    "slots": [
+        ["type", "default", "description"],
+        ["bx_header_v8_turbo","bx_header_v8_turbo", "Exhaust Manifolds", {"coreSlot":true}],
+    ],
     "turbocharger": {
         "bovSoundFileName":"event:>Vehicle>Forced_Induction>Turbo_04>turbo_bov_race",
         "hissLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_05>turbo_hiss_tuned",
@@ -714,7 +736,6 @@
     },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bx_header_v8_turbo", ["bx_engine", "bx_header"],[]],
         ["bx_intake_v8_turbo", ["bx_engine","bx_radiator"],[]],
         {"deformGroup":"mainEngine_piping", "deformMaterialBase":"generic_perf_parts", "deformMaterialDamaged":"invis"},
         ["bx_icpipe_v8_center", ["bx_engine","bx_radiator"],[]],
@@ -844,6 +865,10 @@
         "value":7500,
     },
     "slotType" : "bx_intake_v8",
+    "slots": [
+        ["type", "default", "description"],
+        ["bx_header_v8_turbo","bx_header_v8_turbo", "Exhaust Manifolds", {"coreSlot":true}],
+    ],
     "turbocharger": {
         "bovSoundFileName":"event:>Vehicle>Forced_Induction>Turbo_05>turbo_bov_race",
         "hissLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_07>turbo_hiss_tuned",
@@ -919,7 +944,6 @@
     },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bx_header_v8_turbo", ["bx_engine", "bx_header"],[]],
         ["bx_intake_v8_turbo", ["bx_engine","bx_radiator"],[]],
         {"deformGroup":"mainEngine_piping", "deformMaterialBase":"generic_perf_parts", "deformMaterialDamaged":"invis"},
         ["bx_icpipe_v8_center", ["bx_engine","bx_radiator"],[]],
@@ -1049,6 +1073,10 @@
         "value":13900,
     },
     "slotType" : "bx_intake_v8",
+    "slots": [
+        ["type", "default", "description"],
+        ["bx_header_v8_turbo","bx_header_v8_turbo", "Exhaust Manifolds", {"coreSlot":true}],
+    ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
         ["$wastegateStart", "range", "psi", "Engine", 15, 10, 36, "Wastegate Pressure", "Pressure at which the wastegate begins to open", {"stepDis":0.5}],
@@ -1129,7 +1157,6 @@
     },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bx_header_v8_turbo", ["bx_engine", "bx_header"],[]],
         ["bx_intake_v8_turbo", ["bx_engine","bx_radiator"],[]],
         {"deformGroup":"mainEngine_piping", "deformMaterialBase":"generic_perf_parts", "deformMaterialDamaged":"invis"},
         ["bx_icpipe_v8_center", ["bx_engine","bx_radiator"],[]],

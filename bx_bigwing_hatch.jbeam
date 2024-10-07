@@ -223,6 +223,9 @@
           ["sp2l","t2l"],
           ["sp2l","t5"],
 
+          ["sp2l", "t4l"],
+          ["sp1l", "t4l"],
+
           //right support trunk attach
           {"breakGroup":"spoiler_trunk_R"},
           ["sp1r","t2rr"],

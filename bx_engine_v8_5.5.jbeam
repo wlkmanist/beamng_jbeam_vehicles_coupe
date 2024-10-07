@@ -17,8 +17,10 @@
         ["bx_transmission","bx_transmission_4A", "Transmission"],
         ["bx_radiator_v8","bx_radiator_v8", "Radiator"],
         ["bx_oilcooler","", "Oil Cooler"],
-        ["bx_exhaust_v8","bx_exhaust_v8", "Exhaust"],
     ],
+    "components":{
+        "relocateBattery":true,
+    },
     "powertrain" : [
         ["type", "name", "inputName", "inputIndex"],
         ["combustionEngine", "mainEngine", "dummy", 0],

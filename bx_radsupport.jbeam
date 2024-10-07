@@ -25,7 +25,8 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_chassis_front", ["bx_body","bx_shocktop_F"]],
-           ["bx_engbaycrap", ["bx_body","bx_shocktop_F"]],
+         ["bx_engbaycrap",        ["bx_body","bx_shocktop_F"], [], {"disable":"$= $components.relocateBattery == true"}],
+         ["bx_engbaycrap_custom", ["bx_body","bx_shocktop_F"], [], {"disable":"$= $components.relocateBattery ~= true"}],
          ["bx_headlightmount_popup", ["bx_body","bx_shocktop_F"]],
     ],
     "nodes": [
@@ -215,7 +216,8 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_chassis_front", ["bx_body","bx_shocktop_F"]],
-           ["bx_engbaycrap", ["bx_body","bx_shocktop_F"]],
+         ["bx_engbaycrap",        ["bx_body","bx_shocktop_F"], [], {"disable":"$= $components.relocateBattery == true"}],
+         ["bx_engbaycrap_custom", ["bx_body","bx_shocktop_F"], [], {"disable":"$= $components.relocateBattery ~= true"}],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
