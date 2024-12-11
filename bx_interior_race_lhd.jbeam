@@ -374,7 +374,7 @@
         ["pb_2r", "f5ll"],
         ["pb_2l", "f5l"],
         ["pb_2r", "f5l"],
-        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0,,"deformLimit":""},
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0,"deformLimit":""},
         {"deformLimitExpansion":""},
         {"deformGroup":""},
     ],
@@ -686,7 +686,7 @@
     "soundscape": [
         ["name", "src"],
         //handbrake8
-        {"node:":"sh_b3"},
+        {"node:":"lsh_b3"},
         ["handbrakeDisengaged","event:>Vehicle>Interior>Handbrake_Race>Race_01_Unlock"],
         ["handbrakeEngaging","event:>Vehicle>Interior>Handbrake_Race>Race_01_Lock"],
     ],

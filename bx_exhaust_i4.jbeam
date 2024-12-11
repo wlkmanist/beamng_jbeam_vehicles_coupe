@@ -646,7 +646,7 @@
          ["ex5rr",  -0.4181,  1.4707,  0.3156],
          ["ex6r",   -0.3408,  1.7066, 0.2686],
          ["ex6rr",  -0.5295,  1.7066, 0.2731],
-         ["ex7r",   -0.447,  2.212,  0.322, {"selfCollision":false, "afterFireAudioCoef":0.6, "afterFireVisualCoef":0.4, "afterFireVolumeCoef":0.9, "afterFireMufflingCoef":0.80, "exhaustAudioMufflingCoef":0.66, "exhaustAudioGainChange":-5}],
+         ["ex7r",   -0.447,  2.212,  0.322, {"selfCollision":false, "afterFireAudioCoef":0.7, "afterFireVisualCoef":0.4, "afterFireVolumeCoef":0.9, "afterFireMufflingCoef":0.70, "exhaustAudioMufflingCoef":0.45, "exhaustAudioGainChange":-5}],
 
          //rigidifier
          {"selfCollision":false},

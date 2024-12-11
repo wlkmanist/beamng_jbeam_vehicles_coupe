@@ -672,7 +672,7 @@
 "bx_seats_R_cargo_load_floor": {
     "information":{
         "authors":"BeamNG",
-        "name":"Cargo Box Floor",
+        "name":"Cargo Box Slots",
         "value":0,
     },
     "slotType" : "bx_seats_R",

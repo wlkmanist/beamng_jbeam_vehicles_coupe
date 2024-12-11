@@ -78,7 +78,7 @@
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
 
-        {"brakeTorque":"$=$brakestrength*700"},
+        {"brakeTorque":"$=$brakestrength*760"},
         {"brakeInputSplit":0.65},
         {"brakeSplitCoef":0.4},
         {"parkingTorque":1200},
@@ -193,7 +193,7 @@
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
 
-        {"brakeTorque":"$=$brakestrength*790"},
+        {"brakeTorque":"$=$brakestrength*840"},
         {"brakeInputSplit":0.65},
         {"brakeSplitCoef":0.4},
         {"parkingTorque":1500},
@@ -207,7 +207,7 @@
         {"rotorMaterial":"steel"},
         {"brakeVentingCoef":0.8},
         //abs
-        {"absSlipRatioTarget":0.13},
+        {"absSlipRatioTarget":0.16},
         //brake sounds
         {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
 
