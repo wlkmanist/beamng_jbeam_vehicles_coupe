@@ -6,14 +6,14 @@
         "value":250,
     },
     "slotType" : "bx_brake_F",
-    "slots": [
-        ["type", "default", "description"],
-        ["brakepad_F","brakepad_F_premium", "Front Brake Pads", {"coreSlot":true}],
+    "slots2": [
+        ["name",       "allowTypes",   "denyTypes", "default",            "description"],
+        ["brakepad_F", ["brakepad_F"], [],          "brakepad_F_premium", "Front Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["brake_disc_plain", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
-        ["brake_disc_plain", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x":0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":1.0,"z":1.0}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_disc_plain", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}, "materialOverride":[["disc_brake", "disc_brake_FR"]]}],
+        ["brake_disc_plain", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x":0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":1.0,"z":1.0}, "rot":{"x":180,"y":0,"z":0}, "materialOverride":[["disc_brake", "disc_brake_FL"]]}],
         ["brake_caliper_standard_plain", ["bx_hub_F"], [], {"pos":{"x":-0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":0.9,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
         ["brake_caliper_standard_plain", ["bx_hub_F"], [], {"pos":{"x":0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":0.9,"z":1.0}, "rot":{"x":0,"y":180,"z":0}}],
     ],
@@ -63,14 +63,14 @@
         "value":220,
     },
     "slotType" : "bx_brake_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["brakepad_R","brakepad_R_premium", "Rear Brake Pads", {"coreSlot":true}],
+    "slots2": [
+        ["name",       "allowTypes",   "denyTypes", "default",            "description"],
+        ["brakepad_R", ["brakepad_R"], [],          "brakepad_R_premium", "Rear Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["brake_disc_plain", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.9,"z":0.9}, "rot":{"x":0,"y":0,"z":0}}],
-        ["brake_disc_plain", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.9,"z":0.9}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_disc_plain", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.9,"z":0.9}, "rot":{"x":0,"y":0,"z":0}, "materialOverride":[["disc_brake", "disc_brake_RR"]]}],
+        ["brake_disc_plain", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.9,"z":0.9}, "rot":{"x":180,"y":0,"z":0}, "materialOverride":[["disc_brake", "disc_brake_RL"]]}],
         ["brake_caliper_standard_plain", ["bx_hub_R"], [], {"pos":{"x":-0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.75,"z":0.9}, "rot":{"x":0,"y":0,"z":0}}],
         ["brake_caliper_standard_plain", ["bx_hub_R"], [], {"pos":{"x":0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.75,"z":0.9}, "rot":{"x":0,"y":180,"z":0}}],
     ],
@@ -121,14 +121,14 @@
         "value":350,
     },
     "slotType" : "bx_brake_F",
-    "slots": [
-        ["type", "default", "description"],
-        ["brakepad_F","brakepad_F_sport", "Front Brake Pads", {"coreSlot":true}],
+    "slots2": [
+        ["name",       "allowTypes",   "denyTypes", "default",          "description"],
+        ["brakepad_F", ["brakepad_F"], [],          "brakepad_F_sport", "Front Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["brake_disc_plain", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":1.07,"z":1.07}, "rot":{"x":0,"y":0,"z":0}}],
-        ["brake_disc_plain", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x":0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":1.07,"z":1.07}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_disc_plain", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":1.07,"z":1.07}, "rot":{"x":0,"y":0,"z":0}, "materialOverride":[["disc_brake", "disc_brake_FR"]]}],
+        ["brake_disc_plain", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x":0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":1.07,"z":1.07}, "rot":{"x":180,"y":0,"z":0}, "materialOverride":[["disc_brake", "disc_brake_FL"]]}],
         ["brake_caliper_4pot_plain", ["bx_hub_F"], [], {"pos":{"x":-0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
         ["brake_caliper_4pot_plain", ["bx_hub_F"], [], {"pos":{"x":0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":1.0,"z":1.0}, "rot":{"x":0,"y":180,"z":0}}],
     ],
@@ -178,14 +178,14 @@
         "value":300,
     },
     "slotType" : "bx_brake_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["brakepad_R","brakepad_R_sport", "Rear Brake Pads", {"coreSlot":true}],
+    "slots2": [
+        ["name",       "allowTypes",   "denyTypes", "default",          "description"],
+        ["brakepad_R", ["brakepad_R"], [],          "brakepad_R_sport", "Rear Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["brake_disc_plain", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.95,"z":0.95}, "rot":{"x":0,"y":0,"z":0}}],
-        ["brake_disc_plain", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.95,"z":0.95}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_disc_plain", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.95,"z":0.95}, "rot":{"x":0,"y":0,"z":0}, "materialOverride":[["disc_brake", "disc_brake_RR"]]}],
+        ["brake_disc_plain", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.95,"z":0.95}, "rot":{"x":180,"y":0,"z":0}, "materialOverride":[["disc_brake", "disc_brake_RL"]]}],
         ["brake_caliper_standard_plain", ["bx_hub_R"], [], {"pos":{"x":-0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.8,"z":0.95}, "rot":{"x":0,"y":0,"z":0}}],
         ["brake_caliper_standard_plain", ["bx_hub_R"], [], {"pos":{"x":0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.8,"z":0.95}, "rot":{"x":0,"y":180,"z":0}}],
     ],
@@ -236,14 +236,14 @@
         "value":1100,
     },
     "slotType" : "bx_brake_F",
-    "slots": [
-        ["type", "default", "description"],
-        ["brakepad_F","brakepad_F_race", "Front Brake Pads", {"coreSlot":true}],
+    "slots2": [
+        ["name",       "allowTypes",   "denyTypes", "default",         "description"],
+        ["brakepad_F", ["brakepad_F"], [],          "brakepad_F_race", "Front Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["brake_disc_drilled", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
-        ["brake_disc_drilled", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x":0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":1.0,"z":1.0}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_disc_drilled", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}, "materialOverride":[["disc_brake", "disc_brake_FR"]]}],
+        ["brake_disc_drilled", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x":0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":1.0,"z":1.0}, "rot":{"x":180,"y":0,"z":0}, "materialOverride":[["disc_brake", "disc_brake_FL"]]}],
         ["brake_caliper_6pot_red_rotopad", ["bx_hub_F"], [], {"pos":{"x":-0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":1.02,"z":1.02}, "rot":{"x":0,"y":0,"z":0}}],
         ["brake_caliper_6pot_red_rotopad", ["bx_hub_F"], [], {"pos":{"x":0.685,"y":-1.245, "z":0.35}, "scale":{"x":1.0,"y":1.02,"z":1.02}, "rot":{"x":0,"y":180,"z":0}}],
     ],
@@ -298,14 +298,14 @@
         "value":950,
     },
     "slotType" : "bx_brake_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["brakepad_R","brakepad_R_race", "Rear Brake Pads", {"coreSlot":true}],
+    "slots2": [
+        ["name",       "allowTypes",   "denyTypes", "default",         "description"],
+        ["brakepad_R", ["brakepad_R"], [],          "brakepad_R_race", "Rear Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["brake_disc_drilled", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.95,"z":0.95}, "rot":{"x":0,"y":0,"z":0}}],
-        ["brake_disc_drilled", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.95,"z":0.95}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_disc_drilled", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.95,"z":0.95}, "rot":{"x":0,"y":0,"z":0}, "materialOverride":[["disc_brake", "disc_brake_RR"]]}],
+        ["brake_disc_drilled", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.95,"z":0.95}, "rot":{"x":180,"y":0,"z":0}, "materialOverride":[["disc_brake", "disc_brake_RL"]]}],
         ["brake_caliper_4pot_red_rotopad", ["bx_hub_R"], [], {"pos":{"x":-0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.95,"z":0.95}, "rot":{"x":0,"y":0,"z":0}}],
         ["brake_caliper_4pot_red_rotopad", ["bx_hub_R"], [], {"pos":{"x":0.685,"y":1.25,"z":0.325}, "scale":{"x":1.0,"y":0.95,"z":0.95}, "rot":{"x":0,"y":180,"z":0}}],
     ],
@@ -355,7 +355,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Anti-Lock Braking System",
-        "value":200,
+        "value":600,
     },
     "slotType":"bx_ABS",
     "pressureWheels": [

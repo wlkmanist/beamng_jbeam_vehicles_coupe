@@ -6,20 +6,20 @@
         "value":1000,
     },
     "slotType" : "bx_interior_hatch",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_dashboard","bx_dashboard_lhd", "Dashboard", {"coreSlot":true}],
-        ["bx_shelf_hatch","bx_shelf_hatch", "Package Shelf"],
-        ["bx_seat_FR","bx_seat_FR", "Front Right Seat"],
-        ["bx_seat_FL","bx_seat_FL", "Front Left Seat"],
-        ["bx_seats_R","bx_seats_R", "Rear Seats"],
-        ["skin_interior","bx_skin_interior", "Interior Color", {"coreSlot":true}],
+    "slots2": [
+        ["name",           "allowTypes",       "denyTypes", "default",          "description"],
+        ["bx_dashboard",   ["bx_dashboard"],   [],          "bx_dashboard_lhd", "Dashboard",        {"coreSlot":true}],
+        ["bx_sunvisors",   ["bx_sunvisors"],   [],          "bx_sunvisors",     "Sunvisors"],
+        ["bx_shelf_hatch", ["bx_shelf_hatch"], [],          "bx_shelf_hatch",   "Package Shelf"],
+        ["bx_seat_FR",     ["bx_seat_FR"],     [],          "bx_seat_FR",       "Front Right Seat"],
+        ["bx_seat_FL",     ["bx_seat_FL"],     [],          "bx_seat_FL",       "Front Left Seat"],
+        ["bx_seats_R",     ["bx_seats_R"],     [],          "bx_seats_R",       "Rear Seats"],
+        ["skin_interior",  ["skin_interior"],  [],          "bx_skin_interior", "Interior Color",   {"coreSlot":true}],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_intcarpet_hatch", ["bx_body","bx_shocktop_R","bx_shocktop_F"]],
          ["bx_intpanels_hatch", ["bx_body","bx_shocktop_R","bx_shocktop_F"]],
-         ["bx_sunvisors", ["bx_body","bx_shocktop_R","bx_shocktop_F"]],
     ],
     "sounds": {
         "$+cabinFilterCoef": 0.2
@@ -54,19 +54,19 @@
         "value":1000,
     },
     "slotType" : "bx_interior_coupe",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_dashboard","bx_dashboard_lhd", "Dashboard", {"coreSlot":true}],
-        ["bx_seat_FR","bx_seat_FR", "Front Right Seat"],
-        ["bx_seat_FL","bx_seat_FL", "Front Left Seat"],
-        ["bx_seats_R","bx_seats_R", "Rear Seats"],
-        ["skin_interior","bx_skin_interior", "Interior Color", {"coreSlot":true}],
+    "slots2": [
+        ["name",          "allowTypes",      "denyTypes", "default",          "description"],
+        ["bx_dashboard",  ["bx_dashboard"],  [],          "bx_dashboard_lhd", "Dashboard",        {"coreSlot":true}],
+        ["bx_sunvisors",  ["bx_sunvisors"],  [],          "bx_sunvisors",     "Sunvisors"],
+        ["bx_seat_FR",    ["bx_seat_FR"],    [],          "bx_seat_FR",       "Front Right Seat"],
+        ["bx_seat_FL",    ["bx_seat_FL"],    [],          "bx_seat_FL",       "Front Left Seat"],
+        ["bx_seats_R",    ["bx_seats_R"],    [],          "bx_seats_R",       "Rear Seats"],
+        ["skin_interior", ["skin_interior"], [],          "bx_skin_interior", "Interior Color",   {"coreSlot":true}],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_intcarpet_coupe", ["bx_body","intcarpet_flexfix"]],
          ["bx_intpanels_coupe", ["bx_body","bx_shocktop_R","bx_shocktop_F"]],
-         ["bx_sunvisors", ["bx_body","bx_shocktop_R","bx_shocktop_F"]],
     ],
     "sounds": {
         "$+cabinFilterCoef": 0.2
@@ -100,13 +100,14 @@
         "value":200,
     },
     "slotType" : "bx_interior_hatch",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_dashboard","bx_dashboard_lhd", "Dashboard", {"coreSlot":true}],
-        ["bx_seat_FR","bx_seat_FR", "Front Right Seat"],
-        ["bx_seat_FL","bx_seat_FL", "Front Left Seat"],
-        ["bx_seats_R","bx_seats_R", "Rear Seats"],
-        ["skin_interior","bx_skin_interior", "Interior Color", {"coreSlot":true}],
+    "slots2": [
+        ["name",          "allowTypes",      "denyTypes", "default",          "description"],
+        ["bx_dashboard",  ["bx_dashboard"],  [],          "bx_dashboard_lhd", "Dashboard",        {"coreSlot":true}],
+        ["bx_sunvisors",  ["bx_sunvisors"],  [],          "",                 "Sunvisors"],
+        ["bx_seat_FR",    ["bx_seat_FR"],    [],          "bx_seat_FR",       "Front Right Seat"],
+        ["bx_seat_FL",    ["bx_seat_FL"],    [],          "bx_seat_FL",       "Front Left Seat"],
+        ["bx_seats_R",    ["bx_seats_R"],    [],          "bx_seats_R",       "Rear Seats"],
+        ["skin_interior", ["skin_interior"], [],          "bx_skin_interior", "Interior Color",   {"coreSlot":true}],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -120,17 +121,68 @@
         "value":200,
     },
     "slotType" : "bx_interior_coupe",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_dashboard","bx_dashboard_lhd", "Dashboard", {"coreSlot":true}],
-        ["bx_seat_FR","bx_seat_FR", "Front Right Seat"],
-        ["bx_seat_FL","bx_seat_FL", "Front Left Seat"],
-        ["bx_seats_R","bx_seats_R", "Rear Seats"],
-        ["skin_interior","bx_skin_interior", "Interior Color", {"coreSlot":true}],
+    "slots2": [
+        ["name",          "allowTypes",      "denyTypes", "default",          "description"],
+        ["bx_dashboard",  ["bx_dashboard"],  [],          "bx_dashboard_lhd", "Dashboard",        {"coreSlot":true}],
+        ["bx_sunvisors",  ["bx_sunvisors"],  [],          "",                 "Sunvisors"],
+        ["bx_seat_FR",    ["bx_seat_FR"],    [],          "bx_seat_FR",       "Front Right Seat"],
+        ["bx_seat_FL",    ["bx_seat_FL"],    [],          "bx_seat_FL",       "Front Left Seat"],
+        ["bx_seats_R",    ["bx_seats_R"],    [],          "bx_seats_R",       "Rear Seats"],
+        ["skin_interior", ["skin_interior"], [],          "bx_skin_interior", "Interior Color",   {"coreSlot":true}],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_intcarpet_stripped_coupe", ["bx_body","intcarpet_flexfix"]],
+    ],
+},
+
+"bx_sunvisors": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sunvisors",
+        "value":180,
+    },
+    "slotType" : "bx_sunvisors",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_sunvisor_mounts", ["bx_body","bx_shocktop_R","bx_shocktop_F"]],
+    ],
+    "props": [
+        ["func",       "mesh",                "idRef:", "idX:", "idY:", "baseRotation",          "rotation",                 "translation",        "min", "max", "offset", "multiplier"],
+        ["sunvisor_L_movement","bx_sunvisor_L","rf1","rf1l","rf2",{"x":0,"y":0,"z":0},{"x":-180,"y":0,"z":0},{"x":0,"y":0,"z":0},0,1,0,1,{"baseRotationGlobal":{"x":-0.29,"y":-3.58,"z":-8.22}}],
+        ["sunvisor_R_movement","bx_sunvisor_R","rf1","rf1r","rf2",{"x":0,"y":0,"z":0},{"x":-180,"y":0,"z":0},{"x":0,"y":0,"z":0},0,1,0,1,{"baseRotationGlobal":{"x":-0.51,"y": 3.60,"z": 8.12}}],
+    ],
+    "components": {
+        "electrics": {
+            "customValues": [
+                ["electricsName", "electricsFunction","electricsDefault"],
+                ["sunvisor_L","",0],
+                ["sunvisor_R","",0],
+                ["sunvisor_L_movement","min(1, max(0, electrics.sunvisor_L_movement + electrics.sunvisor_L * dt))",0],
+                ["sunvisor_R_movement","min(1, max(0, electrics.sunvisor_R_movement + electrics.sunvisor_R * dt))",0],
+            ]
+        }
+    },
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["sunvisor_L_close", "rf1","rf1l","rf2", "box", {"x":0.09, "y":0.04, "z":0.04}, {"x":0, "y":0, "z":2}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.26, "y":-0.04, "z": 0.00}],
+        ["sunvisor_R_close", "rf1","rf1r","rf2", "box", {"x":0.09, "y":0.04, "z":0.04}, {"x":0, "y":0, "z":2}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.26, "y":-0.04, "z":-0.04}],
+        ["sunvisor_L_open",  "rf1","rf1l","rf2", "box", {"x":0.09, "y":0.04, "z":0.04}, {"x":0, "y":0, "z":2}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.36, "y":-0.04, "z": 0.00}],
+        ["sunvisor_R_open",  "rf1","rf1r","rf2", "box", {"x":0.09, "y":0.04, "z":0.04}, {"x":0, "y":0, "z":2}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.36, "y":-0.04, "z":-0.04}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["sunvisor_L_open"],
+        ["sunvisor_R_open"],
+        ["sunvisor_L_close"],
+        ["sunvisor_R_close"],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["sunvisor_L_open", "action0", "sunvisor_L_open"],
+        ["sunvisor_R_open", "action0", "sunvisor_R_open"],
+        ["sunvisor_L_close","action0", "sunvisor_L_close"],
+        ["sunvisor_R_close","action0", "sunvisor_R_close"],
     ],
 },
 "bx_seat_FL": {
@@ -156,9 +208,9 @@
          {"collision":true},
          {"selfCollision":true},
          {"nodeWeight":2.5},
-         ["sf1l", 0.13, -0.21, 0.51],
+         ["sf1l", 0.14, -0.21, 0.51],
          ["sf1ll", 0.58, -0.21, 0.51],
-         ["sf2l", 0.15, 0.3, 0.42],
+         ["sf2l", 0.16, 0.3, 0.42],
          ["sf2ll", 0.55, 0.3, 0.42],
          ["sf3l", 0.19, 0.5, 1.06],
          ["sf3ll", 0.48, 0.5, 1.06],
@@ -271,9 +323,9 @@
          {"collision":true},
          {"selfCollision":true},
          {"nodeWeight":2.5},
-         ["sf1r", -0.13, -0.21, 0.51],
+         ["sf1r", -0.14, -0.21, 0.51],
          ["sf1rr", -0.58, -0.21, 0.51],
-         ["sf2r", -0.15, 0.3, 0.42],
+         ["sf2r", -0.16, 0.3, 0.42],
          ["sf2rr", -0.55, 0.3, 0.42],
          ["sf3r", -0.19, 0.5, 1.06],
          ["sf3rr", -0.48, 0.5, 1.06],
@@ -335,7 +387,7 @@
         {"beamPrecompression":0.9, "beamType":"|SUPPORT","beamLongBound":5},
         {"beamSpring":1501000,"beamDamp":120},
         {"beamDeform":1000,"beamStrength":"FLT_MAX"},
-        {"optionar":true},
+        {"optional":true},
         ["sf3r", "p4r"],
         ["sf3r", "p3r"],
         ["sf1r", "f1rr"],
@@ -365,9 +417,9 @@
         "value":10,
     },
     "slotType" : "bx_seat_FL",
-    "slots": [
-        ["type", "default", "description"],
-        ["race_seat_FL","race_seat_FL", "Front Left Race Seat", {"nodeMove":{"x":0.35, "y":0.15, "z":0.27}}],
+    "slots2": [
+        ["name",         "allowTypes",     "denyTypes", "default",      "description"],
+        ["race_seat_FL", ["race_seat_FL"], [],          "race_seat_FL", "Front Left Race Seat", {"nodeMove":{"x":0.35, "y":0.15, "z":0.27}}],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -436,9 +488,9 @@
         "value":10,
     },
     "slotType" : "bx_seat_FR",
-    "slots": [
-        ["type", "default", "description"],
-        ["race_seat_FR","race_seat_FR", "Front Right Race Seat", {"nodeMove":{"x":-0.35, "y":0.15, "z":0.27}}],
+    "slots2": [
+        ["name",         "allowTypes",     "denyTypes", "default",      "description"],
+        ["race_seat_FR", ["race_seat_FR"], [],          "race_seat_FR", "Front Right Race Seat", {"nodeMove":{"x":-0.35, "y":0.15, "z":0.27}}],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -507,9 +559,9 @@
         "value":240,
     },
     "slotType" : "bx_seats_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["load_seat_R","", "Rear Seat Load", {
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["load_seat_R", ["load_seat_R"], [], "", "Rear Seat Load", {
             "nodeMove":{"x": 0.00, "y":0.78, "z":0.67},
             "variables":{
                 "$rotx":-5, "$roty":13, "$rotz":0,
@@ -676,9 +728,9 @@
         "value":0,
     },
     "slotType" : "bx_seats_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["cargo_load_box_L_seats_R","cargo_load_box_L_seats_R", "Cargo Box", {"nodeMove":{"x": 0.00, "y":0.85, "z":0.78}, "variables":{"$group":"bx_body"}}],
+    "slots2": [
+        ["name",                     "allowTypes",                 "denyTypes", "default",                  "description"],
+        ["cargo_load_box_L_seats_R", ["cargo_load_box_L_seats_R"], [],          "cargo_load_box_L_seats_R", "Cargo Box",   {"nodeMove":{"x": 0.00, "y":0.85, "z":0.78}, "variables":{"$group":"bx_body"}}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

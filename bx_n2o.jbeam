@@ -6,10 +6,10 @@
         "value":350,
     },
     "slotType" : "n2o_system",
-    "slots": [
-        ["type", "default", "description"],
-        ["n2o_bottle","n2o_bottle_10lb", "Nitrous Oxide Bottle"],
-        ["n2o_shot","n2o_shot_50", "Nitrous Oxide Shot Size"],
+    "slots2": [
+        ["name",       "allowTypes",   "denyTypes", "default",         "description"],
+        ["n2o_bottle", ["n2o_bottle"], [],          "n2o_bottle_10lb", "Nitrous Oxide Bottle"],
+        ["n2o_shot",   ["n2o_shot"],   [],          "n2o_shot_50",     "Nitrous Oxide Shot Size"],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],

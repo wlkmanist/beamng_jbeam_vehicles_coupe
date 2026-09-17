@@ -6,18 +6,18 @@
         "value":2000,
     },
     "slotType" : "bx_radsupport",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name",                 "allowTypes",             "denyTypes", "default",              "description"],
         //bodywork
-        ["bx_bashbar_f","","Bash Bar"]
-        ["bx_bumper_F_popup","bx_bumper_F_popup", "Front Bumper"],
-        ["bx_hood_popup","bx_hood_popup", "Hood"],
-        ["bx_fender_R_popup","bx_fender_R_popup", "Front Right Fender"],
-        ["bx_fender_L_popup","bx_fender_L_popup", "Front Left Fender"],
+        ["bx_bashbar_f",         ["bx_bashbar_f"],         [],          "",                     "Bash Bar"]
+        ["bx_bumper_F_popup",    ["bx_bumper_F_popup"],    [],          "bx_bumper_F_popup",    "Front Bumper"],
+        ["bx_hood_popup",        ["bx_hood_popup"],        [],          "bx_hood_popup",        "Hood"],
+        ["bx_fender_R_popup",    ["bx_fender_R_popup"],    [],          "bx_fender_R_popup",    "Front Right Fender"],
+        ["bx_fender_L_popup",    ["bx_fender_L_popup"],    [],          "bx_fender_L_popup",    "Front Left Fender"],
 
         //lights
-        ["bx_headlight_R_popup","bx_headlight_R_popup", "Right Headlight"],
-        ["bx_headlight_L_popup","bx_headlight_L_popup", "Left Headlight"],
+        ["bx_headlight_R_popup", ["bx_headlight_R_popup"], [],          "bx_headlight_R_popup", "Right Headlight"],
+        ["bx_headlight_L_popup", ["bx_headlight_L_popup"], [],          "bx_headlight_L_popup", "Left Headlight"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -159,7 +159,7 @@
             ["f14ll","f15l","f15ll"],
             ["f15l","f14ll","f15"],
 
-            {"dragCoef":25},
+            {"dragCoef":43.75},
             ["f15r", "f15rr", "f13rr"],
             ["f15r", "f13rr", "f15"],
             ["f13rr", "f11rr", "f11"],
@@ -170,12 +170,12 @@
             ["f15l", "f13ll", "f15ll"],
 
             //sides
-            {"dragCoef":6},
+            {"dragCoef":10.5},
             ["f15ll", "f14l", "f14ll", {"group":"bx_side_L"}],
             ["f15rr", "f14rr", "f14r", {"group":"bx_side_R"}],
 
             //bottom
-            {"dragCoef":10},
+            {"dragCoef":17.5},
             ["f13rr", "f15rr", "f14r"],
             ["f12rr", "f13rr", "f14r"],
             ["f11rr", "f13rr", "f12rr"],
@@ -192,18 +192,18 @@
         "value":2000,
     },
     "slotType" : "bx_radsupport",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name",                 "allowTypes",             "denyTypes", "default",              "description"],
         //bodywork
-        ["bx_bashbar_f","","Bash Bar"]
-        ["bx_bumper_F_fixed","bx_bumper_F_fixed", "Front Bumper"],
-        ["bx_hood_fixed","bx_hood_fixed", "Hood"],
-        ["bx_fender_R_fixed","bx_fender_R_fixed", "Front Right Fender"],
-        ["bx_fender_L_fixed","bx_fender_L_fixed", "Front Left Fender"],
+        ["bx_bashbar_f",         ["bx_bashbar_f"],         [],          "",                     "Bash Bar"]
+        ["bx_bumper_F_fixed",    ["bx_bumper_F_fixed"],    [],          "bx_bumper_F_fixed",    "Front Bumper"],
+        ["bx_hood_fixed",        ["bx_hood_fixed"],        [],          "bx_hood_fixed",        "Hood"],
+        ["bx_fender_R_fixed",    ["bx_fender_R_fixed"],    [],          "bx_fender_R_fixed",    "Front Right Fender"],
+        ["bx_fender_L_fixed",    ["bx_fender_L_fixed"],    [],          "bx_fender_L_fixed",    "Front Left Fender"],
 
         //lights
-        ["bx_headlight_R_fixed","bx_headlight_R_fixed", "Right Headlight"],
-        ["bx_headlight_L_fixed","bx_headlight_L_fixed", "Left Headlight"],
+        ["bx_headlight_R_fixed", ["bx_headlight_R_fixed"], [],          "bx_headlight_R_fixed", "Right Headlight"],
+        ["bx_headlight_L_fixed", ["bx_headlight_L_fixed"], [],          "bx_headlight_L_fixed", "Left Headlight"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -344,7 +344,7 @@
             ["f14ll","f15l","f15ll"],
             ["f15l","f14ll","f15"],
 
-            {"dragCoef":25},
+            {"dragCoef":43.75},
             ["f15r", "f15rr", "f13rr"],
             ["f15r", "f13rr", "f15"],
             ["f13rr", "f11rr", "f11"],
@@ -355,12 +355,12 @@
             ["f15l", "f13ll", "f15ll"],
 
             //sides
-            {"dragCoef":6},
+            {"dragCoef":10.5},
             ["f15ll", "f14l", "f14ll", {"group":"bx_side_L"}],
             ["f15rr", "f14rr", "f14r", {"group":"bx_side_R"}],
 
             //bottom
-            {"dragCoef":10},
+            {"dragCoef":17.5},
             ["f13rr", "f15rr", "f14r"],
             ["f12rr", "f13rr", "f14r"],
             ["f11rr", "f13rr", "f12rr"],

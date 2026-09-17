@@ -6,54 +6,55 @@
         "value":12000,
     },
     "slotType" : "bx_body",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name",                    "allowTypes",                "denyTypes", "default",                 "description"],
 
         //misc
-        ["bx_lightbar","", "Light Bar"],
-        ["bx_towhitch","", "Tow Hitch", {"nodeOffset":{"x":0.0, "y":-0.44, "z":-0.14}}],
-        ["bx_wheeliebar","", "Wheelie Bar"],
-        ["bx_underglow", "", "Under Glow Lights"],
-        ["bx_roof_accessory_coupe","", "Roof Accessory"],
-        ["bx_trunk_load","", "Trunk Load"],
-        ["bx_mudflap_R","", "Rear Mudflaps"],
+        ["bx_lightbar",             ["bx_lightbar"],             [],          "",                        "Light Bar"],
+        ["bx_towhitch",             ["bx_towhitch"],             [],          "",                        "Tow Hitch",                {"nodeOffset":{"x":0.0, "y":-0.44, "z":-0.14}}],
+        ["bx_wheeliebar",           ["bx_wheeliebar"],           [],          "",                        "Wheelie Bar"],
+        ["bx_underglow",            ["bx_underglow"],            [],          "",                        "Underglow Lights"],
+        ["bx_roof_accessory_coupe", ["bx_roof_accessory_coupe"], [],          "",                        "Roof Accessory"],
+        ["bx_trunk_load",           ["bx_trunk_load"],           [],          "",                        "Trunk Load"],
+        ["bx_skidplate_R",          ["bx_skidplate_R"],          [],          "",                        "Rear Skidplate"],
+        ["bx_roof_antenna_coupe",   ["bx_roof_antenna_coupe"],   [],          "",                        "Roof Antenna"],
 
         //glass
-        ["bx_windshield","bx_windshield", "Windshield"],
-        ["bx_backlight_coupe","bx_backlight_coupe", "Backlight"],
-        ["bx_quarterglass_R_coupe","bx_quarterglass_R_coupe", "Right Quarter Glass"],
-        ["bx_quarterglass_L_coupe","bx_quarterglass_L_coupe", "Left Quarter Glass"],
+        ["bx_windshield",           ["bx_windshield"],           [],          "bx_windshield",           "Windshield"],
+        ["bx_backlight_coupe",      ["bx_backlight_coupe"],      [],          "bx_backlight_coupe",      "Backlight"],
+        ["bx_quarterglass_R_coupe", ["bx_quarterglass_R_coupe"], [],          "bx_quarterglass_R_coupe", "Right Quarter Glass"],
+        ["bx_quarterglass_L_coupe", ["bx_quarterglass_L_coupe"], [],          "bx_quarterglass_L_coupe", "Left Quarter Glass"],
 
         //lights
-        ["bx_taillight_R_coupe","bx_taillight_R_coupe", "Right Taillight"],
-        ["bx_taillight_L_coupe","bx_taillight_L_coupe", "Left Taillight"],
+        ["bx_taillight_R_coupe",    ["bx_taillight_R_coupe"],    [],          "bx_taillight_R_coupe",    "Right Taillight"],
+        ["bx_taillight_L_coupe",    ["bx_taillight_L_coupe"],    [],          "bx_taillight_L_coupe",    "Left Taillight"],
 
         //bodywork
-        ["bx_radsupport","bx_radsupport_popup", "Front Frame", {"coreSlot":true}],
-        ["bx_door_R","bx_door_R", "Right Door"],
-        ["bx_door_L","bx_door_L", "Left Door"],
-        ["bx_sideskirt_R","bx_sideskirt_R", "Right Side Skirt"],
-        ["bx_sideskirt_L","bx_sideskirt_L", "Left Side Skirt"],
-        ["bx_bumper_R","bx_bumper_R", "Rear Bumper"],
-        ["bx_trunk_coupe","bx_trunk_coupe", "Trunk"],
-        ["bx_quarterpanels_coupe","bx_quarterpanels_coupe", "Quarter Panels", {"coreSlot":true}],
-        ["bx_spoiler_roof_coupe","", "Roof Spoiler"],
-        ["bx_trim_body","bx_trim_body_black", "Body Trim"],
+        ["bx_radsupport",           ["bx_radsupport"],           [],          "bx_radsupport_popup",     "Front Frame",              {"coreSlot":true}],
+        ["bx_door_R",               ["bx_door_R"],               [],          "bx_door_R",               "Right Door"],
+        ["bx_door_L",               ["bx_door_L"],               [],          "bx_door_L",               "Left Door"],
+        ["bx_sideskirt_R",          ["bx_sideskirt_R"],          [],          "bx_sideskirt_R",          "Right Side Skirt"],
+        ["bx_sideskirt_L",          ["bx_sideskirt_L"],          [],          "bx_sideskirt_L",          "Left Side Skirt"],
+        ["bx_bumper_R",             ["bx_bumper_R"],             [],          "bx_bumper_R",             "Rear Bumper"],
+        ["bx_trunk_coupe",          ["bx_trunk_coupe"],          [],          "bx_trunk_coupe",          "Trunk"],
+        ["bx_quarterpanels_coupe",  ["bx_quarterpanels_coupe"],  [],          "bx_quarterpanels_coupe",  "Quarter Panels",           {"coreSlot":true}],
+        ["bx_spoiler_roof_coupe",   ["bx_spoiler_roof_coupe"],   [],          "",                        "Roof Spoiler"],
+        ["bx_trim_body",            ["bx_trim_body"],            [],          "bx_trim_body_black",      "Body Trim"],
 
         //interior
-        ["bx_interior_coupe","bx_interior_coupe", "Interior", {"coreSlot":true}],
-        ["bx_rollcage","", "Roll Cage"],
+        ["bx_interior_coupe",       ["bx_interior_coupe"],       [],          "bx_interior_coupe",       "Interior",                 {"coreSlot":true}],
+        ["bx_rollcage",             ["bx_rollcage"],             [],          "",                        "Roll Cage"],
 
         //engine
-        ["bx_fueltank","bx_fueltank", "Fuel Tank"],
-        ["bx_engine","bx_engine_i4_2.0", "Engine"],
+        ["bx_fueltank",             ["bx_fueltank"],             [],          "bx_fueltank",             "Fuel Tank"],
+        ["bx_engine",               ["bx_engine"],               [],          "bx_engine_i4_2.0",        "Engine"],
 
         //running gear
-        ["bx_ABS","", "Anti-Lock Braking System"],
-        ["bx_suspension_R","bx_suspension_R", "Rear Suspension"],
-        ["bx_suspension_F","bx_suspension_F", "Front Suspension"],
-        ["bx_strut_bar","", "Strut Bar"],
-        ["linelock", "", "Brake Line Lock"],
+        ["bx_ABS",                  ["bx_ABS"],                  [],          "",                        "Anti-Lock Braking System"],
+        ["bx_suspension_R",         ["bx_suspension_R"],         [],          "bx_suspension_R",         "Rear Suspension"],
+        ["bx_suspension_F",         ["bx_suspension_F"],         [],          "bx_suspension_F",         "Front Suspension"],
+        ["bx_strut_bar",            ["bx_strut_bar"],            [],          "",                        "Strut Bar"],
+        ["linelock",                ["linelock"],                [],          "",                        "Brake Line Lock"],
     ],
     "sounds": {
         "cabinFilterCoef": 0.28
@@ -321,7 +322,7 @@
          ["rf1l", 0.59, -0.0240, 1.205, {"group":["bx_windshield", "bx_body"]}],
 
          ["rf2r", -0.55, 0.28, 1.2468],
-         ["rf2", 0, 0.27, 1.2895, {"nodeWeight":1.2}],
+         ["rf2", 0, 0.27, 1.2895, {"group":["lightbar_collide", "bx_body"],"nodeWeight":1.2}],
          ["rf2l", 0.55, 0.28, 1.2468],
 
          ["rf3r", -0.54, 0.60, 1.2468, {"group":["bx_body"]}]//weight added by glass
@@ -440,7 +441,7 @@
           ["e4l", "f13ll"],
           ["e3r", "f1r"],
           ["e3l", "f1l"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           //transmission
           ["tra1", "f2ll"],
@@ -580,7 +581,7 @@
           ["rf1r","rf1"],
           ["rf1","rf1l"],
           ["rf2r","rf2"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
           ["rf2","rf2l"],
           ["rf3r","rf3"],
           ["rf3","rf3l"],
@@ -636,7 +637,7 @@
           ["rf2r","rf4r"],
           ["rf2","rf4"],
           ["rf2l","rf4l"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           //a pillar main shape
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
@@ -673,10 +674,10 @@
           ["p2rr", "f1rr", {"deformationTriggerRatio":0.05}],
           ["p2ll", "rf3l"],
           ["p2ll", "f1ll", {"deformationTriggerRatio":0.05}],
-          //["p2rr", "rf1"],
-          //["p2rr", "f6r"],
-          //["p2ll", "rf1"],
-          //["p2ll", "f6l"],
+          ["p2rr", "rf1", {"beamSpring":901000,"beamDeform":1500}],
+          ["p2rr", "f6r", {"beamSpring":901000,"beamDeform":1500}],
+          ["p2ll", "rf1", {"beamSpring":901000,"beamDeform":1500}],
+          ["p2ll", "f6l", {"beamSpring":901000,"beamDeform":1500}],
 
           //corners
           {"beamDeform":3000,"beamStrength":"FLT_MAX"},
@@ -693,7 +694,7 @@
           {"beamDeform":11000,"beamStrength":"FLT_MAX"},
           ["rf1r","f6rr"],
           ["rf1l","f6ll"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
           {"deformLimitExpansion":1.1},
 
           //b pillar main shape
@@ -731,7 +732,7 @@
           ["qrg1r", "p3r"],
           ["qrg1r", "p4r"],
           ["qrg1r", "rf3r", {"beamDeform":2500}],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           //weak to roof
           {"beamDeform":2000,"beamStrength":"FLT_MAX"},
@@ -760,7 +761,7 @@
           ["rf4l", "p6l"],
           ["p6l", "tb1ll"],
           ["p5l", "p6l"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           //crossing
           {"beamDeform":6000,"beamStrength":"FLT_MAX"},
@@ -797,7 +798,7 @@
           ["p6l", "tb1l"],
           ["r1rr", "rf4r"],
           ["r1ll", "rf4l"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           //rigids
           {"beamDeform":3500,"beamStrength":"FLT_MAX"},
@@ -810,11 +811,11 @@
           {"deformLimitExpansion":1.1},
           {"beamSpring":1600000,"beamDamp":70},
           {"beamDeform":10000,"beamStrength":"FLT_MAX"},
-          {"deformGroup":"backlight_break", "deformationTriggerRatio":0.001},
+          {"deformGroup":"backlight_break", "deformationTriggerRatio":0.05},
           ["tb1rr", "tb1r"],
           ["tb1r", "tb1l"],
           ["tb1l", "tb1ll"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
           ["q3r", "tb3r"],
           ["tb3r", "tb3l"],
           ["tb3l", "q3l"],
@@ -856,8 +857,8 @@
           ["tb1rr", "q5r"],
 
           //rigids
-          ["tb1rr", "tb1l", {"deformGroup":"backlight_break", "deformationTriggerRatio":0.001}],
-          ["tb1ll", "tb1r", {"deformGroup":"backlight_break", "deformationTriggerRatio":0.001}],
+          ["tb1rr", "tb1l", {"deformGroup":"backlight_break", "deformationTriggerRatio":0.05}],
+          ["tb1ll", "tb1r", {"deformGroup":"backlight_break", "deformationTriggerRatio":0.05}],
           ["q3l", "tb3r"],
           ["tb3l", "q3r"],
           {"beamDeform":2500,"beamStrength":"FLT_MAX"},
@@ -901,13 +902,13 @@
           {"deformLimitExpansion":1.1},
           {"beamSpring":1201000,"beamDamp":80},
           {"beamDeform":12000,"beamStrength":"FLT_MAX"},
-          ["q1r", "q2r", {"deformGroup":"sideglass_R_break"}],
-          ["q2r", "q3r", {"deformGroup":"sideglass_R_break"}],
+          ["q1r", "q2r", {"deformGroup":"sideglass_R_break", "deformationTriggerRatio":0.05}],
+          ["q2r", "q3r", {"deformGroup":"sideglass_R_break", "deformationTriggerRatio":0.05}],
           ["q3r", "q4r"],
           ["q8r", "q9r"],
           ["q9r", "q10r"],
-          ["q1l", "q2l", {"deformGroup":"sideglass_L_break"}],
-          ["q2l", "q3l", {"deformGroup":"sideglass_L_break"}],
+          ["q1l", "q2l", {"deformGroup":"sideglass_L_break", "deformationTriggerRatio":0.05}],
+          ["q2l", "q3l", {"deformGroup":"sideglass_L_break", "deformationTriggerRatio":0.05}],
           ["q3l", "q4l"],
           ["q8l", "q9l"],
           ["q9l", "q10l"],
@@ -1011,15 +1012,15 @@
 
           //rigidifier
           {"beamDeform":5000,"beamStrength":"FLT_MAX"},
-          {"deformGroup":"sideglass_R_break"},
+          {"deformGroup":"sideglass_R_break", "deformationTriggerRatio":0.05},
           ["qrg1r", "q1r"],
           ["qrg1r", "q2r"],
           ["qrg1r", "q3r"],
-          {"deformGroup":"sideglass_L_break"},
+          {"deformGroup":"sideglass_L_break", "deformationTriggerRatio":0.05},
           ["qrg1l", "q1l"],
           ["qrg1l", "q2l"],
           ["qrg1l", "q3l"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
           ["qrg1r", "q7r"],
           ["qrg1r", "q8r"],
           ["qrg1r", "f4rr"],
@@ -1256,7 +1257,7 @@
           ["f6rr","f6r"],
           ["f6r","f6l"],
           ["f6l","f6ll"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           //firewall surficial crossing
           {"beamDeform":11000,"beamStrength":"FLT_MAX"},
@@ -1704,7 +1705,7 @@
           ["fi3l","f3l"],
           ["fi3ll","f3ll"],
 
-          //floor interior colide, lenghtwise damp
+          //floor interior colide, lengthwise damp
           {"beamSpring":500,"beamDamp":150},
           ["f2rr","fi1rr"],
           ["f2r","fi1r"],
@@ -1737,7 +1738,7 @@
     "triangles": [
             ["id1:","id2:","id3:"],
             {"groundModel":"metal"},
-            {"dragCoef":1},
+            {"dragCoef":1.75},
             //trunk
             {"group":"bx_rear"},
             ["q12l", "r7ll", "r6ll"],
@@ -1796,11 +1797,6 @@
             ["fi1r","f5rr","f5r"],
             ["fi1ll","fi1l","f5l"],
             ["fi1ll","f5l","f5ll"],
-            ["q3l", "tb1ll", "tb1l"],
-            ["tb1l", "tb3r", "q3l"],
-            ["tb1l", "tb1r", "tb3r"],
-            ["tb3r", "tb1r", "q3r"],
-            ["q3r", "tb1r", "tb1rr"],
             ["q4l", "q5l", "tb1ll"],
             ["tb1ll", "q5l", "tb2ll"],
             ["q5l", "q6l", "tb2ll"],
@@ -1810,8 +1806,15 @@
             ["tb1rr", "q4r", "q3r"],
             ["q3l", "q4l", "tb1ll"],
 
+            ["q3l", "tb1ll", "tb3l"],
+            ["tb3l", "tb1ll", "tb1l"],
+            ["tb3r", "tb1rr", "q3r"],
+            ["tb3r", "tb1r", "tb1rr"],
+            ["tb3r", "tb1l", "tb1r"],
+            ["tb3r", "tb3l", "tb1l"],
+
             {"groundModel":"metal"},
-            {"dragCoef":9},
+            {"dragCoef":15.75},
             //side skirt area
             {"group":"bx_side_L"},
             ["fi1ll","f1ll","f2ll"],
@@ -1825,7 +1828,7 @@
             ["fi2rr","f3rr","f2rr"],
             ["fi2rr","fi3rr","f3rr"],
 
-            {"dragCoef":6},
+            {"dragCoef":10.5},
             //rear end
             {"group":"bx_rear"},
             ["r7ll","r4ll","r4"],
@@ -1840,7 +1843,7 @@
             ["q13r", "r7rr", "q6r"],
             ["q6r", "r7rr", "q12r"],
 
-            {"dragCoef":2},
+            {"dragCoef":3.5},
             //front end
             {"group":"bx_front"},
             ["f6r","f6rr","f14rr"],
@@ -1856,7 +1859,7 @@
             //["f14ll","f15l","f15ll"],
             //["f15l","f14ll","f15"],
             //
-            //{"dragCoef":25},
+            //{"dragCoef":43.75},
             //["f15rr", "f19rr", "f13rr"],
             //["f13rr", "f19rr", "f11rr"],
             //["f15r", "f15rr", "f13rr"],
@@ -1872,14 +1875,14 @@
 
             //bottom
             {"group":"bx_bottom"},
-            {"dragCoef":30},
+            {"dragCoef":52.5},
             ["f11", "f11rr", "f10rr"],
             ["f10rr", "f10ll", "f11"],
             ["f11", "f10ll", "f11ll"],
             ["f10rr", "f1r", "f1l"],
             ["f1l", "f10ll", "f10rr"],
 
-            {"dragCoef":15},
+            {"dragCoef":26.25},
             ["f4rr","f4r","f3r"],
             ["f4rr","f3r","f3rr"],
             ["f3rr","f3r","f2r"],
@@ -1911,11 +1914,11 @@
             ["r4","r3rr","r4rr"],
             ["r4","r3","r3rr"],
 
-            {"dragCoef":30},
+            {"dragCoef":52.5},
             ["f14r",  "f1rr",  "f1r"],
             ["f1ll",  "f14l",  "f1l"],
 
-            {"dragCoef":10},
+            {"dragCoef":17.5},
             ["f12rr", "f10rr", "f11rr"],
             //["f19rr", "f12rr", "f11rr"],
             ["f12rr", "f1r",   "f10rr"],
@@ -1950,7 +1953,7 @@
 
             //roof
             {"group":"bx_roof"},
-            {"dragCoef":10},
+            {"dragCoef":17.5},
             ["rf1r","rf1","rf2r"],
             ["rf1","rf2","rf2r"],
             ["rf1","rf1l","rf2l"],
@@ -1966,7 +1969,7 @@
             ["rf3","rf3l","rf4l"],
             ["rf4","rf3","rf4l"],
 
-            {"dragCoef":6},
+            {"dragCoef":10.5},
             //right side
             {"group":"bx_side_R"},
             //["f14rr", "f14r", "f15rr"],
@@ -2051,7 +2054,7 @@
             {"group":""},
 
             //front end lift tuning
-            {"dragCoef":10},
+            {"dragCoef":17.5},
             //["f12ll", "fx5l", "fx5r", {"liftCoef":150,"stallAngle":0.67, "optional":true, "breakGroup":"subframemount_FR"}],
             //["fx5r", "f12rr", "f12ll", {"liftCoef":150,"stallAngle":0.67, "optional":true, "breakGroup":"subframemount_FL"}],
     ],

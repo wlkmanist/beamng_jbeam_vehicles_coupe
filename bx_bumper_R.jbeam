@@ -6,35 +6,50 @@
         "value":350,
     },
     "slotType" : "bx_bumper_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_marker_RL","", "Rear Left Marker"],
-        ["bx_marker_RR","", "Rear Right Marker"],
-        ["bx_trim_bumper_R","bx_trim_bumper_R_black", "Rear Bumper Trim", {"coreSlot":true}],
-        ["bx_licenseplate_R","bx_licenseplate_R", "Rear License Plate"],
+    "slots2": [
+        ["name",              "allowTypes",          "denyTypes", "default",                "description"],
+        ["bx_marker_RL",      ["bx_marker_RL"],      [],          "",                       "Rear Left Marker"],
+        ["bx_marker_RR",      ["bx_marker_RR"],      [],          "",                       "Rear Right Marker"],
+        ["bx_trim_bumper_R",  ["bx_trim_bumper_R"],  [],          "bx_trim_bumper_R_black", "Rear Bumper Trim",   {"coreSlot":true}],
+        ["bx_licenseplate_R", ["bx_licenseplate_R"], [],          "bx_licenseplate_R",      "Rear License Plate"],
+        ["bx_mudflap_R",      ["bx_mudflap_R"],      [],          "",                       "Rear Mud Flaps"],
+        ["incandescent_white_5W_L", ["incandescent_white_5W"], [], "incandescent_white_5W", "Left License Plate Light Bulb"
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric": "lowhighbeam_filament",
+          "$nodeRef":"rb2",  "$nodeX": "rb2l",  "$nodeY":"rb3",
+          "$deformGroup": "platelights",
+          "$posX": 0.08,"$posY": 2.20,"$posZ": 0.52,
+          "$rotX": 100, "$rotY": 0, "$rotZ": 0,
+          "$lightRange":0.22,
+          "$lightInnerAngle":20, "$lightOuterAngle":160,
+          "$shadowEnable":0
+        }
+        }],
+        ["incandescent_white_5W_R", ["incandescent_white_5W"], [], "incandescent_white_5W", "Right License Plate Light Bulb"
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric": "lowhighbeam_filament",
+          "$nodeRef":"rb2",  "$nodeX": "rb2r",  "$nodeY":"rb3",
+          "$deformGroup": "platelights",
+          "$posX":-0.08,"$posY": 2.20,"$posZ": 0.52,
+          "$rotX": 100, "$rotY": 0, "$rotZ": 0,
+          "$lightRange":0.22,
+          "$lightInnerAngle":20, "$lightOuterAngle":160,
+          "$shadowEnable":0
+        }
+        }],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_bumper_R", ["bx_bumper_R"]],
-    ],
-    "props": [
-        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
-        {
-        //license plate light
-            "lightInnerAngle":190,
-            "lightOuterAngle":195,
-            "lightRange":0.23,
-            "lightColor":{"r":255, "g":255, "b":190, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":false,
-            "flareName":"vehicleBrakeLightFlare",
-            "shadowSoftness":0.5,
-        },
-        //["lowhighbeam" ,         "SPOTLIGHT"        , "rb4r", "rb4", "rb3r", {"x":0, "y":85, "z":90} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":1}, 0, 0, 0, 1, {"baseTranslation":{"x":1.285, "y":1.88, "z":-0.042},"flareScale":0.001,"lightBrightness":0.2,"deformGroup":"chmsl_break"}],
-        //["lowhighbeam" ,         "SPOTLIGHT"        , "rb4r", "rb4", "rb3r", {"x":0, "y":95, "z":90} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":1}, 0, 0, 0, 1, {"baseTranslation":{"x":1.11, "y":1.88, "z":-0.042},"flareScale":0.001,"lightBrightness":0.2,"deformGroup":"chmsl_break"}],
-        //
-        //["lowhighbeam" ,         "SPOTLIGHT"        , "rb4l", "rb4", "rb3l", {"x":180, "y":85, "z":-90} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":1}, 0, 0, 0, 1, {"baseTranslation":{"x":1.285, "y":1.88, "z":0.042},"flareScale":0.0001,"lightBrightness":0.2,"deformGroup":"chmsl_break"}],
-        //["lowhighbeam" ,         "SPOTLIGHT"        , "rb4l", "rb4", "rb3l", {"x":180, "y":95, "z":-90} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":1}, 0, 0, 0, 1, {"baseTranslation":{"x":1.11, "y":1.88, "z":0.042},"flareScale":0.0001,"lightBrightness":0.2,"deformGroup":"chmsl_break"}],
+         {"deformGroup":"platelights", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights"},
+         ["bx_platelights", ["bx_bumper_R"]],
+         {"deformGroup":"platelights", "deformMaterialBase":"bx_glass", "deformMaterialDamaged":"bx_glass_dmg"},
+         ["bx_platelightglass", ["bx_bumper_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound1", "deformVolume":0.1}],
+         {"deformGroup":""},
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -45,13 +60,13 @@
          {"nodeMaterial":"|NM_PLASTIC"},
          {"group":"bx_bumper_R"},
          {"nodeWeight":0.3},
-         ["rb1rr",-0.71, 2.0963, 0.6605],
-         ["rb1r",-0.3671, 2.154, 0.6605],
-         ["rb1", 0.0, 2.1723, 0.6605],
-         ["rb1l",0.3671, 2.154, 0.6605],
-         ["rb1ll",0.71, 2.0963, 0.6605],
+         ["rb1rr",-0.71, 2.0963, 0.6505],
+         ["rb1r",-0.3671, 2.154, 0.6505],
+         ["rb1", 0.0, 2.1723, 0.6505],
+         ["rb1l",0.3671, 2.154, 0.6505],
+         ["rb1ll",0.71, 2.0963, 0.6505],
 
-         ["rb2rrrr",-0.8107, 1.59, 0.5063],
+         ["rb2rrrr",-0.8207, 1.59, 0.5063],
          ["rb2rrr",-0.7577, 1.991, 0.5162],
          ["rb2rr",-0.68, 2.1726, 0.5164],
          ["rb2r",-0.37, 2.2356, 0.5164],
@@ -59,13 +74,13 @@
          ["rb2l",0.37, 2.2356, 0.5164],
          ["rb2ll",0.68, 2.1726, 0.5164],
          ["rb2lll",0.7577, 1.991, 0.5162],
-         ["rb2llll",0.8107, 1.59, 0.5063],
+         ["rb2llll",0.8207, 1.59, 0.5063],
 
          ["rb3rrrr",-0.73, 1.62, 0.25],
          ["rb3rrr",-0.6939, 1.945, 0.2951],
          ["rb3rr",-0.6221, 2.1258, 0.32],
          ["rb3r",-0.36, 2.18, 0.32],
-         ["rb3", 0.0, 2.2, 0.32],
+         ["rb3", 0.0, 2.2, 0.32, {"group":["towhitchColide","bx_bumper_R"]}],
          ["rb3l",0.36, 2.18, 0.32],
          ["rb3ll",0.6221, 2.1258, 0.32],
          ["rb3lll",0.6939, 1.945, 0.2951],
@@ -85,6 +100,8 @@
           {"beamSpring":201000,"beamDamp":30},
           {"beamDeform":22000,"beamStrength":80000},
           {"deformLimitExpansion":1.1},
+          {"deformationTriggerRatio":0.005},
+          {"deformGroup":"platelights"},
           ["rb1rr", "rb1r"],
           ["rb1r", "rb1"],
           ["rb1", "rb1l"],
@@ -151,7 +168,9 @@
           ["rb2lll", "rb3llll"],
 
           //rigids
-          {"beamDeform":8000,"beamStrength":34000},
+          {"beamDeform":2000,"beamStrength":34000},
+          {"deformationTriggerRatio":""},
+          {"deformGroup":""},
           ["rb1rr", "rb1"],
           ["rb1r", "rb1l"],
           ["rb1", "rb1ll"],
@@ -182,7 +201,7 @@
 
           //rigidifier
           {"beamSpring":101000,"beamDamp":30},
-          {"beamDeform":2000,"beamStrength":"FLT_MAX"},
+          {"beamDeform":1000,"beamStrength":"FLT_MAX"},
           ["rb4", "rb1ll"],
           ["rb4", "rb1l"],
           ["rb4", "rb1"],
@@ -202,7 +221,7 @@
           //attach
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"beamSpring":101000,"beamDamp":30},
-          {"beamDeform":7000,"beamStrength":10000},
+          {"beamDeform":7000,"beamStrength":8000},
           {"breakGroup":"bumper_R_R1"},
           ["rb3rr", "r4rr"],
           ["rb2rr", "r4rr"],
@@ -227,7 +246,7 @@
           ["rb2ll", "r6ll"],
           ["rb2l", "r6ll"],
           ["rb3ll", "r3ll"],
-          {"beamDeform":3000,"beamStrength":5500},
+          {"beamDeform":3000,"beamStrength":3500},
           {"breakGroup":"bumper_R_M"},
           ["rb1", "r7"],
           ["rb1", "r7ll"],
@@ -264,11 +283,11 @@
           ["q12r", "rb2rrr"],
           ["q11r", "rb2rrr"],
           ["rb2rrr", "r7rr"],
-          {"deformGroup":""},
-          {"breakGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
+          {"breakGroup":"bumper_R_supportBeams"},
 
           //rear bumper support beams
-          {"beamType":"|SUPPORT","beamLongBound":6},
+          {"beamType":"|SUPPORT","beamLongBound":12},
           {"beamSpring":11000,"beamDamp":50},
           {"beamDeform":5000,"beamStrength":100000},
           //to body
@@ -361,7 +380,7 @@
           ["rb2rrrr", "rw1rr"],
           ["rb3rrrr", "rw1rr"],
           {"optional":false},
-
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.1},
     ],
@@ -370,7 +389,7 @@
             //rear bumper
             {"groundModel":"plastic"},
             {"group":"bx_bumper_R"},
-            {"dragCoef":3.5},
+            {"dragCoef":6.13},
             ["rb2rrr",  "rb1rr",   "rb2rr"],
             ["rb2rr",   "rb1rr",   "rb1r"],
             ["rb2rr",   "rb1r",    "rb2r"],
@@ -408,15 +427,48 @@
         "value":100,
     },
     "slotType" : "bx_bumper_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_trim_bumper_R","bx_trim_bumper_R_black", "Rear Bumper Trim", {"coreSlot":true}],
-        ["bx_licenseplate_R","bx_licenseplate_R", "Rear License Plate"],
-        ["bx_bashbar_R","", "Rear Bash Bar"{"nodeOffset":{"x":0.0, "y":0.00, "z":-0.05}}],
+    "slots2": [
+        ["name",              "allowTypes",          "denyTypes", "default",                "description"],
+        ["bx_trim_bumper_R",  ["bx_trim_bumper_R"],  [],          "bx_trim_bumper_R_black", "Rear Bumper Trim",   {"coreSlot":true}],
+        ["bx_licenseplate_R", ["bx_licenseplate_R"], [],          "bx_licenseplate_R",      "Rear License Plate"],
+        ["bx_bashbar_R",      ["bx_bashbar_R"],      [],          "",                       "Rear Bash Bar",      {"nodeOffset":{"x":0.0, "y":0.00, "z":-0.05}}],
+        ["incandescent_white_5W_L", ["incandescent_white_5W"], [], "incandescent_white_5W", "Left License Plate Light Bulb"
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric": "lowhighbeam_filament",
+          "$nodeRef":"rb2",  "$nodeX": "rb2l",  "$nodeY":"rb1",
+          "$deformGroup": "platelights",
+          "$posX": 0.08,"$posY": 2.20,"$posZ": 0.52,
+          "$rotX": 100, "$rotY": 0, "$rotZ": 0,
+          "$lightRange":0.22,
+          "$lightInnerAngle":20, "$lightOuterAngle":160,
+          "$shadowEnable":0
+        }
+        }],
+        ["incandescent_white_5W_R", ["incandescent_white_5W"], [], "incandescent_white_5W", "Right License Plate Light Bulb"
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric": "lowhighbeam_filament",
+          "$nodeRef":"rb2",  "$nodeX": "rb2r",  "$nodeY":"rb1",
+          "$deformGroup": "platelights",
+          "$posX":-0.08,"$posY": 2.20,"$posZ": 0.52,
+          "$rotX": 100, "$rotY": 0, "$rotZ": 0,
+          "$lightRange":0.22,
+          "$lightInnerAngle":20, "$lightOuterAngle":160,
+          "$shadowEnable":0
+        }
+        }],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_bumper_R_cut", ["bx_bumper_R"]],
+         {"deformGroup":"platelights", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights"},
+         ["bx_platelights", ["bx_bumper_R"]],
+         {"deformGroup":"platelights", "deformMaterialBase":"bx_glass", "deformMaterialDamaged":"bx_glass_dmg"},
+         ["bx_platelightglass", ["bx_bumper_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound1", "deformVolume":0.1}],
+         {"deformGroup":""},
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -427,13 +479,13 @@
          {"nodeMaterial":"|NM_PLASTIC"},
          {"group":"bx_bumper_R"},
          {"nodeWeight":0.3},
-         ["rb1rr", -0.71000, 2.09630, 0.66050],
-         ["rb1r", -0.36710, 2.15400, 0.66050],
-         ["rb1", 0.00000, 2.17230, 0.66050],
-         ["rb1l", 0.36710, 2.15400, 0.66050],
-         ["rb1ll", 0.71000, 2.09630, 0.66050],
+         ["rb1rr", -0.71000, 2.09630, 0.6505],
+         ["rb1r", -0.36710, 2.15400, 0.6505],
+         ["rb1", 0.00000, 2.17230, 0.6505],
+         ["rb1l", 0.36710, 2.15400, 0.6505],
+         ["rb1ll", 0.71000, 2.09630, 0.6505],
 
-         ["rb2rrrr", -0.81070, 1.59000, 0.50630],
+         ["rb2rrrr", -0.82070, 1.59000, 0.50630],
          ["rb2rrr", -0.75770, 1.99100, 0.51620],
          ["rb2rr", -0.68000, 2.17260, 0.51640],
          ["rb2r", -0.37000, 2.23560, 0.51640],
@@ -441,7 +493,7 @@
          ["rb2l", 0.37000, 2.23560, 0.51640],
          ["rb2ll", 0.68000, 2.17260, 0.51640],
          ["rb2lll", 0.75770, 1.99100, 0.51620],
-         ["rb2llll", 0.81070, 1.59000, 0.50630],
+         ["rb2llll", 0.82070, 1.59000, 0.50630],
 
          {"group":""},
          //rigidifier
@@ -457,6 +509,8 @@
           {"beamSpring":201000,"beamDamp":30},
           {"beamDeform":22000,"beamStrength":80000},
           {"deformLimitExpansion":1.1},
+          {"deformationTriggerRatio":0.005},
+          {"deformGroup":"platelights"},
           ["rb1rr", "rb1r"],
           ["rb1r", "rb1"],
           ["rb1", "rb1l"],
@@ -491,6 +545,8 @@
 
           //rigids
           {"beamDeform":8000,"beamStrength":34000},
+          {"deformationTriggerRatio":""},
+          {"deformGroup":""},
           ["rb1rr", "rb1"],
           ["rb1r", "rb1l"],
           ["rb1", "rb1ll"],
@@ -573,11 +629,11 @@
           ["q12r", "rb2rrr"],
           ["q11r", "rb2rrr"],
           ["rb2rrr", "r7rr"],
-          {"deformGroup":""},
-          {"breakGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
+          {"breakGroup":"bumper_R_supportBeams"},
 
           //rear bumper support beams
-          {"beamType":"|SUPPORT","beamLongBound":6},
+          {"beamType":"|SUPPORT","beamLongBound":12},
           {"beamSpring":11000,"beamDamp":50},
           {"beamDeform":5000,"beamStrength":100000},
           //to body
@@ -639,7 +695,7 @@
           ["rb2rrrr", "rw1r"],
           ["rb2rrrr", "rw1rr"],
           {"optional":false},
-
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.1},
     ],
@@ -648,7 +704,7 @@
             //rear bumper
             {"groundModel":"plastic"},
             {"group":"bx_bumper_R"},
-            {"dragCoef":3.5},
+            {"dragCoef":6.13},
             ["rb2rrr",  "rb1rr",   "rb2rr"],
             ["rb2rr",   "rb1rr",   "rb1r"],
             ["rb2rr",   "rb1r",    "rb2r"],

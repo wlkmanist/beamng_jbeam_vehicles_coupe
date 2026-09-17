@@ -6,6 +6,33 @@
         "value":180,
     },
     "slotType" : "bx_taillight_R_hatch",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bx_taillight_R_bulb", ["incandescent_red_21W"], [], "incandescent_red_21W", "Right Tail/Brake Light Bulb",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lowhighBrake_filament",
+          "$nodeRef":"tl2r", "$nodeX":"tl4r", "$nodeY":"tl1r",
+          "$deformGroup":"taillight_R_break",
+          "$posX":-0.611, "$posY":2.117, "$posZ":0.72,
+          "$rotX":0, "$rotY":0, "$rotZ":0,
+          "$shadowEnable":1,
+        }
+        }],
+        ["bx_signal_RR_bulb", ["incandescent_amber_21W"], [], "incandescent_amber_21W", "Rear Right Turn Signal Light Bulb",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"signal_R_filament",
+          "$nodeRef":"tl2r", "$nodeX":"tl4r", "$nodeY":"tl1r",
+          "$deformGroup":"taillight_R_break",
+          "$posX":-0.704, "$posY":2.057, "$posZ":0.72,
+          "$rotX":0, "$rotY":0, "$rotZ":-20,
+          "$shadowEnable":1,
+        }
+        }],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          {"deformGroup":"taillight_R_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights_dmg"},
@@ -14,32 +41,6 @@
          ["bx_taillightglass_R_hatch", ["bx_taillight_R"]],
          {"deformGroup":""},
     ],
-    "props": [
-        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
-        //taillights
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightRange":8,
-            "lightColor":{"r":255, "g":0, "b":0, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":false,
-            "flareName":"vehicleBrakeLightFlare",
-            "cookieName":""
-        },
-        ["lowhighbeam", "SPOTLIGHT", "tl2r", "tl4r", "tl1r", {"x":-20, "y":0, "z":-20}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0,0,0,1, {"baseTranslation":{"x":0.7, "y":0.35, "z":0.01},"flareScale":0.04,"lightBrightness":0.03,"lightRange":8,"deformGroup":"taillight_R_break"}],
-        //signals
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightRange":8,
-            "lightColor":{"r":255, "g":150, "b":0, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":false,
-            "flareName":"vehicleBrakeLightFlare",
-        },
-        ["signal_R", "SPOTLIGHT", "tl2r", "tl4r", "tl1r", {"x":-20, "y":0, "z":-10}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0,0,0,1, {"baseTranslation":{"x":0.2, "y":0.35, "z":0.0},"flareScale":0.04,"lightBrightness":0.04,"deformGroup":"taillight_R_break"}],
-     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
          //--taillight--
@@ -94,8 +95,8 @@
           ["tl1r", "r7rr"],
           ["tl3r", "r7rr"],
           ["tl4r", "r7rr"],
-          {"breakGroup":""},
-          {"deformGroup":""},
+          {"breakGroup":"taillight_R_supportBeams"},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           //taillight support beams
           {"beamType":"|SUPPORT", "beamLongBound":4},
@@ -123,6 +124,7 @@
           //["tl1r", "t3r"],
           //["tl3r", "t4"],
           {"optional":false},
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.2},
     ],
@@ -131,7 +133,7 @@
             //right taillight
             {"groundModel":"plastic"},
             {"group":"bx_taillight_R"},
-            {"dragCoef":5},
+            {"dragCoef":8.75},
             ["tl3r", "tl4r", "tl2r"],
             ["tl2r", "tl1r", "tl3r"],
             {"group":""},
@@ -144,6 +146,33 @@
         "value":180,
     },
     "slotType" : "bx_taillight_L_hatch",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bx_taillight_L_bulb", ["incandescent_red_21W"], [], "incandescent_red_21W", "Left Tail/Brake Light Bulb",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lowhighBrake_filament",
+          "$nodeRef":"tl2l", "$nodeX":"tl4l", "$nodeY":"tl1l",
+          "$deformGroup":"taillight_L_break",
+          "$posX":0.611, "$posY":2.117, "$posZ":0.72,
+          "$rotX":0, "$rotY":0, "$rotZ":0,
+          "$shadowEnable":1,
+        }
+        }],
+        ["bx_signal_RL_bulb", ["incandescent_amber_21W"], [], "incandescent_amber_21W", "Rear Left Turn Signal Light Bulb",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"signal_L_filament",
+          "$nodeRef":"tl2l", "$nodeX":"tl4l", "$nodeY":"tl1l",
+          "$deformGroup":"taillight_L_break",
+          "$posX":0.704, "$posY":2.057, "$posZ":0.72,
+          "$rotX":0, "$rotY":0, "$rotZ":20,
+          "$shadowEnable":1,
+        }
+        }],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          {"deformGroup":"taillight_L_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights_dmg"},
@@ -152,32 +181,6 @@
          ["bx_taillightglass_L_hatch", ["bx_taillight_L"]],
          {"deformGroup":""},
     ],
-    "props": [
-        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
-        //taillights
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightRange":8,
-            "lightColor":{"r":255, "g":0, "b":0, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":false,
-            "flareName":"vehicleBrakeLightFlare",
-            "cookieName":""
-        },
-        ["lowhighbeam", "SPOTLIGHT", "tl2l", "tl4l", "tl1l", {"x":-20, "y":0, "z":200}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0,0,0,1, {"baseTranslation":{"x":0.7, "y":0.35, "z":-0.01},"flareScale":0.04,"lightBrightness":0.03,"lightRange":8,"deformGroup":"taillight_L_break"}],
-        //signals
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightRange":8,
-            "lightColor":{"r":255, "g":150, "b":0, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":false,
-            "flareName":"vehicleBrakeLightFlare",
-        },
-        ["signal_L", "SPOTLIGHT", "tl2l", "tl4l", "tl1l", {"x":-20, "y":0, "z":190}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0,0,0,1, {"baseTranslation":{"x":0.2, "y":0.35, "z":-0.0},"flareScale":0.04,"lightBrightness":0.04,"deformGroup":"taillight_L_break"}],
-     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
          //--taillight--
@@ -232,8 +235,8 @@
           ["tl1l", "r7ll"],
           ["tl3l", "r7ll"],
           ["tl4l", "r7ll"],
-          {"breakGroup":""},
-          {"deformGroup":""},
+          {"breakGroup":"taillight_L_supportBeams"},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           //taillight support beams
           {"beamType":"|SUPPORT", "beamLongBound":4},
@@ -261,6 +264,7 @@
           //["tl1l", "t3l"],
           //["tl3l", "t4"],
           {"optional":false},
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.2},
     ],
@@ -269,7 +273,7 @@
             //right taillight
             {"groundModel":"plastic"},
             {"group":"bx_taillight_L"},
-            {"dragCoef":3},
+            {"dragCoef":5.25},
             ["tl4l", "tl3l", "tl2l"],
             ["tl1l", "tl2l", "tl3l"],
             {"group":""},
@@ -282,6 +286,21 @@
         "value":90,
     },
     "slotType" : "bx_trunklight_R_hatch",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bx_taillight_RR_bulb", ["incandescent_red_21W"], [], "incandescent_red_21W", "Right Tail Light Bulb",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lowhighBrake_filament",
+          "$nodeRef":"trl2r", "$nodeX":"trl4r", "$nodeY":"trl1r",
+          "$deformGroup":"trunklight_R_break",
+          "$posX":-0.438, "$posY":2.147, "$posZ":0.726,
+          "$rotX":0, "$rotY":0, "$rotZ":0,
+          "$shadowEnable":1,
+        }
+        }],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          {"deformGroup":"trunklight_R_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights_dmg"},
@@ -290,22 +309,6 @@
          ["bx_trunklightglass_R_hatch", ["bx_trunklight_R"],[],{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.5}],
          {"deformGroup":""},
     ],
-    "props": [
-        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
-        //trunklights
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightRange":8,
-            "lightColor":{"r":255, "g":0, "b":0, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":false,
-            "flareName":"vehicleBrakeLightFlare",
-            "cookieName":""
-        },
-        ["brake", "SPOTLIGHT", "trl2r", "trl4r", "trl1r", {"x":-30, "y":10, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0,0,0,1, {"baseTranslation":{"x":0.6, "y":0.4, "z":0.0},"flareScale":0.05,"lightBrightness":0.05,"deformGroup":"trunklight_R_break"}],
-        ["lowhighbeam", "SPOTLIGHT", "trl2r", "trl4r", "trl1r", {"x":-30, "y":10, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0,0,0,1, {"baseTranslation":{"x":0.6, "y":0.4, "z":0.0},"flareScale":0.04,"lightBrightness":0.03,"lightRange":8,"deformGroup":"trunklight_R_break"}],
-     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
          //--trunklight--
@@ -316,10 +319,10 @@
          {"frictionCoef":0.5},
          {"nodeWeight":0.2},
          {"group":"bx_trunklight_R"},
-         ["trl1r", -0.5752, 2.111, 0.7966],
-         ["trl2r", -0.531, 2.1319, 0.6787],
-         ["trl3r", -0.2877, 2.1452, 0.7966],
-         ["trl4r", -0.353, 2.1535, 0.6787],
+         ["trl1r", -0.5652, 2.121, 0.7966],
+         ["trl2r", -0.521, 2.1419, 0.6787],
+         ["trl3r", -0.2877, 2.1552, 0.7966],
+         ["trl4r", -0.353, 2.1635, 0.6787],
          ["trl5r", -0.4244, 2.0660, 0.7516, {"collision":false}],
          {"group":""},
     ],
@@ -363,8 +366,8 @@
           ["trl5r", "t3rr"],
           ["trl5r", "t4r"],
           ["trl5r", "t3r"],
-          {"breakGroup":""},
-          {"deformGroup":""},
+          {"breakGroup":"taillight_R2_supportBeams"},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           //trunklight support beams
           {"beamType":"|SUPPORT", "beamLongBound":4},
@@ -381,6 +384,7 @@
           ["trl1r", "t5"],
           ["trl1r", "t2rr"],
           ["trl3r", "t2rr"],
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.2},
     ],
@@ -389,7 +393,7 @@
             //right trunklight
             {"groundModel":"plastic"},
             {"group":"bx_trunklight_L"},
-            {"dragCoef":5},
+            {"dragCoef":8.75},
             ["trl3r", "trl4r", "trl2r"],
             ["trl2r", "trl1r", "trl3r"],
             {"group":""},
@@ -402,6 +406,21 @@
         "value":90,
     },
     "slotType" : "bx_trunklight_L_hatch",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bx_taillight_LL_bulb", ["incandescent_red_21W"], [], "incandescent_red_21W", "Left Tail Light Bulb",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lowhighBrake_filament",
+          "$nodeRef":"trl2l", "$nodeX":"trl4l", "$nodeY":"trl1l",
+          "$deformGroup":"trunklight_L_break",
+          "$posX":0.438, "$posY":2.147, "$posZ":0.726,
+          "$rotX":0, "$rotY":0, "$rotZ":0,
+          "$shadowEnable":1,
+        }
+        }],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          {"deformGroup":"trunklight_L_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights_dmg"},
@@ -410,22 +429,6 @@
          ["bx_trunklightglass_L_hatch", ["bx_trunklight_L"],[],{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.5}],
          {"deformGroup":""},
     ],
-    "props": [
-        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
-        //trunklights
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightRange":8,
-            "lightColor":{"r":255, "g":0, "b":0, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":false,
-            "flareName":"vehicleBrakeLightFlare",
-            "cookieName":""
-        },
-        ["brake", "SPOTLIGHT", "trl2l", "trl4l", "trl1l", {"x":-30, "y":10, "z":180}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0,0,0,1, {"baseTranslation":{"x":0.6, "y":0.4, "z":0.0},"flareScale":0.05,"lightBrightness":0.05,"deformGroup":"trunklight_L_break"}],
-        ["lowhighbeam", "SPOTLIGHT", "trl2l", "trl4l", "trl1l", {"x":-30, "y":10, "z":180}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0,0,0,1, {"baseTranslation":{"x":0.6, "y":0.4, "z":0.0},"flareScale":0.04,"lightBrightness":0.03,"lightRange":8,"deformGroup":"trunklight_L_break"}],
-     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
          //--trunklight--
@@ -436,10 +439,10 @@
          {"frictionCoef":0.5},
          {"nodeWeight":0.2},
          {"group":"bx_trunklight_L"},
-         ["trl1l", 0.5752, 2.111, 0.7966],
-         ["trl2l", 0.531, 2.1319, 0.6787],
-         ["trl3l", 0.2877, 2.1452, 0.7966],
-         ["trl4l", 0.353, 2.1535, 0.6787],
+         ["trl1l", 0.5652, 2.121, 0.7966],
+         ["trl2l", 0.521, 2.1419, 0.6787],
+         ["trl3l", 0.2877, 2.1552, 0.7966],
+         ["trl4l", 0.353, 2.1635, 0.6787],
          ["trl5l", 0.4244, 2.0660, 0.7516, {"collision":false}],
          {"group":""},
     ],
@@ -483,8 +486,8 @@
           ["trl5l", "t3ll"],
           ["trl5l", "t4l"],
           ["trl5l", "t3l"],
-          {"breakGroup":""},
-          {"deformGroup":""},
+          {"breakGroup":"taillight_L2_supportBeams"},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           //trunklight support beams
           {"beamType":"|SUPPORT", "beamLongBound":4},
@@ -501,6 +504,7 @@
           ["trl1l", "t5"],
           ["trl1l", "t2ll"],
           ["trl3l", "t2ll"],
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.2},
     ],
@@ -509,7 +513,7 @@
             //right trunklight
             {"groundModel":"plastic"},
             {"group":"bx_trunklight_L"},
-            {"dragCoef":5},
+            {"dragCoef":8.75},
             ["trl4l", "trl3l", "trl2l"],
             ["trl1l", "trl2l", "trl3l"],
             {"group":""},
@@ -522,6 +526,21 @@
         "value":50,
     },
     "slotType" : "bx_chmsl_hatch",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bx_chmsl_bulb", ["incandescent_red_21W"], [], "incandescent_red_21W", "Center Stop Light Bulb",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"brakelight_filament",
+          "$nodeRef":"t3", "$nodeX":"t3r", "$nodeY":"t4",
+          "$deformGroup":"chmsl_break",
+          "$posX":0.0, "$posY":2.113, "$posZ":0.877,
+          "$rotX":0, "$rotY":0, "$rotZ":0,
+          "$shadowEnable":1,
+        }
+        }],
+    ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         {"deformGroup":"chmsl_break", "deformMaterialBase":"bx_glass", "deformMaterialDamaged":"bx_glass_dmg"},
@@ -529,21 +548,6 @@
         {"deformGroup":"chmsl_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights_dmg"},
         ["bx_chmsl_hatch", ["bx_trunk"]],
         {"deformGroup":""},
-    ],
-    "props": [
-        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
-        {
-            "lightInnerAngle":10,
-            "lightOuterAngle":120,
-            "lightRange":8,
-            "lightColor":{"r":255, "g":0, "b":0, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":false,
-            "flareName":"vehicleBrakeLightFlare",
-            "cookieName":""
-        },
-        //chmsl
-        ["brake", "SPOTLIGHT", "t3", "t3r", "t4", {"x":20, "y":0, "z":3}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0, "y":0.18, "z":0.0},"flareScale":0.03,"lightBrightness":0.05,"deformGroup":"chmsl_break"}],
     ],
 },
 "bx_trunkpanel_hatch": {
@@ -553,6 +557,35 @@
         "value":120,
     },
     "slotType" : "bx_trunkpanel_hatch",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bx_lettering_rearpanel_hatch", ["bx_lettering_rearpanel_hatch"], [],          "",        "Trunk Panel Lettering"],
+        //light emitters
+        ["bx_reverselight_R_bulb", ["incandescent_white_21W"], [], "incandescent_white_21W", "Right Reverse Light Bulb",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"reverselight_filament",
+          "$nodeRef":"t4", "$nodeX":"t4r", "$nodeY":"t3",
+          "$deformGroup":"chmsl_break",
+          "$posX":-0.253, "$posY":2.138, "$posZ":0.702,
+          "$rotX":0, "$rotY":0, "$rotZ":0,
+          "$shadowEnable":1,
+        }
+        }],
+        ["bx_reverselight_L_bulb", ["incandescent_white_21W"], [], "incandescent_white_21W", "Left Reverse Light Bulb",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"reverselight_filament",
+          "$nodeRef":"t4", "$nodeX":"t4l", "$nodeY":"t3",
+          "$deformGroup":"chmsl_break",
+          "$posX":0.253, "$posY":2.138, "$posZ":0.702,
+          "$rotX":0, "$rotY":0, "$rotZ":0,
+          "$shadowEnable":1,
+        }
+        }],
+    ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         ["bx_rearpanel", ["bx_trunk"]],
@@ -564,28 +597,6 @@
         ["bx_reverselight_R_hatch", ["bx_trunk"]],
         ["bx_reverselight_L_hatch", ["bx_trunk"]],
         {"deformGroup":""},
-    ],
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_lettering_rearpanel_hatch","", "Trunk Panel Lettering"],
-    ],
-    "props": [
-        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
-        //reverse lights
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightRange":8,
-            "lightColor":{"r":255, "g":255, "b":160, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":false,
-            "flareName":"vehicleReverseLightFlare",
-            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
-            "texSize":512,
-            "shadowSoftness":0.5,
-        },
-        ["reverse", "SPOTLIGHT", "t4", "t4l", "t3", {"x":-40, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.9, "y":0.08, "z":0.01},"flareScale":0.02,"lightBrightness":0.04,"deformGroup":"chmsl_break"}],
-        ["reverse", "SPOTLIGHT", "t4", "t4r", "t3", {"x":-40, "y":0, "z":180}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.9, "y":0.08, "z":-0.01},"flareScale":0.02,"lightBrightness":0.04,"deformGroup":"chmsl_break"}],
     ],
 },
 }

@@ -6,6 +6,21 @@
         "value":15,
     },
     "slotType" : "bx_signal_FR_fixed",
+    "slots2": [
+        ["name",                       "allowTypes",             "denyTypes", "default",                "description"],
+        ["bx_bumper_signal_FR_bulb", ["incandescent_amber_21W"], [],          "incandescent_amber_21W", "Front Right Bumper Turn Signal Bulb",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"signal_R_filament",
+                "$nodeRef":"fb3r", "$nodeX":"fb3rr", "$nodeY":"fb2r",
+                "$deformGroup":"bumpersignal_R_break",
+                "$posX":-0.564, "$posY":-2.102, "$posZ":0.475,
+                "$rotX":0, "$rotY":0, "$rotZ":180,
+                "$shadowEnable":1,
+            }
+        }],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          {"deformGroup":"bumpersignal_R_break", "deformMaterialBase":"bx_glass", "deformMaterialDamaged":"bx_glass_dmg"},
@@ -13,24 +28,6 @@
          {"deformGroup":"bumpersignal_R_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights_dmg"},
          ["bx_bumpersignal_R_fixed", ["bx_bumper_F"]],
          {"deformGroup":""},
-    ],
-    "props": [
-        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":150,
-            "lightRange":8,
-            "lightColor":{"r":255, "g":150, "b":0, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":false,
-            "flareName":"vehicleBrakeLightFlare",
-            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
-            "texSize":512,
-            "shadowSoftness":0.1,
-        },
-        //bumper signals
-        ["signal_R", "SPOTLIGHT", "fb3r", "fb3rr", "fb2r", {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.68, "y":0.75, "z":0.01},"flareScale":0.02,"lightBrightness":0.03,"deformGroup":"bumpersignal_R_break"}],
-        //["lowhighbeam", "SPOTLIGHT", "fb3r", "fb3rr", "fb2r", {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.68, "y":0.75, "z":0.01},"flareScale":0.02,"lightBrightness":0.01,"deformGroup":"bumpersignal_R_break"}],
     ],
 }
 "bx_signal_FL_fixed": {
@@ -40,6 +37,21 @@
         "value":15,
     },
     "slotType" : "bx_signal_FL_fixed",
+    "slots2": [
+        ["name",                       "allowTypes",             "denyTypes", "default",                "description"],
+        ["bx_bumper_signal_FL_bulb", ["incandescent_amber_21W"], [],          "incandescent_amber_21W", "Front Left Bumper Turn Signal Bulb",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"signal_L_filament",
+                "$nodeRef":"fb3l", "$nodeX":"fb3ll", "$nodeY":"fb2l",
+                "$deformGroup":"bumpersignal_L_break",
+                "$posX":0.564, "$posY":-2.102, "$posZ":0.475,
+                "$rotX":0, "$rotY":0, "$rotZ":180,
+                "$shadowEnable":1,
+            }
+        }],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          {"deformGroup":"bumpersignal_L_break", "deformMaterialBase":"bx_glass", "deformMaterialDamaged":"bx_glass_dmg"},
@@ -47,24 +59,6 @@
          {"deformGroup":"bumpersignal_L_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights_dmg"},
          ["bx_bumpersignal_L_fixed", ["bx_bumper_F"]],
          {"deformGroup":""},
-    ],
-    "props": [
-        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":150,
-            "lightRange":8,
-            "lightColor":{"r":255, "g":150, "b":0, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":false,
-            "flareName":"vehicleBrakeLightFlare",
-            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
-            "texSize":512,
-            "shadowSoftness":0.1,
-        },
-        //bumper signals
-        ["signal_L", "SPOTLIGHT", "fb3l", "fb3ll", "fb2l", {"x":180, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.68, "y":0.75, "z":-0.01},"flareScale":0.02,"lightBrightness":0.03,"deformGroup":"bumpersignal_L_break"}],
-        //["lowhighbeam", "SPOTLIGHT", "fb3l", "fb3ll", "fb2l", {"x":180, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.68, "y":0.75, "z":-0.01},"flareScale":0.02,"lightBrightness":0.01,"deformGroup":"bumpersignal_L_break"}],
     ],
 }
 "bx_signal_R_fixed": {
@@ -74,6 +68,33 @@
         "value":15,
     },
     "slotType" : "bx_signal_R_fixed",
+    "slots2": [
+        ["name",                       "allowTypes",             "denyTypes", "default",                "description"],
+        ["bx_fender_signal_FR_bulb", ["incandescent_amber_21W"], [],          "incandescent_amber_21W", "Front Right Fender Turn Signal Bulb",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"signal_R_filament",
+                "$nodeRef":"fe11r", "$nodeX":"fe14r", "$nodeY":"fe12r",
+                "$deformGroup":"fendersignal_R_break",
+                "$posX":-0.75, "$posY":-1.795, "$posZ":0.633,
+                "$rotX":0, "$rotY":0, "$rotZ":230,
+                "$shadowEnable":1,
+            }
+        }],
+        ["bx_fender_parklight_FR_bulb", ["incandescent_white_21W"], [],          "incandescent_white_21W", "Front Right Parking Light Bulb",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"lowhighbeam_filament",
+                "$nodeRef":"fe11r", "$nodeX":"fe14r", "$nodeY":"fe12r",
+                "$deformGroup":"fendersignal_R_break",
+                "$posX":-0.713, "$posY":-1.894, "$posZ":0.629,
+                "$rotX":0, "$rotY":0, "$rotZ":230,
+                "$shadowEnable":1,
+            }
+        }],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          {"deformGroup":"fendersignal_R_break", "deformMaterialBase":"bx_glass", "deformMaterialDamaged":"bx_glass_dmg"},
@@ -81,34 +102,6 @@
          {"deformGroup":"fendersignal_R_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights_dmg"},
          ["bx_parkinglight_R_fixed", ["bx_fender_R", "bx_fendersignal_R_fixed"]],
          {"deformGroup":""},
-    ],
-    "props": [
-        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
-        //parking lights
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightColor":{"r":255, "g":255, "b":160, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":true,
-            "flareName":"vehicleHeadLightFlare",
-            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
-            "texSize":512,
-            "shadowSoftness":0.5,
-        },
-        ["lowhighbeam", "SPOTLIGHT", "fe11r", "fe14r", "fe12r", {"x":50, "y":-110, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.1, "z":0.02},"flareScale":0.02,"lightBrightness":0.01,"deformGroup":"fendersignal_R_break"}],
-        //fender signals
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightRange":8,
-            "lightColor":{"r":255, "g":150, "b":0, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":false,
-            "flareName":"vehicleBrakeLightFlare",
-        },
-        ["signal_R", "SPOTLIGHT", "fe11r", "fe14r", "fe12r", {"x":40, "y":-80, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":0.02},"flareScale":0.02,"lightBrightness":0.03,"deformGroup":"fendersignal_R_break"}],
-        //["lowhighbeam", "SPOTLIGHT", "fe11r", "fe14r", "fe12r", {"x":40, "y":-80, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":0.02},"flareScale":0.02,"lightBrightness":0.01,"deformGroup":"fendersignal_R_break"}],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -118,7 +111,7 @@
          {"frictionCoef":0.5},
          {"nodeWeight":0.4},
          {"group":"bx_fendersignal_R_fixed"},
-         ["fe14r", -0.67, -1.942, 0.5997],
+         ["fe14r", -0.68, -1.942, 0.5897],
          {"group":""},
 
          {"nodeMaterial":"|NM_METAL"},
@@ -148,7 +141,7 @@
           ["fe14r", "fe6r"],
           //rigidifier
           ["fe13r", "fe14r"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.2},
@@ -158,7 +151,7 @@
             //left headlight
             {"groundModel":"plastic"},
             {"group":"bx_signal_R"},
-            {"dragCoef":3},
+            {"dragCoef":5.25},
             ["fe14r", "fe11r", "fe12r"],
     ],
 }
@@ -169,6 +162,33 @@
         "value":15,
     },
     "slotType" : "bx_signal_L_fixed",
+    "slots2": [
+        ["name",                       "allowTypes",             "denyTypes", "default",                "description"],
+        ["bx_fender_signal_FL_bulb", ["incandescent_amber_21W"], [],          "incandescent_amber_21W", "Front Left Fender Turn Signal Bulb",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"signal_L_filament",
+                "$nodeRef":"fe11l", "$nodeX":"fe14l", "$nodeY":"fe12l",
+                "$deformGroup":"fendersignal_L_break",
+                "$posX":0.75, "$posY":-1.795, "$posZ":0.633,
+                "$rotX":0, "$rotY":0, "$rotZ":130,
+                "$shadowEnable":1,
+            }
+        }],
+        ["bx_fender_parklight_FL_bulb", ["incandescent_white_21W"], [],          "incandescent_white_21W", "Front Left Parking Light Bulb",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"lowhighbeam_filament",
+                "$nodeRef":"fe11l", "$nodeX":"fe14l", "$nodeY":"fe12l",
+                "$deformGroup":"fendersignal_L_break",
+                "$posX":0.713, "$posY":-1.894, "$posZ":0.629,
+                "$rotX":0, "$rotY":0, "$rotZ":130,
+                "$shadowEnable":1,
+            }
+        }],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          {"deformGroup":"fendersignal_L_break", "deformMaterialBase":"bx_glass", "deformMaterialDamaged":"bx_glass_dmg"},
@@ -176,34 +196,6 @@
          {"deformGroup":"fendersignal_L_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights_dmg"},
          ["bx_parkinglight_L_fixed", ["bx_fender_L", "bx_fendersignal_L_fixed"]],
          {"deformGroup":""},
-    ],
-    "props": [
-        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
-        //parking lights
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightColor":{"r":255, "g":255, "b":160, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":true,
-            "flareName":"vehicleHeadLightFlare",
-            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
-            "texSize":512,
-            "shadowSoftness":0.5,
-        },
-        ["lowhighbeam", "SPOTLIGHT", "fe11l", "fe14l", "fe12l", {"x":50, "y":-110, "z":180}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.1, "z":-0.02},"flareScale":0.02,"lightBrightness":0.01,"deformGroup":"fendersignal_L_break"}],
-        //fender signals
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightRange":8,
-            "lightColor":{"r":255, "g":150, "b":0, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":false,
-            "flareName":"vehicleBrakeLightFlare",
-        },
-        ["signal_L", "SPOTLIGHT", "fe11l", "fe14l", "fe12l", {"x":40, "y":-80, "z":180}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.02},"flareScale":0.02,"lightBrightness":0.03,"deformGroup":"fendersignal_L_break"}],
-        //["lowhighbeam", "SPOTLIGHT", "fe11l", "fe14l", "fe12l", {"x":40, "y":-80, "z":180}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.02},"flareScale":0.02,"lightBrightness":0.01,"deformGroup":"fendersignal_L_break"}],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -213,7 +205,7 @@
          {"frictionCoef":0.5},
          {"nodeWeight":0.4},
          {"group":"bx_fendersignal_L_fixed"},
-         ["fe14l", 0.67, -1.942, 0.5997],
+         ["fe14l", 0.68, -1.942, 0.5897],
          {"group":""},
 
          {"nodeMaterial":"|NM_METAL"},
@@ -243,7 +235,7 @@
           ["fe14l", "fe6l"],
           //rigidifier
           ["fe13l", "fe14l"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.2},
@@ -253,7 +245,7 @@
             //left headlight
             {"groundModel":"plastic"},
             {"group":"bx_signal_L"},
-            {"dragCoef":3},
+            {"dragCoef":5.25},
             ["fe11l", "fe14l", "fe12l"],
     ],
 }

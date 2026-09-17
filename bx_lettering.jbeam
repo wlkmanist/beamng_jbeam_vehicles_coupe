@@ -139,7 +139,12 @@
 "bx_lettering_trunk_coupe_gtz_200bx": {
     "information":{
         "authors":"BeamNG",
-        "name":"200BX GTz Trunk Lettering",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.200BX BRAND Trunk Lettering",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.GTz"
+            }
+        },
         "value":150,
     },
     "slotType" : "bx_lettering_trunk_coupe",
@@ -153,7 +158,12 @@
 "bx_lettering_trunk_coupe_gtz_diana": {
     "information":{
         "authors":"BeamNG",
-        "name":"Diana GTz Trunk Lettering",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.Diana BRAND Trunk Lettering",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.GTz"
+            }
+        },
         "value":150,
     },
     "slotType" : "bx_lettering_trunk_coupe",
@@ -232,7 +242,12 @@
 "bx_lettering_tailgate_hatch_gtz": {
     "information":{
         "authors":"BeamNG",
-        "name":"GTz Tailgate Lettering",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Tailgate Lettering",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.GTz"
+            }
+        },
         "value":50,
     },
     "slotType" : "bx_lettering_tailgate_hatch",

@@ -10,8 +10,8 @@
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_spoiler_hatch", ["bx_spoiler"]],
     ],
-    "trunkCoupler":{
-        "$+openForceMagnitude":  4,
+    "tailgateCoupler":{
+        "$+openForceMagnitude":  8,
         "$+openForceDuration":   0.1,
         "$+closeForceMagnitude": -10,
         "$+closeForceDuration":  0,
@@ -33,13 +33,13 @@
          ["sp1ll", 0.5866, 1.9743, 0.9515],
          ["sp1lll", 0.6894, 1.9253, 0.9003],
 
-         ["sp2rrr", -0.6771, 2.0244, 0.8901],
+         ["sp2rrr", -0.6771, 2.0244, 0.9001],
          ["sp2rr", -0.5866, 2.0987, 0.9547],
          ["sp2r", -0.3074, 2.1196, 0.9778],
          ["sp2", 0.0000, 2.1248, 0.9778],
          ["sp2l", 0.3074, 2.1196, 0.9778],
          ["sp2ll", 0.5866, 2.0987, 0.9547],
-         ["sp2lll", 0.6771, 2.0244, 0.8901],
+         ["sp2lll", 0.6771, 2.0244, 0.9001],
 
          {"group":""},
          ["sprg", 0.0000, 1.9951, 0.7495, {"selfCollision":false, "collision":false}]
@@ -173,7 +173,7 @@
     ],
     "triangles": [
         ["id1:","id2:","id3:"],
-        {"dragCoef":10},
+        {"dragCoef":17.5},
         {"groundModel":"plastic"},
         ["sp2rrr", "sp1rrr", "sp1rr", {"liftCoef":70}],
         ["sp1rr", "sp2rr", "sp2rrr", {"liftCoef":70}],
@@ -201,7 +201,7 @@
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_spoiler_hatch_special", ["bx_spoiler"]],
     ],
-    "trunkCoupler":{
+    "tailgateCoupler":{
         "$+openForceMagnitude":  10,
         "$+openForceDuration":   0.1,
         "$+closeForceMagnitude": -5,
@@ -228,10 +228,10 @@
          ["sp2l", 0.3214, 2.1993, 1.1596],
          ["sp2ll", 0.5346, 2.1993, 1.1417],
 
-         ["sp3rr", -0.6665, 1.8521, 0.94],
+         ["sp3rr", -0.6665, 1.8521, 0.95],
          ["sp3r", -0.2208, 1.9637, 0.965],
          ["sp3l", 0.2208, 1.9637, 0.965],
-         ["sp3ll", 0.6665, 1.8521, 0.94],
+         ["sp3ll", 0.6665, 1.8521, 0.95],
 
          ["sp4rr", -0.6802, 2.1079, 0.9059],
          ["sp4r", -0.2208, 2.0790, 0.97],
@@ -411,7 +411,7 @@
     ],
     "triangles": [
         ["id1:","id2:","id3:"],
-        {"dragCoef":10},
+        {"dragCoef":17.5},
         {"groundModel":"plastic"},
         ["sp4rr", "sp3rr", "sp1rr", {"liftCoef":70}],
         ["sp1rr", "sp2rr", "sp4rr", {"liftCoef":70}],
@@ -446,7 +446,7 @@
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_spoiler_custom_a_hatch", ["bx_spoiler"]],
     ],
-    "trunkCoupler":{
+    "tailgateCoupler":{
         "$+openForceMagnitude":  12,
         "$+openForceDuration":   0.2,
         "$+closeForceMagnitude": -10,
@@ -629,7 +629,7 @@
     ],
     "triangles": [
         ["id1:","id2:","id3:"],
-        {"dragCoef":10},
+        {"dragCoef":17.5},
         {"groundModel":"plastic"},
         ["sp2rrr", "sp1rrr", "sp1rr", {"liftCoef":80}],
         ["sp1rr", "sp2rr", "sp2rrr", {"liftCoef":80}],
@@ -747,7 +747,7 @@
     ],
     "triangles": [
         ["id1:","id2:","id3:"],
-        {"dragCoef":10},
+        {"dragCoef":17.5},
         {"groundModel":"plastic"},
         ["rsp1", "rsp1l", "rsp2l", {"liftCoef":60}],
         ["rsp2", "rsp1", "rsp2l", {"liftCoef":60}],

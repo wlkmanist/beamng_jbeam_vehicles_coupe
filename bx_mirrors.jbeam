@@ -130,7 +130,7 @@
             //left mirror
             {"groundModel":"plastic"},
             {"group":"bx_mirror_L"},
-            {"dragCoef":45},
+            {"dragCoef":78.75},
             ["mi1l","mi2l","mi3l"],
             ["mi3l","mi2l","mi4l"],
 
@@ -272,7 +272,7 @@
             //right mirror
             {"groundModel":"plastic"},
             {"group":"bx_mirror_R"},
-            {"dragCoef":45},
+            {"dragCoef":78.75},
             ["mi1r","mi3r","mi2r"],
             ["mi3r","mi4r","mi2r"],
 
@@ -414,7 +414,7 @@
             //left mirror
             {"groundModel":"plastic"},
             {"group":"bx_mirror_L"},
-            {"dragCoef":45},
+            {"dragCoef":78.75},
             ["mi1l","mi2l","mi3l"],
             ["mi3l","mi2l","mi4l"],
 
@@ -556,7 +556,7 @@
             //right mirror
             {"groundModel":"plastic"},
             {"group":"bx_mirror_R"},
-            {"dragCoef":45},
+            {"dragCoef":78.75},
             ["mi1r","mi3r","mi2r"],
             ["mi3r","mi4r","mi2r"],
 

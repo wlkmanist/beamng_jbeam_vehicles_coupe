@@ -6,9 +6,9 @@
         "value":390,
     },
     "slotType" : "bx_transmission",
-    "slots": [
-        ["type", "default","description"],
-        ["bx_flywheel","bx_flywheel","Flywheel", {"coreSlot":true}],
+    "slots2": [
+        ["name",        "allowTypes",    "denyTypes", "default",     "description"],
+        ["bx_flywheel", ["bx_flywheel"], [],          "bx_flywheel", "Flywheel",    {"coreSlot":true}],
     ],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
@@ -82,9 +82,9 @@
         "value":4400,
     },
     "slotType" : "bx_transmission",
-    "slots": [
-        ["type", "default","description"],
-        ["bx_flywheel","bx_flywheel_race","Flywheel", {"coreSlot":true}],
+    "slots2": [
+        ["name",        "allowTypes",    "denyTypes", "default",          "description"],
+        ["bx_flywheel", ["bx_flywheel"], [],          "bx_flywheel_race", "Flywheel",    {"coreSlot":true}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -179,9 +179,9 @@
         "value":6450,
     },
     "slotType" : "bx_transmission",
-    "slots": [
-        ["type", "default","description"],
-        ["bx_flywheel","bx_flywheel","Flywheel", {"coreSlot":true}],
+    "slots2": [
+        ["name",        "allowTypes",    "denyTypes", "default",     "description"],
+        ["bx_flywheel", ["bx_flywheel"], [],          "bx_flywheel", "Flywheel",    {"coreSlot":true}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -206,8 +206,8 @@
         "torqueLossCoef": 0.012,
         "gearboxNode:":["tra1"],
 
-        "gearWhineCoefsInput":  [0.66, 0.00, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33],
-        "gearWhineCoefsOutput": [0.00, 0.00, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66],
+        "gearWhineCoefsInput":  [0.33, 0.00, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33],
+        "gearWhineCoefsOutput": [0.00, 0.00, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33],
         "gearWhineInputEvent": "event:>Vehicle>Transmission>straight_01>twine_in_race",
         "gearWhineOutputEvent": "event:>Vehicle>Transmission>straight_01>twine_out_race",
 
@@ -285,9 +285,9 @@
         "value":1350,
     },
     "slotType" : "bx_transmission",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_converter","bx_converter","Torque Converter", {"coreSlot":true}],
+    "slots2": [
+        ["name",         "allowTypes",     "denyTypes", "default",      "description"],
+        ["bx_converter", ["bx_converter"], [],          "bx_converter", "Torque Converter", {"coreSlot":true}],
     ],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
@@ -356,9 +356,9 @@
         "value":7600,
     },
     "slotType" : "bx_transmission",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_converter_drag","bx_converter_drag_med","Torque Converter", {"coreSlot":true}],
+    "slots2": [
+        ["name",              "allowTypes",          "denyTypes", "default",               "description"],
+        ["bx_converter_drag", ["bx_converter_drag"], [],          "bx_converter_drag_med", "Torque Converter", {"coreSlot":true}],
     ],
     "controller": [
         ["fileName"],

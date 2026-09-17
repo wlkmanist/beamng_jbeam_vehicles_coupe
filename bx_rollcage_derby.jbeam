@@ -11,7 +11,7 @@
          ["bx_rollcage_derby", ["bx_floor", "bx_rollcage"]],
     ],
     "sounds": {
-        "$-cabinFilterCoef": 0.08
+        "$+cabinFilterCoef": -0.08
     },
     "nodes": [
          ["id", "posX", "posY", "posZ"],

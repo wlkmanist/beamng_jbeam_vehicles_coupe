@@ -30,7 +30,7 @@
          ["rbb1llll",  0.83, 1.59, 0.50],
 
          //["rbb2r",    -0.33, 2.24, 0.31],
-         ["rbb2",      0.00, 2.25, 0.33],
+         ["rbb2",      0.00, 2.25, 0.33, {"group":["towhitchColide","bx_bashbar_R"]}],
          //["rbb2l",     0.33, 2.24, 0.31],
          //mounts
          ["rbb3r",    -0.40, 2.13, 0.50],
@@ -182,9 +182,9 @@
           ["rbb1llll", "r2ll"],
           ["rbb1lll", "q12l"],
           ["rbb1lll", "r3ll"],
-          {"breakGroup":""},
+          {"breakGroup":"bumperbar_R_supportBeams"},
           //rear bashbar support beams
-          {"beamType":"|SUPPORT","beamLongBound":4},
+          {"beamType":"|SUPPORT","beamLongBound":16},
           {"beamSpring":401000,"beamDamp":30},
           {"beamDeform":145000,"beamStrength":"FLT_MAX"},
           {"beamPrecompression":0.95},
@@ -199,7 +199,7 @@
          //["rbb2l", "r4ll"],
          //["rbb2r", "r4"],
          //["rbb2r", "r4rr"],
-          {"beamPrecompression":0.9,"beamLongBound":8},
+          {"beamPrecompression":0.9,"beamLongBound":32},
           ["rbb1llll", "q10l"],
           ["rbb1llll", "r2ll"],
           ["rbb1llll", "q12l"],
@@ -217,12 +217,13 @@
           ["rbb1rrr", "r2rr"],
           ["rbb1rrr", "q12r"],
           ["rbb1rrr", "r3rr"],
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.1},
     ],
     "triangles": [
             ["id1:","id2:","id3:"],
-            {"dragCoef":1},
+            {"dragCoef":1.75},
             //bumper bar
             {"group":"bx_bashbar"},
             ["rbb1","rbb2","rbb1r"],

@@ -1,0 +1,155 @@
+{
+"bx_underglow": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Underglow Lights",
+        "value":1000,
+    },
+    "slotType" : "bx_underglow",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["underglow_color", ["underglow_color"], [], "underglow_color_red", "Underglow Lights Color",{"coreSlot":true}],
+        ["bx_underglow_front_emitter", ["underglow_neon"], [], "underglow_neon", "Underglow Front Emitter",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"underglow",
+                "$nodeRef":"f11", "$nodeX":"f11rr", "$nodeY":"f15",
+                "$posX":0, "$posY":-1.673, "$posZ":0.402,
+                "$rotX":-90, "$rotY":0, "$rotZ":180,
+                "$deformGroup":"underglow_F_break",
+                "$lightRange":2
+            }
+        }],
+        ["bx_underglow_rear_emitter", ["underglow_neon"], [], "underglow_neon", "Underglow Rear Emitter",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"underglow",
+                "$nodeRef":"r4rr", "$nodeX":"r4ll", "$nodeY":"r3rr",
+                "$posX":-0.054, "$posY":1.915, "$posZ":0.511,
+                "$rotX":90, "$rotY":0, "$rotZ":0,
+                "$deformGroup":"underglow_R_break",
+                "$lightRange":2
+            }
+        }],
+        ["bx_underglow_right_1_emitter", ["underglow_neon"], [], "underglow_neon", "Underglow Right Emitter",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"underglow",
+                "$nodeRef":"f3rr", "$nodeX":"f3r", "$nodeY":"f2rr",
+                "$posX":-0.618, "$posY":-0.3, "$posZ":0.41,
+                "$rotX":90, "$rotY":90, "$rotZ":0,
+                "$deformGroup":"underglow_MR_break",
+                "$lightRange":1.5
+            }
+        }],
+        ["bx_underglow_right_2_emitter", ["underglow_neon"], [], "underglow_neon", "Underglow Right Emitter",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"underglow",
+                "$nodeRef":"f3rr", "$nodeX":"f3r", "$nodeY":"f2rr",
+                "$posX":-0.618, "$posY":0.324, "$posZ":0.41,
+                "$rotX":90, "$rotY":90, "$rotZ":0,
+                "$deformGroup":"underglow_MR_break",
+                "$lightRange":1.5
+            }
+        }],
+        ["bx_underglow_right_3_emitter", ["underglow_neon"], [], "underglow_neon", "Underglow Right Emitter",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"underglow",
+                "$nodeRef":"f3rr", "$nodeX":"f3r", "$nodeY":"f2rr",
+                "$posX":-0.618, "$posY":0.949, "$posZ":0.41,
+                "$rotX":90, "$rotY":90, "$rotZ":0,
+                "$deformGroup":"underglow_MR_break",
+                "$lightRange":1.5
+            }
+        }],
+        ["bx_underglow_left_1_emitter", ["underglow_neon"], [], "underglow_neon", "Underglow Left Emitter",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"underglow",
+                "$nodeRef":"f3ll", "$nodeX":"f3l", "$nodeY":"f2ll",
+                "$posX":0.618, "$posY":-0.3, "$posZ":0.41,
+                "$rotX":90, "$rotY":-90, "$rotZ":0,
+                "$deformGroup":"underglow_ML_break",
+                "$lightRange":1.5
+            }
+        }],
+        ["bx_underglow_left_2_emitter", ["underglow_neon"], [], "underglow_neon", "Underglow Left Emitter",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"underglow",
+                "$nodeRef":"f3ll", "$nodeX":"f3l", "$nodeY":"f2ll",
+                "$posX":0.618, "$posY":0.324, "$posZ":0.41,
+                "$rotX":90, "$rotY":-90, "$rotZ":0,
+                "$deformGroup":"underglow_ML_break",
+                "$lightRange":1.5
+            }
+        }],
+        ["bx_underglow_left_3_emitter", ["underglow_neon"], [], "underglow_neon", "Underglow Left Emitter",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"underglow",
+                "$nodeRef":"f3ll", "$nodeX":"f3l", "$nodeY":"f2ll",
+                "$posX":0.618, "$posY":0.949, "$posZ":0.41,
+                "$rotX":90, "$rotY":-90, "$rotZ":0,
+                "$deformGroup":"underglow_ML_break",
+                "$lightRange":1.5
+            }
+        }],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_neon_cap_front", ["bx_body"], []],
+        ["bx_neon_cap_rear", ["bx_body"], []],
+        ["bx_neon_cap_right", ["bx_body"], []],
+        ["bx_neon_cap_left", ["bx_body"], []],
+
+        {"deformGroup":"underglow_F_break", "deformMaterialBase":"neon_tube_glow", "deformMaterialDamaged":"neon_tube_glow"},
+        ["bx_neon_front", ["bx_body"], []],
+        {"deformGroup":"underglow_R_break", "deformMaterialBase":"neon_tube_glow", "deformMaterialDamaged":"neon_tube_glow"},
+        ["bx_neon_rear", ["bx_body"], []],
+        {"deformGroup":"underglow_MR_break", "deformMaterialBase":"neon_tube_glow", "deformMaterialDamaged":"neon_tube_glow"},
+        ["bx_neon_right", ["bx_body"], []],
+        {"deformGroup":"underglow_ML_break", "deformMaterialBase":"neon_tube_glow", "deformMaterialDamaged":"neon_tube_glow"},
+        ["bx_neon_left", ["bx_body"], []],
+        {"deformGroup":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //brittle beams
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"beamSpring":701000,"beamDamp":10},
+          {"beamDeform":4500,"beamStrength":8500},
+          {"deformLimitExpansion":""},
+          {"deformGroup":"underglow_F_break", "deformationTriggerRatio":0.03},
+          {"breakGroup":"underglow_F"},
+          ["f19ll", "f11rr"],
+          ["f11ll", "f19rr"],
+          {"deformGroup":"underglow_R_break", "deformationTriggerRatio":0.03},
+          {"breakGroup":"underglow_R"},
+          ["r4ll", "r4rr"],
+          {"deformGroup":"underglow_MR_break", "deformationTriggerRatio":0.03},
+          {"breakGroup":"underglow_MR"},
+          ["f4rr", "f1rr"],
+          {"deformGroup":"underglow_ML_break", "deformationTriggerRatio":0.03},
+          {"breakGroup":"underglow_ML"},
+          ["f4ll", "f1ll"],
+          {"breakGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"deformGroup":"", "deformationTriggerRatio":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+    ],
+},
+
+}

@@ -10,10 +10,10 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
         ["bx_quarterpanels_coupe", ["bx_body","bx_shocktop_R","bx_shocktop_F"]],
     ],
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_fenderflare_RR","", "Rear Right Fender Flare"],
-        ["bx_fenderflare_RL","", "Rear Left Fender Flare"],
+    "slots2": [
+        ["name",              "allowTypes",          "denyTypes", "default", "description"],
+        ["bx_fenderflare_RR", ["bx_fenderflare_RR"], [],          "",        "Rear Right Fender Flare"],
+        ["bx_fenderflare_RL", ["bx_fenderflare_RL"], [],          "",        "Rear Left Fender Flare"],
     ],
 },
 "bx_quarterpanels_coupe_wide": {

@@ -28,7 +28,12 @@
 "bx_steer_01a": {
     "information":{
         "authors":"BeamNG",
-        "name":"Nomi Mod.301 Racing Wheel",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Mod.301 Racing Wheel",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Nomi"
+            }
+        },
         "value":310,
     },
     "slotType" : "bx_steer",
@@ -41,7 +46,12 @@
 "bx_steer_02a": {
     "information":{
         "authors":"BeamNG",
-        "name":"Nomi Mod.307 Racing Wheel",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Mod.307 Racing Wheel",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Nomi"
+            }
+        },
         "value":330,
     },
     "slotType" : "bx_steer",
@@ -54,7 +64,12 @@
 "bx_steer_02b": {
     "information":{
         "authors":"BeamNG",
-        "name":"Nomi Mod.307R Racing Wheel",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Mod.307R Racing Wheel",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Nomi"
+            }
+        },
         "value":330,
     },
     "slotType" : "bx_steer",
@@ -67,7 +82,12 @@
 "bx_steer_02c": {
     "information":{
         "authors":"BeamNG",
-        "name":"Nomi Mod.207R Drift Wheel",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Mod.207R Drift Wheel",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Nomi"
+            }
+        },
         "value":250,
     },
     "slotType" : "bx_steer",
@@ -80,7 +100,12 @@
 "bx_steer_03a": {
     "information":{
         "authors":"BeamNG",
-        "name":"Arnida Sportivo Racing Wheel",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Sportivo Racing Wheel",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Arnida"
+            }
+        },
         "value":370,
     },
     "slotType" : "bx_steer",
@@ -93,7 +118,12 @@
 "bx_steer_04a": {
     "information":{
         "authors":"BeamNG",
-        "name":"Arnida Corsa Racing Wheel",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Corsa Racing Wheel",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Arnida"
+            }
+        },
         "value":400,
     },
     "slotType" : "bx_steer",
@@ -106,7 +136,12 @@
 "bx_steer_05a": {
     "information":{
         "authors":"BeamNG",
-        "name":"Legno Classico Steering Wheel",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Classico Steering Wheel",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Legno"
+            }
+        },
         "value":440,
     },
     "slotType" : "bx_steer",

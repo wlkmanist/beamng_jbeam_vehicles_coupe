@@ -6,11 +6,11 @@
         "value":350,
     },
     "slotType" : "bx_differential_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_driveshaft_R","bx_driveshaft_R", "Rear Driveshaft"],
-        ["bx_halfshaft_R","bx_halfshaft_R", "Rear Halfshafts"],
-        ["bx_finaldrive_R","bx_finaldrive_R_392", "Rear Final Drive", {"coreSlot":true}],
+    "slots2": [
+        ["name",            "allowTypes",        "denyTypes", "default",             "description"],
+        ["bx_driveshaft_R", ["bx_driveshaft_R"], [],          "bx_driveshaft_R",     "Rear Driveshaft"],
+        ["bx_halfshaft_R",  ["bx_halfshaft_R"],  [],          "bx_halfshaft_R",      "Rear Halfshafts"],
+        ["bx_finaldrive_R", ["bx_finaldrive_R"], [],          "bx_finaldrive_R_392", "Rear Final Drive", {"coreSlot":true}],
     ],
     "powertrain" : [
         ["type", "name", "inputName", "inputIndex"],
@@ -87,11 +87,11 @@
         "value":450,
     },
     "slotType" : "bx_differential_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_driveshaft_R","bx_driveshaft_R", "Rear Driveshaft"],
-        ["bx_halfshaft_R","bx_halfshaft_R", "Rear Halfshafts"],
-        ["bx_finaldrive_R","bx_finaldrive_R_392", "Rear Final Drive", {"coreSlot":true}],
+    "slots2": [
+        ["name",            "allowTypes",        "denyTypes", "default",             "description"],
+        ["bx_driveshaft_R", ["bx_driveshaft_R"], [],          "bx_driveshaft_R",     "Rear Driveshaft"],
+        ["bx_halfshaft_R",  ["bx_halfshaft_R"],  [],          "bx_halfshaft_R",      "Rear Halfshafts"],
+        ["bx_finaldrive_R", ["bx_finaldrive_R"], [],          "bx_finaldrive_R_392", "Rear Final Drive", {"coreSlot":true}],
     ],
     "powertrain" : [
         ["type", "name", "inputName", "inputIndex"],
@@ -168,11 +168,11 @@
         "value":950,
     },
     "slotType" : "bx_differential_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_driveshaft_R","bx_driveshaft_R", "Rear Driveshaft"],
-        ["bx_halfshaft_R","bx_halfshaft_R", "Rear Halfshafts"],
-        ["bx_finaldrive_R","bx_finaldrive_R_392", "Rear Final Drive", {"coreSlot":true}],
+    "slots2": [
+        ["name",            "allowTypes",        "denyTypes", "default",             "description"],
+        ["bx_driveshaft_R", ["bx_driveshaft_R"], [],          "bx_driveshaft_R",     "Rear Driveshaft"],
+        ["bx_halfshaft_R",  ["bx_halfshaft_R"],  [],          "bx_halfshaft_R",      "Rear Halfshafts"],
+        ["bx_finaldrive_R", ["bx_finaldrive_R"], [],          "bx_finaldrive_R_392", "Rear Final Drive", {"coreSlot":true}],
     ],
     "powertrain" : [
         ["type", "name", "inputName", "inputIndex"],
@@ -249,11 +249,11 @@
         "value":3850,
     },
     "slotType" : "bx_differential_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_driveshaft_R","bx_driveshaft_R", "Rear Driveshaft"],
-        ["bx_halfshaft_R","bx_halfshaft_R", "Rear Halfshafts"],
-        ["bx_finaldrive_R","bx_finaldrive_R_race", "Rear Final Drive", {"coreSlot":true}],
+    "slots2": [
+        ["name",            "allowTypes",        "denyTypes", "default",              "description"],
+        ["bx_driveshaft_R", ["bx_driveshaft_R"], [],          "bx_driveshaft_R",      "Rear Driveshaft"],
+        ["bx_halfshaft_R",  ["bx_halfshaft_R"],  [],          "bx_halfshaft_R",       "Rear Halfshafts"],
+        ["bx_finaldrive_R", ["bx_finaldrive_R"], [],          "bx_finaldrive_R_race", "Rear Final Drive", {"coreSlot":true}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],

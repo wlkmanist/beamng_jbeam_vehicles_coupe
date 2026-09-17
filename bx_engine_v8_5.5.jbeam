@@ -3,20 +3,20 @@
     "information":{
         "authors":"BeamNG",
         "name":"5.5L V8 Engine",
-        "value":7900,
+        "value":10500,
     },
     "slotType" : "bx_engine",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_enginemounts","bx_enginemounts", "Engine Mounts", {"coreSlot":true}],
-        ["pickup_oilpan_v8","pickup_oilpan_v8", "Oil Pan", {"coreSlot":true, "nodeMove":{"x":0.0,"y":0.1,"z":-0.16}}],
-        ["bx_intake_v8","bx_intake_v8_stock", "Intake", {"coreSlot":true}],
-        ["pickup_engine_v8_ecu","pickup_engine_v8_ecu", "Engine Management", {"coreSlot":true}],
-        ["n2o_system","", "Nitrous Oxide System"],
-        ["pickup_engine_v8_internals","pickup_engine_v8_internals", "Engine Long Block", {"coreSlot":true}],
-        ["bx_transmission","bx_transmission_4A", "Transmission"],
-        ["bx_radiator_v8","bx_radiator_v8", "Radiator"],
-        ["bx_oilcooler","", "Oil Cooler"],
+    "slots2": [
+        ["name",                       "allowTypes",                   "denyTypes", "default",                    "description"],
+        ["bx_enginemounts",            ["bx_enginemounts"],            [],          "bx_enginemounts",            "Engine Mounts",        {"coreSlot":true}],
+        ["pickup_oilpan_v8",           ["pickup_oilpan_v8"],           [],          "pickup_oilpan_v8",           "Oil Pan",              {"coreSlot":true, "nodeMove":{"x":0.0,"y":0.1,"z":-0.16}}],
+        ["bx_intake_v8",               ["bx_intake_v8"],               [],          "bx_intake_v8_stock",         "Intake",               {"coreSlot":true}],
+        ["pickup_engine_v8_ecu",       ["pickup_engine_v8_ecu"],       [],          "pickup_engine_v8_ecu",       "Engine Management",    {"coreSlot":true}],
+        ["n2o_system",                 ["n2o_system"],                 [],          "",                           "Nitrous Oxide System"],
+        ["pickup_engine_v8_internals", ["pickup_engine_v8_internals"], [],          "pickup_engine_v8_internals", "Engine Long Block",    {"coreSlot":true}],
+        ["bx_transmission",            ["bx_transmission"],            [],          "bx_transmission_4A",         "Transmission"],
+        ["bx_radiator_v8",             ["bx_radiator_v8"],             [],          "bx_radiator_v8",             "Radiator"],
+        ["bx_oilcooler",               ["bx_oilcooler"],               [],          "",                           "Oil Cooler"],
     ],
     "components":{
         "relocateBattery":true,
@@ -111,10 +111,10 @@
         "deformGroups":["mainEngine", "mainEngine_intake", "mainEngine_accessories"]
     },
     "soundConfig": {
-        "sampleName": "V8_cross_engine",
+        "sampleName": "v8p_cp_2019_05000cc_gt_01_engine",
         "intakeMuffling": 1,
 
-        "mainGain": -2.5,
+        "mainGain": -3.5,
         "onLoadGain":1,
         "offLoadGain":0.67,
 
@@ -136,25 +136,25 @@
         "eqHighWidth": 0.2,
 
         "fundamentalFrequencyCylinderCount":8,
-        "eqFundamentalGain": 0,
+        "eqFundamentalGain": -2,
     },
     "soundConfigExhaust": {
-        "sampleName": "V8_cross_exhaust",
+        "sampleName": "v8p_cp_2019_05000cc_gt_01_exhaust",
 
-        "mainGain": -0.5,
+        "mainGain": 3.5,
         "onLoadGain":1,
-        "offLoadGain":0.61,
+        "offLoadGain":0.68,
 
-        "maxLoadMix": 0.72,
+        "maxLoadMix": 0.75,
         "minLoadMix": 0,
 
         "lowShelfGain":-12,
         "lowShelfFreq":90,
 
-        "highShelfGain":4,
-        "highShelfFreq":2400,
+        "highShelfGain":3,
+        "highShelfFreq":4400,
 
-        "eqLowGain": 1.0,
+        "eqLowGain": 2,
         "eqLowFreq": 150,
         "eqLowWidth": 0.2,
 
@@ -163,7 +163,7 @@
         "eqHighWidth": 0.2,
 
         "fundamentalFrequencyCylinderCount":8,
-        "eqFundamentalGain": -1,
+        "eqFundamentalGain": -2,
     },
     "vehicleController": {
         "clutchLaunchStartRPM":1200,
@@ -288,7 +288,7 @@
           ["e4r","rad2"],
           ["e4l","rad2"],
           {"optional":false},
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],
 },

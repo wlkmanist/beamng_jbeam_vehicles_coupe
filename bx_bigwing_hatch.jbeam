@@ -2,7 +2,13 @@
 "bx_bigwing_01a_hatch": {
     "information":{
         "authors":"BeamNG",
-        "name":"Nomi GTT Wing",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND BRAND Wing",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Nomi",
+                "brand2":"ui.vehicleconfig.brand.GTT"
+            }
+        },
         "value":4300,
     },
     "slotType" : "bx_spoiler_hatch",
@@ -13,7 +19,7 @@
          ["bigwing_01a_c", ["bx_wing_c"],[],{"pos":{"x":0,"y":0.02,"z":0.02}}],
          ["bigwing_01a_d", ["bx_trunk"],[],{"pos":{"x":0,"y":-0.013,"z":0.155},"rot":{"x":-3.5,"y":0,"z":0}}],
     ],
-    "trunkCoupler":{
+    "tailgateCoupler":{
         "$+openForceMagnitude":  25,
         "$+openForceDuration":   0.1,
         "$+closeForceMagnitude": -5,
@@ -358,7 +364,7 @@
     ],
     "triangles": [
         ["id1:","id2:","id3:"],
-        {"dragCoef":20},
+        {"dragCoef":35},
         {"groundModel":"plastic"},
         ["wing3ll","wing2ll","wing1l", {"liftCoef":70, "stallAngle":0.4}],
         ["wing2ll","wing2l","wing1l", {"liftCoef":70, "stallAngle":0.4}],
@@ -373,14 +379,14 @@
         ["wing1r","wing2rr","wing3rr", {"liftCoef":70, "stallAngle":0.4}],
 
         //side
-        {"dragCoef":30},
+        {"dragCoef":42.5},
         ["wing2ll2","wing1ll","wing3ll2"],
         ["wing2ll2","wing3ll2","wing4ll"],
         ["wing2rr2","wing3rr2","wing1rr"],
         ["wing2rr2","wing4rr","wing3rr2"],
 
         //supports
-        {"dragCoef":5},
+        {"dragCoef":8.75},
         ["sp3l", "sp1l", "sp2l"],
         ["sp2l", "sp4l", "sp3l"],
 
@@ -391,7 +397,12 @@
 "bx_bigwing_03a_hatch": {
     "information":{
         "authors":"BeamNG",
-        "name":"Nomi GTC Adjustable Wing",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND GTC Adjustable Wing",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Nomi"
+            }
+        },
         "value":5650,
     },
     "slotType" : "bx_spoiler_hatch",
@@ -405,7 +416,7 @@
          ["bigwing_03a_d_upper", ["bx_wing_b"],[],{"pos":{"x":0,"y":0.02,"z":0.14},"rot":{"x":-3,"y":0,"z":0}}],
          ["bigwing_03a_e_upper", ["bx_wing_c"],[],{"pos":{"x":0,"y":0.02,"z":0.14},"rot":{"x":-3,"y":0,"z":0}}],
     ],
-    "trunkCoupler":{
+    "tailgateCoupler":{
         "$+openForceMagnitude":  25,
         "$+openForceDuration":   0.1,
         "$+closeForceMagnitude": -5,
@@ -770,7 +781,7 @@
     ],
     "triangles": [
         ["id1:","id2:","id3:"],
-        {"dragCoef":40},
+        {"dragCoef":70},
         {"groundModel":"plastic"},
         ["wing1ll","wing2ll","wing1l", {"liftCoef":120, "stallAngle":0.4}],
         ["wing2ll","wing2l","wing1l", {"liftCoef":120, "stallAngle":0.4}],
@@ -785,7 +796,7 @@
         ["wing1r","wing2rr","wing1rr", {"liftCoef":120, "stallAngle":0.4}],
 
         //side
-        {"dragCoef":30},
+        {"dragCoef":42.5},
         ["wing2ll2","wing1ll2","wing3ll"],
         ["wing2ll2","wing3ll","wing4ll"],
         ["wing2rr2","wing3rr","wing1rr2"],

@@ -6,31 +6,42 @@
         "value":300,
     },
     "slotType" : "bx_headlight_R_popup",
+    "slots2": [
+        ["name",                     "allowTypes",                 "denyTypes", "default", "description"],
+        ["bx_headlight_R_low_bulb",  ["headlightBulb_halogen_55W"], [],          "headlightBulb_halogen_55W", "Right Low Beam Headlight Bulb",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"lowhighbeam_filament",
+                "$lightPattern":"US",
+                "$nodeRef":"he2r", "$nodeX":"he2rr", "$nodeY":"he1r",
+                "$deformGroup":"headlightglass_R_break",
+                "$posX":-0.567, "$posY":-1.882, "$posZ":0.677,
+                "$rotX":0, "$rotY":0, "$rotZ":180,
+                "$shadowEnable":1,
+            }
+        }],
+        ["bx_headlight_R_high_bulb",  ["headlightBulb_halogen_60W"], [],          "headlightBulb_halogen_60W", "Right High Beam Headlight Bulb",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"highbeam_filament",
+                "$lightPattern":"US",
+                "$nodeRef":"he2r", "$nodeX":"he2rr", "$nodeY":"he1r",
+                "$deformGroup":"headlightglass_R_break",
+                "$posX":-0.481, "$posY":-1.908, "$posZ":0.677,
+                "$rotX":0, "$rotY":0, "$rotZ":180,
+                "$shadowEnable":1,
+            }
+        }],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          {"deformGroup":"headlightglass_R_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights"},
          ["bx_headlight_R_popup_fixed", ["bx_headlight_R"]],
-         {"deformGroup":"headlightglass_L_break", "deformMaterialBase":"bx_glass", "deformMaterialDamaged":"bx_glass_dmg"},
+         {"deformGroup":"headlightglass_R_break", "deformMaterialBase":"bx_glass", "deformMaterialDamaged":"bx_glass_dmg"},
          ["bx_headlightglass_R_popup_fixed", ["bx_headlight_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound3", "deformVolume":0.5}],
          {"deformGroup":""},
-    ],
-    "props": [
-        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightColor":{"r":255, "g":255, "b":210, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":true,
-            "flareName":"vehicleHeadLightFlare",
-            "cookieName":"art/special/BNG_light_cookie_headlight.dds",
-            "texSize":512,
-            "shadowSoftness":0.5
-        },
-        //low beams
-        ["lowbeam", "SPOTLIGHT", "he2r", "he2rr", "he1r", {"x":-80, "y":-8, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.65, "y":0.45, "z":-0.015},"lightRange":50,"lightBrightness":0.4,"lightOuterAngle":75,"flareScale":0.07,"deformGroup":"headlightglass_R_break"}],
-        //high beams
-        ["highbeam", "SPOTLIGHT", "he2r", "he2rr", "he1r", {"x":-75, "y":-5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.28, "y":0.45, "z":-0.015},"lightRange":80,"lightBrightness":0.7,"lightOuterAngle":90,"flareScale":0.08,"deformGroup":"headlightglass_R_break"}],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -107,8 +118,8 @@
           ["he2rr","f19rr", {"optional":true}],
           ["he2r","f13rr"],
           ["he2r","f19rr", {"optional":true}],
-          {"deformGroup":""},
-          {"breakGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
+          {"breakGroup":"headlight_R_supportBeams"},
 
           //headlight support beams
           {"beamPrecompression":1,"beamType":"|SUPPORT","beamLongBound":4},
@@ -117,6 +128,7 @@
           ["he1rr","fb1rr"],
           ["he1r","fb1"],
           {"optional":false},
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.1},
     ],
@@ -125,7 +137,7 @@
             //left headlight
             {"groundModel":"metal"},
             {"group":"bx_headlight_R"},
-            {"dragCoef":4},
+            {"dragCoef":7},
             ["he1r",  "he1rr", "he2rr"],
             ["he2r",  "he1r",  "he2rr"],
             ["he3r",  "he1r",  "he2r"],
@@ -142,6 +154,35 @@
         "value":300,
     },
     "slotType" : "bx_headlight_L_popup",
+    "slots2": [
+        ["name",                     "allowTypes",                 "denyTypes", "default", "description"],
+        ["bx_headlight_L_low_bulb",  ["headlightBulb_halogen_55W"], [],          "headlightBulb_halogen_55W", "Left Low Beam Headlight Bulb",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"lowhighbeam_filament",
+                "$lightPattern":"US",
+                "$nodeRef":"he2l", "$nodeX":"he2ll", "$nodeY":"he1l",
+                "$deformGroup":"headlightglass_L_break",
+                "$posX":0.567, "$posY":-1.882, "$posZ":0.677,
+                "$rotX":0, "$rotY":0, "$rotZ":180,
+                "$shadowEnable":1,
+            }
+        }],
+        ["bx_headlight_L_high_bulb",  ["headlightBulb_halogen_60W"], [],          "headlightBulb_halogen_60W", "Left High Beam Headlight Bulb",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"highbeam_filament",
+                "$lightPattern":"US",
+                "$nodeRef":"he2l", "$nodeX":"he2ll", "$nodeY":"he1l",
+                "$deformGroup":"headlightglass_L_break",
+                "$posX":0.481, "$posY":-1.908, "$posZ":0.677,
+                "$rotX":0, "$rotY":0, "$rotZ":180,
+                "$shadowEnable":1,
+            }
+        }],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          {"deformGroup":"headlightglass_L_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights"},
@@ -149,24 +190,6 @@
          {"deformGroup":"headlightglass_L_break", "deformMaterialBase":"bx_glass", "deformMaterialDamaged":"bx_glass_dmg"},
          ["bx_headlightglass_L_popup_fixed", ["bx_headlight_L"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound3", "deformVolume":0.5}],
          {"deformGroup":""},
-    ],
-    "props": [
-        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightColor":{"r":255, "g":255, "b":210, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":true,
-            "flareName":"vehicleHeadLightFlare",
-            "cookieName":"art/special/BNG_light_cookie_headlight.dds",
-            "texSize":512,
-            "shadowSoftness":0.5
-        },
-        //low beams
-        ["lowbeam", "SPOTLIGHT", "he2l", "he2ll", "he1l", {"x":-96, "y":-8, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.65, "y":0.45, "z":0.015},"lightRange":50,"lightBrightness":0.4,"lightOuterAngle":75,"flareScale":0.07,"deformGroup":"headlightglass_L_break"}],
-        //high beams
-        ["highbeam", "SPOTLIGHT", "he2l", "he2ll", "he1l", {"x":-105, "y":-5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.28, "y":0.45, "z":0.015},"lightRange":80,"lightBrightness":0.7,"lightOuterAngle":90,"flareScale":0.08,"deformGroup":"headlightglass_L_break"}],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -243,8 +266,8 @@
           ["he2ll","f19ll", {"optional":true}],
           ["he2l","f13ll"],
           ["he2l","f19ll", {"optional":true}],
-          {"deformGroup":""},
-          {"breakGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
+          {"breakGroup":"headlight_L_supportBeams"},
 
           //headlight support beams
           {"beamPrecompression":1,"beamType":"|SUPPORT","beamLongBound":4},
@@ -253,6 +276,7 @@
           ["he1ll","fb1ll"],
           ["he1l","fb1"],
           {"optional":false},
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.1},
     ],
@@ -261,7 +285,7 @@
             //left headlight
             {"groundModel":"metal"},
             {"group":"bx_headlight_L"},
-            {"dragCoef":4},
+            {"dragCoef":7},
             ["he1ll", "he1l",  "he2ll"],
             ["he1l",  "he2l",  "he2ll"],
             ["he1l",  "he3l",  "he2l"],
@@ -278,31 +302,42 @@
         "value":300,
     },
     "slotType" : "bx_headlight_R_popup",
+    "slots2": [
+        ["name",                     "allowTypes",                 "denyTypes", "default", "description"],
+        ["bx_headlight_R_low_bulb",  ["headlightBulb_halogen_55W"], [],          "headlightBulb_halogen_55W", "Right Low Beam Headlight Bulb",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"lowhighbeam_filament",
+                "$lightPattern":"RHD",
+                "$nodeRef":"he2r", "$nodeX":"he2rr", "$nodeY":"he1r",
+                "$deformGroup":"headlightglass_R_break",
+                "$posX":-0.567, "$posY":-1.882, "$posZ":0.677,
+                "$rotX":0, "$rotY":0, "$rotZ":180,
+                "$shadowEnable":1,
+            }
+        }],
+        ["bx_headlight_R_high_bulb",  ["headlightBulb_halogen_60W"], [],          "headlightBulb_halogen_60W", "Right High Beam Headlight Bulb",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"highbeam_filament",
+                "$lightPattern":"RHD",
+                "$nodeRef":"he2r", "$nodeX":"he2rr", "$nodeY":"he1r",
+                "$deformGroup":"headlightglass_R_break",
+                "$posX":-0.481, "$posY":-1.908, "$posZ":0.677,
+                "$rotX":0, "$rotY":0, "$rotZ":180,
+                "$shadowEnable":1,
+            }
+        }],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          {"deformGroup":"headlightglass_R_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights"},
          ["bx_headlight_R_popup_fixed", ["bx_headlight_R"]],
-         {"deformGroup":"headlightglass_L_break", "deformMaterialBase":"bx_glass", "deformMaterialDamaged":"bx_glass_dmg"},
+         {"deformGroup":"headlightglass_R_break", "deformMaterialBase":"bx_glass", "deformMaterialDamaged":"bx_glass_dmg"},
          ["bx_headlightglass_R_popup_fixed", ["bx_headlight_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound3", "deformVolume":0.5}],
          {"deformGroup":""},
-    ],
-    "props": [
-        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightColor":{"r":255, "g":255, "b":210, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":true,
-            "flareName":"vehicleHeadLightFlare",
-            "cookieName":"art/special/BNG_light_cookie_headlight.dds",
-            "texSize":512,
-            "shadowSoftness":0.5
-        },
-        //low beams
-        ["lowbeam", "SPOTLIGHT", "he2r", "he2rr", "he1r", {"x":-84, "y":-8, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.65, "y":0.45, "z":-0.015},"lightRange":50,"lightBrightness":0.4,"lightOuterAngle":75,"flareScale":0.07,"deformGroup":"headlightglass_R_break"}],
-        //high beams
-        ["highbeam", "SPOTLIGHT", "he2r", "he2rr", "he1r", {"x":-75, "y":-5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.28, "y":0.45, "z":-0.015},"lightRange":80,"lightBrightness":0.7,"lightOuterAngle":90,"flareScale":0.08,"deformGroup":"headlightglass_R_break"}],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -379,8 +414,8 @@
           ["he2rr","f19rr", {"optional":true}],
           ["he2r","f13rr"],
           ["he2r","f19rr", {"optional":true}],
-          {"deformGroup":""},
-          {"breakGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
+          {"breakGroup":"headlight_R_supportBeams"},
 
           //headlight support beams
           {"beamPrecompression":1,"beamType":"|SUPPORT","beamLongBound":4},
@@ -389,6 +424,7 @@
           ["he1rr","fb1rr"],
           ["he1r","fb1"],
           {"optional":false},
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.1},
     ],
@@ -397,7 +433,7 @@
             //left headlight
             {"groundModel":"metal"},
             {"group":"bx_headlight_R"},
-            {"dragCoef":4},
+            {"dragCoef":7},
             ["he1r",  "he1rr", "he2rr"],
             ["he2r",  "he1r",  "he2rr"],
             ["he3r",  "he1r",  "he2r"],
@@ -414,6 +450,35 @@
         "value":300,
     },
     "slotType" : "bx_headlight_L_popup",
+    "slots2": [
+        ["name",                     "allowTypes",                 "denyTypes", "default", "description"],
+        ["bx_headlight_L_low_bulb",  ["headlightBulb_halogen_55W"], [],          "headlightBulb_halogen_55W", "Left Low Beam Headlight Bulb",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"lowhighbeam_filament",
+                "$lightPattern":"RHD",
+                "$nodeRef":"he2l", "$nodeX":"he2ll", "$nodeY":"he1l",
+                "$deformGroup":"headlightglass_L_break",
+                "$posX":0.567, "$posY":-1.882, "$posZ":0.677,
+                "$rotX":0, "$rotY":0, "$rotZ":180,
+                "$shadowEnable":1,
+            }
+        }],
+        ["bx_headlight_L_high_bulb",  ["headlightBulb_halogen_60W"], [],          "headlightBulb_halogen_60W", "Left High Beam Headlight Bulb",
+        {
+            "coreSlot":true,
+            "variables":{
+                "$electric":"highbeam_filament",
+                "$lightPattern":"RHD",
+                "$nodeRef":"he2l", "$nodeX":"he2ll", "$nodeY":"he1l",
+                "$deformGroup":"headlightglass_L_break",
+                "$posX":0.481, "$posY":-1.908, "$posZ":0.677,
+                "$rotX":0, "$rotY":0, "$rotZ":180,
+                "$shadowEnable":1,
+            }
+        }],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          {"deformGroup":"headlightglass_L_break", "deformMaterialBase":"bx_lights", "deformMaterialDamaged":"bx_lights"},
@@ -421,24 +486,6 @@
          {"deformGroup":"headlightglass_L_break", "deformMaterialBase":"bx_glass", "deformMaterialDamaged":"bx_glass_dmg"},
          ["bx_headlightglass_L_popup_fixed", ["bx_headlight_L"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound3", "deformVolume":0.5}],
          {"deformGroup":""},
-    ],
-    "props": [
-        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightColor":{"r":255, "g":255, "b":210, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":true,
-            "flareName":"vehicleHeadLightFlare",
-            "cookieName":"art/special/BNG_light_cookie_headlight.dds",
-            "texSize":512,
-            "shadowSoftness":0.5
-        },
-        //low beams
-        ["lowbeam", "SPOTLIGHT", "he2l", "he2ll", "he1l", {"x":-100, "y":-8, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.65, "y":0.45, "z":0.015},"lightRange":50,"lightBrightness":0.4,"lightOuterAngle":75,"flareScale":0.07,"deformGroup":"headlightglass_L_break"}],
-        //high beams
-        ["highbeam", "SPOTLIGHT", "he2l", "he2ll", "he1l", {"x":-105, "y":-5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.28, "y":0.45, "z":0.015},"lightRange":80,"lightBrightness":0.7,"lightOuterAngle":90,"flareScale":0.08,"deformGroup":"headlightglass_L_break"}],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -515,8 +562,8 @@
           ["he2ll","f19ll", {"optional":true}],
           ["he2l","f13ll"],
           ["he2l","f19ll", {"optional":true}],
-          {"deformGroup":""},
-          {"breakGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
+          {"breakGroup":"headlight_L_supportBeams"},
 
           //headlight support beams
           {"beamPrecompression":1,"beamType":"|SUPPORT","beamLongBound":4},
@@ -525,6 +572,7 @@
           ["he1ll","fb1ll"],
           ["he1l","fb1"],
           {"optional":false},
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.1},
     ],
@@ -533,7 +581,7 @@
             //left headlight
             {"groundModel":"metal"},
             {"group":"bx_headlight_L"},
-            {"dragCoef":4},
+            {"dragCoef":7},
             ["he1ll", "he1l",  "he2ll"],
             ["he1l",  "he2l",  "he2ll"],
             ["he1l",  "he3l",  "he2l"],

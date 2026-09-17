@@ -41,8 +41,8 @@
          {"nodeWeight":1.0},
          {"group":"bx_exhaust"},
          ["ex1r",    -0.239,  -1.0405,  0.2904, {"selfCollision":false}]
-         ["ex2r",   -0.1117,  -0.8, 0.1894],
-         ["ex2rr",  -0.2866,  -0.8, 0.1894],
+         ["ex2r",   -0.1117,  -0.8, 0.1794],
+         ["ex2rr",  -0.2866,  -0.8, 0.1794],
          ["ex3r",   -0.0205,  0.1251, 0.2443, {"selfCollision":false}],
          ["ex3rr",  -0.1748,  0.1251, 0.2443, {"selfCollision":false}],
          ["ex4r",   -0.0990,  0.9359, 0.2124],
@@ -51,8 +51,8 @@
          ["ex5rr",  -0.4181,  1.4707,  0.3156],
          ["ex6r",   -0.3408,  1.7066, 0.2686],
          ["ex6rr",  -0.5295,  1.7066, 0.2731],
-         ["ex7r",   -0.4051,  2.1854,  0.3435, {"selfCollision":false, "afterFireAudioCoef":0.2, "afterFireVisualCoef":0.2, "afterFireVolumeCoef":0.2, "afterFireMufflingCoef":0.25, "exhaustAudioMufflingCoef":0.25, "exhaustAudioGainChange":-9}],
-         ["ex7rr",  -0.4751,  2.175,  0.3435, {"selfCollision":false, "afterFireAudioCoef":0.2, "afterFireVisualCoef":0.2, "afterFireVolumeCoef":0.2, "afterFireMufflingCoef":0.25, "exhaustAudioMufflingCoef":0.25, "exhaustAudioGainChange":-9}],
+         ["ex7r",   -0.4051,  2.1854,  0.3435, {"selfCollision":false, "afterFireAudioCoef":0.2, "afterFireVisualCoef":0.2, "afterFireVolumeCoef":0.2, "afterFireMufflingCoef":0.22, "exhaustAudioMufflingCoef":0.22, "exhaustAudioGainChange":-9}],
+         ["ex7rr",  -0.4751,  2.175,  0.3435, {"selfCollision":false, "afterFireAudioCoef":0.2, "afterFireVisualCoef":0.2, "afterFireVolumeCoef":0.2, "afterFireMufflingCoef":0.22, "exhaustAudioMufflingCoef":0.22, "exhaustAudioGainChange":-9}],
 
          //rigidifier
          {"selfCollision":false},
@@ -200,10 +200,10 @@
           ["ex7r", "r7rr"],
           ["ex7rr", "r7"],
           ["ex7r", "r7"],
-          {"breakGroup":""},
+          {"breakGroup":"exhaust_supportBeams"},
 
           //limiters
-          {"beamPrecompression":0.8, "beamType":"|SUPPORT", "beamLongBound":15},
+          {"beamPrecompression":0.8, "beamType":"|SUPPORT", "beamLongBound":10},
           {"beamSpring":401000,"beamDamp":80},
           {"beamDeform":9000,"beamStrength":65000},
           ["ex2rr", "f5r"],
@@ -273,6 +273,7 @@
           ["ex7r", "rb3rr"],
           ["ex7rr", "rb3r"],
           {"optional":false},
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
     ],
 
@@ -338,8 +339,8 @@
          {"nodeWeight":1.0},
          {"group":"bx_exhaust"},
          ["ex1r",    -0.239,  -1.0405,  0.2904, {"selfCollision":false}]
-         ["ex2r",   -0.1117,  -0.8, 0.1894],
-         ["ex2rr",  -0.2866,  -0.8, 0.1894],
+         ["ex2r",   -0.1117,  -0.8, 0.1794],
+         ["ex2rr",  -0.2866,  -0.8, 0.1794],
          ["ex3r",   -0.0205,  0.1251, 0.2443, {"selfCollision":false}],
          ["ex3rr",  -0.1748,  0.1251, 0.2443, {"selfCollision":false}],
          ["ex4r",   -0.0990,  0.9359, 0.2124],
@@ -348,8 +349,8 @@
          ["ex5rr",  -0.4181,  1.4707,  0.3156],
          ["ex6r",   -0.3408,  1.7066, 0.2686],
          ["ex6rr",  -0.5295,  1.7066, 0.2731],
-         ["ex7r",   -0.4051,  2.1854,  0.3435, {"selfCollision":false, "afterFireAudioCoef":0.35, "afterFireVisualCoef":0.2, "afterFireVolumeCoef":0.35, "afterFireMufflingCoef":0.35, "exhaustAudioMufflingCoef":0.35, "exhaustAudioGainChange":-8}],
-         ["ex7rr",  -0.4751,  2.175,  0.3435, {"selfCollision":false, "afterFireAudioCoef":0.35, "afterFireVisualCoef":0.2, "afterFireVolumeCoef":0.35, "afterFireMufflingCoef":0.35, "exhaustAudioMufflingCoef":0.35, "exhaustAudioGainChange":-8}],
+         ["ex7r",   -0.4051,  2.1854,  0.3435, {"selfCollision":false, "afterFireAudioCoef":0.35, "afterFireVisualCoef":0.2, "afterFireVolumeCoef":0.35, "afterFireMufflingCoef":0.44, "exhaustAudioMufflingCoef":0.44, "exhaustAudioGainChange":-8}],
+         ["ex7rr",  -0.4751,  2.175,  0.3435, {"selfCollision":false, "afterFireAudioCoef":0.35, "afterFireVisualCoef":0.2, "afterFireVolumeCoef":0.35, "afterFireMufflingCoef":0.44, "exhaustAudioMufflingCoef":0.44, "exhaustAudioGainChange":-8}],
 
          //rigidifier
          {"selfCollision":false},
@@ -497,10 +498,10 @@
           ["ex7r", "r7rr"],
           ["ex7rr", "r7"],
           ["ex7r", "r7"],
-          {"breakGroup":""},
+          {"breakGroup":"exhaust_supportBeams"},
 
           //limiters
-          {"beamPrecompression":0.8, "beamType":"|SUPPORT", "beamLongBound":15},
+          {"beamPrecompression":0.8, "beamType":"|SUPPORT", "beamLongBound":10},
           {"beamSpring":401000,"beamDamp":80},
           {"beamDeform":9000,"beamStrength":65000},
           ["ex2rr", "f5r"],
@@ -570,6 +571,7 @@
           ["ex7r", "rb3rr"],
           ["ex7rr", "rb3r"],
           {"optional":false},
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
     ],
 
@@ -621,11 +623,11 @@
         ],
     },
     "soundConfigExhaust": {
-        "$+lowShelfGain":12,
-        "$+highShelfGain":-3,
+        "$+lowShelfGain":10,
+        "$+highShelfGain":5,
         "$+eqLowGain": 1,
-        "$+eqHighGain": 0,
-        "$+eqFundamentalGain":6,
+        "$+eqHighGain": 1,
+        "$+eqFundamentalGain":3,
     },
     "nodes":[
          ["id", "posX", "posY", "posZ"],
@@ -636,8 +638,8 @@
          {"nodeWeight":0.6},
          {"group":"bx_exhaust"},
          ["ex1r",    -0.239,  -1.0405,  0.2904, {"selfCollision":false}]
-         ["ex2r",   -0.1117,  -0.8, 0.1894],
-         ["ex2rr",  -0.2866,  -0.8, 0.1894],
+         ["ex2r",   -0.1117,  -0.8, 0.1794],
+         ["ex2rr",  -0.2866,  -0.8, 0.1794],
          ["ex3r",   -0.0205,  0.1251, 0.2443, {"selfCollision":false}],
          ["ex3rr",  -0.1748,  0.1251, 0.2443, {"selfCollision":false}],
          ["ex4r",   -0.0990,  0.9359, 0.2124],
@@ -646,7 +648,7 @@
          ["ex5rr",  -0.4181,  1.4707,  0.3156],
          ["ex6r",   -0.3408,  1.7066, 0.2686],
          ["ex6rr",  -0.5295,  1.7066, 0.2731],
-         ["ex7r",   -0.447,  2.212,  0.322, {"selfCollision":false, "afterFireAudioCoef":0.7, "afterFireVisualCoef":0.4, "afterFireVolumeCoef":0.9, "afterFireMufflingCoef":0.70, "exhaustAudioMufflingCoef":0.45, "exhaustAudioGainChange":-5}],
+         ["ex7r",   -0.447,  2.212,  0.322, {"selfCollision":false, "afterFireAudioCoef":0.7, "afterFireVisualCoef":0.4, "afterFireVolumeCoef":0.9, "afterFireMufflingCoef":0.80, "exhaustAudioMufflingCoef":0.66, "exhaustAudioGainChange":-5}],
 
          //rigidifier
          {"selfCollision":false},
@@ -788,10 +790,10 @@
           {"beamSpring":0,"beamDamp":10},
           ["ex7r", "r7rr"],
           ["ex7r", "r7"],
-          {"breakGroup":""},
+          {"breakGroup":"exhaust_supportBeams"},
 
           //limiters
-          {"beamPrecompression":0.8, "beamType":"|SUPPORT", "beamLongBound":15},
+          {"beamPrecompression":0.8, "beamType":"|SUPPORT", "beamLongBound":10},
           {"beamSpring":401000,"beamDamp":80},
           {"beamDeform":9000,"beamStrength":65000},
           ["ex2rr", "f5r"],
@@ -855,6 +857,7 @@
           ["ex7r", "rb2rr"],
           ["ex7r", "rb3rr"],
           {"optional":false},
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
     ],
 

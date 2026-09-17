@@ -6,13 +6,13 @@
         "value":750,
     },
     "slotType" : "bx_suspension_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_differential_R","bx_differential_R", "Rear Differential"],
-        ["bx_hub_R","bx_hub_R_5", "Rear Wheel Hubs"],
-        ["bx_wheeldata_R","bx_wheeldata_R", "Rear Spindles", {"coreSlot":true}],
-        ["bx_coilover_R","bx_coilover_R", "Rear Struts"],
-        ["bx_swaybar_R","bx_swaybar_R", "Rear Sway Bar"],
+    "slots2": [
+        ["name",              "allowTypes",          "denyTypes", "default",           "description"],
+        ["bx_differential_R", ["bx_differential_R"], [],          "bx_differential_R", "Rear Differential"],
+        ["bx_hub_R",          ["bx_hub_R"],          [],          "bx_hub_R_5",        "Rear Wheel Hubs"],
+        ["bx_wheeldata_R",    ["bx_wheeldata_R"],    [],          "bx_wheeldata_R",    "Rear Spindles",     {"coreSlot":true}],
+        ["bx_coilover_R",     ["bx_coilover_R"],     [],          "bx_coilover_R",     "Rear Struts"],
+        ["bx_swaybar_R",      ["bx_swaybar_R"],      [],          "bx_swaybar_R",      "Rear Sway Bar"],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -516,7 +516,7 @@
     ],
     "triangles": [
           ["id1:","id2:","id3:"],
-          {"dragCoef":1},
+          {"dragCoef":1.75},
           ["rx6r", "rx2r", "rx2l",{"triangleType":"NONCOLLIDABLE"}],
           ["rx2l", "rx6l", "rx6r",{"triangleType":"NONCOLLIDABLE"}],
           ["rx2r", "rx1r", "rx1l"],
@@ -582,10 +582,10 @@
         ["brake_hub_4l", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.695,"y":1.25,"z":0.325}, "scale":{"x":0.5,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
         ["brake_hub_4l", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.695,"y":1.25,"z":0.325}, "scale":{"x":0.5,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":180}}],
     ],
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_brake_R","bx_brake_R", "Rear Brakes"],
-        ["wheel_R_4","steelwheel_01a_14x5.5_R","Rear Wheels", {"nodeOffset":{"x":"$=$trackoffset_R+0.220", "y":1.25, "z":0.325}}],
+    "slots2": [
+        ["name",       "allowTypes",   "denyTypes", "default",                 "description"],
+        ["bx_brake_R", ["bx_brake_R"], [],          "bx_brake_R",              "Rear Brakes"],
+        ["wheel_R_4",  ["wheel_R_4"],  [],          "steelwheel_01a_14x5.5_R", "Rear Wheels", {"nodeOffset":{"x":"$=$trackoffset_R+0.220", "y":1.25, "z":0.325}}],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -634,10 +634,10 @@
         ["brake_hub_5l", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.695,"y":1.25,"z":0.325}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
         ["brake_hub_5l", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.695,"y":1.25,"z":0.325}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":180}}],
     ],
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_brake_R","bx_brake_R", "Rear Brakes"],
-        ["wheel_R_5","steelwheel_01a_15x7_R","Rear Wheels", {"nodeOffset":{"x":"$=$trackoffset_R+0.220", "y":1.25, "z":0.325}}],
+    "slots2": [
+        ["name",       "allowTypes",   "denyTypes", "default",               "description"],
+        ["bx_brake_R", ["bx_brake_R"], [],          "bx_brake_R",            "Rear Brakes"],
+        ["wheel_R_5",  ["wheel_R_5"],  [],          "steelwheel_01a_15x7_R", "Rear Wheels", {"nodeOffset":{"x":"$=$trackoffset_R+0.220", "y":1.25, "z":0.325}}],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],

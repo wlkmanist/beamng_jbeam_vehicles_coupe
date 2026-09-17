@@ -6,14 +6,15 @@
         "value":470,
     },
     "slotType" : "bx_bumper_F_fixed",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_licenseplate_F_fixed","", "Front License Plate"],
-        ["bx_grille_F_fixed","bx_grille_F_fixed", "Front Grille"],
-        ["bx_lip_F_fixed","", "Front Lip"],
-        ["bx_signal_FL_fixed","bx_signal_FL_fixed", "Front Left Signal"],
-        ["bx_signal_FR_fixed","bx_signal_FR_fixed", "Front Right Signal"],
-        ["bx_trim_bumper_F_fixed","bx_trim_bumper_F_fixed_black", "Front Bumper Trim", {"coreSlot":true}],
+    "slots2": [
+        ["name",                    "allowTypes",                "denyTypes", "default",                      "description"],
+        ["bx_licenseplate_F_fixed", ["bx_licenseplate_F_fixed"], [],          "",                             "Front License Plate"],
+        ["bx_grille_F_fixed",       ["bx_grille_F_fixed"],       [],          "bx_grille_F_fixed",            "Front Grille"],
+        ["bx_lip_F_fixed",          ["bx_lip_F_fixed"],          [],          "",                             "Front Lip"],
+        ["bx_signal_FL_fixed",      ["bx_signal_FL_fixed"],      [],          "bx_signal_FL_fixed",           "Front Left Signal"],
+        ["bx_signal_FR_fixed",      ["bx_signal_FR_fixed"],      [],          "bx_signal_FR_fixed",           "Front Right Signal"],
+        ["bx_rallylights_fixed",    ["bx_rallylights_fixed"],    [],          "",                             "Rally Lights"],
+        ["bx_trim_bumper_F_fixed",  ["bx_trim_bumper_F_fixed"],  [],          "bx_trim_bumper_F_fixed_black", "Front Bumper Trim",   {"coreSlot":true}],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -28,11 +29,11 @@
          {"nodeMaterial":"|NM_PLASTIC"},
          {"group":"bx_bumper_F"},
          {"nodeWeight":0.3},
-         ["fb1rr", -0.657, -1.971, 0.5822],
-         ["fb1r", -0.254, -2.075, 0.583],
-         ["fb1", -0.0000, -2.0881, 0.5822],
-         ["fb1l", 0.254, -2.075, 0.583],
-         ["fb1ll", 0.657, -1.971, 0.5822],
+         ["fb1rr", -0.667, -1.971, 0.5622],
+         ["fb1r", -0.254, -2.075, 0.563],
+         ["fb1", -0.0000, -2.0881, 0.5622],
+         ["fb1l", 0.254, -2.075, 0.563],
+         ["fb1ll", 0.667, -1.971, 0.5622],
 
          ["fb2rrrr", -0.8048, -1.6027, 0.4314],
          ["fb2rrr", -0.7594, -1.876, 0.4819],
@@ -67,8 +68,8 @@
          {"collision":false},
          {"selfCollision":false},
          ["fb5", 0.0, -1.8721, 0.4417],
-         ["fb1rrrr", -0.8101, -1.5228, 0.5822],
-         ["fb1llll", 0.8101, -1.5228, 0.5919]
+         ["fb1rrrr", -0.8101, -1.5228, 0.5722],
+         ["fb1llll", 0.8101, -1.5228, 0.5722]
     ],
     "beams": [
           ["id1:", "id2:"],
@@ -94,7 +95,7 @@
           ["fb3ll", "fb3lll"],
           ["fb3lll", "fb2lll"],
           ["fb2lll", "fb2ll"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
           ["fb1", "fb1l"],
           ["fb1", "fb2"],
           ["fb1l", "fb1ll"],
@@ -149,7 +150,7 @@
           ["fb2ll", "fb3l"],
           ["fb2ll", "fb3lll"],
           ["fb3ll", "fb2lll"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
           ["fb2r", "fb3"],
           ["fb2", "fb3r"],
           ["fb2", "fb3l"],
@@ -209,7 +210,7 @@
           ["fb2l", "fb4l"],
           ["fb3ll", "fb1ll"],
           ["fb3l", "fb1l"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
           ["fb1", "fb3"],
           ["fb2", "fb4"],
           ["fb1ll", "fb3lll"],
@@ -357,11 +358,11 @@
           ["fb1llll", "fe13l"],
           ["fb1ll", "fe12l"],
           ["fb1ll", "fe11l"],
-          {"breakGroup":""},
+          {"breakGroup":"bumper_F_supportBeams"},
           {"optional":false},
 
           //front bumper support beams
-          {"beamType":"|SUPPORT","beamLongBound":2},
+          {"beamType":"|SUPPORT","beamLongBound":10},
           {"beamSpring":101000,"beamDamp":30},
           {"beamDeform":5000,"beamStrength":100000},
           //lengthwise to body
@@ -456,7 +457,7 @@
           ["fb1llll", "fw1ll"],
           ["fb2llll", "fw1ll"],
           {"optional":false},
-
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.1},
     ],
@@ -475,7 +476,7 @@
             ["fb1l", "fb2ll", "fb1ll"],
             ["fb1l", "fb2l", "fb2ll"],
 
-            {"dragCoef":6},
+            {"dragCoef":10.5},
             ["fb1ll", "fb2lll", "fb1llll"],
             ["fb1llll", "fb2lll", "fb2llll"],
             ["fb1rrrr", "fb2rrrr", "fb2rrr"],
@@ -545,6 +546,38 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_lip_F_sport_fixed", ["bx_bumper_F"]],
+    ],
+},
+"bx_lip_F_fixed_rally": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rally Front Lip",
+        "value":600,
+    },
+    "slotType" : "bx_lip_F_fixed",
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--FRONT BUMPER--
+         {"selfCollision":true},
+         {"collision":true},
+         {"frictionCoef":0.8},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"group":"bx_bumper_F"},
+         {"nodeWeight":0.44},
+         ["fb4rrrr", -0.775, -1.6128, 0.2386],
+         ["fb4rrr", -0.72, -1.8784, 0.2427]
+         ["fb4rr", -0.6025, -2.0528, 0.2457],
+         ["fb4r", -0.3294, -2.1177, 0.246],
+         ["fb4", -0.0000, -2.1529, 0.2467],
+         ["fb4l", 0.3294, -2.1177, 0.246],
+         ["fb4ll", 0.6025, -2.0528, 0.2457],
+         ["fb4lll", 0.72, -1.8784, 0.2427]
+         ["fb4llll", 0.775, -1.6128, 0.2386],
+         {"group":""},
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["bx_lip_F_rally_fixed", ["bx_bumper_F"]],
     ],
 },
 }

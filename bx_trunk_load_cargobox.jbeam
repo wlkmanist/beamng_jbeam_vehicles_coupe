@@ -6,11 +6,11 @@
     "value":0,
   },
   "slotType" : "bx_trunk_load",
-  "slots": [
-    ["type", "default", "description"],
-    ["cargo_load_box_M_trunk_A_90deg","cargo_load_box_M_trunk_A_90deg", "Trunk Box A", {"nodeMove":{"x":-0.26, "y":1.72, "z":0.58}, "coreSlot":true}],
-    ["cargo_load_box_M_trunk_B_90deg","cargo_load_box_M_trunk_B_90deg", "Trunk Box B", {"nodeMove":{"x": 0.00, "y":1.72, "z":0.58}, "coreSlot":true}],
-    ["cargo_load_box_M_trunk_C_90deg","cargo_load_box_M_trunk_C_90deg", "Trunk Box C", {"nodeMove":{"x": 0.26, "y":1.72, "z":0.58}, "coreSlot":true}],
+  "slots2": [
+    ["name",                           "allowTypes",                       "denyTypes", "default",                        "description"],
+    ["cargo_load_box_M_trunk_A_90deg", ["cargo_load_box_M_trunk_A_90deg"], [],          "cargo_load_box_M_trunk_A_90deg", {"txt":"ui.vehicleconfig.generic.numberedSlotName","ctx":{"name":"ui.vehicleconfig.slot.description.Trunk Box","number":"A"}}, {"nodeMove":{"x":-0.26, "y":1.72, "z":0.58}, "coreSlot":true}],
+    ["cargo_load_box_M_trunk_B_90deg", ["cargo_load_box_M_trunk_B_90deg"], [],          "cargo_load_box_M_trunk_B_90deg", {"txt":"ui.vehicleconfig.generic.numberedSlotName","ctx":{"name":"ui.vehicleconfig.slot.description.Trunk Box","number":"B"}}, {"nodeMove":{"x": 0.00, "y":1.72, "z":0.58}, "coreSlot":true}],
+    ["cargo_load_box_M_trunk_C_90deg", ["cargo_load_box_M_trunk_C_90deg"], [],          "cargo_load_box_M_trunk_C_90deg", {"txt":"ui.vehicleconfig.generic.numberedSlotName","ctx":{"name":"ui.vehicleconfig.slot.description.Trunk Box","number":"C"}}, {"nodeMove":{"x": 0.26, "y":1.72, "z":0.58}, "coreSlot":true}],
   ],
   "flexbodies": [
     ["mesh", "[group]:", "nonFlexMaterials"],
@@ -26,7 +26,7 @@
     {"beamSpring":1501000,"beamDamp":30},
     {"beamDeform":20000,"beamStrength":15000},
     {"breakGroup":"strap"}
-    {"deformGroup":"strap", "deformationTriggerRatio":0.5}
+    {"deformGroup":"strap"}
     ["trunk_box_A_5", "r3ll"],
     ["trunk_box_A_5", "r2ll"],
     ["trunk_box_A_5", "r3"],

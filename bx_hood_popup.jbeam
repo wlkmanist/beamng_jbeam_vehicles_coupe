@@ -6,6 +6,10 @@
         "value":280,
     },
     "slotType" : "bx_hood_popup",
+    "slots2": [
+        ["name",              "allowTypes",          "denyTypes", "default", "description"],
+        ["bx_rally_switches", ["bx_rally_switches"], [],          "",        "Rally Safety Switches"],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_hood_popup", ["bx_hood"]],
@@ -49,20 +53,17 @@
         "closeForceMagnitude": 100,
         "closeForceDuration": 1.5
     }
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["hood",                 "", "h5","h5r","h4",    "box", {"x":0.08, "y":0.08, "z":0.08}, {"x":0, "y":-4, "z":3}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.04, "y":-0.04, "z":-0.04}],
-        //["hood_int", "", "f5ll","f5l","f6ll", "box", {"x":0.08, "y":0.08, "z":0.08}, {"x":45, "y":0, "z":-15}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.07, "y":0.0, "z":-0.15}],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["hood", "h5","h5r","h4",    "box", {"x":0.08, "y":0.08, "z":0.08}, {"x":0, "y":-4, "z":3}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.04, "y":-0.04, "z":-0.04}],
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],
+    "actionsEnabled": [
+        ["id"],
+        ["hoodCatch"],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
         ["hood", "action0", "hoodCatch"],
-        //["hood_int", "action0", "hoodRelease"],
-    ],
-    "events":[
-        ["id", "title", "desc"],
-        ["hoodCatch", "ui.inputActions.bx.hoodCatch.title", "ui.inputActions.bx.hoodCatch.description", {"onDown":"controller.getControllerSafe('hoodCatchCoupler').toggleGroupConditional({{'hoodLatchCoupler','attached','vehicle.advancedCouplerControl.releaseHoodFirstInterior'}})"}],
-        ["hoodRelease", "ui.inputActions.bx.hoodLatch.title", "ui.inputActions.bx.hoodLatch.description", {"onDown":"controller.getControllerSafe('hoodLatchCoupler').toggleGroup()"}],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -71,7 +72,7 @@
          {"frictionCoef":0.5},
          {"collision":true},
          {"selfCollision":true},
-         {"group":"bx_hood"},
+         {"group":["bx_hood","bx_hood_popup"]},
          {"nodeWeight":0.55},
          ["h1rr",-0.69, -0.76, 0.88],
          ["h1r",-0.24, -0.86, 0.90],
@@ -321,10 +322,10 @@
           ["h4ll", "f14ll", {"breakGroup":"hoodhinge_L"}],
           {"beamPrecompression":1},
           {"breakGroupType":0},
-          {"breakGroup":""},
+          {"breakGroup":"hood_supportBeams"},
 
           //hood support beams
-          {"beamType":"|SUPPORT", "beamLongBound":12},
+          {"beamType":"|SUPPORT", "beamLongBound":24},
           {"beamSpring":523050,"beamDamp":45},
           {"beamDeform":13500,"beamStrength":1250000},
           ["h1rr","f5rr"],
@@ -381,7 +382,7 @@
 
           ["f14l", "h3ll"],
           ["f14r", "h3rr"],
-
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.1},
 
@@ -390,7 +391,7 @@
             ["id1:","id2:","id3:"],
             //hood
             {"group":"bx_hood"},
-            {"dragCoef":10},
+            {"dragCoef":17.5},
             ["h1rr","h2rr","h2r"],
             ["h2r","h1r","h1rr"],
             ["h1l","h1r","h2r"],
@@ -431,6 +432,10 @@
         "value":600,
     },
     "slotType" : "bx_hood_popup",
+    "slots2": [
+        ["name",              "allowTypes",          "denyTypes", "default", "description"],
+        ["bx_rally_switches", ["bx_rally_switches"], [],          "",        "Rally Safety Switches"],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_hood_custom_popup", ["bx_hood"]],
@@ -474,20 +479,17 @@
         "closeForceMagnitude": 100,
         "closeForceDuration": 1.5
     }
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["hood",                 "", "h5","h5r","h4",    "box", {"x":0.08, "y":0.08, "z":0.08}, {"x":0, "y":-4, "z":3}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.04, "y":-0.04, "z":-0.04}],
-        //["hood_int", "", "f5ll","f5l","f6ll", "box", {"x":0.08, "y":0.08, "z":0.08}, {"x":45, "y":0, "z":-15}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.07, "y":0.0, "z":-0.15}],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["hood", "h5","h5r","h4",    "box", {"x":0.08, "y":0.08, "z":0.08}, {"x":0, "y":-4, "z":3}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.04, "y":-0.04, "z":-0.04}],
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],
+    "actionsEnabled": [
+        ["id"],
+        ["hoodCatch"],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
         ["hood", "action0", "hoodCatch"],
-        //["hood_int", "action0", "hoodRelease"],
-    ],
-    "events":[
-        ["id", "title", "desc"],
-        ["hoodCatch", "ui.inputActions.bx.hoodCatch.title", "ui.inputActions.bx.hoodCatch.description", {"onDown":"controller.getControllerSafe('hoodCatchCoupler').toggleGroupConditional({{'hoodLatchCoupler','attached','vehicle.advancedCouplerControl.releaseHoodFirstInterior'}})"}],
-        ["hoodRelease", "ui.inputActions.bx.hoodLatch.title", "ui.inputActions.bx.hoodLatch.description", {"onDown":"controller.getControllerSafe('hoodLatchCoupler').toggleGroup()"}],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -496,7 +498,7 @@
          {"frictionCoef":0.5},
          {"collision":true},
          {"selfCollision":true},
-         {"group":"bx_hood"},
+         {"group":["bx_hood","bx_hood_popup"]},
          {"nodeWeight":0.55},
          ["h1rr",-0.69, -0.76, 0.88],
          ["h1r",-0.24, -0.86, 0.90],
@@ -746,10 +748,10 @@
           ["h4ll", "f14ll", {"breakGroup":"hoodhinge_L"}],
           {"beamPrecompression":1},
           {"breakGroupType":0},
-          {"breakGroup":""},
+          {"breakGroup":"hood_supportBeams"},
 
           //hood support beams
-          {"beamType":"|SUPPORT", "beamLongBound":12},
+          {"beamType":"|SUPPORT", "beamLongBound":24},
           {"beamSpring":523050,"beamDamp":45},
           {"beamDeform":13500,"beamStrength":1250000},
           ["h1rr","f5rr"],
@@ -806,7 +808,7 @@
 
           ["f14l", "h3ll"],
           ["f14r", "h3rr"],
-
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.1},
 
@@ -815,7 +817,7 @@
             ["id1:","id2:","id3:"],
             //hood
             {"group":"bx_hood"},
-            {"dragCoef":10},
+            {"dragCoef":17.5},
             ["h1rr","h2rr","h2r"],
             ["h2r","h1r","h1rr"],
             ["h1l","h1r","h2r"],

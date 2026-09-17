@@ -15,9 +15,9 @@
          ["roofbar_mount_R",     ["bx_body", "roofbar_R"],[],{"pos":{"x":-0.007, "y":0.87, "z":1.35}, "rot":{"x":-15, "y":0, "z":0}, "scale":{"x":1.0,"y":1.0,"z":1.10}}],
          ["roofbar_mount_L",     ["bx_body", "roofbar_R"],[],{"pos":{"x":0.007,  "y":0.87, "z":1.35}, "rot":{"x":-15, "y":0, "z":0}, "scale":{"x":1.0,"y":1.0,"z":1.10}}],
     ],
-    "slots": [
-        ["type", "default", "description"],
-        ["roofbars_load","","Roof Bars Load", {"nodeOffset":{"x":0.0, "y":0.42, "z":1.355}}],
+    "slots2": [
+        ["name",          "allowTypes",      "denyTypes", "default", "description"],
+        ["roofbars_load", ["roofbars_load"], [],          "",        "Roof Bars Load", {"nodeOffset":{"x":0.0, "y":0.42, "z":1.355}}],
     ],
     "rails": {
         "roofbar_F":{"links:":["rfb1rr", "rfb1ll"], "broken:":[], "looped":false, "capped":true},
@@ -181,9 +181,9 @@
          ["roofbar_mount_R",     ["bx_body", "roofbar_R"],[],{"pos":{"x":-0.007, "y":0.87, "z":1.35}, "rot":{"x":-8, "y":0, "z":0}, "scale":{"x":1.0,"y":1.0,"z":1.10}}],
          ["roofbar_mount_L",     ["bx_body", "roofbar_R"],[],{"pos":{"x":0.007,  "y":0.87, "z":1.35}, "rot":{"x":-8, "y":0, "z":0}, "scale":{"x":1.0,"y":1.0,"z":1.10}}],
     ],
-    "slots": [
-        ["type", "default", "description"],
-        ["roofbars_load","","Roof Bars Load", {"nodeOffset":{"x":0.0, "y":0.42, "z":1.355}}],
+    "slots2": [
+        ["name",          "allowTypes",      "denyTypes", "default", "description"],
+        ["roofbars_load", ["roofbars_load"], [],          "",        "Roof Bars Load", {"nodeOffset":{"x":0.0, "y":0.42, "z":1.355}}],
     ],
     "rails": {
         "roofbar_F":{"links:":["rfb1rr", "rfb1ll"], "broken:":[], "looped":false, "capped":true},

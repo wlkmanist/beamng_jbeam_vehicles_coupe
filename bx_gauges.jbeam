@@ -131,7 +131,7 @@
     ],
     "glowMap":{
         //gauges
-        "bx_gauges":       {"simpleFunction":"lowhighbeam", "off":"bx_gauges_metric", "on":"bx_gauges_metric_on"},
+        "bx_gauges":       {"simpleFunction":"lowhighbeam_filament", "off":"bx_gauges_metric", "on":"bx_gauges_metric_on",       "materialEmissiveScaling":{"on_max":1}},
     },
     "analogOdometer": {
         "configuration": {
@@ -188,7 +188,7 @@
     ],
     "glowMap":{
         //gauges
-        "bx_gauges":       {"simpleFunction":"lowhighbeam", "off":"bx_gauges_metric", "on":"bx_gauges_metric_on"},
+        "bx_gauges":       {"simpleFunction":"lowhighbeam_filament", "off":"bx_gauges_metric", "on":"bx_gauges_metric_on",       "materialEmissiveScaling":{"on_max":1}},
     },
     "analogOdometer": {
         "configuration": {

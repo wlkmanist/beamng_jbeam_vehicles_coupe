@@ -3,20 +3,20 @@
     "information":{
         "authors":"BeamNG",
         "name":"4.5L V8 Engine",
-        "value":5300,
+        "value":8500,
     },
     "slotType" : "bx_engine",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_enginemounts","bx_enginemounts", "Engine Mounts", {"coreSlot":true}],
-        ["pickup_oilpan_v8","pickup_oilpan_v8", "Oil Pan", {"coreSlot":true, "nodeMove":{"x":0.0,"y":0.1,"z":-0.16}}],
-        ["bx_intake_v8","bx_intake_v8_stock", "Intake", {"coreSlot":true}],
-        ["pickup_engine_v8_ecu","pickup_engine_v8_ecu", "Engine Management", {"coreSlot":true}],
-        ["n2o_system","", "Nitrous Oxide System"],
-        ["pickup_engine_v8_internals","pickup_engine_v8_internals", "Engine Long Block", {"coreSlot":true}],
-        ["bx_transmission","bx_transmission_4A", "Transmission"],
-        ["bx_radiator_v8","bx_radiator_v8", "Radiator"],
-        ["bx_oilcooler","", "Oil Cooler"],
+    "slots2": [
+        ["name",                       "allowTypes",                   "denyTypes", "default",                    "description"],
+        ["bx_enginemounts",            ["bx_enginemounts"],            [],          "bx_enginemounts",            "Engine Mounts",        {"coreSlot":true}],
+        ["pickup_oilpan_v8",           ["pickup_oilpan_v8"],           [],          "pickup_oilpan_v8",           "Oil Pan",              {"coreSlot":true, "nodeMove":{"x":0.0,"y":0.1,"z":-0.16}}],
+        ["bx_intake_v8",               ["bx_intake_v8"],               [],          "bx_intake_v8_stock",         "Intake",               {"coreSlot":true}],
+        ["pickup_engine_v8_ecu",       ["pickup_engine_v8_ecu"],       [],          "pickup_engine_v8_ecu",       "Engine Management",    {"coreSlot":true}],
+        ["n2o_system",                 ["n2o_system"],                 [],          "",                           "Nitrous Oxide System"],
+        ["pickup_engine_v8_internals", ["pickup_engine_v8_internals"], [],          "pickup_engine_v8_internals", "Engine Long Block",    {"coreSlot":true}],
+        ["bx_transmission",            ["bx_transmission"],            [],          "bx_transmission_4A",         "Transmission"],
+        ["bx_radiator_v8",             ["bx_radiator_v8"],             [],          "bx_radiator_v8",             "Radiator"],
+        ["bx_oilcooler",               ["bx_oilcooler"],               [],          "",                           "Oil Cooler"],
     ],
     "components":{
         "relocateBattery":true,
@@ -110,14 +110,14 @@
         "deformGroups_oilPan":["oilpan_damage"]
     },
     "soundConfig": {
-        "sampleName": "V8_cross_engine",
+        "sampleName": "v8p_cp_2019_05000cc_gt_01_engine",
         "intakeMuffling": 1,
 
-        "mainGain": -4,
+        "mainGain": -3.5,
         "onLoadGain":1,
         "offLoadGain":0.67,
 
-        "maxLoadMix": 0.7,
+        "maxLoadMix": 0.75,
         "minLoadMix": 0,
 
         "lowShelfGain":6,
@@ -135,25 +135,25 @@
         "eqHighWidth": 0.2,
 
         "fundamentalFrequencyCylinderCount":8,
-        "eqFundamentalGain": -2,
+        "eqFundamentalGain": -3,
     },
     "soundConfigExhaust": {
-        "sampleName": "V8_cross_exhaust",
+        "sampleName": "v8p_cp_2019_05000cc_gt_01_exhaust",
 
-        "mainGain": 7,
+        "mainGain": 3.0,
         "onLoadGain":1,
         "offLoadGain":0.68,
 
-        "maxLoadMix": 0.7,
+        "maxLoadMix": 0.75,
         "minLoadMix": 0,
 
-        "lowShelfGain":-13,
+        "lowShelfGain":-12,
         "lowShelfFreq":90,
 
-        "highShelfGain":2,
+        "highShelfGain":3,
         "highShelfFreq":4400,
 
-        "eqLowGain": 0,
+        "eqLowGain": 2,
         "eqLowFreq": 150,
         "eqLowWidth": 0.2,
 
@@ -162,7 +162,7 @@
         "eqHighWidth": 0.2,
 
         "fundamentalFrequencyCylinderCount":8,
-        "eqFundamentalGain": -4,
+        "eqFundamentalGain": -3,
     },
     "vehicleController": {
         "clutchLaunchStartRPM":1200,
@@ -287,7 +287,7 @@
           ["e4r","rad2"],
           ["e4l","rad2"],
           {"optional":false},
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],
 },
@@ -298,9 +298,9 @@
         "value":350,
     },
     "slotType" : "bx_header_v8",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_exhaust_v8","bx_exhaust_v8", "Exhaust"],
+    "slots2": [
+        ["name",          "allowTypes",      "denyTypes", "default",       "description"],
+        ["bx_exhaust_v8", ["bx_exhaust_v8"], [],          "bx_exhaust_v8", "Exhaust"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -354,9 +354,9 @@
         "value":350,
     },
     "slotType" : "bx_header_v8_turbo",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_exhaust_v8","bx_exhaust_v8", "Exhaust"],
+    "slots2": [
+        ["name",          "allowTypes",      "denyTypes", "default",       "description"],
+        ["bx_exhaust_v8", ["bx_exhaust_v8"], [],          "bx_exhaust_v8", "Exhaust"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -370,9 +370,9 @@
         "value":450,
     },
     "slotType" : "bx_intake_v8",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_header_v8","bx_exhmanifold_v8", "Exhaust Manifolds", {"coreSlot":true}],
+    "slots2": [
+        ["name",         "allowTypes",     "denyTypes", "default",           "description"],
+        ["bx_header_v8", ["bx_header_v8"], [],          "bx_exhmanifold_v8", "Exhaust Manifolds", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -427,7 +427,7 @@
           ["intake1", "e4l"],
           ["intake1", "e2l"],
           ["intake1", "e2r"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           {"beamSpring":501000,"beamDamp":150},
           {"beamDeform":4500,"beamStrength":"FLT_MAX"},
@@ -462,9 +462,9 @@
         "value":1650,
     },
     "slotType" : "bx_intake_v8",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_header_v8","bx_exhmanifold_v8", "Exhaust Manifolds", {"coreSlot":true}],
+    "slots2": [
+        ["name",         "allowTypes",     "denyTypes", "default",           "description"],
+        ["bx_header_v8", ["bx_header_v8"], [],          "bx_exhmanifold_v8", "Exhaust Manifolds", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -519,7 +519,7 @@
           ["intake1", "e4l"],
           ["intake1", "e2l"],
           ["intake1", "e2r"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           {"beamSpring":501000,"beamDamp":150},
           {"beamDeform":4500,"beamStrength":"FLT_MAX"},
@@ -554,9 +554,9 @@
         "value":6950,
     },
     "slotType" : "bx_intake_v8",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_header_v8","bx_exhmanifold_v8", "Exhaust Manifolds", {"coreSlot":true}],
+    "slots2": [
+        ["name",         "allowTypes",     "denyTypes", "default",           "description"],
+        ["bx_header_v8", ["bx_header_v8"], [],          "bx_exhmanifold_v8", "Exhaust Manifolds", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -622,7 +622,7 @@
           ["intake1", "e4l"],
           ["intake1", "e2l"],
           ["intake1", "e2r"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           {"beamSpring":501000,"beamDamp":150},
           {"beamDeform":4500,"beamStrength":"FLT_MAX"},
@@ -657,9 +657,9 @@
         "value":2500,
     },
     "slotType" : "bx_intake_v8",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_header_v8_turbo","bx_header_v8_turbo", "Exhaust Manifolds", {"coreSlot":true}],
+    "slots2": [
+        ["name",               "allowTypes",           "denyTypes", "default",            "description"],
+        ["bx_header_v8_turbo", ["bx_header_v8_turbo"], [],          "bx_header_v8_turbo", "Exhaust Manifolds", {"coreSlot":true}],
     ],
     "turbocharger": {
         "bovSoundFileName":"event:>Vehicle>Forced_Induction>Turbo_04>turbo_bov_race",
@@ -830,7 +830,7 @@
           ["itc1", "e4r"],
           ["itc2", "e4r"],
           ["itc1", "e4l"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           //exhaust manifold
           {"beamSpring":2750550,"beamDamp":125},
@@ -865,9 +865,9 @@
         "value":7500,
     },
     "slotType" : "bx_intake_v8",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_header_v8_turbo","bx_header_v8_turbo", "Exhaust Manifolds", {"coreSlot":true}],
+    "slots2": [
+        ["name",               "allowTypes",           "denyTypes", "default",            "description"],
+        ["bx_header_v8_turbo", ["bx_header_v8_turbo"], [],          "bx_header_v8_turbo", "Exhaust Manifolds", {"coreSlot":true}],
     ],
     "turbocharger": {
         "bovSoundFileName":"event:>Vehicle>Forced_Induction>Turbo_05>turbo_bov_race",
@@ -1038,7 +1038,7 @@
           ["itc1", "e4r"],
           ["itc2", "e4r"],
           ["itc1", "e4l"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           //exhaust manifold
           {"beamSpring":2750550,"beamDamp":125},
@@ -1073,9 +1073,9 @@
         "value":13900,
     },
     "slotType" : "bx_intake_v8",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_header_v8_turbo","bx_header_v8_turbo", "Exhaust Manifolds", {"coreSlot":true}],
+    "slots2": [
+        ["name",               "allowTypes",           "denyTypes", "default",            "description"],
+        ["bx_header_v8_turbo", ["bx_header_v8_turbo"], [],          "bx_header_v8_turbo", "Exhaust Manifolds", {"coreSlot":true}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -1251,7 +1251,7 @@
           ["itc1", "e4r"],
           ["itc2", "e4r"],
           ["itc1", "e4l"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           //exhaust manifold
           {"beamSpring":2750550,"beamDamp":125},

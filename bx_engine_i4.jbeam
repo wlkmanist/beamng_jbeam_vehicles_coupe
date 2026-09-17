@@ -3,21 +3,21 @@
     "information":{
         "authors":"BeamNG",
         "name":"2.0L I4 Engine",
-        "value":4980,
+        "value":7900,
     },
     "slotType" : "bx_engine",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_enginemounts","bx_enginemounts", "Engine Mounts", {"coreSlot":true}],
-        ["bx_intake_i4","bx_intake_i4", "Intake", {"coreSlot":true}],
-        ["bx_oilpan_i4","bx_oilpan_i4", "Oil Pan", {"coreSlot":true}],
-        ["bx_exhaust_i4","bx_exhaust_i4", "Exhaust"],
-        ["bx_engine_ecu_i4","bx_engine_ecu_i4", "Engine Management", {"coreSlot":true}],
-        ["n2o_system","", "Nitrous Oxide System"],
-        ["bx_engine_internals_i4","bx_engine_internals_i4", "Engine Long Block", {"coreSlot":true}],
-        ["bx_transmission","bx_transmission_4A", "Transmission"],
-        ["bx_radiator_i4","bx_radiator_i4", "Radiator"],
-        ["bx_oilcooler","", "Oil Cooler"],
+    "slots2": [
+        ["name",                   "allowTypes",               "denyTypes", "default",                "description"],
+        ["bx_enginemounts",        ["bx_enginemounts"],        [],          "bx_enginemounts",        "Engine Mounts",        {"coreSlot":true}],
+        ["bx_intake_i4",           ["bx_intake_i4"],           [],          "bx_intake_i4",           "Intake",               {"coreSlot":true}],
+        ["bx_oilpan_i4",           ["bx_oilpan_i4"],           [],          "bx_oilpan_i4",           "Oil Pan",              {"coreSlot":true}],
+        ["bx_exhaust_i4",          ["bx_exhaust_i4"],          [],          "bx_exhaust_i4",          "Exhaust"],
+        ["bx_engine_ecu_i4",       ["bx_engine_ecu_i4"],       [],          "bx_engine_ecu_i4",       "Engine Management",    {"coreSlot":true}],
+        ["n2o_system",             ["n2o_system"],             [],          "",                       "Nitrous Oxide System"],
+        ["bx_engine_internals_i4", ["bx_engine_internals_i4"], [],          "bx_engine_internals_i4", "Engine Long Block",    {"coreSlot":true}],
+        ["bx_transmission",        ["bx_transmission"],        [],          "bx_transmission_4A",     "Transmission"],
+        ["bx_radiator_i4",         ["bx_radiator_i4"],         [],          "bx_radiator_i4",         "Radiator"],
+        ["bx_oilcooler",           ["bx_oilcooler"],           [],          "",                       "Oil Cooler"],
     ],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
@@ -116,7 +116,7 @@
 
         "mainGain": -5,
         "onLoadGain":1,
-        "offLoadGain":0.40,
+        "offLoadGain":0.6,
 
         "maxLoadMix": 0.8,
         "minLoadMix": 0,
@@ -139,11 +139,11 @@
         "eqFundamentalGain": -2,
     },
     "soundConfigExhaust": {
-        "sampleName": "i4p_01600cc_motorsport_01_exhaust",
+        "sampleName": "i4p_2000_02000cc_modified_01_exhaust",
 
         "mainGain": 2.5,
         "onLoadGain":1,
-        "offLoadGain":0.26,
+        "offLoadGain":0.5,
 
         "maxLoadMix": 0.6,
         "minLoadMix": 0,
@@ -286,7 +286,7 @@
           ["e3r", "f11ll"],
           ["f15l", "e1r"],
           {"optional":false},
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],
@@ -340,7 +340,7 @@
           ["oilpan", "e3l"],
           ["oilpan", "e4r"],
           ["oilpan", "e4l"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           //oil ref
           {"beamSpring":1001000,"beamDamp":150},
@@ -405,7 +405,7 @@
           ["oilpan", "e3l"],
           ["oilpan", "e4r"],
           ["oilpan", "e4l"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           //oil ref
           {"beamSpring":1001000,"beamDamp":150},
@@ -755,7 +755,7 @@
           ["airb2", "e2l"],
           ["airb2", "e2r"],
           ["airb2", "airb1"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           //attach to body
           {"beamDeform":8000,"beamStrength":11000},
@@ -876,7 +876,7 @@
           ["airb2", "e2l"],
           ["airb2", "e2r"],
           ["airb2", "airb1"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           //attach to body
           {"beamDeform":8000,"beamStrength":11000},
@@ -1120,7 +1120,7 @@
           ["airb2", "e4l"],
           ["airb2", "e2l"],
           ["airb2", "e2r"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           //attach to body
           {"beamDeform":8000,"beamStrength":11000},
@@ -1151,7 +1151,7 @@
         "turboSizeCoef": 0.7,
         "bovSoundVolumeCoef": 0.55,
         "hissVolumePerPSI": 0.04,
-        "whineVolumePer10kRPM": 0.02,
+        "whineVolumePer10kRPM": 0.015,
         "whinePitchPer10kRPM": 0.06,
         "wastegateStart":"$wastegateStart",
         "wastegateLimit":"$=$wastegateStart+2",
@@ -1345,7 +1345,7 @@
           ["airb2", "e4l"],
           ["airb2", "e2l"],
           ["airb2", "e2r"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           //attach to body
           {"beamDeform":8000,"beamStrength":11000},
@@ -1376,7 +1376,7 @@
         "turboSizeCoef": 0.9,
         "bovSoundVolumeCoef": 0.45,
         "hissVolumePerPSI": 0.035,
-        "whineVolumePer10kRPM": 0.02,
+        "whineVolumePer10kRPM": 0.015,
         "whinePitchPer10kRPM": 0.07,
         "wastegateStart":"$wastegateStart",
         "wastegateLimit":"$=$wastegateStart+2",
@@ -1570,7 +1570,7 @@
           ["airb2", "e4l"],
           ["airb2", "e2l"],
           ["airb2", "e2r"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           //attach to body
           {"beamDeform":8000,"beamStrength":11000},
@@ -1601,7 +1601,7 @@
         "turboSizeCoef": 1.0,
         "bovSoundVolumeCoef": 0.5,
         "hissVolumePerPSI": 0.035,
-        "whineVolumePer10kRPM": 0.03,
+        "whineVolumePer10kRPM": 0.025,
         "whinePitchPer10kRPM": 0.06,
         "wastegateStart":"$wastegateStart",
         "wastegateLimit":"$=$wastegateStart+1",
@@ -1799,7 +1799,7 @@
           ["airb2", "e4l"],
           ["airb2", "e2l"],
           ["airb2", "e2r"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           //attach to body
           {"beamDeform":8000,"beamStrength":11000},

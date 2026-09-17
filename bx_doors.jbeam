@@ -6,11 +6,11 @@
         "value":450,
     },
     "slotType" : "bx_door_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_mirror_R","bx_mirror_R", "Right Mirror"],
-        ["bx_doorpanel_R","bx_doorpanel_R", "Right Door Panel"],
-        ["bx_doorglass_R","bx_doorglass_R", "Right Door Glass"],
+    "slots2": [
+        ["name",           "allowTypes",       "denyTypes", "default",        "description"],
+        ["bx_mirror_R",    ["bx_mirror_R"],    [],          "bx_mirror_R",    "Right Mirror"],
+        ["bx_doorpanel_R", ["bx_doorpanel_R"], [],          "bx_doorpanel_R", "Right Door Panel"],
+        ["bx_doorglass_R", ["bx_doorglass_R"], [],          "bx_doorglass_R", "Right Door Glass"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -18,9 +18,9 @@
     ],
     "controller": [
         ["fileName"],
-        ["advancedCouplerControl", {"name":"doorRCoupler"}],
+        ["advancedCouplerControl", {"name":"door_R_coupler"}],
     ]
-    "doorRCoupler":{
+    "door_R_coupler":{
         "couplerNodes":[
             ["cid1",    "cid2",     "autoCouplingStrength",    "autoCouplingRadius",   "autoCouplingLockRadius",   "autoCouplingSpeed", "couplingStartRadius",  "breakGroup"]
             ["qrg1r",     "d14rr",     35000,                     0.01,                   0.005,                      0.2,                 0.1,                   "doorR_latch"]
@@ -37,19 +37,19 @@
         "closeForceMagnitude": 70,
         "closeForceDuration": 0.4
     }
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["door_R", "", "d9r","d8r","d6r", "box", {"x":0.125, "y":0.02, "z":0.030}, {"x":0, "y":-1, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.07, "y":0.13, "z":-0.02}],
-        ["door_R_int", "", "d7r","d8r","d4r", "box", {"x":0.1, "y":0.03, "z":0.06}, {"x":-13, "y":1, "z":1}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.51, "y":0.062, "z":0.085}],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["door_R", "d9r","d8r","d6r", "box", {"x":0.125, "y":0.02, "z":0.030}, {"x":0, "y":-1, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.07, "y":0.13, "z":-0.02}],
+        ["door_R_int", "d7r","d8r","d4r", "box", {"x":0.1, "y":0.03, "z":0.06}, {"x":-13, "y":1, "z":1}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.51, "y":0.062, "z":0.085}],
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],
-        ["door_R", "action0", "doorLatch_R"],
-        ["door_R_int", "action0", "doorLatch_R"],
+    "actionsEnabled": [
+        ["id"],
+        ["door_R"],
     ],
-    "events":[
-        ["id", "title", "desc"],
-        ["doorLatch_R", "ui.inputActions.bx.doorLatch_R.title", "ui.inputActions.bx.doorLatch_R.description", {"onUp":"controller.getControllerSafe('doorRCoupler').toggleGroup()"}],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["door_R", "action0", "door_R"],
+        ["door_R_int", "action0", "door_R"],
     ],
     "sounds": {
         "$+cabinFilterCoef": 0.06
@@ -191,6 +191,7 @@
           {"beamType":"|SUPPORT","beamLongBound":6, "beamPrecompression":0.98},
           {"beamSpring":1001000,"beamDamp":50},
           {"beamDeform":8000,"beamStrength":200000},
+          {"breakGroup":"door_R_supportBeams"},
           ["d3r","q1r"],
           ["d5r","q7r"],
           ["d8r","q1r"],
@@ -213,6 +214,42 @@
           ["d11r", "rf2"],
           {"optional":false}
 
+          //door seal
+          {"beamSpring":0,"beamDamp":50},
+          {"beamDeform":9999,"beamStrength":102000},
+          {"beamPrecompression":1.01},
+          {"optional":true}
+          ["d9r", "f3rr"],
+          ["d3r", "q1r"],
+          ["d1r", "f1rr"],
+          ["d1r", "f6rr"],
+          ["d2r", "f1rr"],
+          ["d1r", "f2rr"],
+          ["d2r", "f3rr"],
+          ["d3r", "f2rr"],
+          ["d9r", "qrg1r"],
+          ["d6r", "qrg1r"],
+          ["d6r", "f8r"],
+          ["d3r", "f8r"],
+          ["d3r", "f7r"],
+          ["d2r", "f8r"],
+          ["d1r", "f7r"],
+          ["d2r", "f5r"],
+          ["d7r", "f6r"],
+          ["d4r", "f6r"],
+          ["d4r", "f5r"],
+          ["d10r", "rf3r"],
+          ["d11r", "rf1r"],
+          ["d10r", "rf1"],
+          ["d10r", "rf3"],
+          ["d11r", "p3r"],
+          ["d11r", "rf1"],
+          ["d11r", "q1r"],
+          ["d10r", "p2r"],
+          {"optional":false}
+          {"beamPrecompression":1.0},
+
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.1},
     ],
@@ -221,7 +258,7 @@
             //right door
             {"groundModel":"metal"},
             {"group":"bx_door_R"},
-            {"dragCoef":10},
+            {"dragCoef":17.5},
             ["d4r","d2r","d1r"],
             ["d4r","d5r","d2r"],
             ["d5r","d3r","d2r"],
@@ -239,11 +276,11 @@
         "value":450,
     },
     "slotType" : "bx_door_L",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_mirror_L","bx_mirror_L", "Left Mirror"],
-        ["bx_doorpanel_L","bx_doorpanel_L", "Left Door Panel"],
-        ["bx_doorglass_L","bx_doorglass_L", "Left Door Glass"],
+    "slots2": [
+        ["name",           "allowTypes",       "denyTypes", "default",        "description"],
+        ["bx_mirror_L",    ["bx_mirror_L"],    [],          "bx_mirror_L",    "Left Mirror"],
+        ["bx_doorpanel_L", ["bx_doorpanel_L"], [],          "bx_doorpanel_L", "Left Door Panel"],
+        ["bx_doorglass_L", ["bx_doorglass_L"], [],          "bx_doorglass_L", "Left Door Glass"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -251,9 +288,9 @@
     ],
     "controller": [
         ["fileName"],
-        ["advancedCouplerControl", {"name":"doorLCoupler"}],
+        ["advancedCouplerControl", {"name":"door_L_coupler"}],
     ]
-    "doorLCoupler":{
+    "door_L_coupler":{
         "couplerNodes":[
             ["cid1",    "cid2",     "autoCouplingStrength",    "autoCouplingRadius",   "autoCouplingLockRadius",   "autoCouplingSpeed", "couplingStartRadius",  "breakGroup"]
             ["qrg1l",     "d14ll",     35000,                     0.01,                   0.005,                      0.2,                 0.1,                   "doorL_latch"]
@@ -270,19 +307,19 @@
         "closeForceMagnitude": 70,
         "closeForceDuration": 0.4
     }
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["door_L", "", "d9l","d8l","d6l", "box", {"x":0.125, "y":0.02, "z":0.030}, {"x":0, "y":-1, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.07, "y":0.13, "z":0.0}],
-        ["door_L_int", "", "d7l","d8l","d4l", "box", {"x":0.1, "y":0.03, "z":0.06}, {"x":12.5, "y":1, "z":-1}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.51, "y":0.062, "z":-0.115}],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["door_L", "d9l","d8l","d6l", "box", {"x":0.125, "y":0.02, "z":0.030}, {"x":0, "y":-1, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.07, "y":0.13, "z":0.0}],
+        ["door_L_int", "d7l","d8l","d4l", "box", {"x":0.1, "y":0.03, "z":0.06}, {"x":12.5, "y":1, "z":-1}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.51, "y":0.062, "z":-0.115}],
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],
-        ["door_L", "action0", "doorLatch_L"],
-        ["door_L_int", "action0", "doorLatch_L"],
+    "actionsEnabled": [
+        ["id"],
+        ["door_L"],
     ],
-    "events":[
-        ["id", "title", "desc"],
-        ["doorLatch_L", "ui.inputActions.bx.doorLatch_L.title", "ui.inputActions.bx.doorLatch_L.description", {"onUp":"controller.getControllerSafe('doorLCoupler').toggleGroup()"}],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["door_L", "action0", "door_L"],
+        ["door_L_int", "action0", "door_L"],
     ],
     "sounds": {
         "$+cabinFilterCoef": 0.06
@@ -425,6 +462,7 @@
           {"beamType":"|SUPPORT","beamLongBound":6, "beamPrecompression":0.99},
           {"beamSpring":1001000,"beamDamp":50},
           {"beamDeform":8000,"beamStrength":200000},
+          {"breakGroup":"door_L_supportBeams"},
           ["d3l","q1l"],
           ["d5l","q7l"],
           ["d8l","q1l"],
@@ -447,6 +485,42 @@
           ["d11l", "rf2"],
           {"optional":false}
 
+          //door seal
+          {"beamSpring":0,"beamDamp":50},
+          {"beamDeform":9999,"beamStrength":102000},
+          {"beamPrecompression":1.01},
+          {"optional":true}
+          ["d9l", "f3ll"],
+          ["d3l", "q1l"],
+          ["d1r", "f1ll"],
+          ["d1l", "f6ll"],
+          ["d2l", "f1ll"],
+          ["d1l", "f2ll"],
+          ["d2l", "f3ll"],
+          ["d3l", "f2ll"],
+          ["d9l", "qrg1l"],
+          ["d6l", "qrg1l"],
+          ["d6l", "f8l"],
+          ["d3l", "f8l"],
+          ["d3l", "f7l"],
+          ["d2l", "f8l"],
+          ["d1l", "f7l"],
+          ["d2l", "f5l"],
+          ["d7l", "f6l"],
+          ["d4l", "f6l"],
+          ["d4l", "f5l"],
+          ["d10l", "rf3l"],
+          ["d11l", "rf1l"],
+          ["d10l", "rf1"],
+          ["d10l", "rf3"],
+          ["d11l", "p3r"],
+          ["d11l", "rf1"],
+          ["d11l", "q1l"],
+          ["d10l", "p2l"],
+          {"optional":false}
+          {"beamPrecompression":1.0},
+
+          {"breakGroup":""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
           {"deformLimitExpansion":1.1},
     ],
@@ -455,7 +529,7 @@
             //left door
             {"groundModel":"metal"},
             {"group":"bx_door_L"},
-            {"dragCoef":10},
+            {"dragCoef":17.5},
             ["d4l","d1l","d2l"],
             ["d4l","d2l","d5l"],
             ["d5l","d2l","d3l"],
@@ -480,7 +554,7 @@
     "sounds": {
         "$+cabinFilterCoef": 0.04
     },
-    "doorRCoupler":{
+    "door_R_coupler":{
         "$+openForceMagnitude":  10,
         "$+closeForceMagnitude": 30,
     }
@@ -526,7 +600,7 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
         ["bx_doorpanel_L", ["bx_doorpanel_L"]],
     ],
-    "doorLCoupler":{
+    "door_L_coupler":{
         "$+openForceMagnitude":  10,
         "$+closeForceMagnitude": 30,
     }

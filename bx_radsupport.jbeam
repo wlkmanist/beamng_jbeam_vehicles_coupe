@@ -6,21 +6,21 @@
         "value":700,
     },
     "slotType" : "bx_radsupport",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name",                 "allowTypes",             "denyTypes", "default",              "description"],
         //bodywork
-        ["bx_bumperbar_F","bx_bumperbar_F", "Front Bumper Support"],
-        ["bx_bumper_F_popup","bx_bumper_F_popup", "Front Bumper"],
-        ["bx_hood_popup","bx_hood_popup", "Hood"],
-        ["bx_fender_R_popup","bx_fender_R_popup", "Front Right Fender"],
-        ["bx_fender_L_popup","bx_fender_L_popup", "Front Left Fender"],
-        ["bx_tubs_FR","bx_tubs_FR", "Front Right Inner Fender"],
-        ["bx_tubs_FL","bx_tubs_FL", "Front Left Inner Fender"],
-        ["bx_skidplate","", "Skidplate"],
+        ["bx_bumperbar_F",       ["bx_bumperbar_F"],       [],          "bx_bumperbar_F",       "Front Bumper Support"],
+        ["bx_bumper_F_popup",    ["bx_bumper_F_popup"],    [],          "bx_bumper_F_popup",    "Front Bumper"],
+        ["bx_hood_popup",        ["bx_hood_popup"],        [],          "bx_hood_popup",        "Hood"],
+        ["bx_fender_R_popup",    ["bx_fender_R_popup"],    [],          "bx_fender_R_popup",    "Front Right Fender"],
+        ["bx_fender_L_popup",    ["bx_fender_L_popup"],    [],          "bx_fender_L_popup",    "Front Left Fender"],
+        ["bx_tubs_FR",           ["bx_tubs_FR"],           [],          "bx_tubs_FR",           "Front Right Inner Fender"],
+        ["bx_tubs_FL",           ["bx_tubs_FL"],           [],          "bx_tubs_FL",           "Front Left Inner Fender"],
+        ["bx_skidplate",         ["bx_skidplate"],         [],          "",                     "Skidplate"],
 
         //lights
-        ["bx_headlight_R_popup","bx_headlight_R_popup", "Right Headlight"],
-        ["bx_headlight_L_popup","bx_headlight_L_popup", "Left Headlight"],
+        ["bx_headlight_R_popup", ["bx_headlight_R_popup"], [],          "bx_headlight_R_popup", "Right Headlight"],
+        ["bx_headlight_L_popup", ["bx_headlight_L_popup"], [],          "bx_headlight_L_popup", "Left Headlight"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -159,7 +159,7 @@
             ["f14ll","f15l","f15ll"],
             ["f15l","f14ll","f15"],
 
-            {"dragCoef":25},
+            {"dragCoef":43.75},
             ["f15rr", "f19rr", "f13rr"],
             ["f13rr", "f19rr", "f11rr"],
             ["f15r", "f15rr", "f13rr"],
@@ -174,14 +174,14 @@
             ["f19ll", "f13ll", "f11ll"],
 
             //sides
-            {"dragCoef":6},
+            {"dragCoef":10.5},
             ["f14r", "f19rr", "f15rr", {"group":"bx_side_R"}],
             ["f14rr", "f14r", "f15rr", {"group":"bx_side_R"}],
             ["f14l", "f15ll", "f19ll", {"group":"bx_side_L"}],
             ["f14l", "f14ll", "f15ll", {"group":"bx_side_L"}],
 
             //bottom
-            {"dragCoef":10},
+            {"dragCoef":17.5},
             ["f12ll", "f19ll", "f11ll"],
             ["f19ll", "f12ll", "f14l"],
             ["f19rr", "f12rr", "f11rr"],
@@ -196,22 +196,22 @@
         "value":700,
     },
     "slotType" : "bx_radsupport",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name",                 "allowTypes",             "denyTypes", "default",              "description"],
         //bodywork
-        ["bx_bumperbar_F","bx_bumperbar_F", "Front Bumper Support"],
-        ["bx_bumper_F_fixed","bx_bumper_F_fixed", "Front Bumper"],
-        ["bx_hood_fixed","bx_hood_fixed", "Hood"],
-        ["bx_fender_R_fixed","bx_fender_R_fixed", "Front Right Fender"],
-        ["bx_fender_L_fixed","bx_fender_L_fixed", "Front Left Fender"],
-        ["bx_tubs_FR","bx_tubs_FR", "Front Right Inner Fender"],
-        ["bx_tubs_FL","bx_tubs_FL", "Front Left Inner Fender"],
-        ["bx_lightbar_LED","", "LED Lightbar"],
-        ["bx_skidplate","", "Skidplate"],
+        ["bx_bumperbar_F",       ["bx_bumperbar_F"],       [],          "bx_bumperbar_F",       "Front Bumper Support"],
+        ["bx_bumper_F_fixed",    ["bx_bumper_F_fixed"],    [],          "bx_bumper_F_fixed",    "Front Bumper"],
+        ["bx_hood_fixed",        ["bx_hood_fixed"],        [],          "bx_hood_fixed",        "Hood"],
+        ["bx_fender_R_fixed",    ["bx_fender_R_fixed"],    [],          "bx_fender_R_fixed",    "Front Right Fender"],
+        ["bx_fender_L_fixed",    ["bx_fender_L_fixed"],    [],          "bx_fender_L_fixed",    "Front Left Fender"],
+        ["bx_tubs_FR",           ["bx_tubs_FR"],           [],          "bx_tubs_FR",           "Front Right Inner Fender"],
+        ["bx_tubs_FL",           ["bx_tubs_FL"],           [],          "bx_tubs_FL",           "Front Left Inner Fender"],
+        ["bx_lightbar_LED",      ["bx_lightbar_LED"],      [],          "",                     "LED Light Bar"],
+        ["bx_skidplate",         ["bx_skidplate"],         [],          "",                     "Skidplate"],
 
         //lights
-        ["bx_headlight_R_fixed","bx_headlight_R_fixed", "Right Headlight"],
-        ["bx_headlight_L_fixed","bx_headlight_L_fixed", "Left Headlight"],
+        ["bx_headlight_R_fixed", ["bx_headlight_R_fixed"], [],          "bx_headlight_R_fixed", "Right Headlight"],
+        ["bx_headlight_L_fixed", ["bx_headlight_L_fixed"], [],          "bx_headlight_L_fixed", "Left Headlight"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -350,7 +350,7 @@
             ["f14ll","f15l","f15ll"],
             ["f15l","f14ll","f15"],
 
-            {"dragCoef":25},
+            {"dragCoef":43.75},
             ["f15rr", "f19rr", "f13rr"],
             ["f13rr", "f19rr", "f11rr"],
             ["f15r", "f15rr", "f13rr"],
@@ -365,14 +365,14 @@
             ["f19ll", "f13ll", "f11ll"],
 
             //sides
-            {"dragCoef":6},
+            {"dragCoef":10.5},
             ["f14r", "f19rr", "f15rr", {"group":"bx_side_R"}],
             ["f14rr", "f14r", "f15rr", {"group":"bx_side_R"}],
             ["f14l", "f15ll", "f19ll", {"group":"bx_side_L"}],
             ["f14l", "f14ll", "f15ll", {"group":"bx_side_L"}],
 
             //bottom
-            {"dragCoef":10},
+            {"dragCoef":17.5},
             ["f12ll", "f19ll", "f11ll"],
             ["f19ll", "f12ll", "f14l"],
             ["f19rr", "f12rr", "f11rr"],
@@ -387,6 +387,10 @@
         "value":35,
     },
     "slotType" : "bx_tubs_FR",
+    "slots2": [
+        ["name",          "allowTypes",      "denyTypes", "default", "description"],
+        ["bx_mudflap_FR", ["bx_mudflap_FR"], [],          "",        "Front Right Mud Flap"],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_tub_R", ["bx_body","bx_shocktop_F"]],
@@ -399,6 +403,10 @@
         "value":35,
     },
     "slotType" : "bx_tubs_FL",
+    "slots2": [
+        ["name",          "allowTypes",      "denyTypes", "default", "description"],
+        ["bx_mudflap_FL", ["bx_mudflap_FL"], [],          "",        "Front Left Mud Flap"],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bx_tub_L", ["bx_body","bx_shocktop_F"]],

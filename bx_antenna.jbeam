@@ -1,0 +1,261 @@
+{
+"bx_roof_antenna_coupe": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rally Antenna",
+        "value":200,
+    },
+    "slotType" : "bx_roof_antenna_coupe",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_rallyantenna_base_coupe", ["bx_roof_antenna_base"]],
+        ["bx_rallyantenna_coupe", ["bx_roof_antenna"]],
+    ],
+    "slidenodes": [
+        ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
+        ["rfantb4", "rfant1", true, false, 0.0, 8500, "FLT_MAX", "FLT_MAX"],
+        ["rfant1", "rfant2", true, false, 0.0, 4500, "FLT_MAX", "FLT_MAX"],
+        ["rfant2", "rfant3", true, false, 0.0, 2500, "FLT_MAX", "FLT_MAX"],
+    ],
+    "rails": {
+        "rfant1":{"links:":["rfantb5", "rfant1"], "broken:":[], "looped":false, "capped":true},
+        "rfant2":{"links:":["rfantb4", "rfant2"], "broken:":[], "looped":false, "capped":true},
+        "rfant3":{"links:":["rfant1", "rfant3"], "broken:":[], "looped":false, "capped":true},
+    },
+     "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"selfCollision":false},
+        {"collision":true},
+
+        {"nodeWeight":0.703},
+        {"frictionCoef":0.7},
+        {"group":"bx_roof_antenna_base"},
+        {"nodeMaterial":"|NM_METAL"},
+        //antenna base
+        ["rfantb1", -0.05, 0.83, 1.31],
+        ["rfantb2",  0.05, 0.83, 1.31],
+        ["rfantb3",  0.00, 0.74, 1.31],
+        {"group":"bx_roof_antenna"},
+        ["rfantb6", -0.00, 1.25, 1.31, {"selfCollision":false, "collision":false}],//flexbody node
+        ["rfantb4", -0.00, 0.79, 1.40],
+        ["rfantb5", -0.00, 0.79, 1.21, {"selfCollision":false, "collision":false}],
+
+        //antenna
+        {"nodeWeight":0.185},
+        {"selfCollision":true},
+        ["rfant1", -0.00, 0.80, 1.60],
+        ["rfant2", -0.00, 0.82, 1.83],
+        ["rfant3", -0.00, 0.83, 2.01],
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //base
+        {"deformLimitExpansion":""},
+        {"beamSpring":232175,"beamDamp":64.75},
+        {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+        ["rfantb1", "rfantb2"],
+        ["rfantb2", "rfantb3"],
+        ["rfantb3", "rfantb1"],
+        ["rfantb1", "rfantb4"],
+        ["rfantb3", "rfantb4"],
+        ["rfantb2", "rfantb4"],
+        ["rfantb5", "rfantb1"],
+        ["rfantb5", "rfantb2"],
+        ["rfantb5", "rfantb3"],
+        ["rfantb5", "rfantb4"],
+        ["rfantb6", "rfantb2"],
+        ["rfantb6", "rfantb1"],
+        ["rfantb6", "rfantb5"],
+        //antenna
+        {"beamSpring":232175,"beamDamp":64.75},
+        {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        ["rfantb4", "rfant1"],
+        ["rfant1", "rfant2"],
+        ["rfant2", "rfant3"],
+
+        //damping
+        {"deformLimitExpansion":""},
+        {"beamSpring":925,"beamDamp":55.5},
+        ["rfantb3", "rfant1"],
+        ["rfantb3", "rfant2"],
+        ["rfantb3", "rfant3"],
+        ["rfantb1", "rfant1"],
+        ["rfantb2", "rfant1"],
+        ["rfantb1", "rfant2"],
+        ["rfantb2", "rfant2"],
+        ["rfantb1", "rfant3"],
+        ["rfantb2", "rfant3"],
+
+        //attach
+        {"beamPrecompression":1},
+        {"beamSpring":232175,"beamDamp":64.75},
+        {"beamDeform":4000,"beamStrength":4000},
+        {"breakGroup":"antenna_roof"},
+        ["rfantb1", "rf3"],
+        ["rfantb1", "rf4"],
+        ["rfantb1", "rf5"],
+        ["rfantb1", "rf4r"],
+        ["rfantb1", "rf4l"],
+
+        ["rfantb2", "rf3"],
+        ["rfantb2", "rf4"],
+        ["rfantb2", "rf5"],
+        ["rfantb2", "rf4r"],
+        ["rfantb2", "rf4l"],
+
+        ["rfantb3", "rf3"],
+        ["rfantb3", "rf4"],
+        ["rfantb3", "rf5"],
+        ["rfantb3", "rf4r"],
+        ["rfantb3", "rf4l"],
+
+        ["rfantb4", "rf3"],
+        ["rfantb4", "rf4"],
+        ["rfantb4", "rf5"],
+        ["rfantb4", "rf4r"],
+        ["rfantb4", "rf4l"],
+
+        ["rfantb5", "rf3"],
+        ["rfantb5", "rf4"],
+        ["rfantb5", "rf5"],
+        ["rfantb5", "rf4r"],
+        ["rfantb5", "rf4l"],
+
+        {"breakGroup":""},
+        {"deformLimitExpansion":1.1},
+
+    ],
+},
+"bx_roof_antenna_hatch": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rally Antenna",
+        "value":200,
+    },
+    "slotType" : "bx_roof_antenna_hatch",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bx_rallyantenna_base_hatch", ["bx_roof_antenna_base"]],
+        ["bx_rallyantenna_hatch", ["bx_roof_antenna"]],
+    ],
+    "slidenodes": [
+        ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
+        ["rfantb4", "rfant1", true, false, 0.0, 8500, "FLT_MAX", "FLT_MAX"],
+        ["rfant1", "rfant2", true, false, 0.0, 4500, "FLT_MAX", "FLT_MAX"],
+        ["rfant2", "rfant3", true, false, 0.0, 2500, "FLT_MAX", "FLT_MAX"],
+    ],
+    "rails": {
+        "rfant1":{"links:":["rfantb5", "rfant1"], "broken:":[], "looped":false, "capped":true},
+        "rfant2":{"links:":["rfantb4", "rfant2"], "broken:":[], "looped":false, "capped":true},
+        "rfant3":{"links:":["rfant1", "rfant3"], "broken:":[], "looped":false, "capped":true},
+    },
+     "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"selfCollision":false},
+        {"collision":true},
+
+        {"nodeWeight":0.703},
+        {"frictionCoef":0.7},
+        {"group":"bx_roof_antenna_base"},
+        {"nodeMaterial":"|NM_METAL"},
+        //antenna base
+        ["rfantb1", -0.05, 0.83, 1.31],
+        ["rfantb2",  0.05, 0.83, 1.31],
+        ["rfantb3",  0.00, 0.74, 1.31],
+        {"group":"bx_roof_antenna"},
+        ["rfantb6", -0.00, 1.25, 1.31, {"selfCollision":false, "collision":false}],//flexbody node
+        ["rfantb4", -0.00, 0.79, 1.40],
+        ["rfantb5", -0.00, 0.79, 1.21, {"selfCollision":false, "collision":false}],
+
+        //antenna
+        {"nodeWeight":0.185},
+        {"selfCollision":true},
+        ["rfant1", -0.00, 0.81, 1.60],
+        ["rfant2", -0.00, 0.84, 1.83],
+        ["rfant3", -0.00, 0.86, 2.01],
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //base
+        {"deformLimitExpansion":""},
+        {"beamSpring":232175,"beamDamp":64.75},
+        {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+        ["rfantb1", "rfantb2"],
+        ["rfantb2", "rfantb3"],
+        ["rfantb3", "rfantb1"],
+        ["rfantb1", "rfantb4"],
+        ["rfantb3", "rfantb4"],
+        ["rfantb2", "rfantb4"],
+        ["rfantb5", "rfantb1"],
+        ["rfantb5", "rfantb2"],
+        ["rfantb5", "rfantb3"],
+        ["rfantb5", "rfantb4"],
+        ["rfantb6", "rfantb2"],
+        ["rfantb6", "rfantb1"],
+        ["rfantb6", "rfantb5"],
+        //antenna
+        {"beamSpring":232175,"beamDamp":64.75},
+        {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        ["rfantb4", "rfant1"],
+        ["rfant1", "rfant2"],
+        ["rfant2", "rfant3"],
+
+        //damping
+        {"deformLimitExpansion":""},
+        {"beamSpring":925,"beamDamp":55.5},
+        ["rfantb3", "rfant1"],
+        ["rfantb3", "rfant2"],
+        ["rfantb3", "rfant3"],
+        ["rfantb1", "rfant1"],
+        ["rfantb2", "rfant1"],
+        ["rfantb1", "rfant2"],
+        ["rfantb2", "rfant2"],
+        ["rfantb1", "rfant3"],
+        ["rfantb2", "rfant3"],
+
+        //attach
+        {"beamPrecompression":1},
+        {"beamSpring":232175,"beamDamp":64.75},
+        {"beamDeform":4000,"beamStrength":4000},
+        {"breakGroup":"antenna_roof"},
+        ["rfantb1", "rf3"],
+        ["rfantb1", "rf4"],
+        ["rfantb1", "rf5"],
+        ["rfantb1", "rf4r"],
+        ["rfantb1", "rf4l"],
+
+        ["rfantb2", "rf3"],
+        ["rfantb2", "rf4"],
+        ["rfantb2", "rf5"],
+        ["rfantb2", "rf4r"],
+        ["rfantb2", "rf4l"],
+
+        ["rfantb3", "rf3"],
+        ["rfantb3", "rf4"],
+        ["rfantb3", "rf5"],
+        ["rfantb3", "rf4r"],
+        ["rfantb3", "rf4l"],
+
+        ["rfantb4", "rf3"],
+        ["rfantb4", "rf4"],
+        ["rfantb4", "rf5"],
+        ["rfantb4", "rf4r"],
+        ["rfantb4", "rf4l"],
+
+        ["rfantb5", "rf3"],
+        ["rfantb5", "rf4"],
+        ["rfantb5", "rf5"],
+        ["rfantb5", "rf4r"],
+        ["rfantb5", "rf4l"],
+
+        {"breakGroup":""},
+        {"deformLimitExpansion":1.1},
+
+    ],
+},
+
+}

@@ -6,9 +6,9 @@
         "value":50,
     },
     "slotType" : "bx_grille_F_fixed",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_lettering_grille_fixed","", "Front Grille Badge"],
+    "slots2": [
+        ["name",                      "allowTypes",                  "denyTypes", "default", "description"],
+        ["bx_lettering_grille_fixed", ["bx_lettering_grille_fixed"], [],          "",        "Front Grille Badge"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -22,9 +22,9 @@
          {"nodeMaterial":"|NM_PLASTIC"},
          {"group":"bx_grille_F"},
          {"nodeWeight":0.4},
-         ["fgr1r", -0.3236, -2.0214, 0.6671],
+         ["fgr1r", -0.3036, -2.0214, 0.6671],
          ["fgr1", -0.0000, -2.0565, 0.6671],
-         ["fgr1l", 0.3236, -2.0214, 0.6671],
+         ["fgr1l", 0.3036, -2.0214, 0.6671],
     ],
     "beams": [
           ["id1:", "id2:"],
@@ -109,7 +109,7 @@
             //front grille
             {"groundModel":"plastic"},
             {"group":"bx_grille_F"},
-            {"dragCoef":3},
+            {"dragCoef":5.25},
             ["fgr1", "fb1", "fgr1l"],
             ["fgr1l", "fb1", "fb1l"],
             ["fgr1", "fgr1r", "fb1"],
@@ -136,9 +136,9 @@
          {"nodeMaterial":"|NM_PLASTIC"},
          {"group":"bx_grille_F"},
          {"nodeWeight":0.4},
-         ["fgr1r", -0.3236, -2.0214, 0.6671],
+         ["fgr1r", -0.3036, -2.0214, 0.6671],
          ["fgr1", -0.0000, -2.0565, 0.6671],
-         ["fgr1l", 0.3236, -2.0214, 0.6671],
+         ["fgr1l", 0.3036, -2.0214, 0.6671],
     ],
     "beams": [
           ["id1:", "id2:"],
@@ -223,7 +223,7 @@
             //front grille
             {"groundModel":"plastic"},
             {"group":"bx_grille_F"},
-            {"dragCoef":3},
+            {"dragCoef":5.25},
             ["fgr1", "fb1", "fgr1l"],
             ["fgr1l", "fb1", "fb1l"],
             ["fgr1", "fgr1r", "fb1"],

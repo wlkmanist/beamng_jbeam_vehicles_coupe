@@ -64,7 +64,7 @@
           ["rad2", "f11rr"],
           ["rad2", "f13ll"],
           ["rad2", "f13rr"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],
@@ -134,7 +134,7 @@
           ["rad2", "f11rr"],
           ["rad2", "f13ll"],
           ["rad2", "f13rr"],
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],

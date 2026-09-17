@@ -2,7 +2,7 @@
 "bx_dashboard_lhd": {
     "information":{
         "authors":"BeamNG",
-        "name":"Left-Hand-Drive Dashboard",
+        "name":"Left Hand Drive Dashboard",
         "value":500,
     },
     "slotType" : "bx_dashboard",
@@ -11,7 +11,6 @@
          ["bx_dash", ["bx_dash"]],
          ["bx_mirror_int_lhd", ["bx_body"]],
          ["bx_engbaycrap_back_lhd", ["bx_body"]],
-         ["bx_sunvisors", ["bx_body"]],
          ["bx_wipers_lhd", ["bx_windshield"]],
          //window siwtches
          ["bx_doorpanel_controls_single_R", ["bx_doorpanel_R2"]],
@@ -21,16 +20,16 @@
         ["mesh", "idRef:", "id1:", "id2:"],
         ["bx_mirror_int_lhd","rf1","rf1r","rf2",{"refBaseTranslation":{"x":0.00,"y":-0.08,"z":-0.12},"baseRotationGlobal":{"x":6,"y":0,"z":19}}],
     ],
-    "slots": [
-        ["type", "default", "description"],
-        ["soundscape_horn", "soundscape_horn_3", "Horn"],
-        ["bx_steer","bx_steer", "Steering Wheel"],
-        ["bx_radio_lhd","bx_radio_lhd", "Radio", {"coreSlot":true}],
-        ["bx_shifter_lhd","bx_shifter_A_lhd", "Shifter"],
-        ["bx_gauges_lhd","bx_gauges_lhd", "Gauges", {"coreSlot":true}],
-        ["bx_shiftlight_lhd","", "Shift Light"],
-        ["bx_interior_accessory_lhd","", "Dashboard Accessory"],
-        ["gps_alt","","Navigation Unit", {"nodeMove":{"x":0.055,"y":-0.42,"z":0.865}}],
+    "slots2": [
+        ["name",                      "allowTypes",                  "denyTypes", "default",           "description"],
+        ["soundscape_horn",           ["soundscape_horn"],           [],          "soundscape_horn_3", "Horn"],
+        ["bx_steer",                  ["bx_steer"],                  [],          "bx_steer",          "Steering Wheel"],
+        ["bx_radio_lhd",              ["bx_radio_lhd"],              [],          "bx_radio_lhd",      "Radio",               {"coreSlot":true}],
+        ["bx_shifter_lhd",            ["bx_shifter_lhd"],            [],          "bx_shifter_A_lhd",  "Shifter"],
+        ["bx_gauges_lhd",             ["bx_gauges_lhd"],             [],          "bx_gauges_lhd",     "Gauges",              {"coreSlot":true}],
+        ["bx_shiftlight_lhd",         ["bx_shiftlight_lhd"],         [],          "",                  "Shift Light"],
+        ["bx_interior_accessory_lhd", ["bx_interior_accessory_lhd"], [],          "",                  "Dashboard Accessory"],
+        ["gps_altb",                  ["gps_altb"],                  [],          "",                  "Navigation Unit",     {"nodeMove":{"x":0.055,"y":-0.445,"z":0.845},"nodeRotate":{"x":25, "y":0, "z":-10, "px":0.055, "py":-0.445, "pz":0.845}}],
     ],
     "soundscape": [
         ["name", "src"],
@@ -72,13 +71,26 @@
         //parking brake
         ["parkingbrake"     ,"bx_parkingbrake", "f7r","f7l","f8r",  {"x":125, "y":0, "z":0} , {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
     ],
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["hood_int", "", "f5ll","f5l","f6ll", "box", {"x":0.08, "y":0.08, "z":0.08}, {"x":45, "y":0, "z":-15}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.07, "y":0.0, "z":-0.15}],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["hood_int", "f5ll","f5l","f6ll", "box", {"x":0.08, "y":0.08, "z":0.08}, {"x":45, "y":0, "z":-15}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.07, "y":0.0, "z":-0.15}],
+        ["foglights",   "dsh2l","dsh2ll","dsh1l","box",{"x":-0.03,"y":-0.03,"z":0.03},{"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x": 0.320, "y":0.080, "z": 0.000}],
+        ["hazard",      "dsh2l","dsh2ll","dsh1l","box",{"x":-0.03,"y":-0.03,"z":0.03},{"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.005, "y":0.080, "z": 0.000}],
+        ["sw_ignition", "dsh2l","dsh2ll","dsh1l","sphere", 0.025,                     {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x": 0.060, "y":0.075, "z": 0.020}],
+        ["headlights",  "stc3","int_stalk","stc1","sphere",0.025,                     {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x": 0.200, "y":0.000, "z": 0.000}],
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],
+    "actionsEnabled": [
+        ["id"],
+        ["hoodRelease"],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
         ["hood_int", "action0", "hoodRelease"],
+        ["foglights",  "action0", "common:toggle_foglights"],
+        ["hazard", "action0", "common:toggle_hazard_signal"],
+        ["sw_ignition", "action0", "common:activateStarterMotor"],
+        ["sw_ignition", "action2", "common:setIgnitionLevel3Momentary"],
+        ["headlights", "action0", "common:toggle_headlights"],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -111,12 +123,20 @@
          ["stc1",0.3426,-0.5404,0.70],
          ["stc2",0.1767,-0.5404,0.70],
          ["stc3",0.3426,-0.285,0.785],
+
+         {"nodeWeight":0.2},
+         ["int_stalk",0.550,-0.292, 0.833],
     ],
     "torsionbars":[
        ["id1:", "id2:", "id3:", "id4:"],
         //rigify the column
         {"spring":20000, "damp":1, "deform":18000, "strength":28000},
         ["stc3", "stc1", "stc2", "f5l"],
+    ],
+    "torsionHydros": [
+        ["id1:","id2:","id3:","id4:"],
+        {"spring":100, "damp":1, "deform":"FLT_MAX", "strength":1000},
+        ["int_stalk","stc3","stc1","stc2",  {"inputSource":"turnsignal","factor":-0.19}],
     ],
     "beams": [
           ["id1:", "id2:"],
@@ -259,6 +279,11 @@
           ["stc3", "dsh1l"],
           ["stc3", "dsh1ll"],
           ["stc3", "dsh3l"],
+
+          {"beamSpring":160100,"beamDamp":142.73},
+          {"beamDeform":70300,"beamStrength":"FLT_MAX"},
+          ["int_stalk","stc1"],
+          ["int_stalk","stc3"],
     ],
     "triangles":[
         ["id1:", "id2:", "id3:"],
@@ -414,7 +439,7 @@
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         //clutch pedal
-        ["clutch"     ,"bx_clutchpedal", "f5l","f5r","f6l", {"x":0, "y":0, "z":180}, {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+        ["clutch"     ,"bx_clutchpedal", "f5l","f5r","f6l", {"x":0, "y":0, "z":180}, {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1, {"disable":"$= $components.disableClutchPedal ~= nil"}],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -497,7 +522,7 @@
         {"breakGroup":""},
 
         //attach to body
-        {"beamSpring":300000,"beamDamp":70},
+        {"beamSpring":200000,"beamDamp":20},
         {"beamDeform":1000,"beamStrength":"FLT_MAX"},
         ["sh_b1l", "f7r"],
         ["sh_b1r", "f7r"],

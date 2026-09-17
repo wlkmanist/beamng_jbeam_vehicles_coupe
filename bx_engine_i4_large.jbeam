@@ -3,21 +3,21 @@
     "information":{
         "authors":"BeamNG",
         "name":"2.4L I4 Engine",
-        "value":4980,
+        "value":8400,
     },
     "slotType" : "bx_engine",
-    "slots": [
-        ["type", "default", "description"],
-        ["bx_enginemounts","bx_enginemounts", "Engine Mounts", {"coreSlot":true}],
-        ["bx_intake_i4_large","bx_intake_i4_large", "Intake", {"coreSlot":true}],
-        ["bx_oilpan_i4","bx_oilpan_i4", "Oil Pan", {"coreSlot":true}],
-        ["bx_exhaust_i4","bx_exhaust_i4", "Exhaust"],
-        ["bx_engine_ecu_i4_large","bx_engine_ecu_i4_large", "Engine Management", {"coreSlot":true}],
-        ["n2o_system","", "Nitrous Oxide System"],
-        ["bx_engine_internals_i4_large","bx_engine_internals_i4_large", "Engine Long Block", {"coreSlot":true}],
-        ["bx_transmission","bx_transmission_4A", "Transmission"],
-        ["bx_radiator_i4","bx_radiator_i4", "Radiator"],
-        ["bx_oilcooler","", "Oil Cooler"],
+    "slots2": [
+        ["name",                         "allowTypes",                     "denyTypes", "default",                      "description"],
+        ["bx_enginemounts",              ["bx_enginemounts"],              [],          "bx_enginemounts",              "Engine Mounts",        {"coreSlot":true}],
+        ["bx_intake_i4_large",           ["bx_intake_i4_large"],           [],          "bx_intake_i4_large",           "Intake",               {"coreSlot":true}],
+        ["bx_oilpan_i4",                 ["bx_oilpan_i4"],                 [],          "bx_oilpan_i4",                 "Oil Pan",              {"coreSlot":true}],
+        ["bx_exhaust_i4",                ["bx_exhaust_i4"],                [],          "bx_exhaust_i4",                "Exhaust"],
+        ["bx_engine_ecu_i4_large",       ["bx_engine_ecu_i4_large"],       [],          "bx_engine_ecu_i4_large",       "Engine Management",    {"coreSlot":true}],
+        ["n2o_system",                   ["n2o_system"],                   [],          "",                             "Nitrous Oxide System"],
+        ["bx_engine_internals_i4_large", ["bx_engine_internals_i4_large"], [],          "bx_engine_internals_i4_large", "Engine Long Block",    {"coreSlot":true}],
+        ["bx_transmission",              ["bx_transmission"],              [],          "bx_transmission_4A",           "Transmission"],
+        ["bx_radiator_i4",               ["bx_radiator_i4"],               [],          "bx_radiator_i4",               "Radiator"],
+        ["bx_oilcooler",                 ["bx_oilcooler"],                 [],          "",                             "Oil Cooler"],
     ],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
@@ -117,7 +117,7 @@
 
         "mainGain": -4,
         "onLoadGain":1,
-        "offLoadGain":0.40,
+        "offLoadGain":0.5,
 
         "maxLoadMix": 0.8,
         "minLoadMix": 0,
@@ -140,11 +140,11 @@
         "eqFundamentalGain": -1,
     },
     "soundConfigExhaust": {
-        "sampleName": "i4p_01600cc_motorsport_01_exhaust",
+        "sampleName": "i4p_2000_02000cc_modified_01_exhaust",
 
         "mainGain": 3,
         "onLoadGain":1,
-        "offLoadGain":0.26,
+        "offLoadGain":0.5,
 
         "maxLoadMix": 0.6,
         "minLoadMix": 0,
@@ -287,7 +287,7 @@
           ["e3r", "f11ll"],
           ["f15l", "e1r"],
           {"optional":false},
-          {"deformGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
 
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],
@@ -584,7 +584,7 @@
           ["airb2", "e2l"],
           ["airb2", "e2r"],
           ["airb2", "airb1"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           //attach to body
           {"beamDeform":8000,"beamStrength":11000},
@@ -704,7 +704,7 @@
           ["airb2", "e2l"],
           ["airb2", "e2r"],
           ["airb2", "airb1"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           //attach to body
           {"beamDeform":8000,"beamStrength":11000},
@@ -935,7 +935,7 @@
           ["airb2", "e4l"],
           ["airb2", "e2l"],
           ["airb2", "e2r"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           //attach to body
           {"beamDeform":8000,"beamStrength":11000},
@@ -1161,7 +1161,7 @@
           ["airb2", "e4l"],
           ["airb2", "e2l"],
           ["airb2", "e2r"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           //attach to body
           {"beamDeform":8000,"beamStrength":11000},
@@ -1388,7 +1388,7 @@
           ["airb2", "e4l"],
           ["airb2", "e2l"],
           ["airb2", "e2r"],
-          {"deformGroup":""}
+          {"deformGroup":"", "deformationTriggerRatio":""}
 
           //attach to body
           {"beamDeform":8000,"beamStrength":11000},

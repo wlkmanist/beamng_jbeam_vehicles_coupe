@@ -2,11 +2,24 @@
    "bx_lightbar_LED": {
     "information":{
         "authors":"BeamNG",
-        "name":"LED Lightbar",
+        "name":"LED Light Bar",
         "value":950,
     },
-
     "slotType" : "bx_lightbar_LED",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bx_lightbar_LED_bulb", ["generic_lightbar_wide_white_100W"], [],      "generic_lightbar_wide_white_100W", "LED Light Bar Center Emitter",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"fog",
+          "$nodeRef":"flb2", "$nodeX":"flb1", "$nodeY":"flb2r",
+          "$deformGroup":"lightbar_break",
+          "$posX":0, "$posY":-2.006, "$posZ":0.636,
+          "$rotX":0, "$rotY":0, "$rotZ":180
+        }
+        }],
+    ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         {"deformGroup":"lightbar_break", "deformMaterialBase":"off_road_lights", "deformMaterialDamaged":"off_road_lights"},
@@ -20,53 +33,6 @@
          "off_road_lights_fog":{"simpleFunction":{"fog":1}, "off":"off_road_lights", "on":"off_road_lights_on", "on_intense":"off_road_lights_on_intense"},
          "off_road_lights_glass_fog":{"simpleFunction":{"fog":1}, "off":"off_road_lights_glass", "on":"off_road_lights_glass_on", "on_intense":"off_road_lights_glass_on_intense"},
      },
-    "props": [
-        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
-        {
-          "lightInnerAngle":0,
-          "lightOuterAngle":120,
-          "lightBrightness":0.85,
-          "lightRange":80,
-          "lightColor":{"r":235, "g":235, "b":255, "a":255},
-          "lightAttenuation":{"x":0, "y":1, "z":1},
-          "lightCastShadows":true,
-          "flareName":"vehicleHeadLightFlare",
-          "flareScale":0.02,
-          "cookieName":"art/special/BNG_light_cookie_headlight.dds"
-          "texSize":512,
-          "shadowSoftness":0.5,
-        },
-        ["fog"    , "SPOTLIGHT"        ,  "flb2","flb1","flb2r", {"x":0, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.86, "z":0.0},"deformGroup":"lightbar_break"}],
-        ["fog"    , "SPOTLIGHT"        ,  "flb2","flb1","flb2r", {"x":0, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.3, "z":0.0},"deformGroup":"lightbar_break"}],
-        ["fog"    , "SPOTLIGHT"        ,  "flb2","flb1","flb2l", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.86, "z":0.0},"deformGroup":"lightbar_break"}],
-        ["fog"    , "SPOTLIGHT"        ,  "flb2","flb1","flb2l", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.3, "z":0.0},"deformGroup":"lightbar_break"}],
-
-        {
-          "lightInnerAngle":0,
-          "lightOuterAngle":120,
-          "lightBrightness":0.85,
-          "lightRange":0,
-          "lightColor":{"r":235, "g":235, "b":255, "a":255},
-          "lightAttenuation":{"x":0, "y":1, "z":1},
-          "lightCastShadows":false,
-          "flareName":"vehicleHeadLightFlare",
-          "flareScale":0.02,
-          "cookieName":"art/special/BNG_light_cookie_headlight.dds"
-          "texSize":512,
-          "shadowSoftness":0.5,
-        },
-        ["fog"    , "SPOTLIGHT"        ,  "flb2","flb1","flb2l", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.75, "z":0.0},"deformGroup":"lightbar_break"}],
-        ["fog"    , "SPOTLIGHT"        ,  "flb2","flb1","flb2l", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.6, "z":0.0},"deformGroup":"lightbar_break"}],
-        ["fog"    , "SPOTLIGHT"        ,  "flb2","flb1","flb2r", {"x":0, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.45, "z":0.0},"deformGroup":"lightbar_break"}],
-        ["fog"    , "SPOTLIGHT"        ,  "flb2","flb1","flb2r", {"x":0, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.15, "z":0.0},"deformGroup":"lightbar_break"}],
-
-        ["fog"    , "SPOTLIGHT"        ,  "flb2","flb1","flb2r", {"x":0, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.0, "z":0.0},"deformGroup":"lightbar_break"}],
-
-        ["fog"    , "SPOTLIGHT"        ,  "flb2","flb1","flb2l", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.15, "z":0.0},"deformGroup":"lightbar_break"}],
-        ["fog"    , "SPOTLIGHT"        ,  "flb2","flb1","flb2l", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.45, "z":0.0},"deformGroup":"lightbar_break"}],
-        ["fog"    , "SPOTLIGHT"        ,  "flb2","flb1","flb2r", {"x":0, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.6, "z":0.0},"deformGroup":"lightbar_break"}],
-        ["fog"    , "SPOTLIGHT"        ,  "flb2","flb1","flb2r", {"x":0, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.75, "z":0.0},"deformGroup":"lightbar_break"}],
-    ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
         {"collision":true},
@@ -111,7 +77,7 @@
         ["flb2r", "flb1r"],
         ["flb2", "flb1"],
         ["flb1l", "flb2l"],
-        //lenghtwise
+        //lengthwise
         ["flb2l", "flb3l"],
         ["flb1l", "flb3l"],
         ["flb2", "flb3"],
@@ -180,7 +146,7 @@
         ["flb1l", "f15"],
         ["flb3l", "f15"],
         ["flb2l", "f15"],
-        {"deformGroup":""},
+        {"deformGroup":"", "deformationTriggerRatio":""},
         {"breakGroup":""},
         {"deformLimitExpansion":1.2},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
